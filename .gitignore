@@ -64,6 +64,6 @@ node_modules/
 # dotenv environment variables file
 .env
 
-assets/testing.js
+assets/scripts/testing.js
 # to be removed later
-assets/main.js:3:13
+assets/scripts/main.js:3:13
