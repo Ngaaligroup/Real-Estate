@@ -125,7 +125,7 @@
                         </div>
 						 <div class="radio" id="agent-switch" data-agent-state="">
                             <label>
-                                <input type="radio" id="account-type-agent" name="account-type" required>Real-Estate Agency
+                                <input type="radio" id="account-type-professional" name="account-type" required>Professional
                             </label>
                         </div>
 						
@@ -137,13 +137,18 @@
                         <div id="agency" class="disabled">
                             <div class="form-group">
                                 <label for="account-agency">Select your agency:</label>
-                                <select name="account-agency" id="account-agency">
+                                <select name="account-type" id="account-agency">
                                     <option value="">Agency</option>
                                     
                                 </select>
                             </div><!-- /.form-group -->
                         </div>
+						
                         <hr>
+						 <div class="form-group">
+                            <label for="form-create-account-full-name">Profession:</label>
+                            <input type="text" class="form-control" id="form-create-account-full-name" required>
+                        </div><!-- /.form-group -->
                         <div class="form-group">
                             <label for="form-create-account-full-name">Full Name:</label>
                             <input type="text" class="form-control" id="form-create-account-full-name" required>
@@ -177,43 +182,7 @@
                             <button type="submit" class="btn pull-right btn-default" id="account-submit">Create an Account</button>
                         </div><!-- /.form-group -->
                     </form>
-					<form role="form" id="form-create-account" method="post" >
-					<div class="radio" id="professional account" data-agent-state="">
-                            <label>
-                                <input type="radio" id="account-type-professional" name="account-type" required>Professional
-                            </label>
-                        </div>
-					<hr>
-                        <div class="form-group">
-						<div class="form-group">
-                            <label for="form-create-account-email">Profession:</label>
-                            <input type="email" class="form-control" id="form-create-account-NIN" required>
-                        </div><!-- /.form-group -->
-                            <label for="form-create-account-full-name">Full Name:</label>
-                            <input type="text" class="form-control" id="form-create-account-full-name" required>
-                        </div><!-- /.form-group -->
-                        <div class="form-group">
-                            <label for="form-create-account-email">Email:</label>
-                            <input type="email" class="form-control" id="form-create-account-email" required>
-                        </div><!-- /.form-group -->
-						 <div class="form-group">
-                            <label for="form-create-account-email">Phone Number:</label>
-                            <input type="email" class="form-control" id="form-create-account-Phone Number" required>
-                        </div><!-- /.form-group -->
-						 <div class="form-group">
-                            <label for="form-create-account-email">National ID (NIN):</label>
-                            <input type="email" class="form-control" id="form-create-account-NIN" required>
-                        </div><!-- /.form-group -->
-						
-                        <div class="form-group">
-                            <label for="form-create-account-password">Password:</label>
-                            <input type="password" class="form-control" id="form-create-account-password" required>
-                        </div><!-- /.form-group -->
-                        <div class="form-group">
-                            <label for="form-create-account-confirm-password">Confirm Password:</label>
-                            <input type="password" class="form-control" id="form-create-account-confirm-password" required>
-                        </div><!-- /.form-group -->
-                    <hr>
+					
                     <div class="center">
                         <figure class="note">By clicking the “Create an Account” button you agree with our <a href="terms-conditions.html">Terms and conditions</a></figure>
                     </div>
