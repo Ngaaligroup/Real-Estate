@@ -2,13 +2,13 @@ $(document).ready(function(){
   
 	// Initialize Firebase
 	var config = {
-	apiKey: "AIzaSyAwrdWBHcMo6xlvUp0qAavF5osGKMrFfNc",
-	authDomain: "real-estate-9882c.firebaseapp.com",
-	databaseURL: "https://real-estate-9882c.firebaseio.com",
-	projectId: "real-estate-9882c",
-	storageBucket: "real-estate-9882c.appspot.com",
-	messagingSenderId: "1077907462804",
-	appId: "1:1077907462804:web:bd7b165973428aa6"
+	apiKey: "",
+	authDomain: "",
+	databaseURL: "",
+	projectId: "",
+	storageBucket: "",
+	messagingSenderId: "",
+	appId: ""
 	};
 	
 	firebase.initializeApp(config);
