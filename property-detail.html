@@ -30,8 +30,8 @@
                     <figure><strong>Phone:</strong>##########</figure>
                     <figure><strong>Email:</strong>rsseki@gmail.com</figure>
                 </div>
-                <div class="user-area">
-                    <div class="actions">
+                <div class="user-area" >
+                    <div class="actions" id="act">
                         <a href="create-agency.html" class="promoted">Register Agency</a>
                         <a href="create-account.html" class="promoted"><strong>Create Account</strong></a>
                         <a href="sign-in.html" id="sign-in" class="hide">Sign In</a>
@@ -54,43 +54,34 @@
                         <span class="icon-bar"></span>
                     </button>
                     <div class="navbar-brand nav" id="brand">
-                        <a href="index-google-map-fullscreen.html"><img src="assets/img/logo.png" alt="brand"></a>
+                        <a href="index-google-map-fullscreen.html"><img src="assets/img/Blue.PNG" alt="brand"></a>
                     </div>
                 </div>
                 <nav class="collapse navbar-collapse bs-navbar-collapse navbar-right" role="navigation">
                     <ul class="nav navbar-nav">
-                         <li "><a href="index.html">Homepage</a>
+                         <li><a href="index.html">Homepage</a>
                        
                         </li>
-                        <li class="has-child"><a href="#">Properties</a>
+                        <li class="has-child" id="adminhide"><a href="#">Properties</a>
                            <ul class="child-navigation">
-                                <!-- <li><a href="property-detail.html">Property Detail</a></li> -->
                                 <li><a href="land.html">Land</a></li>
-                                <!-- <li><a href="properties-listing-grid.html">Grid Listing</a></li> -->
-                                <li><a href="properties-listing-lines.html">Buildings</a></li>
+                                <li><a href="properties-listing-lines.html">Building</a></li>
                             </ul>
                         </li>
                      
-                        <li class="has-child"><a href="#">Agents & Agencies</a>
+                        <li class="has-child" id="adminhides"><a href="#">Agents & Agencies</a>
                             <ul class="child-navigation">
                                 <li><a href="agents-listing.html">Agents Listing</a></li>
-                                <!-- <li><a href="agent-detail.html">Agent Detail</a></li> -->
                                 <li><a href="agencies-listing.html">Agencies Listing</a></li>
-                                <!-- <li><a href="agency-detail.html">Agency Detail</a></li> -->
                             </ul>
                         </li>
-                        <li><a href="submit.html">Submit</a></li>
-                        <li class="has-child"><a href="#">Blog</a>
-                            <ul class="child-navigation">
-                                <li><a href="blog.html">Blog Listing</a></li>
-                                <li><a href="blog-detail.html">Blog Post Detail</a></li>
-                            </ul>
-                        </li>
+                        <li><a href="submit.html" class="hide" id="submitlin">Add Your Property</a></li>
+                        
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </nav><!-- /.navbar collapse-->
                 <div class="add-your-property">
-                    <a href="submit.html" class="btn btn-default"><i class="fa fa-plus"></i><span class="text">Add Your Property</span></a>
+                    <!-- <a href="submit.html" class="btn btn-default"><i class="fa fa-plus"></i><span class="text">Add Your Property</span></a> -->
                 </div>
             </header><!-- /.navbar -->
         </div><!-- /.container -->
@@ -111,35 +102,35 @@
             <div class="row">
                 <!-- Property Detail Content -->
                 <div class="col-md-9 col-sm-9">
-                    <section id="property-detail">
+                    <section id="property-detail" class="propdeter">
                         <header class="property-title">
-                            <h1>987 Cantebury Drive</h1>
-                            <figure>Golden Valley, MN 55427</figure>
+                            <h1 id="title">987 Cantebury Drive</h1>
+                            <figure id="address">Golden Valley, MN 55427</figure>
                             <span class="actions">
                                 <!--<a href="#" class="fa fa-print"></a>-->
                                 <a href="#" class="bookmark" data-bookmark-state="empty"><span class="title-add">Add to bookmark</span><span class="title-added">Added</span></a>
                             </span>
                         </header>
                         <section id="property-gallery">
-                            <div class="owl-carousel property-carousel">
-                                <div class="property-slide">
-                                    <a href="assets/img/properties/property-detail-01.jpg" class="image-popup">
+                            <div class="owl-carousel property-carousel slidein">
+                                <!-- <div class="property-slide">
+                                    <a href="" class="image-popup" >
                                         <div class="overlay"><h3>Front View</h3></div>
-                                        <img alt="" src="assets/img/properties/property-detail-01.jpg">
+                                        <img alt="" src="assets/img/properties/property-detail-01.jpg" >
                                     </a>
-                                </div><!-- /.property-slide -->
+                                </div>
                                 <div class="property-slide">
-                                    <a href="assets/img/properties/property-detail-02.jpg" class="image-popup">
+                                    <a href="assets/img/properties/property-detail-02.jpg" class="image-popup" >
                                         <div class="overlay"><h3>Bedroom</h3></div>
-                                        <img alt="" src="assets/img/properties/property-detail-02.jpg">
+                                        <img alt="" src="assets/img/properties/property-detail-02.jpg" >
                                     </a>
-                                </div><!-- /.property-slide -->
+                                </div>
                                 <div class="property-slide">
-                                    <a href="assets/img/properties/property-detail-03.jpg" class="image-popup">
+                                    <a href="assets/img/properties/property-detail-03.jpg" class="image-popup" >
                                         <div class="overlay"><h3>Bathroom</h3></div>
-                                        <img alt="" src="assets/img/properties/property-detail-03.jpg">
+                                        <img alt="" src="assets/img/properties/property-detail-03.jpg" >
                                     </a>
-                                </div><!-- /.property-slide -->
+                                </div> -->
                             </div><!-- /.property-carousel -->
                         </section>
                         <div class="row">
@@ -148,21 +139,21 @@
                                     <header><h2>Quick Summary</h2></header>
                                     <dl>
                                         <dt>Location</dt>
-                                            <dd>Chicago, IL 60610</dd>
+                                            <dd id="addresss">Chicago, IL 60610</dd>
                                         <dt>Price</dt>
-                                            <dd><span class="tag price">$78,000</span></dd>
+                                            <dd><span class="tag price" >UGX <span id="price"></span></span></dd>
                                         <dt>Property Type:</dt>
-                                            <dd>House</dd>
+                                            <dd id="propty">House</dd>
                                         <dt>Status:</dt>
-                                            <dd>Sale</dd>
+                                            <dd id="status">Sale</dd>
                                         <dt>Area:</dt>
-                                            <dd>860 m<sup>2</sup></dd>
+                                            <dd><span id="area">800</span>m<sup>2</sup></dd>
                                         <dt>Beds:</dt>
-                                            <dd>3</dd>
+                                            <dd id="bed">3</dd>
                                         <dt>Baths:</dt>
-                                            <dd>2</dd>
+                                            <dd id="bath">2</dd>
                                         <dt>Garages:</dt>
-                                            <dd>2</dd>
+                                            <dd id="garage">2</dd>
                                         <dt>Rating:</dt>
                                             <dd><div class="rating rating-overall" data-score="4"></div></dd>
                                     </dl>
@@ -171,23 +162,16 @@
                             <div class="col-md-8 col-sm-12">
                                 <section id="description">
                                     <header><h2>Property Description</h2></header>
-                                    <p>
+                                    <p id="desc">
                                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras et dui vestibulum,
                                         bibendum purus sit amet, vulputate mauris. Ut adipiscing gravida tincidunt.
                                         Duis euismod placerat rhoncus. Phasellus mollis imperdiet placerat. Sed ac
                                         turpis nisl. Mauris at ante mauris. Aliquam posuere fermentum lorem, a aliquam
                                         mauris rutrum a. Curabitur sit amet pretium lectus, nec consequat orci.
                                     </p>
-                                    <p>
-                                        Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos
-                                        himenaeos. Duis et metus in libero sollicitudin venenatis eu sed enim. Nam felis
-                                        lorem, suscipit ac nisl ac, iaculis dapibus tellus. Cras ante justo, aliquet quis
-                                        placerat nec, molestie id turpis. Cras at tincidunt magna. Mauris aliquam sem sit
-                                        amet dapibus venenatis. Sed metus orci, tincidunt sed fermentum non, ornare non quam.
-                                        Aenean nec turpis at libero lobortis pretium.
-                                    </p>
+                                    
                                 </section><!-- /#description -->
-                                <section id="property-features">
+                               <!--  <section id="property-features">
                                     <header><h2>Property Description</h2></header>
                                     <ul class="list-unstyled property-features-list">
                                         <li>Sauna</li>
@@ -199,14 +183,14 @@
                                         <li>Family Room</li>
                                         <li>Concrete Flooring</li>
                                     </ul>
-                                </section><!-- /#property-features -->
+                                </section>
                                 <section id="floor-plans">
                                     <div class="floor-plans">
                                         <header><h2>Floor Plans</h2></header>
                                         <a href="assets/img/properties/floor-plan-big.jpg" class="image-popup"><img alt="" src="assets/img/properties/floor-plan-01.jpg"></a>
                                         <a href="assets/img/properties/floor-plan-big.jpg" class="image-popup"><img alt="" src="assets/img/properties/floor-plan-02.jpg"></a>
                                     </div>
-                                </section><!-- /#floor-plans -->
+                                </section> -->
                                 <section id="property-map">
                                     <header><h2>Map</h2></header>
                                     <div class="property-detail-map-wrapper">
@@ -259,12 +243,12 @@
                                         </form><!-- /#form-contact -->
                                     </div><!-- /.rating-form -->
                                 </section><!-- /#property-rating -->
-                                <section id="video-presentation">
+                                <!-- <section id="video-presentation">
                                     <header><h2>Video Presentation</h2></header>
                                     <div class="video">
                                         <iframe src="//player.vimeo.com/video/34741214?title=0&amp;byline=0&amp;portrait=0&amp;color=ffffff" width="500" height="281" ></iframe>
                                     </div>
-                                </section><!-- /#video-presentation -->
+                                </section>-->
                             </div><!-- /.col-md-8 -->
                             <div class="col-md-12 col-sm-12">
                                 <section id="contact-agent">
@@ -272,8 +256,8 @@
                                     <div class="row">
                                         <section class="agent-form">
                                             <div class="col-md-7 col-sm-12">
-                                                <aside class="agent-info clearfix">
-                                                    <figure><a href="agent-detail.html"><img alt="" src="assets/img/agent-01.jpg"></a></figure>
+                                                <aside class="agent-info clearfix" id="agentee">
+                                                    <!-- <figure><a href="agent-detail.html"><img alt="" src="assets/img/agent-01.jpg"></a></figure>
                                                     <div class="agent-contact-info">
                                                         <h3>Robert Farley</h3>
                                                         <p>
@@ -293,7 +277,7 @@
                                                         </dl>
                                                         <hr>
                                                         <a href="agent-detail.html" class="link-arrow">Full Profile</a>
-                                                    </div>
+                                                    </div> -->
                                                 </aside><!-- /.agent-info -->
                                             </div><!-- /.col-md-7 -->
                                             <div class="col-md-5 col-sm-12">
@@ -564,55 +548,22 @@
                                 </div><!-- /.form-group -->
                             </form><!-- /#form-map -->
                         </aside><!-- /#edit-search -->
-                        <aside id="featured-properties">
-                            <header><h3>Featured Properties</h3></header>
-                            <div class="property small">
-                                <a href="property-detail.html">
-                                    <div class="property-image">
-                                        <img alt="" src="assets/img/properties/property-06.jpg">
-                                    </div>
-                                </a>
-                                <div class="info">
-                                    <a href="property-detail.html"><h4>2186 Rinehart Road</h4></a>
-                                    <figure>Doral, FL 33178 </figure>
-                                    <div class="tag price">$ 72,000</div>
-                                </div>
-                            </div><!-- /.property -->
-                            <div class="property small">
-                                <a href="property-detail.html">
-                                    <div class="property-image">
-                                        <img alt="" src="assets/img/properties/property-09.jpg">
-                                    </div>
-                                </a>
-                                <div class="info">
-                                    <a href="property-detail.html"><h4>2479 Murphy Court</h4></a>
-                                    <figure>Minneapolis, MN 55402</figure>
-                                    <div class="tag price">$ 36,000</div>
-                                </div>
-                            </div><!-- /.property -->
-                            <div class="property small">
-                                <a href="property-detail.html">
-                                    <div class="property-image">
-                                        <img alt="" src="assets/img/properties/property-03.jpg">
-                                    </div>
-                                </a>
-                                <div class="info">
-                                    <a href="property-detail.html"><h4>1949 Tennessee Avenue</h4></a>
-                                    <figure>Minneapolis, MN 55402</figure>
-                                    <div class="tag price">$ 128,600</div>
-                                </div>
-                            </div><!-- /.property -->
-                        </aside><!-- /#featured-properties -->
+                          
                         <aside id="our-guides">
                             <header><h3>Our Guides</h3></header>
-                            <a href="#" class="universal-button">
+                            <a href="Guidelines.html" class="universal-button">
                                 <figure class="fa fa-home"></figure>
-                                <span>Buying Guide</span>
+                                <span>Guidelines for Purchase</span>
                                 <span class="arrow fa fa-angle-right"></span>
                             </a><!-- /.universal-button -->
-                            <a href="#" class="universal-button">
+                            <a href="Recommendations.html" class="universal-button">
                                 <figure class="fa fa-umbrella"></figure>
-                                <span>Right Insurance for You</span>
+                                <span>Recommendations</span>
+                                <span class="arrow fa fa-angle-right"></span>
+                            </a><!-- /.universal-button -->
+                            <a href="proffesionals.html" class="universal-button">
+                                <figure class="fa fa-umbrella"></figure>
+                                <span>Proffesionals</span>
                                 <span class="arrow fa fa-angle-right"></span>
                             </a><!-- /.universal-button -->
                         </aside><!-- /#our-guide -->
@@ -641,33 +592,12 @@
                             </article>
                         </div><!-- /.col-sm-3 -->
                         <div class="col-md-3 col-sm-3">
-                            <article>
-                                <h3>Recent Properties</h3>
-                                <div class="property small">
-                                    <a href="property-detail.html">
-                                        <div class="property-image">
-                                            <img alt="" src="assets/img/properties/property-06.jpg">
-                                        </div>
-                                    </a>
-                                    <div class="info">
-                                        <a href="property-detail.html"><h4>2186 Rinehart Road</h4></a>
-                                        <figure>Doral, FL 33178 </figure>
-                                        <div class="tag price">$ 72,000</div>
-                                    </div>
-                                </div><!-- /.property -->
-                                <div class="property small">
-                                    <a href="property-detail.html">
-                                        <div class="property-image">
-                                            <img alt="" src="assets/img/properties/property-09.jpg">
-                                        </div>
-                                    </a>
-                                    <div class="info">
-                                        <a href="property-detail.html"><h4>2479 Murphy Court</h4></a>
-                                        <figure>Minneapolis, MN 55402</figure>
-                                        <div class="tag price">$ 36,000</div>
-                                    </div>
-                                </div><!-- /.property -->
-                            </article>
+                            <div class="recent">
+                                <article>
+                                    <h3>Recent Properties</h3>
+                                    
+                                </article>
+                            </div>
                         </div><!-- /.col-sm-3 -->
                         <div class="col-md-3 col-sm-3">
                             <article>
@@ -759,6 +689,7 @@
 
 
 <script src="assets/scripts/main.js"></script>
+<script type="text/javascript" src="assets/scripts/propdetails.js"></script>
 
 </body>
 </html>

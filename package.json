@@ -1,0 +1,20 @@
+{
+  "name": "real-estate",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "test": "",
+    "start": "firebase serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ngaaligroup/Real-Estate.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ngaaligroup/Real-Estate/issues"
+  },
+  "homepage": "https://github.com/Ngaaligroup/Real-Estate#readme"
+}

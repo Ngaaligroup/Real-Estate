@@ -31,7 +31,7 @@
                     <figure><strong>Email:</strong>rsseki@gmail.com</figure>
                 </div>
                 <div class="user-area">
-                    <div class="actions">
+                    <div class="actions" id="act">
                         <a href="create-agency.html" class="promoted" >Register Agency</a>
                         <a href="create-account.html" class="promoted"><strong>Create Account</strong></a>
                         <a href="sign-in.html" id="sign-in" class="hide">Sign In</a>
@@ -55,7 +55,7 @@
                         <span class="icon-bar"></span>
                     </button>
                     <div class="navbar-brand nav" id="brand">
-                        <a href="index-google-map-fullscreen.html"><img src="assets/img/logo.png" alt="brand"></a>
+                        <a href="index-google-map-fullscreen.html"><img src="assets/img/Blue.PNG" alt="brand"></a>
                     </div>
                 </div>
                 <nav class="collapse navbar-collapse bs-navbar-collapse navbar-right" role="navigation">
@@ -63,65 +63,53 @@
                         <li class="active"><a href="#">Homepage</a>
                             
                         </li>
-                        <li class="has-child"><a href="#">Properties</a>
+                        <li class="has-child" id="adminhide"><a href="#">Properties</a>
                            <ul class="child-navigation">
                                 <li><a href="land.html">Land</a></li>
-                                <!-- <li><a href="properties-listing.html">Masonry Listing</a></li>
-                                <li><a href="properties-listing-grid.html">Grid Listing</a></li> -->
                                 <li><a href="properties-listing-lines.html">Building</a></li>
                             </ul>
                         </li>
                      
-                        <li class="has-child"><a href="#">Agents & Agencies</a>
+                        <li class="has-child" id="adminhides"><a href="#">Agents & Agencies</a>
                             <ul class="child-navigation">
                                 <li><a href="agents-listing.html">Agents Listing</a></li>
-                                <!-- <li><a href="agent-detail.html">Agent Detail</a></li> -->
                                 <li><a href="agencies-listing.html">Agencies Listing</a></li>
-                                <!-- <li><a href="agency-detail.html">Agency Detail</a></li> -->
                             </ul>
                         </li>
-                        <li><a href="submit.html">Submit</a></li>
-                        <li class="has-child"><a href="#">Blog</a>
+                        <li><a href="submit.html" class="hide" id="submitlin">Add Your Property</a></li>
+                        <!-- <li class="has-child"><a href="#">Blog</a>
                             <ul class="child-navigation">
                                 <li><a href="blog.html">Blog Listing</a></li>
                                 <li><a href="blog-detail.html">Blog Post Detail</a></li>
                             </ul>
-                        </li>
+                        </li> -->
                         <li><a href="contact.html">Contact</a></li>
 						
                     </ul>
                 </nav><!-- /.navbar collapse-->
                 <div class="add-your-property">
-                    <a href="submit.html" class="btn btn-default"><i class="fa fa-plus"></i><span class="text">Add Your Property</span></a>
+                    <a href="submit.html" class="btn btn-default hide" id="submitlin"><i class="fa fa-plus"></i><span class="text">Add Your Property</span></a>
                 </div>
             </header><!-- /.navbar -->
         </div><!-- /.container -->
     </div><!-- /.navigation -->
 
     <!-- Slider -->
-    <div id="slider" class="loading has-parallax">
+    <!-- <div id="slider" class="loading has-parallax">
         <div id="loading-icon"><i class="fa fa-cog fa-spin"></i></div>
         <div class="owl-carousel homepage-slider carousel-full-width">
-            
-            <!-- <div class="slide">
-                <div class="container">
-                    <div class="overlay">
-                        <div class="info">
-                            <div class="tag price">$ 28,500</div>
-                            <h3>1866 Clement Street</h3>
-                            <figure>Atlanta, GA 30303</figure>
-                        </div>
-                        <hr>
-                        <a href="property-detail.html" class="link-arrow">Read More</a>
+            <div class="owl-stage-outer">
+                <div class="owl-stage" style="width: 3808px; transform: translate3d(-2176px, 0px, 0px); transition: all 0s ease 0s;">
+                    <div class="owl-item cloned" style="width: 544px; margin-right: 0px;">
+                        
                     </div>
                 </div>
-                <img alt="" src="assets/img/slide-03.jpg">
-            </div> -->
+            </div>
         </div>
-    </div>
+    </div> -->
     <!-- end Slider -->
 
-    <div class="search-box-wrapper">
+    <!-- <div class="search-box-wrapper">
         <div class="search-box-inner">
             <div class="container">
                 <div class="search-box map">
@@ -131,13 +119,13 @@
                                 <div class="form-group">
                                     <select name="form-sale-country">
                                         <option value="1">Uganda</option>
-                                     <!--   <option value="1">France</option>
+                                         <option value="1">France</option>
                                         <option value="2">Great Britain</option>
                                         <option value="3">Spain</option>
                                         <option value="4">Russia</option>
-                                        <option value="5">United States</option> -->
+                                        <option value="5">United States</option> 
                                     </select>
-                                </div><!-- /.form-group -->
+                                </div>/.form-group 
                             </div>
                             <div class="col-md-2 col-sm-4">
                                 <div class="form-group">
@@ -149,7 +137,7 @@
                                         <option value="4">Makindye</option>
                                         <option value="5">Gaaba</option>
                                     </select>
-                                </div><!-- /.form-group -->
+                                </div> /.form-group 
                             </div>
                             <div class="col-md-2 col-sm-4">
                                 <div class="form-group">
@@ -161,7 +149,7 @@
                                         <option value="4">Mityana</option>
                                         <option value="5">Kalangala</option>
                                     </select>
-                                </div><!-- /.form-group -->
+                                </div> /.form-group 
                             </div>
                             <div class="col-md-2 col-sm-4">
                                 <div class="form-group">
@@ -173,7 +161,7 @@
                                         <option value="4">Flat</option>
                                         <option value="5">House</option>
                                     </select>
-                                </div><!-- /.form-group -->
+                                </div> /.form-group 
                             </div>
                             <div class="col-md-2 col-sm-4">
                                 <div class="form-group">
@@ -189,23 +177,23 @@
                             <div class="col-md-2 col-sm-4">
                                 <div class="form-group">
                                     <button type="submit" class="btn btn-default">Search Sale</button>
-                                </div><!-- /.form-group -->
+                                </div>/.form-group 
                             </div>
                         </div>
-                    </form><!-- /#form-map -->
-                </div><!-- /.search-box -->
-            </div><!-- /.container -->
-        </div><!-- /.search-box-inner -->
+                    </form> /#form-map 
+                </div> /.search-box
+            </div> /.container  
+        </div> /.search-box-inner 
         <div class="background-image"><img class="opacity-20" src="assets/img/searchbox-bg.jpg"></div>
     </div>
-    <!-- end Search Box -->
+     end Search Box -->
 
     <!-- Page Content -->
     <div id="page-content">
         <section id="banner">
             <div class="block has-dark-background background-color-default-darker center text-banner">
                 <div class="container">
-                    <h1 class="no-bottom-margin no-border">welcome to !</h1>
+                    <h1 class="no-bottom-margin no-border">welcome to REAL ESTATES</h1>
                 </div>
             </div>
         </section><!-- /#banner -->
@@ -216,114 +204,13 @@
             <div class="container">
                 <header class="section-title">
                     <h2>New Properties for You</h2>
-                    <a href="properties-listing.html" class="link-arrow">All Properties</a>
+                    <a href="#" class="link-arrow">All Properties</a>
                 </header>
-                <div class="row">
-                    <div class="col-md-3 col-sm-6">
+                <div class="row" id="allprop">
+                    
+                    <div class="col-md-3 col-sm-6" style="padding-top: 20px;">
                         <div class="property">
-                            <a href="property-detail.html">
-                                <div class="property-image">
-                                    <img alt="" src="assets/img/properties/property-09.jpg">
-                                </div>
-                                <div class="overlay">
-                                    <div class="info">
-                                        <div class="tag price">$ 11,000</div>
-                                        <h3>3398 Lodgeville Road</h3>
-                                        <figure>Golden Valley, MN 55427</figure>
-                                    </div>
-                                    <ul class="additional-info">
-                                        <li>
-                                            <header>Area:</header>
-                                            <figure>240m<sup>2</sup></figure>
-                                        </li>
-                                        <li>
-                                            <header>Beds:</header>
-                                            <figure>2</figure>
-                                        </li>
-                                        <li>
-                                            <header>Baths:</header>
-                                            <figure>2</figure>
-                                        </li>
-                                        <li>
-                                            <header>Garages:</header>
-                                            <figure>0</figure>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </a>
-                        </div><!-- /.property -->
-                    </div><!-- /.col-md-3 -->
-                    <div class="col-md-3 col-sm-6">
-                        <div class="property">
-                            <a href="property-detail.html">
-                                <div class="property-image">
-                                    <img alt="" src="assets/img/properties/property-03.jpg">
-                                </div>
-                                <div class="overlay">
-                                    <div class="info">
-                                        <div class="tag price">$ 38,000</div>
-                                        <h3>2186 Rinehart Road</h3>
-                                        <figure>Doral, FL 33178 </figure>
-                                    </div>
-                                    <ul class="additional-info">
-                                        <li>
-                                            <header>Area:</header>
-                                            <figure>240m<sup>2</sup></figure>
-                                        </li>
-                                        <li>
-                                            <header>Beds:</header>
-                                            <figure>3</figure>
-                                        </li>
-                                        <li>
-                                            <header>Baths:</header>
-                                            <figure>1</figure>
-                                        </li>
-                                        <li>
-                                            <header>Garages:</header>
-                                            <figure>1</figure>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </a>
-                        </div><!-- /.property -->
-                    </div><!-- /.col-md-3 -->
-                    <div class="col-md-3 col-sm-6">
-                        <div class="property">
-                            <a href="property-detail.html">
-                                <div class="property-image">
-                                    <img alt="" src="assets/img/properties/property-06.jpg">
-                                </div>
-                                <div class="overlay">
-                                    <div class="info">
-                                        <div class="tag price">$ 325,000</div>
-                                        <h3>3705 Brighton Circle Road</h3>
-                                        <figure>Glenwood, MN 56334</figure>
-                                    </div>
-                                    <ul class="additional-info">
-                                        <li>
-                                            <header>Area:</header>
-                                            <figure>240m<sup>2</sup></figure>
-                                        </li>
-                                        <li>
-                                            <header>Beds:</header>
-                                            <figure>3</figure>
-                                        </li>
-                                        <li>
-                                            <header>Baths:</header>
-                                            <figure>1</figure>
-                                        </li>
-                                        <li>
-                                            <header>Garages:</header>
-                                            <figure>1</figure>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </a>
-                        </div><!-- /.property -->
-                    </div><!-- /.col-md-3 -->
-                    <div class="col-md-3 col-sm-6">
-                        <div class="property">
-                            <a href="property-detail.html">
+                            <a href="property-detail.html?property=data-details">
                                 <div class="property-image">
                                     <img alt="" src="assets/img/properties/property-01.jpg">
                                 </div>
@@ -356,144 +243,7 @@
                         </div><!-- /.property -->
                     </div><!-- /.col-md-3 -->
                 </div><!-- /.row-->
-                <div class="row">
-                    <div class="col-md-3 col-sm-6">
-                        <div class="property">
-                            <a href="property-detail.html">
-                                <div class="property-image">
-                                    <img alt="" src="assets/img/properties/property-02.jpg">
-                                </div>
-                                <div class="overlay">
-                                    <div class="info">
-                                        <div class="tag price">$ 18,000</div>
-                                        <h3>2506 B Street</h3>
-                                        <figure>New Brighton, MN 55112</figure>
-                                    </div>
-                                    <ul class="additional-info">
-                                        <li>
-                                            <header>Area:</header>
-                                            <figure>280m<sup>2</sup></figure>
-                                        </li>
-                                        <li>
-                                            <header>Beds:</header>
-                                            <figure>3</figure>
-                                        </li>
-                                        <li>
-                                            <header>Baths:</header>
-                                            <figure>2</figure>
-                                        </li>
-                                        <li>
-                                            <header>Garages:</header>
-                                            <figure>1</figure>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </a>
-                        </div><!-- /.property -->
-                    </div><!-- /.col-md-3 -->
-                    <div class="col-md-3 col-sm-6">
-                        <div class="property">
-                            <a href="property-detail.html">
-                                <div class="property-image">
-                                    <img alt="" src="assets/img/properties/property-12.jpg">
-                                </div>
-                                <div class="overlay">
-                                    <div class="info">
-                                        <div class="tag price">$ 136,000</div>
-                                        <h3>3990 Late Avenue</h3>
-                                        <figure>Kingfisher, OK 73750</figure>
-                                    </div>
-                                    <ul class="additional-info">
-                                        <li>
-                                            <header>Area:</header>
-                                            <figure>30m<sup>2</sup></figure>
-                                        </li>
-                                        <li>
-                                            <header>Beds:</header>
-                                            <figure>1</figure>
-                                        </li>
-                                        <li>
-                                            <header>Baths:</header>
-                                            <figure>1</figure>
-                                        </li>
-                                        <li>
-                                            <header>Garages:</header>
-                                            <figure>0</figure>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </a>
-                        </div><!-- /.property -->
-                    </div><!-- /.col-md-3 -->
-                    <div class="col-md-3 col-sm-6">
-                        <div class="property">
-                            <a href="property-detail.html">
-                                <div class="property-image">
-                                    <img alt="" src="assets/img/properties/property-05.jpg">
-                                </div>
-                                <div class="overlay">
-                                    <div class="info">
-                                        <div class="tag price">$ 12,680</div>
-                                        <h3>297 Marie Street</h3>
-                                        <figure>Towson, MD 21204 </figure>
-                                    </div>
-                                    <ul class="additional-info">
-                                        <li>
-                                            <header>Area:</header>
-                                            <figure>240m<sup>2</sup></figure>
-                                        </li>
-                                        <li>
-                                            <header>Beds:</header>
-                                            <figure>3</figure>
-                                        </li>
-                                        <li>
-                                            <header>Baths:</header>
-                                            <figure>1</figure>
-                                        </li>
-                                        <li>
-                                            <header>Garages:</header>
-                                            <figure>1</figure>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </a>
-                        </div><!-- /.property -->
-                    </div><!-- /.col-md-3 -->
-                    <div class="col-md-3 col-sm-6">
-                        <div class="property">
-                            <a href="property-detail.html">
-                                <div class="property-image">
-                                    <img alt="" src="assets/img/properties/property-10.jpg">
-                                </div>
-                                <div class="overlay">
-                                    <div class="info">
-                                        <div class="tag price">$ 12,800</div>
-                                        <h3>64 Timberbrook Lane</h3>
-                                        <figure>Denver, CO 80202</figure>
-                                    </div>
-                                    <ul class="additional-info">
-                                        <li>
-                                            <header>Area:</header>
-                                            <figure>240m<sup>2</sup></figure>
-                                        </li>
-                                        <li>
-                                            <header>Beds:</header>
-                                            <figure>3</figure>
-                                        </li>
-                                        <li>
-                                            <header>Baths:</header>
-                                            <figure>1</figure>
-                                        </li>
-                                        <li>
-                                            <header>Garages:</header>
-                                            <figure>1</figure>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </a>
-                        </div><!-- /.property -->
-                    </div><!-- /.col-md-3 -->
-                </div><!-- /.row-->
+                
             </div><!-- /.container-->
         </section><!-- /#new-properties-->
         <section id="testimonials" class="block">
@@ -557,33 +307,12 @@
                             </article>
                         </div><!-- /.col-sm-3 -->
                         <div class="col-md-3 col-sm-3">
-                            <article>
-                                <h3>Recent Properties</h3>
-                                <div class="property small">
-                                    <a href="property-detail.html">
-                                        <div class="property-image">
-                                            <img alt="" src="assets/img/properties/property-06.jpg">
-                                        </div>
-                                    </a>
-                                    <div class="info">
-                                        <a href="property-detail.html"><h4>2186 Rinehart Road</h4></a>
-                                        <figure>Doral, FL 33178 </figure>
-                                        <div class="tag price">$ 72,000</div>
-                                    </div>
-                                </div><!-- /.property -->
-                                <div class="property small">
-                                    <a href="property-detail.html">
-                                        <div class="property-image">
-                                            <img alt="" src="assets/img/properties/property-09.jpg">
-                                        </div>
-                                    </a>
-                                    <div class="info">
-                                        <a href="property-detail.html"><h4>2479 Murphy Court</h4></a>
-                                        <figure>Minneapolis, MN 55402</figure>
-                                        <div class="tag price">$ 36,000</div>
-                                    </div>
-                                </div><!-- /.property -->
-                            </article>
+                            <div class="recent">
+                                <article>
+                                    <h3>Recent Properties</h3>
+                                    
+                                </article>
+                            </div>
                         </div><!-- /.col-sm-3 -->
                         <div class="col-md-3 col-sm-3">
                             <article>

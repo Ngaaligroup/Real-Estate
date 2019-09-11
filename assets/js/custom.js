@@ -497,7 +497,7 @@ function setNavigationPosition(){
     $('.nav > li').each(function () {
         if($(this).hasClass('has-child')){
             var fullNavigationWidth = $(this).children('.child-navigation').width() + $(this).children('.child-navigation').children('li').children('.child-navigation').width();
-            if(($(this).children('.child-navigation').offset().left + fullNavigationWidth) > $(window).width()){
+            if(($(this).children('.child-navigation').offset() + fullNavigationWidth) > $(window).width()){
                 $(this).children('.child-navigation').addClass('navigation-to-left');
             }
         }

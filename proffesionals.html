@@ -15,11 +15,11 @@
     <link rel="stylesheet" href="assets/css/owl.carousel.css" type="text/css">
     <link rel="stylesheet" href="assets/css/style.css" type="text/css">
 
-    <title>Real-Estate | Land</title>
+    <title>Real | professional Listing</title>
 
 </head>
 
-<body class="page-sub-page page-property-detail" id="page-top">
+<body class="page-sub-page page-agents-listing" id="page-top">
 <!-- Wrapper -->
 <div class="wrapper">
     <!-- Navigation -->
@@ -30,16 +30,16 @@
                     <figure><strong>Phone:</strong>##########</figure>
                     <figure><strong>Email:</strong>rsseki@gmail.com</figure>
                 </div>
-                <div class="user-area" >
-                    <div class="actions" id="act">
+                <div class="user-area">
+                    <div class="actions">
                         <a href="create-agency.html" class="promoted">Register Agency</a>
                         <a href="create-account.html" class="promoted"><strong>Create Account</strong></a>
-                        <a href="sign-in.html" id="sign-in" class="hide">Sign In</a>
-                        <a href="sign-in.html" id="sign-out" class="hide" style="padding-right: 20px">Sign Out</a>
+                        <a href="sign-in.html">Sign In</a>
                     </div>
                     <div class="language-bar">
-                        <a href="#" class="active"><img src="assets/img/flags/gb.png" alt=""></a>
-                        
+                     <!--   <a href="#" class="active"><img src="assets/img/flags/gb.png" alt=""></a>
+                        <a href="#"><img src="assets/img/flags/de.png" alt=""></a>
+                        <a href="#"><img src="assets/img/flags/es.png" alt=""></a> -->
                     </div>
                 </div>
             </div>
@@ -54,13 +54,13 @@
                         <span class="icon-bar"></span>
                     </button>
                     <div class="navbar-brand nav" id="brand">
-                        <a href="index-google-map-fullscreen.html"><img src="assets/img/Blue.PNG" alt="brand"></a>
+                     <a href="index-google-map-fullscreen.html"><img src="assets/img/Blue.png" alt="brand"></a> 
                     </div>
                 </div>
                 <nav class="collapse navbar-collapse bs-navbar-collapse navbar-right" role="navigation">
                     <ul class="nav navbar-nav">
-                       <li class="active"><a href="index.html">Homepage</a>
-                            
+                        <li><a href="index-slider-horizontal-search-box.html">Homepage</a>
+                          
                         </li>
                         <li class="has-child" id="adminhide"><a href="#">Properties</a>
                            <ul class="child-navigation">
@@ -75,14 +75,18 @@
                                 <li><a href="agencies-listing.html">Agencies Listing</a></li>
                             </ul>
                         </li>
-                        <li><a href="submit.html" class="hide" id="submitlin">Add Your Property</a></li>
-                        
+                        <li><a href="submit.html">Add Property</a></li>
+                        <li class="has-child"><a href="#">Blog</a>
+                            <ul class="child-navigation">
+                                <li><a href="blog.html">Blog Listing</a></li>
+                                <li><a href="blog-detail.html">Blog Post Detail</a></li>
+                            </ul>
+                        </li>
                         <li><a href="contact.html">Contact</a></li>
-                        
                     </ul>
                 </nav><!-- /.navbar collapse-->
                 <div class="add-your-property">
-                    <a href="submit.html" class="btn btn-default hide" id="submitlin"><i class="fa fa-plus"></i><span class="text">Add Your Property</span></a>
+                    <a href="submit.html" class="btn btn-default"><i class="fa fa-plus"></i><span class="text">Add Your Property</span></a>
                 </div>
             </header><!-- /.navbar -->
         </div><!-- /.container -->
@@ -94,48 +98,31 @@
         <div class="container">
             <ol class="breadcrumb">
                 <li><a href="#">Home</a></li>
-                <li class="active">Property Detail</li>
+                <li><a href="#">Agents</a></li>
+                <li class="active">Agents Listing</li>
             </ol>
         </div>
         <!-- end Breadcrumb -->
+
         <div class="container">
             <div class="row">
-                <!-- Results -->
+                <!-- Agent Detail -->
                 <div class="col-md-9 col-sm-9">
-                    <section id="results">
-                        <header><h1>Properties Listing</h1></header>
-                        <section id="search-filter">
-                            <figure><h3><i class="fa fa-search"></i>Search Results:</h3>
-                                <span class="search-count">28</span>
-                                <div class="sorting">
-                                    <div class="form-group">
-                                        <select name="sorting">
-                                            <option value="">Sort By</option>
-                                            <option value="1">Lowest price first</option>
-                                            <option value="2">Highest price first</option>
-                                            <option value="3">Date added</option>
-                                        </select>
-                                    </div><!-- /.form-group -->
-                                </div>
-                            </figure>
-                        </section>
-                        <section id="properties " class="display-lines showprop">
-                            
-                            
-                        </section><!-- /#properties-->
-                        <!-- Pagination -->
-                            <div class="center">
-                                <ul class="pagination">
-                                    <li class="active"><a href="#">1</a></li>
-                                    <li><a href="#">2</a></li>
-                                    <li><a href="#">3</a></li>
-                                    <li><a href="#">4</a></li>
-                                    <li><a href="#">5</a></li>
-                                </ul><!-- /.pagination-->
-                            </div><!-- /.center-->
-                    </section><!-- /#results -->
+                    <section id="agents-listing">
+                        <header><h1>Professionals Listing</h1></header>
+                        
+                    <!-- Pagination -->
+                    <div class="center">
+                        <ul class="pagination">
+                            <li class="active"><a href="#">1</a></li>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li><a href="#">4</a></li>
+                            <li><a href="#">5</a></li>
+                        </ul><!-- /.pagination-->
+                    </div><!-- /.center-->
                 </div><!-- /.col-md-9 -->
-                <!-- end Results -->
+                <!-- end Agent Detail -->
 
                 <!-- sidebar -->
                 <div class="col-md-3 col-sm-3">
@@ -152,67 +139,53 @@
                                 </div><!-- /.form-group -->
                                 <div class="form-group">
                                     <select name="country">
+                                        <option value="">Country</option>
                                         <option value="1">Uganda</option>
-                                 </select>
+                                      
+                                    </select>
                                 </div><!-- /.form-group -->
                                 <div class="form-group">
                                     <select name="city">
                                         <option value="">City</option>
-                                        <option value="1">Kawempe</option>
-                                        <option value="2">Jinja</option>
-                                        <option value="3">Muyenga</option>
-                                        <option value="4">Makindye</option>
-                                        <option value="5">Gaaba</option>
+                                        
                                     </select>
                                 </div><!-- /.form-group -->
                                 <div class="form-group">
                                     <select name="district">
                                         <option value="">District</option>
-                                        <option value="1">Wakiso</option>
-                                        <option value="2">Mpiji</option>
-                                        <option value="3">Kampala</option>
-                                        <option value="4">Mityana</option>
-                                        <option value="5">Kalangala</option>
+                                       
                                     </select>
                                 </div><!-- /.form-group -->
                                 <div class="form-group">
                                     <select name="property-type">
                                         <option value="">Property Type</option>
-                                        <option value="1">Mailo Land</option>
-										
-										<option value="2">Mailo Titled</option>
-										<option value="3">Mailo Untitled</option>
-										
-                                        <option value="4">Crown Land</option>
-                                        
+                                        ion>
                                     </select>
                                 </div><!-- /.form-group -->
                                 <div class="form-group">
-                                    <div class="price-range">
-                                        <input id="price-input" type="text" name="price" value="">
-                                    </div>
+                                    
                                 </div>
                                 <div class="form-group">
                                     <button type="submit" class="btn btn-default">Search Now</button>
                                 </div><!-- /.form-group -->
                             </form><!-- /#form-map -->
                         </aside><!-- /#edit-search -->
-                          
+                        <aside id="featured-properties">
+                            <header><h3>Featured Properties</h3></header>
+                            
+                            
+                           
+                        </aside><!-- /#featured-properties -->
                         <aside id="our-guides">
                             <header><h3>Our Guides</h3></header>
-                            <a href="Guidelines.html" class="universal-button">
+                            <a href="#" class="universal-button">
                                 <figure class="fa fa-home"></figure>
-                                <span>Guidelines for Purchase</span>
+                                <span>Guidelines for purchase</span>
                                 <span class="arrow fa fa-angle-right"></span>
                             </a><!-- /.universal-button -->
-                            <a href="Recommendations.html" class="universal-button">
+                            <a href="#" class="universal-button">
                                 <figure class="fa fa-umbrella"></figure>
                                 <span>Recommendations</span>
-                                <span class="arrow fa fa-angle-right"></span>
-                            </a><!-- /.universal-button -->
-                            <a href="proffesionals.html" class="universal-button">
-                                <figure class="fa fa-umbrella"></figure>
-                                <span>Proffesionals</span>
                                 <span class="arrow fa fa-angle-right"></span>
                             </a><!-- /.universal-button -->
                         </aside><!-- /#our-guide -->
@@ -232,44 +205,25 @@
                         <div class="col-md-3 col-sm-3">
                             <article>
                                 <h3>About Us</h3>
-                                <p>Vel fermentum ipsum. Suspendisse quis molestie odio. Interdum et malesuada fames ac ante ipsum
-                                    primis in faucibus. Quisque aliquet a metus in aliquet. Praesent ut turpis posuere, commodo odio
-                                    id, ornare tortor
+                                <p>
                                 </p>
                                 <hr>
                                 <a href="#" class="link-arrow">Read More</a>
                             </article>
                         </div><!-- /.col-sm-3 -->
-                        <div class="col-md-3 col-sm-3">
-                            <div class="recent">
-                                <article>
-                                    <h3>Recent Properties</h3>
-                                    
-                                </article>
-                            </div>
-                        </div><!-- /.col-sm-3 -->
-                        <div class="col-md-3 col-sm-3">
-                            <article>
-                                <h3>Contact</h3>
-                                <address>
-                                    <strong>Your Company</strong><br>
-                                    4877 Spruce Drive<br>
-                                    West Newton, PA 15089
-                                </address>
-                                +1 (734) 123-4567<br>
-                                <a href="#">hello@example.com</a>
-                            </article>
-                        </div><!-- /.col-sm-3 -->
+                        
+                           
+                        
                         <div class="col-md-3 col-sm-3">
                             <article>
                                 <h3>Useful Links</h3>
                                 <ul class="list-unstyled list-links">
-								 <li class="has-child"><a href="#">All Properties</a>
-                            <ul class="child-navigation">
+                                    <li><a href="#">All Properties</a></li>
+									<ul class="child-navigation">
                                 <li><a href="agents-listing.html">Land</a></li>
                                 <li><a href="agent-detail.html">Buildings</a></li>
                                     </ul>
-                                    </li>
+                                    
                                     <li><a href="#">Login and Register Account</a></li>
                                     <li><a href="#">FAQ</a></li>
                                     
@@ -282,9 +236,7 @@
             <aside id="footer-thumbnails" class="footer-thumbnails"></aside><!-- /#footer-thumbnails -->
             <aside id="footer-copyright">
                 <div class="container">
-                    <span>Copyright © <script type="text/javascript">
-  document.write(new Date().getFullYear());
-</script>. All Rights Reserved.</span>
+                    <span>Copyright © 2019. All Rights Reserved.</span>
                     <span class="pull-right"><a href="#page-top" class="roll">Go to top</a></span>
                 </div>
             </aside>
@@ -297,8 +249,12 @@
 <script type="text/javascript" src="assets/js/jquery-migrate-1.2.1.min.js"></script>
 <script type="text/javascript" src="assets/bootstrap/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="assets/js/smoothscroll.js"></script>
+<script type="text/javascript" src="assets/js/owl.carousel.min.js"></script>
 <script type="text/javascript" src="assets/js/bootstrap-select.min.js"></script>
+<script type="text/javascript" src="assets/js/jquery.validate.min.js"></script>
+<script type="text/javascript" src="assets/js/icheck.min.js"></script>
 <script type="text/javascript" src="assets/js/retina-1.1.0.min.js"></script>
+<script type="text/javascript" src="assets/js/jquery.magnific-popup.min.js"></script>
 <script type="text/javascript" src="assets/js/jshashtable-2.1_src.js"></script>
 <script type="text/javascript" src="assets/js/jquery.numberformatter-1.2.3.js"></script>
 <script type="text/javascript" src="assets/js/tmpl.js"></script>
@@ -309,21 +265,6 @@
 <!--[if gt IE 8]>
 <script type="text/javascript" src="assets/js/ie.js"></script>
 <![endif]-->
-
-<!-- Import and configure the Firebase SDK -->
-<!-- These scripts are made available when the app is served or deployed on Firebase Hosting -->
-<!-- If you do not want to serve/host your project using Firebase Hosting see https://firebase.google.com/docs/web/setup -->
-
-<script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-auth.js"></script>
-<script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-storage.js"></script>
-<script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-messaging.js"></script>
-<script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-firestore.js"></script>
-<script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-performance.js"></script>
-<script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-database.js"></script>
-
-
-<script src="assets/scripts/main.js"></script>
 
 </body>
 </html>
