@@ -35,14 +35,14 @@ a {
   -moz-transition: 0.2s;
   -webkit-transition: 0.2s;
   transition: 0.2s;
-  color: #1396e2;
+  color: #fff;
   outline: none !important;
 }
 a:hover {
   text-decoration: none;
 }
 a:hover h1, a:hover h2, a:hover h3, a:hover h4 {
-  color: #1396e2;
+  color: MidnightBlue;
 }
 a:focus, a:active {
   outline: none !important;
@@ -52,7 +52,7 @@ a h1, a h2, a h3, a h4 {
   -moz-transition: 0.2s;
   -webkit-transition: 0.2s;
   transition: 0.2s;
-  color: #073855;
+  color: #fff;
 }
 
 blockquote {
@@ -67,7 +67,7 @@ blockquote figure {
   vertical-align: middle;
 }
 blockquote figure .image {
-  background-color: #5a5a5a;
+  background-color: DeepSkyBlue;
   height: 180px;
   position: relative;
   overflow: hidden;
@@ -85,7 +85,7 @@ blockquote figure .image:after {
   width: 0px;
 }
 blockquote figure .image:before {
-  background-color: #fff;
+  background-color: DeepSkyBlue;
   bottom: 0;
   content: "";
   height: 20px;
@@ -105,12 +105,12 @@ blockquote .cite p {
   font-style: italic;
 }
 blockquote .cite footer {
-  color: #073855;
+  color: #fff;
 }
 
 body {
-  background-color: #fff;
-  color: #5a5a5a;
+  background-color: PowderBlue;
+  color: MidnightBlue;
   font-family: 'Roboto', sans-serif;
 }
 
@@ -188,27 +188,27 @@ ul.list-links li a {
   -moz-transition: 0.2s;
   -webkit-transition: 0.2s;
   transition: 0.2s;
-  color: #5a5a5a;
+  color: MidnightBlue;
   display: block;
   padding: 5px 0;
   padding-left: 0;
 }
 ul.list-links li a:hover {
-  color: #1396e2;
+  color: #fff;
   padding-left: 5px;
 }
 
 /* 2. Styling for specific pages */
 
 .page-sub-page #page-content:after {
-  background: #f1f1f1;
-  background: -moz-linear-gradient(top, #f1f1f1 0%, white 80%);
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f1f1f1), color-stop(80%, white));
-  background: -webkit-linear-gradient(top, #f1f1f1 0%, white 80%);
-  background: -o-linear-gradient(top, #f1f1f1 0%, white 80%);
-  background: -ms-linear-gradient(top, #f1f1f1 0%, white 80%);
-  background: linear-gradient(to bottom, #f1f1f1 0%, white 80%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f1f1f1', endColorstr='#ffffff',GradientType=0 );
+  background: DodgerBlue;
+  background: -moz-linear-gradient(top, DodgerBlue 0%, white 80%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, DodgerBlue), color-stop(80%, white));
+  background: -webkit-linear-gradient(top, DodgerBlue 0%, white 80%);
+  background: -o-linear-gradient(top, DodgerBlue 0%, white 80%);
+  background: -ms-linear-gradient(top, DodgerBlue 0%, white 80%);
+  background: linear-gradient(to bottom, DodgerBlue 0%, white 80%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='DodgerBlue', endColorstr='DodgerBlue',GradientType=0 );
   content: "";
   left: 0;
   height: 110px;
@@ -264,23 +264,23 @@ ul.list-links li a:hover {
 /* 3. Universal classes */
 
 .background-color-grey-light {
-    background-color: #f3f3f3;
+    background-color: LightBlue;
 }
 
 .background-color-grey-medium {
-    background-color: #5a5a5a;
+    background-color: #fff;
 }
 
 .background-color-grey-dark {
-    background-color: #2a2a2a;
+    background-color: DarkBlue;
 }
 
 .background-color-default {
-    background-color: #1396e2;
+    background-color: SteelBlue;
 }
 
 .background-color-default-darker {
-    background-color: #073855;
+    background-color: #fff;
 }
 
 .background-image {
@@ -381,10 +381,10 @@ ul.list-links li a:hover {
 }
 
 .link-icon {
-  color: #2a2a2a;
+  color: #fff;
 }
 .link-icon .fa {
-  color: #1396e2;
+  color: #fff;
   margin: 0 10px;
 }
 
@@ -392,7 +392,7 @@ ul.list-links li a:hover {
   -moz-transition: 0.2s;
   -webkit-transition: 0.2s;
   transition: 0.2s;
-  color: #2a2a2a;
+  color: MidnightBlue;
   display: inline-block;
 }
 .link-arrow:after {
@@ -408,7 +408,7 @@ ul.list-links li a:hover {
   line-height: 1;
   text-transform: none;
   content: "\f105";
-  color: #1396e2;
+  color: CornFlowerBlue;
   left: 0;
   font-size: 18px;
   margin-left: 10px;
@@ -417,11 +417,11 @@ ul.list-links li a:hover {
   bottom: 2px;
 }
 .link-arrow:hover {
-  color: #2a2a2a;
+  color: #fff;
   cursor: pointer;
 }
 .link-arrow:hover:after {
-  color: #073855;
+  color: #fff;
   left: 5px;
 }
 .link-arrow.geo-location:after {
@@ -448,7 +448,7 @@ ul.list-links li a:hover {
   line-height: 1;
   text-transform: none;
   content: "\f104";
-  color: #1396e2;
+  color: #fff;
   right: 0;
   font-size: 18px;
   margin-right: 10px;
@@ -457,11 +457,11 @@ ul.list-links li a:hover {
   bottom: 2px;
 }
 .link-arrow.back:hover {
-  color: #2a2a2a;
+  color: #fff;
   cursor: pointer;
 }
 .link-arrow.back:hover:before {
-  color: #073855;
+  color: #fff;
   right: 5px;
 }
 
@@ -497,7 +497,7 @@ ul.list-links li a:hover {
     -moz-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.15);
     -webkit-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.15);
     box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.15);
-    background-color: #fff;
+    background-color: Azure;
     /*margin-bottom: 20px;*/
     position: relative;
     width: 100%;
@@ -550,7 +550,7 @@ ul.list-links li a:hover {
     opacity: 1;
 }
 .navigation .navbar .navbar-nav > li.active .child-navigation a {
-    color: #5a5a5a;
+    color: MidnightBlue;
 }
 .navigation .navbar .navbar-nav > li.active .child-navigation a:after {
     display: none;
@@ -574,7 +574,7 @@ ul.list-links li a:hover {
     line-height: 1;
     text-transform: none;
     content: "\f0d7";
-    color: #1396e2;
+    color: #fff;
     font-size: 8px;
     height: 10px;
     position: absolute;
@@ -586,7 +586,7 @@ ul.list-links li a:hover {
 .navigation .navbar .navbar-nav > li a {
     filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70);
     opacity: 0.7;
-    color: #2a2a2a;
+    color: Black;
     line-height: 0;
     margin: 0;
     padding-bottom: 5px;
@@ -599,7 +599,7 @@ ul.list-links li a:hover {
     -moz-transition: 0.2s;
     -webkit-transition: 0.2s;
     transition: 0.2s;
-    background-color: #1396e2;
+    background-color: #fff;
     bottom: -5px;
     content: "";
     left: 16px;
@@ -642,7 +642,7 @@ ul.list-links li a:hover {
 .navigation .navbar .navbar-nav > li > .child-navigation.position-bottom > li:last-child > a:after {
     filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
     opacity: 1;
-    background-color: transparent;
+    background-color: PowderBlue;
     border-color: #f3f3f3 transparent transparent transparent;
     border-style: solid;
     border-width: 7.5px 7.5px 0 7.5px;
@@ -890,13 +890,13 @@ ul.list-links li a:hover {
     width: 100%;
 }
 #page-footer .inner h3 {
-    color: #2a2a2a;
+    color: midn;
     font-weight: normal;
     margin-bottom: 30px;
     margin-top: 0;
 }
 #page-footer .inner #footer-main {
-    background-color: #f3f3f3;
+    background-color: MidnightBlue
     padding: 40px 0;
 }
 #page-footer .inner #footer-copyright {
