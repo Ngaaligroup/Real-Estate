@@ -97,10 +97,41 @@ $(document).ready(function(){
 	        console.log("passwords dont match");
 	        // $('#messageModalLabel').html(spanText("ERROR: Passwords didn't match", ['danger']))
 	      }
-    
-     
-  }
+    }
+    if ($(".profilepic").get(0).files.length != 0) {
+      var storage = firebase.storage();
+      var storageRef = storage.ref();
+      var file = $(".profilepic")[0].files[0];
+      var imgRef = storageRef.child(user.uid + "/ProfilePic/" + file.name);
+      var upload = imgRef.put(file).then(function(snapshot){
+        snapshot.ref.getDownloadURL().then(function(url) {
+          // if ($('#submit-property-type').val() =="Land") {
+          //   // TODO: submit land pictures
+          //   var db = firebase.database().ref();
+          //   db.child('properties/Land/' +  newLandKey).update({Photos: url});
+          //   db.child('users/' + user.uid + "/property/" + newLandKey).update({Photos: url});
+          //   db.child('AllProperty/' + newLandKey).update({Photos: url});
+          //   console.log("Photos:" +url)
+          // }else{
+          //   var db = firebase.database().ref();
+          //   db.child('properties/house/' + newhouseKey ).update({Photos: url});
+          //   db.child('users/' + user.uid + "/property/" + newhouseKey).update({Photos: url});
+          //   db.child('AllProperty/' + newhouseKey).update({Photos: url});
+          //   console.log("Photos:" +url)
+            
+
+          // }
+         
+          // document.getElementById("form-submit-property").reset();
         });
+      });
+
+    }else{
+      
+      window.alert("please add your profile picture ");
+    }
+  
+  });
 
   //Register account
   $('#form-create-agency').on('submit', function (e) {
