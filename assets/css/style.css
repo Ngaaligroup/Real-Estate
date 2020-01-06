@@ -35,14 +35,14 @@ a {
   -moz-transition: 0.2s;
   -webkit-transition: 0.2s;
   transition: 0.2s;
-  color: MidnightBlue;
+  color: dodgerblue;
   outline: none !important;
 }
 a:hover {
   text-decoration: none;
 }
 a:hover h1, a:hover h2, a:hover h3, a:hover h4 {
-  color: #fff;
+  color: dodgerblue;
 }
 a:focus, a:active {
   outline: none !important;
@@ -52,7 +52,7 @@ a h1, a h2, a h3, a h4 {
   -moz-transition: 0.2s;
   -webkit-transition: 0.2s;
   transition: 0.2s;
-  color: MidnightBlue;
+  color: dodgerblue;
 }
 
 blockquote {
@@ -67,7 +67,7 @@ blockquote figure {
   vertical-align: middle;
 }
 blockquote figure .image {
-  background-color: DeepSkyBlue;
+  background-color: dodgerblue;
   height: 180px;
   position: relative;
   overflow: hidden;
@@ -85,7 +85,7 @@ blockquote figure .image:after {
   width: 0px;
 }
 blockquote figure .image:before {
-  background-color: DeepSkyBlue;
+  background-color:rgb(23, 19, 27);
   bottom: 0;
   content: "";
   height: 20px;
@@ -103,14 +103,15 @@ blockquote .cite p {
   font-family: Georgia, serif;
   font-size: 24px;
   font-style: italic;
+  color: white 
 }
 blockquote .cite footer {
   color: #fff;
 }
 
 body {
-  background-color: PowderBlue;
-  color: MidnightBlue;
+  background-color: paleturquoise;
+  color: rgb(115, 175, 235);
   font-family: 'Roboto', sans-serif;
 }
 
@@ -146,17 +147,20 @@ h2 {
   margin-bottom: 30px;
   margin-top: 10px;
   padding-bottom: 15px;
+  color: black;
 }
 
 h3 {
   font-size: 18px;
   font-weight: lighter;
   margin-bottom: 20px;
+  color: black;
 }
 
 h4 {
   font-size: 14px;
   font-weight: lighter;
+  color: black ;
 }
 
 hr {
@@ -166,7 +170,7 @@ hr.thick {
   border-width: 2px;
 }
 hr.divider {
-  border-color: #1396e2;
+  border-color: #0e4163;
   border-width: 2px;
   width: 40px;
 }
@@ -175,6 +179,7 @@ p {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70);
   opacity: 0.7;
   font-family: "Arial", sans-serif;
+  color: black;
 }
 
 section {
@@ -188,7 +193,7 @@ ul.list-links li a {
   -moz-transition: 0.2s;
   -webkit-transition: 0.2s;
   transition: 0.2s;
-  color: MidnightBlue;
+  color: black;
   display: block;
   padding: 5px 0;
   padding-left: 0;
@@ -201,14 +206,14 @@ ul.list-links li a:hover {
 /* 2. Styling for specific pages */
 
 .page-sub-page #page-content:after {
-  background: DodgerBlue;
-  background: -moz-linear-gradient(top, DodgerBlue 0%, white 80%);
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, DodgerBlue), color-stop(80%, white));
-  background: -webkit-linear-gradient(top, DodgerBlue 0%, white 80%);
-  background: -o-linear-gradient(top, DodgerBlue 0%, white 80%);
-  background: -ms-linear-gradient(top, DodgerBlue 0%, white 80%);
-  background: linear-gradient(to bottom, DodgerBlue 0%, white 80%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='DodgerBlue', endColorstr='DodgerBlue',GradientType=0 );
+  background: rgb(178, 197, 235);
+  /* background: -moz-linear-gradient(top, rgb(5, 44, 77) 0%, rgb(49, 13, 13) 80%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgb(11, 18, 26)), color-stop(80%, rgb(49, 13, 13)));
+  background: -webkit-linear-gradient(top, rgb(5, 44, 77) 0%, rgb(49, 13, 13) 80%);
+  background: -o-linear-gradient(top, rgb(5, 44, 77) 0%, rgb(49, 13, 13) 80%);
+  background: -ms-linear-gradient(top, rgb(5, 44, 77) 0% rgb(49, 13, 13)80%);
+  background: linear-gradient(to bottom, rgb(5, 44, 77) 0% rgb(49, 13, 13)80%); */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='rgb(5, 44, 77) ', endColorstr='rgb(11, 18, 26',GradientType=0 );
   content: "";
   left: 0;
   height: 110px;
@@ -264,7 +269,7 @@ ul.list-links li a:hover {
 /* 3. Universal classes */
 
 .background-color-grey-light {
-    background-color: LightBlue;
+    background-color: rgb(141, 148, 150);
 }
 
 .background-color-grey-medium {
@@ -272,7 +277,7 @@ ul.list-links li a:hover {
 }
 
 .background-color-grey-dark {
-    background-color: DarkBlue;
+    background-color: rgb(108, 94, 240);
 }
 
 .background-color-default {
@@ -392,7 +397,7 @@ ul.list-links li a:hover {
   -moz-transition: 0.2s;
   -webkit-transition: 0.2s;
   transition: 0.2s;
-  color: MidnightBlue;
+  color: black;
   display: inline-block;
 }
 .link-arrow:after {
@@ -494,10 +499,10 @@ ul.list-links li a:hover {
 /* 4. Header*/
 
 .navigation {
-    -moz-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.301);
     -webkit-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.15);
     box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.15);
-    background-color: Azure;
+    background-color: plum ;
     /*margin-bottom: 20px;*/
     position: relative;
     width: 100%;
@@ -550,7 +555,7 @@ ul.list-links li a:hover {
     opacity: 1;
 }
 .navigation .navbar .navbar-nav > li.active .child-navigation a {
-    color: MidnightBlue;
+    color: red;
 }
 .navigation .navbar .navbar-nav > li.active .child-navigation a:after {
     display: none;
@@ -637,12 +642,12 @@ ul.list-links li a:hover {
     border-color: transparent !important;
 }
 .navigation .navbar .navbar-nav > li > .child-navigation.position-bottom > li:last-child:hover a:after {
-    border-color: #1396e2 transparent transparent transparent;
+    border-color: #19191a transparent transparent transparent;
 }
 .navigation .navbar .navbar-nav > li > .child-navigation.position-bottom > li:last-child > a:after {
     filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
     opacity: 1;
-    background-color: PowderBlue;
+    background-color: rgb(137, 158, 168);
     border-color: #f3f3f3 transparent transparent transparent;
     border-style: solid;
     border-width: 7.5px 7.5px 0 7.5px;
@@ -838,7 +843,7 @@ ul.list-links li a:hover {
     color: #073855;
 }
 .navigation .secondary-navigation a.promoted {
-    color: #1396e2;
+    color: black;
 }
 .navigation .secondary-navigation a.promoted:hover {
     color: #073855;
@@ -890,7 +895,7 @@ ul.list-links li a:hover {
     width: 100%;
 }
 #page-footer .inner h3 {
-    color: midn;
+    color: midnightblue;
     font-weight: normal;
     margin-bottom: 30px;
     margin-top: 0;
@@ -900,7 +905,7 @@ ul.list-links li a:hover {
     padding: 40px 0;
 }
 #page-footer .inner #footer-copyright {
-    background-color: #073855;
+    background-color: plum;
     color: #fff;
     display: table;
     padding: 20px 0;
@@ -1117,6 +1122,7 @@ ul.list-links li a:hover {
   margin-top: 0;
   margin-bottom: 10px;
 }
+
 .agency h2 {
   border: none;
   margin-bottom: 20px;
@@ -2250,7 +2256,7 @@ ul.list-links li a:hover {
   margin-right: 5px;
 }
 .my-properties table tbody tr td.actions .delete {
-  color: red;
+  color: #fff;
   position: relative;
   top: 5px;
 }
@@ -4020,9 +4026,9 @@ input[type="text"], input[type="email"], input[type="search"], input[type="passw
   -moz-transition: 0.3s;
   -webkit-transition: 0.3s;
   transition: 0.3s;
-  -moz-box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2) inset;
-  -webkit-box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2) inset;
-  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2) inset;
+  -moz-box-shadow: 0px 1px 1px white inset;
+  -webkit-box-shadow: 0px 1px 1px white inset;
+  box-shadow: 0px 1px 1px whitesmoke inset;
   -webkit-appearance: none;
   background-color: #f3f3f3;
   border: none;
@@ -4033,12 +4039,12 @@ input[type="text"], input[type="email"], input[type="search"], input[type="passw
   height: inherit;
 }
 input[type="text"]:active, input[type="text"]:focus, input[type="email"]:active, input[type="email"]:focus, input[type="search"]:active, input[type="search"]:focus, input[type="password"]:active, input[type="password"]:focus, input[type="number"]:active, input[type="number"]:focus, input[type="tel"]:active, input[type="tel"]:focus, textarea.form-control:active, textarea.form-control:focus {
-  -moz-box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.2);
-  -webkit-box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.2);
-  box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: inset 0px 1px 1px white ;
+  -webkit-box-shadow: inset 0px 1px 1px white ;
+  box-shadow: inset 0px 1px 1px white ;
 }
 input[type="text"]:hover, input[type="email"]:hover, input[type="search"]:hover, input[type="password"]:hover, input[type="number"]:hover, input[type="tel"]:hover, textarea.form-control:hover {
-  background-color: rgba(0, 0, 0, 0.02);
+  background-color: white ;
 }
 
 .btn, select {

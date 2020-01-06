@@ -1,20 +1,54 @@
 {
   "name": "real-estate",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.html",
+  "private": true,
   "scripts": {
-    "test": "",
-    "start": "firebase serve"
+    "start": "webpack-dev-server --open --mode development",
+    "build": "webpack --mode production",
+    "clean": "nwb clean-app",
+    "test": "nwb test",
+    "test:coverage": "nwb test --coverage",
+    "test:watch": "nwb test --server"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Ngaaligroup/Real-Estate.git"
+  "description": "",
+  "dependencies": {
+    "admin-lte": "^3.0.0-alpha",
+    "axios": "^0.19.0",
+    "css-loader": "^3.1.0",
+    "dotenv": "^8.0.0",
+    "express": "^4.17.1",
+    "firebase": "^7.6.0",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.2.0",
+    "mongoose": "^5.7.4",
+    "nwb": "^0.23.0",
+    "rater-js": "^1.0.1",
+    "react": "^16.10.2",
+    "react-bootstrap": "^1.0.0-beta.14",
+    "react-dom": "^16.10.2",
+    "react-router-dom": "^5.1.2"
+  },
+  "main": "index.js",
+  "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "@babel/preset-react": "^7.0.0",
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^10.0.2",
+    "babel-loader": "^8.0.6",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "eslint": "^6.1.0",
+    "eslint-config-google": "^0.13.0",
+    "eslint-plugin-react": "^7.14.3",
+    "file-loader": "^4.1.0",
+    "prop-types": "^15.7.2",
+    "style-loader": "^0.23.1",
+    "webpack": "^4.41.1",
+    "webpack-cli": "^3.3.9",
+    "webpack-dev-server": "^3.8.2",
+    "webpack-node-externals": "^1.7.2"
   },
   "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Ngaaligroup/Real-Estate/issues"
-  },
-  "homepage": "https://github.com/Ngaaligroup/Real-Estate#readme"
+  "license": "ISC"
 }

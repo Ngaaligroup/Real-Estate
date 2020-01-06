@@ -2,13 +2,13 @@ $(document).ready(function(){
   
 	// Initialize Firebase
 	var config = {
-	apiKey: "",
-	authDomain: "",
-	databaseURL: "",
-	projectId: "",
-	storageBucket: "",
-	messagingSenderId: "",
-	appId: ""
+	apiKey: "AIzaSyAwrdWBHcMo6xlvUp0qAavF5osGKMrFfNc",
+	authDomain: "real-estate-9882c.firebaseapp.com",
+	databaseURL: "https://real-estate-9882c.firebaseio.com",
+	projectId: "real-estate-9882c",
+	storageBucket: "real-estate-9882c.appspot.com",
+	messagingSenderId: "1077907462804",
+	appId: "1:1077907462804:web:bd7b165973428aa6"
 	};
 	
 	firebase.initializeApp(config);
@@ -355,11 +355,13 @@ $(document).ready(function(){
                 db.child('properties/Land/' +  newLandKey).update({Photos: url});
                 db.child('users/' + user.uid + "/property/" + newLandKey).update({Photos: url});
                 db.child('AllProperty/' + newLandKey).update({Photos: url});
+                console.log("Photos:" +url)
               }else{
                 var db = firebase.database().ref();
                 db.child('properties/house/' + newhouseKey ).update({Photos: url});
                 db.child('users/' + user.uid + "/property/" + newhouseKey).update({Photos: url});
                 db.child('AllProperty/' + newhouseKey).update({Photos: url});
+                console.log("Photos:" +url)
                 
 
               }
