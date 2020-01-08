@@ -123,6 +123,9 @@ $(document).ready(function(){
           // }
          
           // document.getElementById("form-submit-property").reset();
+          var db = firebase.database().ref();
+          db.child('users' +  uid).update({ProfilePic: url});
+          
         });
       });
 
