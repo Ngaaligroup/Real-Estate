@@ -26,10 +26,7 @@
     <div class="navigation">
         <div class="secondary-navigation">
             <div class="container">
-                <div class="contact">
-                    <figure><strong>Phone:</strong>###############</figure>
-                    <figure><strong>Email:</strong>rsseki@gmail.com</figure>
-                </div>
+               
                 <div class="user-area">
                     <div class="actions">
                         <a href="create-agency.html" class="promoted">Registef Agency</a>
@@ -37,10 +34,7 @@
                         <a href="sign-in.html" id="sign-in" class="hide">Sign In</a>
                         <a href="sign-in.html" id="sign-out" class="hide" style="padding-right: 20px">Sign Out</a>
                     </div>
-                    <div class="language-bar">
-                        <a href="#" class="active"><img src="assets/img/flags/gb.png" alt=""></a>
-                        
-                    </div>
+                    
                 </div>
             </div>
         </div>
@@ -53,9 +47,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <div class="navbar-brand nav" id="brand">
-                        <a href="index-google-map-fullscreen.html"><img src="assets/img/Blue.PNG" alt="brand"></a>
-                    </div>
+                    
                 </div>
                 <nav class="collapse navbar-collapse bs-navbar-collapse navbar-right" role="navigation">
                     <ul class="nav navbar-nav">
@@ -68,16 +60,22 @@
                                 <li><a href="properties-listing-lines.html">Building</a></li>
                             </ul>
                         </li>
-                     
+                        <li class="has-child" id="adminhides"><a href="#">Professionals</a>
+                            <ul class="child-navigation">
+                                <li><a href="architect.html">Architects</a></li>
+                                <li><a href="surveyor.html">Surveyors</a></li>
+                                <li><a href="hardware.html">Hardware</a></li>
+                                <li><a href="civilEngineer.html">Civil Engineers</a></li>
+                                <li><a href="Lawyer.html">Lawyers</a></li>
+                            </ul>
+                        </li>
                         <li class="has-child" id="adminhides"><a href="#">Agents & Agencies</a>
                             <ul class="child-navigation">
                                 <li><a href="agents-listing.html">Agents Listing</a></li>
                                 <li><a href="agencies-listing.html">Agencies Listing</a></li>
                             </ul>
                         </li>
-                        <li><a href="submit.html" class="hide" id="submitlin">Add Your Property</a></li>
                         
-                        <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </nav><!-- /.navbar collapse-->
                 <div class="add-your-property">
@@ -150,11 +148,11 @@
                                                     <div class="form-group">
                                                         <select name="account-agency" id="account-agency">
                                                             <option value="">Agency</option>
-                                                            <option value="1">Estate+</option>
-                                                            <option value="2">Northfolk Eastate</option>
-                                                            <option value="3">Maximum Properties</option>
-                                                            <option value="4">Edd's Homes</option>
-                                                            <option value="5">Will & Scotch</option>
+                                                            <option value="1">Jomayi Proerty consultants</option>
+                                                            <option value="2">Seema properties</option>
+                                                            <option value="3">Kamoga Property Consultants </option>
+                                                            <option value="4">Hosanna Real estate  </option>
+                                                            <option value="5">Ecoland Property Services</option>
                                                         </select>
                                                     </div><!-- /.form-group -->
                                                 </div>
@@ -165,28 +163,24 @@
                                             <dl class="contact-fields">
                                                 <dt><label for="form-account-name">Your Name:</label></dt>
                                                 <dd><div class="form-group">
-                                                    <input type="text" class="form-control" id="form-account-name" name="form-account-name" required value="Jeffrey Scott">
+                                                    <input type="text" class="form-control" id="form-account-name" name="form-account-name" placeholder="Jeffrey Scott">
                                                 </div><!-- /.form-group --></dd>
                                                 <dt><label for="form-account-phone">Phone:</label></dt>
                                                 <dd><div class="form-group">
-                                                    <input type="text" class="form-control" id="form-account-phone" name="form-account-phone" value="(123) 456 789">
+                                                    <input type="text" class="form-control" id="form-account-phone" name="form-account-phone" placeholder="(123) 456 789">
                                                 </div><!-- /.form-group --></dd>
                                                 <dt><label for="form-account-email">Email:</label></dt>
                                                 <dd><div class="form-group">
-                                                    <input type="text" class="form-control" id="form-account-email" name="form-account-phone" value="jeffrey.scott@example.com">
+                                                    <input type="text" class="form-control" id="form-account-email" name="form-account-phone" placeholder="jeffrey.scott@example.com">
                                                 </div><!-- /.form-group --></dd>
-                                                <dt><label for="form-account-skype">Skype:</label></dt>
-                                                <dd><div class="form-group">
-                                                    <input type="text" class="form-control" id="form-account-skype" name="form-account-skype" value="jeffrey.scott">
-                                                </div><!-- /.form-group --></dd>
+                                                
                                             </dl>
                                         </section>
                                         <section id="about-me">
                                             <h3>About Me</h3>
                                             <div class="form-group">
-                                                <textarea class="form-control" id="form-contact-agent-message" rows="5" name="form-contact-agent-message">
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras et dui vestibulum, bibendum purus sit amet, vulputate mauris. Ut adipiscing gravida tincidunt. Duis euismod placerat rhoncus.
-Phasellus mollis imperdiet placerat. Sed ac turpis nisl. Mauris at ante mauris. Aliquam posuere fermentum lorem, a aliquam mauris rutrum.</textarea>
+                                                <textarea class="form-control" id="form-contact-agent-message" rows="5" name="form-contact-agent-message" placeholder="say something about yourself">
+.</textarea>
                                             </div><!-- /.form-group -->
                                         </section>
                                         <section id="social">
