@@ -2936,22 +2936,30 @@ ul.list-links li a:hover {
 /****
   R
 ****/
-.rating img {
-  background-color: #1396e2;
+.rating {
+  float: left;
+  unicode-bidi: bidi-override;
+  direction: rtl;
+  font-size: 28px;
+  margin-top: -11px;
+  color: #3a5fb1;
+  margin-left: 10px;
+  margin-right: 10px;
 }
-.rating .inner img {
-  background-color: #1396e2;
-}
-.rating.rating-individual {
-  margin-bottom: 10px;
-}
-.rating.rating-user {
+.rating > span {
   display: inline-block;
+  position: relative;
+  width: 0.7em;
+  cursor: pointer;
 }
-.rating.rating-user #hint {
-  margin-top: 20px;
-  height: 20px;
+.rating > span:hover:before,
+.rating > span:hover ~ span:before,
+.rating > span.rated:before,
+.rating > span.rated ~ span:before {
+  content: "\2605";
+  position: absolute;
 }
+
 
 .ribbon {
   -moz-box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2);
