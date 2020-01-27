@@ -4,3 +4,4 @@ dist
 .babelrc
 .vscode
 Hey
+assets/scripts/testing.js

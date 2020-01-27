@@ -316,33 +316,29 @@ var useeref =firebase.database().ref('property owners/seller');
   {{ item.$key }}
 </div>
 
-In your Home.ts create that function and, using navController, push the city page with the city info.
-
-showCityInfo(item) {
-  this.navCtrl.push(CityPage, item);
-}
-
-in your citypage, grab the city info with navparams and save it in a variable
-
-//IMPORT NAVPARAMS FROM IONIC-ANGULAR
-cityInfo: any;
-
-constructor(public navPrms: NavParams){
-  this.cityInfo = navPrms.data; //here you'll get the data you passed from your home.ts
-}
-just populate your city.html with your city info
-
-<ion-content padding class="recipe">
-  <p> {{ cityInfo.summary }} </p>
-  <p> {{ cityInfo.geography }} </p>
-  <p> {{ cityInfo.population }} </p>
-  <p> {{ cityInfo.zipcode }} </p>
-  <img src="{{ cityInfo.image }}">
-</ion-content>
+//  if ($(".profilepic").get(0).files.length != 0) {
+              //   var storage = firebase.storage();
+              //   var storageRef = storage.ref();
+              //   var file = $(".profilepic")[0].files[0];
+              //   var imgRef = storageRef.child(uid + "/ProfilePic/" + file.name);
+              //   var upload = imgRef.put(file).then(function(snapshot){
+              //     snapshot.ref.getDownloadURL().then(function(url) {
+                    
+              //       var db = firebase.database().ref();
+              //       db.child('users' +  uid).update({ProfilePic: url});
+                    
+              //     });
+              //   });
+          
+              // }else{
+                
+              //   window.alert("please add your profile picture ");
+              // }
+	            
 
 
 
-
+              JSON.parse( JSON.stringify(ObjectToSave ) )
 
 
 

@@ -42,37 +42,67 @@ $(document).ready(function(){
 			                '<td>'+date+'</td>'+
 			                '<td>236</td>'+
 			                '<td class="actions">'+
-			                    '<a href="#" class="edit" id="edits" ><i class="fa fa-pencil"></i>Edit</a>'+
-			                    '<a href="#" id="deletes"><i class="delete fa fa-trash-o"></i></a>'+
+			                    '<a href="#" class="edit" id="edits"  ><i class="fa fa-pencil"></i>Edit</a>'+
+			                    '<a href="#" id="deletes" "><i class="delete fa fa-trash-o"></i></a>'+
 			                '</td>'+
 		            	'</tr>'
 
 			        	);
-			        $('#edits').click(function(key){
-			        	window.open("editproperty.html?name="+key+"");
+			        $('#edits').click(function(){
+						window.open("editproperty.html?name="+key+"");
+						$('#submit-title').attr('placeholder',+Title);
     
 					});
-					$('#deletes').click(function(key){
-			        	ref.child(key).remove();
-						firebase.database().ref("AllProperty").child(key).remove();
-
+					$('#deletes').click(function(){
 						
+						var refDB = firebase.database().ref("users/" + uid+ "/property/" + key);
+						refDB.remove()
+						.then(function() {
+						//   console.log("Remove succeeded.")
+						})
+						.catch(function(error) {
+						  console.log("Remove failed: " + error.message)
+						});
+
+						var ref2 = firebase.database().ref("AllProperty/" +key);
+						ref2.remove()
+						.then(function() {
+						//   console.log("Remove succeeded.")
+						})
+						.catch(function(error) {
+						  console.log("Remove failed: " + error.message)
+						});
+
+						var ref3 = firebase.database().ref("properties/Land/" +key)
+						ref3.remove()
+						.then(function() {
+						//   console.log("Remove succeeded.")
+						})
+						.catch(function(error) {
+						  console.log("Remove failed: " + error.message)
+						});
+
+						var ref4 = firebase.database().ref("properties/house/" +key)
+						ref4.remove()
+						.then(function() {
+						  console.log("Remove succeeded.")
+						})
+						.catch(function(error) {
+						  console.log("Remove failed: " + error.message)
+						});
+
+						window.open("submit.html");
+
 		            });
 
 
     
 					});
-			  //       function editss(key){
-			        	
-
-					// }
-					// function deletess(key){
-						
-					// }
-		    	
+			       
 			});
 		}else{
 			window.alert("you not authorized");
 		}
+		
 	});
 });
