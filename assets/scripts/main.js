@@ -689,18 +689,13 @@ $(document).ready(function(){
       var phone=childSnapshot.val().phone;
       var properties=childSnapshot.child("property").numChildren();
 
-      document.getElementById('divRating').addEventListener('click', function(event) {
-        if (event.target.tagName.toLowerCase() != 'span') return;
-        
-        if (event.target.classList.contains('rated')) {
-          event.target.classList.remove('rated');
-        } else {
-          Array.prototype.forEach.call(document.getElementsByClassName('rated'), function(el) {
-            el.classList.remove('rated');
-          });
-          event.target.classList.add('rated');
+      document.querySelector('#rating').addEventListener('click', function (e) {
+        let action = 'add';
+        for (const span of this.children) {
+            span.classList[action]('active');
+            if (span === e.target) action = 'remove';
         }
-      });
+    });
       
       // var proper=properties.length;
 
