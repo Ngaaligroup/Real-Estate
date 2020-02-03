@@ -28,28 +28,23 @@ $(document).ready(function(){
      
     
   	    var acc = {
-  	         
-  	         
   	         FirstName : $('#create-account-first-name').val(),
   	         LastName : $('#create-account-last-name').val(),
   	         email : $('#form-create-account-email').val(),
   	         phone : $('#create-account-phone').val(),
-  	         Id : $('#create-account-nin').val(),
   	         company : $('#create-company').val(),
   	         address : $('#create-adress').val(),
   	         profession : $('#create-proffesion').val(),
              ProfilePic: "",
-             usertype :  $("input[name='account-type']:checked").val()
-
-             
-  	         
-  	        };
+             usertype :  $("input[name='account-type']:checked").val(),
+  	        }
   	    var pass ={
               password : $('#create-account-password').val(),
               cpassword : $('#create-account-confirm-password').val(),
 
           }
         var usertype =  $("input[name='account-type']:checked").val();
+        
         if (usertype ==="seller") {
           
           acc = Object.assign({isAdmin: true}, acc)
@@ -58,6 +53,7 @@ $(document).ready(function(){
           
           acc = Object.assign({isAdmin: false}, acc)
         }
+       
       
 	    if( acc.email != '' && pass.password != ''  && pass.cpassword != '' ){
 	      if( pass.password == pass.cpassword ){
@@ -73,19 +69,20 @@ $(document).ready(function(){
               document.getElementById("form-create-account").reset();
 	           
               console.log(usertype);
-	            // firebase.database().ref('users/' + usertype + '/' + uid).set(acc)
-              firebase.database().ref('users/' + uid).set(acc)
-	              .then(function(){
-	               console.log("User Information Saved:", uid);
-                 
-	              })
+              firebase.database().ref("users/" + uid).set(acc)
+              .then(function(){
+                console.log("User Information Saved:", uid);
+              })
               if (usertype=== "seller") {
-                 firebase.database().ref('property owners/' + usertype + '/' + uid).set(acc)
+                 firebase.database().ref("property owners/" + usertype + "/" + uid).set(acc)
+                 .then(function(){
+                  console.log("success", uid);
+                })
+               window.location.href = "index.html";
                }else{
                 //do nothing
                }
-	            
-	          })
+            })
 	          .catch(function(error){
 	            console.log("Error creating user:", error);
               window.alert("Error creating user:", error);
@@ -98,41 +95,7 @@ $(document).ready(function(){
 	        // $('#messageModalLabel').html(spanText("ERROR: Passwords didn't match", ['danger']))
 	      }
     }
-    if ($(".profilepic").get(0).files.length != 0) {
-      var storage = firebase.storage();
-      var storageRef = storage.ref();
-      var file = $(".profilepic")[0].files[0];
-      var imgRef = storageRef.child(user.uid + "/ProfilePic/" + file.name);
-      var upload = imgRef.put(file).then(function(snapshot){
-        snapshot.ref.getDownloadURL().then(function(url) {
-          // if ($('#submit-property-type').val() =="Land") {
-          //   // TODO: submit land pictures
-          //   var db = firebase.database().ref();
-          //   db.child('properties/Land/' +  newLandKey).update({Photos: url});
-          //   db.child('users/' + user.uid + "/property/" + newLandKey).update({Photos: url});
-          //   db.child('AllProperty/' + newLandKey).update({Photos: url});
-          //   console.log("Photos:" +url)
-          // }else{
-          //   var db = firebase.database().ref();
-          //   db.child('properties/house/' + newhouseKey ).update({Photos: url});
-          //   db.child('users/' + user.uid + "/property/" + newhouseKey).update({Photos: url});
-          //   db.child('AllProperty/' + newhouseKey).update({Photos: url});
-          //   console.log("Photos:" +url)
-            
-
-          // }
-         
-          // document.getElementById("form-submit-property").reset();
-          var db = firebase.database().ref();
-          db.child('users' +  uid).update({ProfilePic: url});
-          
-        });
-      });
-
-    }else{
-      
-      window.alert("please add your profile picture ");
-    }
+    
   
   });
 
