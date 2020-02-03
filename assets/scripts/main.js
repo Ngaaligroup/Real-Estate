@@ -686,6 +686,13 @@ $(document).ready(function(){
                       '<!--<dd>john.doe</dd>-->' +
                   '</dl>' +
               '</div>' +
+              '<div id="divRating" class="rating">'+
+                '<span id="spanRatingExcellent" title="Excellent">☆</span>' +
+                '<span id="spanRatingGood" title="Good">☆</span>' +
+                '<span id="spanRatingFair" title="Fair">☆</span>' +
+                '<span id="spanRatingPoor" title="Poor">☆</span>' +
+                '<span id="spanRatingAwful" title="Awful">☆</span>' +
+              '</div>'+
           '</div><!-- /.agent -->' +
         '</div><!-- /.col-md-12 -->'
       );
