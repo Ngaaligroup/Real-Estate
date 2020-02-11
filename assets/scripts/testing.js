@@ -303,3 +303,10 @@ var useeref =firebase.database().ref('property owners/seller');
       firebase.database().ref('/posts').on('value', function(snapshot) {
     console.log(snapshot.val());
 });
+
+// 
+// 
+
+<script firebaseURL="https://real-estate-9882c.firebaseio.com" ratingName="auto" fullStarImg="https://3.bp.blogspot.com/-L4GR7vdzrgc/XEGkokT078I/AAAAAAAAAIQ/Y9yfAbS3qeI_1mnakhxL8IfiLFT5VefMACLcBGAs/s1600/fullstar.png" emptyStarImg="https://2.bp.blogspot.com/-d7Wi7ydMI9U/XEGkov32b3I/AAAAAAAAAII/yFOd1Rx1k-AfehWmWztIJkxy92qSLYUDwCLcBGAs/s1600/emptystar.png" hoverStarImg="https://3.bp.blogspot.com/-Zyu05yRkz2Q/XEGkoqSwG4I/AAAAAAAAAIM/5n3-GoefwjosPttLthINLOUZoV7ujrLxgCLcBGAs/s1600/hoveredstar.png" numberOfStars="5" starSize="16" textSize="15" textColor="#292929" fontFamily="Georgia, serif" align="center" topText="Rating:" bottomText="Average: $average$ / $max$ ($votes$ votes)" thankYouText="Thanks for voting" blockingText="You have already cast your vote, your rating is $userRating$." status="active" async src="https://drive.google.com/uc?export=download&id=1_3EXmeXQzNkbuQ369vV4li-eLN1mGcOV"></script>
+
+userRef.child('mike').update({'dateOfBirth': moment(value.dateOfBirth).toDate().getTime()})

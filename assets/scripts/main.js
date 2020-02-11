@@ -16,8 +16,8 @@ $(document).ready(function(){
 	//create firebase references
   	var Auth = firebase.auth(); 
   	var dbRef = firebase.database();
-  	var agencyRef = dbRef.ref('agencies')
-  	var usersRef = dbRef.ref('users')
+  	var agencyRef = dbRef.ref('agencies');
+  	var usersRef = dbRef.ref('users');
     
   	// var auth = null;
 
@@ -37,21 +37,21 @@ $(document).ready(function(){
   	         profession : $('#create-proffesion').val(),
              ProfilePic: "",
              usertype :  $("input[name='account-type']:checked").val(),
-  	        }
+  	        };
   	    var pass ={
               password : $('#create-account-password').val(),
               cpassword : $('#create-account-confirm-password').val(),
 
-          }
+          };
         var usertype =  $("input[name='account-type']:checked").val();
         
         if (usertype ==="seller") {
           
-          acc = Object.assign({isAdmin: true}, acc)
+          acc = Object.assign({isAdmin: true}, acc);
 
         }else{
           
-          acc = Object.assign({isAdmin: false}, acc)
+          acc = Object.assign({isAdmin: false}, acc);
         }
        
       
@@ -72,12 +72,12 @@ $(document).ready(function(){
               firebase.database().ref("users/" + uid).set(acc)
               .then(function(){
                 console.log("User Information Saved:", uid);
-              })
+              });
               if (usertype=== "seller") {
                  firebase.database().ref("property owners/" + usertype + "/" + uid).set(acc)
                  .then(function(){
                   console.log("success", uid);
-                })
+                });
                window.location.href = "index.html";
                }else{
                 //do nothing
@@ -137,13 +137,13 @@ $(document).ready(function(){
           firebase.database().ref("users/" + uid).set(agency)
             .then(function(){
               console.log("User Information Saved:", uid);
-            })
+            });
          
           //saving information to the property owners
           firebase.database().ref("property owners/Agency/" + uid).set(agency)
             .then(function(){
               console.log("success", uid);
-            })
+            });
            window.location.href = "index.html";
             
         })
@@ -184,7 +184,7 @@ $(document).ready(function(){
 
   $('#sign-out').on('click', function(e) {
     e.preventDefault();
-    firebase.auth().signOut()
+    firebase.auth().signOut();
     window.location.href = "sign-in.html";
   });
 
@@ -352,13 +352,13 @@ $(document).ready(function(){
                 db.child('properties/Land/' +  newLandKey).update({Photos: url});
                 db.child('users/' + user.uid + "/property/" + newLandKey).update({Photos: url});
                 db.child('AllProperty/' + newLandKey).update({Photos: url});
-                console.log("Photos:" +url)
+                console.log("Photos:" +url);
               }else{
                 var db = firebase.database().ref();
                 db.child('properties/house/' + newhouseKey ).update({Photos: url});
                 db.child('users/' + user.uid + "/property/" + newhouseKey).update({Photos: url});
                 db.child('AllProperty/' + newhouseKey).update({Photos: url});
-                console.log("Photos:" +url)
+                console.log("Photos:" +url);
                 
 
               }
