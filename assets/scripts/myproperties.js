@@ -49,7 +49,7 @@ $(document).ready(function(){
 
 			        	);
 			        $('#edits').click(function(){
-						window.open("editproperty.html?name="+key+"");
+						window.open("update.html?name="+key+"");
 						$('#submit-title').attr('placeholder',+Title);
     
 					});
