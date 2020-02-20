@@ -304,42 +304,9 @@ var useeref =firebase.database().ref('property owners/seller');
     console.log(snapshot.val());
 });
 
+// 
+// 
 
+<script firebaseURL="https://real-estate-9882c.firebaseio.com" ratingName="auto" fullStarImg="https://3.bp.blogspot.com/-L4GR7vdzrgc/XEGkokT078I/AAAAAAAAAIQ/Y9yfAbS3qeI_1mnakhxL8IfiLFT5VefMACLcBGAs/s1600/fullstar.png" emptyStarImg="https://2.bp.blogspot.com/-d7Wi7ydMI9U/XEGkov32b3I/AAAAAAAAAII/yFOd1Rx1k-AfehWmWztIJkxy92qSLYUDwCLcBGAs/s1600/emptystar.png" hoverStarImg="https://3.bp.blogspot.com/-Zyu05yRkz2Q/XEGkoqSwG4I/AAAAAAAAAIM/5n3-GoefwjosPttLthINLOUZoV7ujrLxgCLcBGAs/s1600/hoveredstar.png" numberOfStars="5" starSize="16" textSize="15" textColor="#292929" fontFamily="Georgia, serif" align="center" topText="Rating:" bottomText="Average: $average$ / $max$ ($votes$ votes)" thankYouText="Thanks for voting" blockingText="You have already cast your vote, your rating is $userRating$." status="active" async src="https://drive.google.com/uc?export=download&id=1_3EXmeXQzNkbuQ369vV4li-eLN1mGcOV"></script>
 
-    }
-  }
-
-  <div [navPush]="cityPage" class="demo-card-square mdl-card mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-shadow--2dp" *ngFor="let item of cityinfo | async">
-  <figure class="mdl-card__media" (click)="showCityInfo(item)"> //CAN USE (tap) TOO.
-    <img src="{{ item.image }}" alt="" />
-  </figure>
-  {{ item.$key }}
-</div>
-
-//  if ($(".profilepic").get(0).files.length != 0) {
-              //   var storage = firebase.storage();
-              //   var storageRef = storage.ref();
-              //   var file = $(".profilepic")[0].files[0];
-              //   var imgRef = storageRef.child(uid + "/ProfilePic/" + file.name);
-              //   var upload = imgRef.put(file).then(function(snapshot){
-              //     snapshot.ref.getDownloadURL().then(function(url) {
-                    
-              //       var db = firebase.database().ref();
-              //       db.child('users' +  uid).update({ProfilePic: url});
-                    
-              //     });
-              //   });
-          
-              // }else{
-                
-              //   window.alert("please add your profile picture ");
-              // }
-	            
-
-
-
-              JSON.parse( JSON.stringify(ObjectToSave ) )
-
-
-
-
+userRef.child('mike').update({'dateOfBirth': moment(value.dateOfBirth).toDate().getTime()})

@@ -5,3 +5,4 @@ dist
 .vscode
 Hey
 assets/scripts/testing.js
+firebase-debug.log

@@ -16,8 +16,8 @@ $(document).ready(function(){
 	//create firebase references
   	var Auth = firebase.auth(); 
   	var dbRef = firebase.database();
-  	var agencyRef = dbRef.ref('agencies')
-  	var usersRef = dbRef.ref('users')
+  	var agencyRef = dbRef.ref('agencies');
+  	var usersRef = dbRef.ref('users');
     
   	// var auth = null;
 
@@ -37,21 +37,21 @@ $(document).ready(function(){
   	         profession : $('#create-proffesion').val(),
              ProfilePic: "",
              usertype :  $("input[name='account-type']:checked").val(),
-  	        }
+  	        };
   	    var pass ={
               password : $('#create-account-password').val(),
               cpassword : $('#create-account-confirm-password').val(),
 
-          }
+          };
         var usertype =  $("input[name='account-type']:checked").val();
         
         if (usertype ==="seller") {
           
-          acc = Object.assign({isAdmin: true}, acc)
+          acc = Object.assign({isAdmin: true}, acc);
 
         }else{
           
-          acc = Object.assign({isAdmin: false}, acc)
+          acc = Object.assign({isAdmin: false}, acc);
         }
        
       
@@ -72,15 +72,23 @@ $(document).ready(function(){
               firebase.database().ref("users/" + uid).set(acc)
               .then(function(){
                 console.log("User Information Saved:", uid);
-              })
+              });
               if (usertype=== "seller") {
                  firebase.database().ref("property owners/" + usertype + "/" + uid).set(acc)
                  .then(function(){
                   console.log("success", uid);
-                })
+                });
                window.location.href = "index.html";
+               }else if(usertype=== "professional"){
+                 var profType = $('#create-proffesion :selected').text();
+                 console.log(profType);
+                 firebase.database().ref(usertype + "/" + profType + "/" + uid).set(acc)
+                 .then(function(){
+                  console.log("proffesional registered succsefully", uid);
+
+                 });
                }else{
-                //do nothing
+
                }
             })
 	          .catch(function(error){
@@ -137,13 +145,13 @@ $(document).ready(function(){
           firebase.database().ref("users/" + uid).set(agency)
             .then(function(){
               console.log("User Information Saved:", uid);
-            })
+            });
          
           //saving information to the property owners
           firebase.database().ref("property owners/Agency/" + uid).set(agency)
             .then(function(){
               console.log("success", uid);
-            })
+            });
            window.location.href = "index.html";
             
         })
@@ -184,7 +192,7 @@ $(document).ready(function(){
 
   $('#sign-out').on('click', function(e) {
     e.preventDefault();
-    firebase.auth().signOut()
+    firebase.auth().signOut();
     window.location.href = "sign-in.html";
   });
 
@@ -332,18 +340,18 @@ $(document).ready(function(){
         }else{
 
           // TODO: submit other properties
-          var db = firebase.database().ref();
-          db.child('properties/house/' + newhouseKey ).set(propertyhouse);
-          db.child('users/' + user.uid + "/property/" + newhouseKey).set(propertyhouse);
-          db.child('AllProperty/' + newhouseKey).set(propertyhouse);
+          var dbo = firebase.database().ref();
+          dbo.child('properties/house/' + newhouseKey ).set(propertyhouse);
+          dbo.child('users/' + user.uid + "/property/" + newhouseKey).set(propertyhouse);
+          db0.child('AllProperty/' + newhouseKey).set(propertyhouse);
         }
 
 
         if ($(".propertypic").get(0).files.length != 0) {
-          var storage = firebase.storage();
-          var storageRef = storage.ref();
-          var file = $(".propertypic")[0].files[0];
-          var imgRef = storageRef.child(user.uid + "/" + newLandKey+ "/properties/" + file.name);
+          var storage2 = firebase.storage();
+          var storageRef2 = storage2.ref();
+          var file1 = $(".propertypic")[0].files[0];
+          var imgRef = storageRef2.child(user.uid + "/" + newLandKey+ "/properties/" + file1.name);
           var upload = imgRef.put(file).then(function(snapshot){
             snapshot.ref.getDownloadURL().then(function(url) {
               if ($('#submit-property-type').val() =="Land") {
@@ -352,13 +360,13 @@ $(document).ready(function(){
                 db.child('properties/Land/' +  newLandKey).update({Photos: url});
                 db.child('users/' + user.uid + "/property/" + newLandKey).update({Photos: url});
                 db.child('AllProperty/' + newLandKey).update({Photos: url});
-                console.log("Photos:" +url)
+                console.log("Photos:" +url);
               }else{
-                var db = firebase.database().ref();
-                db.child('properties/house/' + newhouseKey ).update({Photos: url});
-                db.child('users/' + user.uid + "/property/" + newhouseKey).update({Photos: url});
-                db.child('AllProperty/' + newhouseKey).update({Photos: url});
-                console.log("Photos:" +url)
+                var db6 = firebase.database().ref();
+                db6.child('properties/house/' + newhouseKey ).update({Photos: url});
+                db6.child('users/' + user.uid + "/property/" + newhouseKey).update({Photos: url});
+                db6.child('AllProperty/' + newhouseKey).update({Photos: url});
+                console.log("Photos:" +url);
                 
 
               }
@@ -481,8 +489,8 @@ $(document).ready(function(){
    
   });
   // retrieveing recent properties...
-  var leadsRef = firebase.database().ref('AllProperty');
-  leadsRef.orderByChild("TimeOn").limitToLast(2).once("value").then(function(snapshot) {
+  var leadsRef3 = firebase.database().ref('AllProperty');
+  leadsRef3.orderByChild("TimeOn").limitToLast(2).once("value").then(function(snapshot) {
     snapshot.forEach(function(childSnapshot) {
       var key = childSnapshot.key;
       var childData = childSnapshot.val();
@@ -652,6 +660,7 @@ $(document).ready(function(){
       var phone=childSnapshot.val().phone;
       var properties=childSnapshot.child("property").numChildren();
 
+<<<<<<< HEAD
       document.querySelector('#rating').addEventListener('click', function (e) {
         let action = 'add';
         for (const span of this.children) {
@@ -659,6 +668,20 @@ $(document).ready(function(){
             if (span === e.target) action = 'remove';
         }
     });
+=======
+      // document.getElementById('divRating').addEventListener('click', function(event) {
+      //   if (event.target.tagName.toLowerCase() != 'span') return;
+        
+      //   if (event.target.classList.contains('rated')) {
+      //     event.target.classList.remove('rated');
+      //   } else {
+      //     Array.prototype.forEach.call(document.getElementsByClassName('rated'), function(el) {
+      //       el.classList.remove('rated');
+      //     });
+      //     event.target.classList.add('rated');
+      //   }
+      // });
+>>>>>>> 83374bdd1ac12498fac16df015cb412cf6499523
       
       // var proper=properties.length;
 
@@ -681,6 +704,13 @@ $(document).ready(function(){
                       '<!--<dd>john.doe</dd>-->' +
                   '</dl>' +
               '</div>' +
+              '<div id="divRating" class="rating">'+
+                '<span id="spanRatingExcellent" title="Excellent">☆</span>' +
+                '<span id="spanRatingGood" title="Good">☆</span>' +
+                '<span id="spanRatingFair" title="Fair">☆</span>' +
+                '<span id="spanRatingPoor" title="Poor">☆</span>' +
+                '<span id="spanRatingAwful" title="Awful">☆</span>' +
+              '</div>'+
           '</div><!-- /.agent -->' +
         '</div><!-- /.col-md-12 -->'
       );
@@ -689,8 +719,8 @@ $(document).ready(function(){
     });
   });
    //  TODO:  retrieving agency
-  var useeref =firebase.database().ref('property owners/Agency');
-  useeref.once("value").then(function(snapshot) {
+  var useeref11 =firebase.database().ref('property owners/Agency');
+  useeref11.once("value").then(function(snapshot) {
     snapshot.forEach(function(childSnapshot) {
       var key = childSnapshot.key;
       var childData = childSnapshot.val();
@@ -819,11 +849,4 @@ $(document).ready(function(){
 
     });
   });
-
-
-
-
-
-
-
 });
