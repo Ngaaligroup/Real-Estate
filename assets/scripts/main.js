@@ -26,7 +26,7 @@ $(document).ready(function(){
 	    e.preventDefault();
 
      
-    
+  
   	    var acc = {
   	         FirstName : $('#create-account-first-name').val(),
   	         LastName : $('#create-account-last-name').val(),
@@ -37,7 +37,8 @@ $(document).ready(function(){
   	         profession : $('#create-proffesion').val(),
              ProfilePic: "",
              usertype :  $("input[name='account-type']:checked").val(),
-  	        };
+            };
+            
   	    var pass ={
               password : $('#create-account-password').val(),
               cpassword : $('#create-account-confirm-password').val(),
@@ -65,8 +66,8 @@ $(document).ready(function(){
 	            //now user is needed to be logged in to save data
 	            auth = user;
               var uid = firebase.auth().currentUser.uid;
-              window.location.href = "index.html";
-              document.getElementById("form-create-account").reset();
+              // window.location.href = "index.html";
+              // document.getElementById("form-create-account").reset();
 	           
               console.log(usertype);
               firebase.database().ref("users/" + uid).set(acc)
@@ -80,7 +81,7 @@ $(document).ready(function(){
                 });
                window.location.href = "index.html";
                }else if(usertype=== "professional"){
-                 var profType = $('#create-proffesion :selected').text();
+                 var profType = $('.prof1').val();
                  console.log(profType);
                  firebase.database().ref(usertype + "/" + profType + "/" + uid).set(acc)
                  .then(function(){
