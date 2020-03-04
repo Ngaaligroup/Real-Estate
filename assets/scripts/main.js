@@ -660,7 +660,6 @@ $(document).ready(function(){
       var phone=childSnapshot.val().phone;
       var properties=childSnapshot.child("property").numChildren();
 
-<<<<<<< HEAD
       document.querySelector('#rating').addEventListener('click', function (e) {
         let action = 'add';
         for (const span of this.children) {
@@ -668,7 +667,6 @@ $(document).ready(function(){
             if (span === e.target) action = 'remove';
         }
     });
-=======
       // document.getElementById('divRating').addEventListener('click', function(event) {
       //   if (event.target.tagName.toLowerCase() != 'span') return;
         
@@ -681,7 +679,6 @@ $(document).ready(function(){
       //     event.target.classList.add('rated');
       //   }
       // });
->>>>>>> 83374bdd1ac12498fac16df015cb412cf6499523
       
       // var proper=properties.length;
 
