@@ -61,7 +61,7 @@ $(document).ready(function(){
 						//   console.log("Remove succeeded.")
 						})
 						.catch(function(error) {
-						  console.log("Remove failed: " + error.message)
+						  console.log("Remove failed: " + error.message);
 						});
 
 						var ref2 = firebase.database().ref("AllProperty/" +key);
@@ -70,25 +70,25 @@ $(document).ready(function(){
 						//   console.log("Remove succeeded.")
 						})
 						.catch(function(error) {
-						  console.log("Remove failed: " + error.message)
+						  console.log("Remove failed: " + error.message);
 						});
 
-						var ref3 = firebase.database().ref("properties/Land/" +key)
+						var ref3 = firebase.database().ref("properties/Land/" +key);
 						ref3.remove()
 						.then(function() {
 						//   console.log("Remove succeeded.")
 						})
 						.catch(function(error) {
-						  console.log("Remove failed: " + error.message)
+						  console.log("Remove failed: " + error.message);
 						});
 
-						var ref4 = firebase.database().ref("properties/house/" +key)
+						var ref4 = firebase.database().ref("properties/house/" +key);
 						ref4.remove()
 						.then(function() {
-						  console.log("Remove succeeded.")
+						  console.log("Remove succeeded.");
 						})
 						.catch(function(error) {
-						  console.log("Remove failed: " + error.message)
+						  console.log("Remove failed: " + error.message);
 						});
 
 						window.open("submit.html");
