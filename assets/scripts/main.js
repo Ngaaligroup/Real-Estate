@@ -683,21 +683,6 @@ $(document).ready(function(){
       var phone=childSnapshot.val().phone;
       var properties=childSnapshot.child("property").numChildren();
 
-      // document.getElementById('divRating').addEventListener('click', function(event) {
-      //   if (event.target.tagName.toLowerCase() != 'span') return;
-        
-      //   if (event.target.classList.contains('rated')) {
-      //     event.target.classList.remove('rated');
-      //   } else {
-      //     Array.prototype.forEach.call(document.getElementsByClassName('rated'), function(el) {
-      //       el.classList.remove('rated');
-      //     });
-      //     event.target.classList.add('rated');
-      //   }
-      // });
-      
-      // var proper=properties.length;
-
        $('.agentie').
       append(
         '<div class="col-md-12 col-lg-6">' +
@@ -727,6 +712,20 @@ $(document).ready(function(){
           '</div><!-- /.agent -->' +
         '</div><!-- /.col-md-12 -->'
       );
+      document.getElementById('divRating').addEventListener('click', function(event) {
+        if (event.target.tagName.toLowerCase() != 'span') return;
+        
+        if (event.target.classList.contains('rated')) {
+          event.target.classList.remove('rated');
+        } else {
+          Array.prototype.forEach.call(document.getElementsByClassName('rated'), function(el) {
+            el.classList.remove('rated');
+          });
+          event.target.classList.add('rated');
+        }
+      });
+      
+      var proper=properties.length;
 
 
     });
@@ -744,22 +743,7 @@ $(document).ready(function(){
       var Lname=childSnapshot.val().LastName;
       var email=childSnapshot.val().email;
       var phone=childSnapshot.val().phone;
-      // var properties=childSnapshot.child("property").numChildren();
-
-      // document.getElementById('divRating').addEventListener('click', function(event) {
-      //   if (event.target.tagName.toLowerCase() != 'span') return;
-        
-      //   if (event.target.classList.contains('rated')) {
-      //     event.target.classList.remove('rated');
-      //   } else {
-      //     Array.prototype.forEach.call(document.getElementsByClassName('rated'), function(el) {
-      //       el.classList.remove('rated');
-      //     });
-      //     event.target.classList.add('rated');
-      //   }
-      // });
       
-      // var proper=properties.length;
 
        $('.surveyor').
       append(
@@ -790,6 +774,20 @@ $(document).ready(function(){
           '</div><!-- /.agent -->' +
         '</div><!-- /.col-md-12 -->'
       );
+      document.getElementById('divRating').addEventListener('click', function(event) {
+        if (event.target.tagName.toLowerCase() != 'span') return;
+        
+        if (event.target.classList.contains('rated')) {
+          event.target.classList.remove('rated');
+        } else {
+          Array.prototype.forEach.call(document.getElementsByClassName('rated'), function(el) {
+            el.classList.remove('rated');
+          });
+          event.target.classList.add('rated');
+        }
+      });
+      
+      var proper=properties.length;
 
 
     });
@@ -806,22 +804,7 @@ $(document).ready(function(){
       var Lname=childSnapshot.val().LastName;
       var email=childSnapshot.val().email;
       var phone=childSnapshot.val().phone;
-      // var properties=childSnapshot.child("property").numChildren();
-
-      // document.getElementById('divRating').addEventListener('click', function(event) {
-      //   if (event.target.tagName.toLowerCase() != 'span') return;
-        
-      //   if (event.target.classList.contains('rated')) {
-      //     event.target.classList.remove('rated');
-      //   } else {
-      //     Array.prototype.forEach.call(document.getElementsByClassName('rated'), function(el) {
-      //       el.classList.remove('rated');
-      //     });
-      //     event.target.classList.add('rated');
-      //   }
-      // });
       
-      // var proper=properties.length;
 
        $('.architect').
       append(
@@ -852,6 +835,20 @@ $(document).ready(function(){
           '</div><!-- /.agent -->' +
         '</div><!-- /.col-md-12 -->'
       );
+      document.getElementById('divRating').addEventListener('click', function(event) {
+        if (event.target.tagName.toLowerCase() != 'span') return;
+        
+        if (event.target.classList.contains('rated')) {
+          event.target.classList.remove('rated');
+        } else {
+          Array.prototype.forEach.call(document.getElementsByClassName('rated'), function(el) {
+            el.classList.remove('rated');
+          });
+          event.target.classList.add('rated');
+        }
+      });
+      
+      var proper=properties.length;
 
 
     });
@@ -868,22 +865,6 @@ $(document).ready(function(){
       var Lname=childSnapshot.val().LastName;
       var email=childSnapshot.val().email;
       var phone=childSnapshot.val().phone;
-      // var properties=childSnapshot.child("property").numChildren();
-
-      // document.getElementById('divRating').addEventListener('click', function(event) {
-      //   if (event.target.tagName.toLowerCase() != 'span') return;
-        
-      //   if (event.target.classList.contains('rated')) {
-      //     event.target.classList.remove('rated');
-      //   } else {
-      //     Array.prototype.forEach.call(document.getElementsByClassName('rated'), function(el) {
-      //       el.classList.remove('rated');
-      //     });
-      //     event.target.classList.add('rated');
-      //   }
-      // });
-      
-      // var proper=properties.length;
 
        $('.hardware').
       append(
@@ -914,6 +895,20 @@ $(document).ready(function(){
           '</div><!-- /.agent -->' +
         '</div><!-- /.col-md-12 -->'
       );
+      document.getElementById('divRating').addEventListener('click', function(event) {
+        if (event.target.tagName.toLowerCase() != 'span') return;
+        
+        if (event.target.classList.contains('rated')) {
+          event.target.classList.remove('rated');
+        } else {
+          Array.prototype.forEach.call(document.getElementsByClassName('rated'), function(el) {
+            el.classList.remove('rated');
+          });
+          event.target.classList.add('rated');
+        }
+      });
+      
+      var proper=properties.length;
 
 
     });
@@ -930,22 +925,6 @@ $(document).ready(function(){
       var Lname=childSnapshot.val().LastName;
       var email=childSnapshot.val().email;
       var phone=childSnapshot.val().phone;
-      // var properties=childSnapshot.child("property").numChildren();
-
-      // document.getElementById('divRating').addEventListener('click', function(event) {
-      //   if (event.target.tagName.toLowerCase() != 'span') return;
-        
-      //   if (event.target.classList.contains('rated')) {
-      //     event.target.classList.remove('rated');
-      //   } else {
-      //     Array.prototype.forEach.call(document.getElementsByClassName('rated'), function(el) {
-      //       el.classList.remove('rated');
-      //     });
-      //     event.target.classList.add('rated');
-      //   }
-      // });
-      
-      // var proper=properties.length;
 
        $('.civils').
       append(
@@ -976,6 +955,20 @@ $(document).ready(function(){
           '</div><!-- /.agent -->' +
         '</div><!-- /.col-md-12 -->'
       );
+      document.getElementById('divRating').addEventListener('click', function(event) {
+        if (event.target.tagName.toLowerCase() != 'span') return;
+        
+        if (event.target.classList.contains('rated')) {
+          event.target.classList.remove('rated');
+        } else {
+          Array.prototype.forEach.call(document.getElementsByClassName('rated'), function(el) {
+            el.classList.remove('rated');
+          });
+          event.target.classList.add('rated');
+        }
+      });
+      
+      var proper=properties.length;
 
 
     });
@@ -992,22 +985,6 @@ $(document).ready(function(){
       var Lname=childSnapshot.val().LastName;
       var email=childSnapshot.val().email;
       var phone=childSnapshot.val().phone;
-      // var properties=childSnapshot.child("property").numChildren();
-
-      // document.getElementById('divRating').addEventListener('click', function(event) {
-      //   if (event.target.tagName.toLowerCase() != 'span') return;
-        
-      //   if (event.target.classList.contains('rated')) {
-      //     event.target.classList.remove('rated');
-      //   } else {
-      //     Array.prototype.forEach.call(document.getElementsByClassName('rated'), function(el) {
-      //       el.classList.remove('rated');
-      //     });
-      //     event.target.classList.add('rated');
-      //   }
-      // });
-      
-      // var proper=properties.length;
 
        $('.lawyer').
       append(
@@ -1038,6 +1015,20 @@ $(document).ready(function(){
           '</div><!-- /.agent -->' +
         '</div><!-- /.col-md-12 -->'
       );
+      document.getElementById('divRating').addEventListener('click', function(event) {
+        if (event.target.tagName.toLowerCase() != 'span') return;
+        
+        if (event.target.classList.contains('rated')) {
+          event.target.classList.remove('rated');
+        } else {
+          Array.prototype.forEach.call(document.getElementsByClassName('rated'), function(el) {
+            el.classList.remove('rated');
+          });
+          event.target.classList.add('rated');
+        }
+      });
+      
+      var proper=properties.length;
 
 
     });
@@ -1182,4 +1173,6 @@ $(document).ready(function(){
 
     });
   });
+  //rating  here
+
 });
