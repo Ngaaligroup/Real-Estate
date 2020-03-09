@@ -18,8 +18,7 @@ $(document).ready(function(){
   	var dbRef = firebase.database();
   	var agencyRef = dbRef.ref('agencies');
   	var usersRef = dbRef.ref('users');
-    
-  	// var auth = null;
+
 
   	//Register account
   	$('#form-create-account').on('submit', function (e) {
@@ -79,7 +78,7 @@ $(document).ready(function(){
                  .then(function(){
                   console.log("success", uid);
                 });
-               window.location.href = "index.html";
+               
                }else if(usertype=== "professional"){
                  var profType = $('.prof1').val();
                  console.log(profType);
@@ -91,17 +90,41 @@ $(document).ready(function(){
                }else{
 
                }
+
+               if ($(".profilepic").get(0).files.length != 0) {
+                var storage3 = firebase.storage();
+                var storageRef3 = storage3.ref();
+                var file1 = $(".profilepic")[0].files[0];
+                var imgRef3 = storageRef3.child(user.uid + "/ProfilePic/" + file1.name);
+                var upload1 = imgRef3.put(file).then(function(snapshot){
+                  snapshot.ref.getDownloadURL().then(function(url) {
+                    var dbt  = firebase.database("users/" + uid).ref();
+                    dbt.child().update({ProfilePic: url});
+                    if (usertype=== "seller") {
+                      var db = firebase.database().ref();
+                      db.child("property owners/" + usertype + "/" + uid).update({ProfilePic: url});
+                      
+                    }else if(usertype=== "professional"){
+                      var db6 = firebase.database().ref();
+                      db6.child(usertype + "/" + profType + "/" + uid ).update({ProfilePic: url});
+                    
+                    }
+                    window.location.href = "index.html";
+                  });
+                });
+              }else{
+                window.alert('Error: Profile picture missing');
+
+              }
             })
 	          .catch(function(error){
-	            console.log("Error creating user:", error);
+	            // console.log("Error creating user:", error);
               window.alert("Error creating user:", error);
 	           
 	          });
 	      } else {
-	        //password and confirm password didn't match
           window.alert("passwords dont match");
-	        console.log("passwords dont match");
-	        // $('#messageModalLabel').html(spanText("ERROR: Passwords didn't match", ['danger']))
+	        // console.log("passwords dont match");
 	      }
     }
     
@@ -145,19 +168,19 @@ $(document).ready(function(){
           
           firebase.database().ref("users/" + uid).set(agency)
             .then(function(){
-              console.log("User Information Saved:", uid);
+              // console.log("User Information Saved:", uid);
             });
          
           //saving information to the property owners
           firebase.database().ref("property owners/Agency/" + uid).set(agency)
             .then(function(){
-              console.log("success", uid);
+              // console.log("success", uid);
             });
            window.location.href = "index.html";
             
         })
         .catch(function(error){
-          console.log("Error creating user:", error);
+          // console.log("Error creating user:", error);
           window.alert("Error creating user:", error);
            
         });
@@ -200,9 +223,8 @@ $(document).ready(function(){
   firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
          var uid = user.uid;
-         console.log(uid);
+        //  console.log(uid);
           // User is signed in.
-         // var username =firebase.auth().currentUser.displayName;
          $(".promoted").hide();
          signout= document.getElementById('sign-out');
          signout.classList.remove('hide');
@@ -258,7 +280,7 @@ $(document).ready(function(){
 
   $('#submit-property-type').change(function(){
     if(this.value == "Land"){
-        // $('#prd_damount1').prop('readonly',true);
+        
         $('#submit-Baths').prop('readonly', true);
         $('#submit-Beds').prop('readonly', true);
         $('#submit-state').prop('disabled', true);
