@@ -712,18 +712,18 @@ $(document).ready(function(){
           '</div><!-- /.agent -->' +
         '</div><!-- /.col-md-12 -->'
       );
-      document.getElementById('divRating').addEventListener('click', function(event) {
-        if (event.target.tagName.toLowerCase() != 'span') return;
+      // document.getElementById('divRating').addEventListener('click', function(event) {
+      //   if (event.target.tagName.toLowerCase() != 'span') return;
         
-        if (event.target.classList.contains('rated')) {
-          event.target.classList.remove('rated');
-        } else {
-          Array.prototype.forEach.call(document.getElementsByClassName('rated'), function(el) {
-            el.classList.remove('rated');
-          });
-          event.target.classList.add('rated');
-        }
-      });
+      //   if (event.target.classList.contains('rated')) {
+      //     event.target.classList.remove('rated');
+      //   } else {
+      //     Array.prototype.forEach.call(document.getElementsByClassName('rated'), function(el) {
+      //       el.classList.remove('rated');
+      //     });
+      //     event.target.classList.add('rated');
+      //   }
+      // });
       
       var proper=properties.length;
 
@@ -774,20 +774,20 @@ $(document).ready(function(){
           '</div><!-- /.agent -->' +
         '</div><!-- /.col-md-12 -->'
       );
-      document.getElementById('divRating').addEventListener('click', function(event) {
-        if (event.target.tagName.toLowerCase() != 'span') return;
+      // document.getElementById('divRating').addEventListener('click', function(event) {
+      //   if (event.target.tagName.toLowerCase() != 'span') return;
         
-        if (event.target.classList.contains('rated')) {
-          event.target.classList.remove('rated');
-        } else {
-          Array.prototype.forEach.call(document.getElementsByClassName('rated'), function(el) {
-            el.classList.remove('rated');
-          });
-          event.target.classList.add('rated');
-        }
-      });
+      //   if (event.target.classList.contains('rated')) {
+      //     event.target.classList.remove('rated');
+      //   } else {
+      //     Array.prototype.forEach.call(document.getElementsByClassName('rated'), function(el) {
+      //       el.classList.remove('rated');
+      //     });
+      //     event.target.classList.add('rated');
+      //   }
+      // });
       
-      var proper=properties.length;
+      // var proper=properties.length;
 
 
     });
@@ -835,20 +835,20 @@ $(document).ready(function(){
           '</div><!-- /.agent -->' +
         '</div><!-- /.col-md-12 -->'
       );
-      document.getElementById('divRating').addEventListener('click', function(event) {
-        if (event.target.tagName.toLowerCase() != 'span') return;
+      // document.getElementById('divRating').addEventListener('click', function(event) {
+      //   if (event.target.tagName.toLowerCase() != 'span') return;
         
-        if (event.target.classList.contains('rated')) {
-          event.target.classList.remove('rated');
-        } else {
-          Array.prototype.forEach.call(document.getElementsByClassName('rated'), function(el) {
-            el.classList.remove('rated');
-          });
-          event.target.classList.add('rated');
-        }
-      });
+      //   if (event.target.classList.contains('rated')) {
+      //     event.target.classList.remove('rated');
+      //   } else {
+      //     Array.prototype.forEach.call(document.getElementsByClassName('rated'), function(el) {
+      //       el.classList.remove('rated');
+      //     });
+      //     event.target.classList.add('rated');
+      //   }
+      // });
       
-      var proper=properties.length;
+      // var proper=properties.length;
 
 
     });
@@ -1089,7 +1089,7 @@ $(document).ready(function(){
     });
   });
 
-  document.querySelector('#rating').addEventListener('click', function (e) {
+  document.querySelector('#divrating').addEventListener('click', function (e) {
     let action = 'add';
     for (const span of this.children) {
         span.classList[action]('active');
