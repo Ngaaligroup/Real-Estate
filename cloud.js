@@ -38,3 +38,26 @@ exports.average = functions.database
         console.log(error);
       });
   });
+
+
+exports.taverage = functions.database.ref('/User/tsetUser/monthQuit/{pushId}')
+.onCreate((snapshot, context) => {
+  return admin.database().ref('/User/tsetUser/inform/standardQuit').transaction(function(avg) {
+    if (!avg) avg = 0;
+    return (15.0 * avg + snapshot.val()) / 16.0;
+  });
+});
+
+exports.taverage = functions.database.ref('/User/tsetUser/monthQuit/{pushId}')
+.onCreate((snapshot, context) => {
+    return admin.database().ref('/User/tsetUser/monthQuit/{pushId}').once('value')
+    .then(function(snapshot) {
+        let sum=0;
+        snapshot.forEach(child => {
+            sum = sum + child.val();
+        })
+        let avg = sum / snapshot.numChildren();
+
+        return admin.database().ref('/User/tsetUser/inform/standardQuit').set(avg);
+    });
+});
