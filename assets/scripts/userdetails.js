@@ -19,7 +19,9 @@ function getUrlParam(param)
 	        var Lname=snapshot.val().LastName;
 	        var email=val.email;
 	        var phone=val.phone;
-	        var aboutme=val.AboutMe;
+			var aboutme=val.AboutMe;
+			var ProfilePic=val.ProfilePic;
+      		// var company=childSnapshot.val().company;
 	        var propertiesNumber=snapshot.child("property").numChildren();
 
 	        $('#usernames').append('<header><h1 >'+Fname+' '+Lname+'</h1></header>');
@@ -29,8 +31,15 @@ function getUrlParam(param)
 	        if (aboutme=="undefined") {
 	        	document.getElementById('aboutme').innerHTML="";
 	        }else{
-	        	document.getElementById('aboutme').innerHTML="aboutme";
-	        }
+				// document.getElementById('aboutme').innerHTML="aboutme";
+				
+			}
+			if(ProfilePic == "undefined"){
+				$('#profilepic').append('<img  alt="" src="assets/img/agent-01.jpg"></img>');
+				
+			}else{
+				$('#profilepic').append('<img  alt="not found" src="'+ProfilePic+'" onerror=this.src="assets/img/agent-01.jpg"></img>');
+			}
 	        $('.countprop').append('<header><h3>My Properties ('+propertiesNumber+')</h3></header>');
 	        
 

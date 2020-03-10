@@ -115,7 +115,7 @@
                         <section id="agent-info">
                             <div class="row">
                                 <div class="col-md-3 col-sm-3">
-                                    <figure class="agent-image"><img alt="" src="assets/img/agent-01.jpg"></figure>
+                                    <figure class="agent-image" id="profilepic"></figure>
                                 </div><!-- /.col-md-3 -->
                                 <div class="col-md-5 col-sm-5">
                                     <h3>Contact Info</h3>
@@ -154,6 +154,15 @@
                                         <span title="Fair"></span>
                                         <span  title="Poor"></span>
                                         <span  title="Awful"></span>
+                                    </div>
+                                    <div id="review">
+                                        <div class="form-group">
+                                            <label for="form_review">Your Review<em>*</em></label>
+                                            <textarea class="form-control" id="form_review" rows="3" name="form_review" required></textarea>
+                                        </div><!-- /.form-group -->
+                                        <div class="form-group clearfix">
+                                            <button type="submit" class="btn pull-right btn-default submitreview" id="form-contact-agent-submit submitreview">Review</button>
+                                        </div><!-- /.form-group -->
                                     </div>
                                     <!-- <section id="property-rating">
                                         <header><h2>Rating</h2></header>
