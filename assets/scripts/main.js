@@ -87,19 +87,15 @@ $(document).ready(function(){
                   console.log("proffesional registered succsefully", uid);
 
                  });
-               }else{
-
                }
-
-               if ($(".profilepic").get(0).files.length != 0) {
                 var storage3 = firebase.storage();
                 var storageRef3 = storage3.ref();
                 var file1 = $(".profilepic")[0].files[0];
-                var imgRef3 = storageRef3.child(user.uid + "/ProfilePic/" + file1.name);
-                var upload1 = imgRef3.put(file).then(function(snapshot){
+                var imgRef3 = storageRef3.child(uid + "/ProfilePic/" + file1.name);
+                var upload1 = imgRef3.put(file1).then(function(snapshot){
                   snapshot.ref.getDownloadURL().then(function(url) {
-                    var dbt  = firebase.database("users/" + uid).ref();
-                    dbt.child().update({ProfilePic: url});
+                    var dbt  = firebase.database().ref();
+                    dbt.child("users/" + uid).update({ProfilePic: url});
                     if (usertype=== "seller") {
                       var db = firebase.database().ref();
                       db.child("property owners/" + usertype + "/" + uid).update({ProfilePic: url});
@@ -112,13 +108,10 @@ $(document).ready(function(){
                     window.location.href = "index.html";
                   });
                 });
-              }else{
-                window.alert('Error: Profile picture missing');
-
-              }
+              
             })
 	          .catch(function(error){
-	            // console.log("Error creating user:", error);
+	            console.log("Error creating user:", error);
               window.alert("Error creating user:", error);
 	           
 	          });
@@ -681,13 +674,14 @@ $(document).ready(function(){
       var Lname=childSnapshot.val().LastName;
       var email=childSnapshot.val().email;
       var phone=childSnapshot.val().phone;
+      var ProfilePic=childSnapshot.val().ProfilePic;
       var properties=childSnapshot.child("property").numChildren();
 
        $('.agentie').
       append(
         '<div class="col-md-12 col-lg-6">' +
           '<div class="agent">' +
-              '<a href="agent-detail.html?name='+key+'" class="agent-image"><img alt="userimage" src="assets/img/agent-01.jpg"></a>' +
+              '<a href="agent-detail.html?name='+key+'" class="agent-image"><img alt="userimage" src="'+ProfilePic+'"></a>' +
               '<div class="wrapper">' +
                   '<header><a href="agent-detail.html?name='+key+'" ><h2>'+Fname+' '+Lname+'</h2></a></header>' +
                   '<aside>'+properties+ ' Properties</aside>' +
@@ -743,17 +737,21 @@ $(document).ready(function(){
       var Lname=childSnapshot.val().LastName;
       var email=childSnapshot.val().email;
       var phone=childSnapshot.val().phone;
+      var ProfilePic=childSnapshot.val().ProfilePic;
+      var company=childSnapshot.val().company;
       
 
        $('.surveyor').
       append(
         '<div class="col-md-12 col-lg-6">' +
           '<div class="agent">' +
-              '<a href="agent-detail.html?name='+key+'" class="agent-image"><img alt="userimage" src="assets/img/agent-01.jpg"></a>' +
+              '<a href="agent-detail.html?name='+key+'" class="agent-image"><img alt="userimage" src="'+ProfilePic+'"></a>' +
               '<div class="wrapper">' +
                   '<header><a href="agent-detail.html?name='+key+'" ><h2>'+Fname+' '+Lname+'</h2></a></header>' +
                   '<aside>Contact</aside>' +
                   '<dl>' +
+                      '<dt>Company:</dt>' +
+                      '<dd>'+company+'</dd>' +
                       '<dt>Phone:</dt>' +
                       '<dd>(+256)'+phone+'</dd>' +
                       '<dt>Mobile:</dt>' +
@@ -804,17 +802,21 @@ $(document).ready(function(){
       var Lname=childSnapshot.val().LastName;
       var email=childSnapshot.val().email;
       var phone=childSnapshot.val().phone;
+      var ProfilePic=childSnapshot.val().ProfilePic;
+      var company=childSnapshot.val().company;
       
 
        $('.architect').
       append(
         '<div class="col-md-12 col-lg-6">' +
           '<div class="agent">' +
-              '<a href="agent-detail.html?name='+key+'" class="agent-image"><img alt="userimage" src="assets/img/agent-01.jpg"></a>' +
+              '<a href="agent-detail.html?name='+key+'" class="agent-image"><img alt="userimage" src="'+ProfilePic+'"></a>' +
               '<div class="wrapper">' +
                   '<header><a href="agent-detail.html?name='+key+'" ><h2>'+Fname+' '+Lname+'</h2></a></header>' +
                   '<aside>Contact</aside>' +
                   '<dl>' +
+                      '<dt>Company:</dt>' +
+                      '<dd>'+company+'</dd>' +
                       '<dt>Phone:</dt>' +
                       '<dd>(+256)'+phone+'</dd>' +
                       '<dt>Mobile:</dt>' +
@@ -865,16 +867,20 @@ $(document).ready(function(){
       var Lname=childSnapshot.val().LastName;
       var email=childSnapshot.val().email;
       var phone=childSnapshot.val().phone;
+      var ProfilePic=childSnapshot.val().ProfilePic;
+      var company=childSnapshot.val().company;
 
        $('.hardware').
       append(
         '<div class="col-md-12 col-lg-6">' +
           '<div class="agent">' +
-              '<a href="agent-detail.html?name='+key+'" class="agent-image"><img alt="userimage" src="assets/img/agent-01.jpg"></a>' +
+              '<a href="agent-detail.html?name='+key+'" class="agent-image"><img alt="userimage" src="'+ProfilePic+'"></a>' +
               '<div class="wrapper">' +
                   '<header><a href="agent-detail.html?name='+key+'" ><h2>'+Fname+' '+Lname+'</h2></a></header>' +
                   '<aside>Contact</aside>' +
                   '<dl>' +
+                      '<dt>Company:</dt>' +
+                      '<dd>'+company+'</dd>' +
                       '<dt>Phone:</dt>' +
                       '<dd>(+256)'+phone+'</dd>' +
                       '<dt>Mobile:</dt>' +
@@ -925,16 +931,20 @@ $(document).ready(function(){
       var Lname=childSnapshot.val().LastName;
       var email=childSnapshot.val().email;
       var phone=childSnapshot.val().phone;
+      var ProfilePic=childSnapshot.val().ProfilePic;
+      var company=childSnapshot.val().company;
 
        $('.civils').
       append(
         '<div class="col-md-12 col-lg-6">' +
           '<div class="agent">' +
-              '<a href="agent-detail.html?name='+key+'" class="agent-image"><img alt="userimage" src="assets/img/agent-01.jpg"></a>' +
+              '<a href="agent-detail.html?name='+key+'" class="agent-image"><img alt="userimage" src="'+ProfilePic+'"></a>' +
               '<div class="wrapper">' +
                   '<header><a href="agent-detail.html?name='+key+'" ><h2>'+Fname+' '+Lname+'</h2></a></header>' +
                   '<aside>Contact</aside>' +
                   '<dl>' +
+                      '<dt>Company:</dt>' +
+                      '<dd>'+company+'</dd>' +
                       '<dt>Phone:</dt>' +
                       '<dd>(+256)'+phone+'</dd>' +
                       '<dt>Mobile:</dt>' +
@@ -985,16 +995,20 @@ $(document).ready(function(){
       var Lname=childSnapshot.val().LastName;
       var email=childSnapshot.val().email;
       var phone=childSnapshot.val().phone;
+      var ProfilePic=childSnapshot.val().ProfilePic;
+      var company=childSnapshot.val().company;
 
        $('.lawyer').
       append(
         '<div class="col-md-12 col-lg-6">' +
           '<div class="agent">' +
-              '<a href="agent-detail.html?name='+key+'" class="agent-image"><img alt="userimage" src="assets/img/agent-01.jpg"></a>' +
+              '<a href="agent-detail.html?name='+key+'" class="agent-image"><img alt="userimage" src="'+ProfilePic+'"></a>' +
               '<div class="wrapper">' +
                   '<header><a href="agent-detail.html?name='+key+'" ><h2>'+Fname+' '+Lname+'</h2></a></header>' +
                   '<aside>Contact</aside>' +
                   '<dl>' +
+                      '<dt>Company:</dt>' +
+                      '<dd>'+company+'</dd>' +
                       '<dt>Phone:</dt>' +
                       '<dd>(+256)'+phone+'</dd>' +
                       '<dt>Mobile:</dt>' +
