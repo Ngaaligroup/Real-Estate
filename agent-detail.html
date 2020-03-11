@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="ThemeStarz">
 
+    <script type="text/javascript" src="assets/js/jquery-2.1.0.min.js"></script>
+    <script src="star.js"></script>
+    
     <link href='http://fonts.googleapis.com/css?family=Roboto:300,400,700' rel='stylesheet' type='text/css'>
     <link href="assets/fonts/font-awesome.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.css" type="text/css">
@@ -15,6 +18,7 @@
     <link rel="stylesheet" href="assets/css/owl.carousel.css" type="text/css">
     <link rel="stylesheet" href="assets/css/style.css" type="text/css">
     <link rel="stylesheet" href="styles/5star.css">
+
 
 
     <title>ESTATE | Agent Detail</title>
@@ -126,8 +130,13 @@
                                         <dd id="phnes">888 123 456 789</dd>
                                         <dt>Email:</dt>
                                         <dd class="useremail"><!-- <a href="mailto:#">john.doe@example.com</a> --></dd>
-                                        <!-- <dt>Skype:</dt>
-                                        <dd>john.doe</dd> -->
+                                        <dt>Avg Rating:</dt><br>
+                                        <dt>
+                                            <div id="avgrating" style="font-size: 25px;">
+                                            </div>
+                                            <!-- <div><span id="avgvalue">4.5/5</span> <span>333</span> reviews </div><br> -->
+                                            
+                                        </dt><br>
                                     </dl>
                                 </div><!-- /.col-md-5 -->
                                 <div class="col-md-4 col-sm-4">
@@ -146,48 +155,20 @@
                                         <a href="#" class="fa fa-facebook btn btn-grey-dark"></a>
                                         <a href="#" class="fa fa-linkedin btn btn-grey-dark"></a>
                                     </div>
-                                    <div id="rating">
-                                        <br>
-                                        <!-- <h3>RATING</h3> -->
-                                        <span  title="Excellent"></span>
-                                        <span title="Good"></span>
-                                        <span title="Fair"></span>
-                                        <span  title="Poor"></span>
-                                        <span  title="Awful"></span>
-                                    </div>
-                                    <div id="review">
+                                    
+                                    <form id="review" method="post"  class="clearfix">
+                                        <div id="ratin" style="font-size:40px ;">
+                                        </div>
+                                        <div><span id="value1"></span></div>
                                         <div class="form-group">
                                             <label for="form_review">Your Review<em>*</em></label>
-                                            <textarea class="form-control" id="form_review" rows="3" name="form_review" required></textarea>
+                                            <textarea class="form-control" id="form_review1" rows="2" name="form_review1"></textarea>
                                         </div><!-- /.form-group -->
                                         <div class="form-group clearfix">
-                                            <button type="submit" class="btn pull-right btn-default submitreview" id="form-contact-agent-submit submitreview">Review</button>
+                                            <button type="submit" class="btn pull-right btn-default submitreview1" id=" submitreview1">Review</button>
                                         </div><!-- /.form-group -->
-                                    </div>
-                                    <!-- <section id="property-rating">
-                                        <header><h2>Rating</h2></header>
-                                        <div class="clearfix">
-                                            <aside>
-                                                <header>Your Rating</header>
-                                                <div class="rating rating-user">
-                                                    <div class="inner"></div>
-                                                </div>
-                                            </aside>
-                                            <figure>
-                                                <header>Overall Rating</header>
-                                                <div class="rating rating-overall" data-score="4"></div>
-                                                <div id="rating">
-                                                    <span title="Awful"></span>
-                                                    <span title="Poor"></span>
-                                                    <span title="Fair"></span>
-                                                    <span title="Good"></span>
-                                                    <span title="Excellent"></span>
-                                                </div>
-                                            </figure>
-                                        </div>
-                                         -->
-                                    <!-- </section>/#property-rating -->
-
+                                    </form>
+                                   
                                 </div><!-- /.col-md-4 -->
                             </div><!-- /.row -->
                             <div id="rater">

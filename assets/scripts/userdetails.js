@@ -106,5 +106,43 @@ function getUrlParam(param)
 	                '</div>'
 		    		);
 		    });
-	    });
+		});
+	firebase.auth().onAuthStateChanged(function(user) {
+		if (user) {
+
+			var uid = user.uid;
+			
+			$('#review').on('submit', function (e) {
+				e.preventDefault();
+				
+				var ratingdata = {
+					rating: $("#value1").val(),
+					review: $("#form_review1").val(),
+					ratedby: uid
+				};
+
+				// console.log(ratingdata);
+				if(param == uid){
+					window.alert("user cant rate him/herself");
+
+				}else{
+				var db = firebase.database().ref();
+				db.child('Rates/'+param ).push(ratingdata);
+				}
+		
+			});
+		}else{
+			$('#review').on('submit', function (e) {
+				e.preventDefault();
+				window.alert("Login to review");
+				
+				
+		
+			});
+		}
+
+	});
+	
+	
+	
 });
