@@ -128,6 +128,7 @@ function getUrlParam(param)
 				}else{
 				var db = firebase.database().ref();
 				db.child('Rates/'+param ).push(ratingdata);
+				document.getElementById("review").reset();
 				}
 		
 			});

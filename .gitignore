@@ -8,3 +8,7 @@ assets/scripts/testing.js
 firebase-debug.log
 test.js
 tests.html
+.jshintrc
+.firebase/
+database-debug.log
+
