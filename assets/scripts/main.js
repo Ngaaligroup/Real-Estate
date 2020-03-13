@@ -923,7 +923,7 @@ $(document).ready(function(){
   });
 
   //civilengineers
-  var civilref =firebase.database().ref('professional/civilengineer');
+  var civilref =firebase.database().ref('professional/civilEngineer');
   civilref.once("value").then(function(snapshot) {
     snapshot.forEach(function(childSnapshot) {
       var key = childSnapshot.key;
@@ -940,7 +940,7 @@ $(document).ready(function(){
       append(
         '<div class="col-md-12 col-lg-6">' +
           '<div class="agent">' +
-              '<a href="agent-detail.html?name='+key+'" class="agent-image"><img alt="userimage" src="'+ProfilePic+'" onerror=this.src="assets/img/agent-01.jpg"></a>' +
+              '<a href="agent-detail.html?name='+key+'" class="agent-image"><img height ="200"alt="userimage" src="'+ProfilePic+'" onerror=this.src="assets/img/agent-01.jpg"></a>' +
               '<div class="wrapper">' +
                   '<header><a href="agent-detail.html?name='+key+'" ><h2>'+Fname+' '+Lname+'</h2></a></header>' +
                   '<aside>Contact</aside>' +

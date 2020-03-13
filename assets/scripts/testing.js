@@ -1,312 +1,136 @@
-window.location.href = "my-properties.html";
-        document.getElementById("form-submit-property").reset();
-$(document).ready(function(){
-    // Initialize Firebase
-    var config = {
-    apiKey: "AIzaSyAwrdWBHcMo6xlvUp0qAavF5osGKMrFfNc",
-    authDomain: "real-estate-9882c.firebaseapp.com",
-    databaseURL: "https://real-estate-9882c.firebaseio.com",
-    projectId: "real-estate-9882c",
-    storageBucket: "real-estate-9882c.appspot.com",
-    messagingSenderId: "1077907462804",
-    appId: "1:1077907462804:web:bd7b165973428aa6"
-    };
-    
-    firebase.initializeApp(config);
+<table>
+  <thead>
+    <tr>
+      <th>Hotel</th>
+      <th>Rating</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="hotel_a">
+      <td>Hotel A</td>
+      <td>
+        <div class="stars-outer">
+          <div class="stars-inner"></div>
+        </div>
+      </td>
+    </tr>
+    <tr class="hotel_b">
+      <td>Hotel B</td>
+      <td>
+        <div class="stars-outer">
+          <div class="stars-inner"></div>
+        </div>
+      </td>
+    </tr>
+    <tr class="hotel_c">
+      <td>Hotel C</td>
+      <td>
+        <div class="stars-outer">
+          <div class="stars-inner"></div>
+        </div>
+      </td>
+    </tr>
+    <tr class="hotel_d">
+      <td>Hotel D</td>
+      <td>
+        <div class="stars-outer">
+          <div class="stars-inner"></div>
+        </div>
+      </td>
+    </tr>
+    <tr class="hotel_e">
+      <td>Hotel E</td>
+      <td>
+        <div class="stars-outer">
+          <div class="stars-inner"></div>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>
 
-    //create firebase references
-    var Auth = firebase.auth(); 
-    var dbRef = firebase.database();
-    var agencyRef = dbRef.ref('agencies')
-    var usersRef = dbRef.ref('users')
-    // var auth = null;
+<a class="attribution" href="http://fontawesome.io/"><i class="fa fa-font-awesome"></i> fontawesome.io</a>
 
-   
+body {
+  margin-top: 50px;
+  font-family: sans-serif;
+  background: #f1f1f1;
+}
+
+table {
+  margin: 0 auto;
+  text-align: center;
+  border-collapse: collapse;
+  border: 1px solid #d4d4d4;
+  font-size: 20px;
+  background: #fff;
+}
+
+table th, 
+table tr:nth-child(2n+2) {
+  background: #e7e7e7;
+}
  
-  $('#sign-out').on('click', function(e) {
-    e.preventDefault();
-    firebase.auth().signOut()
-    window.location.href = "sign-in.html";
-  });
-
-  
-  firebase.auth().onAuthStateChanged(function(user) {
-    if (user) {
-         var uid = user.uid;
-         console.log(uid);
-          // User is signed in.
-         // var username =firebase.auth().currentUser.displayName;
-         $(".promoted").hide();
-         signout= document.getElementById('sign-out');
-         signout.classList.remove('hide');
-
-         signed=document.getElementById('sign-in');
-         signed.classList.add('hide');
-
-         $('.actions').append('<span class="user-name" style="color:#1396e2" style="font-weight:bold">   Hello , '+user.email+' !!</span>');
-          
-        } else {
-          // No user is signed in.
-          console.log("no user");
-          signout= document.getElementById('sign-out');
-          signout.classList.add('hide');
-
-          signed=document.getElementById('sign-in');
-          signed.classList.remove('hide');
-        } 
-  });
-
+table th, 
+table td {
+  padding: 20px 50px;
+}
  
-  
-  // /////////////////////////////////////////////////////////////
-  //                                                            //
-  //  RETRIEVE  DATA AND POPULATING IT                          //
-  //                                                            //
-  // /////////////////////////////////////////////////////////////
+table th {
+  border-bottom: 1px solid #d4d4d4;
+}     
 
-  // var uid = firebase.auth().currentUser.uid;
-  
+.stars-outer {
+  display: inline-block;
+  position: relative;
+  font-family: FontAwesome;
+}
 
-  // retrieving land properties....
-  var leadsRef = firebase.database().ref('properties/Land');
-  leadsRef.once("value").then(function(snapshot) {
-    snapshot.forEach(function(childSnapshot) {
-      var key = childSnapshot.key;
-      var childData = childSnapshot.val();
+.stars-outer::before {
+  content: "\f006 \f006 \f006 \f006 \f006";
+}
 
-      
-      //
-      var Title=childSnapshot.val().Title;
-    // alert(Title);
-    var Address=childSnapshot.val().Address;
-    var Area=childSnapshot.val().Area;
-    var description=childSnapshot.val().Description;
-    var price=childSnapshot.val().Price;
-    var Land_Type=childSnapshot.val().Land_Type;
-    var Photos=childSnapshot.val().Photos;
-    var Status=childSnapshot.val().Status;
-    
-    // $("#title").append(Title);
-    // document.getElementById("image").src = Photos;
-    // $("#adress").append(Address);
-    // $("#price").append(price);
-    // $("#desc").append(description);
-    // $("#area").append(Area);
-    // $("#status").append(Status);
-    $(".display-lines").
-    append(
-      '<div class="property">' +
-      '<figure class="tag status">'+Status+'</figure>' +  
-      '<figure class="type" title="Land" id="type"><img src="assets/img/property-types/land.png" alt=""></figure>' +
-      '<div class="property-image" >' +
-          '<a href="property-detail.html">' +
-              '<img   alt="" src= "'+Photos+'"   >' +
-          '</a>' +
-      '</div>' +
-      '<div class="info">' +
-          '<header>' +
-              '<a href="property-detail.html"><h3>'+Title+'</h3></a>' +
-              '<figure >'+Address+'</figure>' +
-          '</header>' +
-          '<div class="tag price" >UGX '+price+'</div>' +
-          '<aside>' +
-              '<p >'+description +'</p>' +
-              
-              '<dl>' +
-                  '<dt>Status:</dt>' +
-                  '<dd >'+Status+ '</dd>' +
-                  '<dt>Area:</dt>' +
-                  '<dd><span >'+Area+ '</span> m<sup>2</sup></dd>' +
-                  
+.stars-inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 0;
+}
 
-              '</dl>' +
-          '</aside>' +
-          '<a href="property-detail.html" class="link-arrow">Read More</a>' +
-      '</div>' +
-    '</div>'
-    );
+.stars-inner::before {
+  content: "\f005 \f005 \f005 \f005 \f005";
+  color: #f8ce0b;
+}
 
-    $(".owl-carousel homepage-slider carousel-full-width").
-    append(
-      '<div class="slide">' +
-        '<div class="container">' +
-          '<div class="overlay">' +
-              '<div class="info">' +
-                  '<div class="tag price">UGX '+price+'</div>' +
-                  '<h3>'+Title+'</h3>' +
-                  '<figure>'+Address+'</figure>' +
-              '</div>' +
-              '<hr>' +
-              '<a href="property-detail.html" class="link-arrow">Read More</a>' +
-          '</div>' +
-        '</div>' +
-        '<img alt="" src="'+Photos+'">' +
-      '</div>');
-    });
+.attribution {
+  font-size: 12px;
+  color: #444;
+  text-decoration: none;
+  text-align: center;
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  z-index: -1;
+}
+.attribution:hover {
+  color: #1fa67a;
+}
 
+const ratings = {
+  hotel_a : 2.8,
+  hotel_b : 3.3,
+  hotel_c : 1.9,
+  hotel_d : 4.3,
+  hotel_e : 4.74
+};
 
-    
-      
-  });
-  // retrieveing recent properties...
-  var leadsRef = firebase.database().ref('properties/Land');
-  leadsRef.orderByChild("TimeOn").limitToLast(2).once("value").then(function(snapshot) {
-    snapshot.forEach(function(childSnapshot) {
-      var key = childSnapshot.key;
-      var childData = childSnapshot.val();
+// total number of stars
+const starTotal = 5;
 
-      
-      //
-      var Title=childSnapshot.val().Title;
-    // alert(Title);
-    var Address=childSnapshot.val().Address;
-    var Area=childSnapshot.val().Area;
-    var description=childSnapshot.val().Description;
-    var price=childSnapshot.val().Price;
-    var Land_Type=childSnapshot.val().Land_Type;
-    var Photos=childSnapshot.val().Photos;
-    var Status=childSnapshot.val().Status;
-
-  $(".recent").
-    append(
-      '<div class="property small">' +
-        '<a href="property-detail.html">' +
-            '<div class="property-image">' +
-                '<img alt="" src="'+Photos+'">' +
-            '</div>' +
-        '</a>' +
-        '<div class="info">' +
-            '<a href="property-detail.html"><h4>'+Title+'</h4></a>' +
-            '<figure>'+Address+'</figure>' +
-            '<div class="tag price">UGX '+price+  '</div>'  +
-        '</div>' +
-    '</div>'
-    );
-    });
-
-    
-
-  });
-
-  //retrieving houses properties...
-  // TODO: retrieving houses properties
-  var houseref =firebase.database().ref('properties/house');
-  houseref.once("value").then(function(snapshot) {
-    snapshot.forEach(function(childSnapshot) {
-
-
-    });
-  });
-
-
-  /// retrieving users......./
-
-  //  TODO:  retrieving agents
-  var useeref =firebase.database().ref('property owners/seller');
-  useeref.once("value").then(function(snapshot) {
-    snapshot.forEach(function(childSnapshot) {
-
-
-    });
-  });
-   //  TODO:  retrieving agency
-  var useeref =firebase.database().ref('property owners/Agency');
-  useeref.once("value").then(function(snapshot) {
-    snapshot.forEach(function(childSnapshot) {
-
-
-    });
-  });
-
-  ///add all properties
-  //  TODO: retriev all properties
-  var propref =firebase.database().ref('AllProperty/');
-  propref.once("value").then(function(snapshot) {
-    snapshot.forEach(function(childSnapshot) {
-
-
-    });
-  });
-
-
-
-  
-});
-
-// var pageSize = 3;
-// var ref = firebase.database().ref('swapi/people').orderByKey().limitToLast(pageSize);
-
-// function paginate(cursor) {
-//   var paginatedRef = ref;
-//   if (cursor) {
-//     paginatedRef = ref.endAt(cursor);
-//   }
-//   return paginatedRef.once('value').then(snap => snap.val());
-// }
-
-// function readAllPages(cursor) {
-//   return paginate(cursor).then(values => {
-//     var orderedKeys = Object.keys(values).sort((a, b) => +a > +b);
-//     console.log('cursor', cursor, 'orderedKeys', orderedKeys);
-//     if (orderedKeys.length == pageSize) {
-//       return readAllPages(orderedKeys[0]);
-//     }
-//   });
-// }
-
-// readAllPages();
-
-
-// Keeps track of the length of the 'likes' child list in a separate property.
-exports.countlikechange = functions.database.ref('/posts/{postid}/likes/{likeid}').onWrite(
-    async (change) => {
-      const collectionRef = change.after.ref.parent;
-      const countRef = collectionRef.parent.child('likes_count');
-
-      let increment;
-      if (change.after.exists() && !change.before.exists()) {
-        increment = 1;
-      } else if (!change.after.exists() && change.before.exists()) {
-        increment = -1;
-      } else {
-        return null;
-      }
-
-      // Return the promise from countRef.transaction() so our function
-      // waits for this async event to complete before it exits.
-      await countRef.transaction((current) => {
-        return (current || 0) + increment;
-      });
-      console.log('Counter updated.');
-      return null;
-    });
-
-// If the number of likes gets deleted, recount the number of likes
-exports.recountlikes = functions.database.ref('/posts/{postid}/likes_count').onDelete(async (snap) => {
-  const counterRef = snap.ref;
-  const collectionRef = counterRef.parent.child('likes');
-
-  // Return the promise from counterRef.set() so our function
-  // waits for this async event to complete before it exits.
-  const messagesData = await collectionRef.once('value');
-  return await counterRef.set(messagesData.numChildren());
-});
-
-
-
-var useeref =firebase.database().ref('property owners/seller');
-  useeref.once("value").then(function(snapshot) {
-    snapshot.forEach(function(childSnapshot) {
-      var key = childSnapshot.key;
-      var childData = childSnapshot.val();
-
-      firebase.database().ref('/posts').on('value', function(snapshot) {
-    console.log(snapshot.val());
-});
-
-// 
-// 
-
-<script firebaseURL="https://real-estate-9882c.firebaseio.com" ratingName="auto" fullStarImg="https://3.bp.blogspot.com/-L4GR7vdzrgc/XEGkokT078I/AAAAAAAAAIQ/Y9yfAbS3qeI_1mnakhxL8IfiLFT5VefMACLcBGAs/s1600/fullstar.png" emptyStarImg="https://2.bp.blogspot.com/-d7Wi7ydMI9U/XEGkov32b3I/AAAAAAAAAII/yFOd1Rx1k-AfehWmWztIJkxy92qSLYUDwCLcBGAs/s1600/emptystar.png" hoverStarImg="https://3.bp.blogspot.com/-Zyu05yRkz2Q/XEGkoqSwG4I/AAAAAAAAAIM/5n3-GoefwjosPttLthINLOUZoV7ujrLxgCLcBGAs/s1600/hoveredstar.png" numberOfStars="5" starSize="16" textSize="15" textColor="#292929" fontFamily="Georgia, serif" align="center" topText="Rating:" bottomText="Average: $average$ / $max$ ($votes$ votes)" thankYouText="Thanks for voting" blockingText="You have already cast your vote, your rating is $userRating$." status="active" async src="https://drive.google.com/uc?export=download&id=1_3EXmeXQzNkbuQ369vV4li-eLN1mGcOV"></script>
-
-userRef.child('mike').update({'dateOfBirth': moment(value.dateOfBirth).toDate().getTime()})
+for(const rating in ratings) {  
+  const starPercentage = (ratings[rating] / starTotal) * 100;
+  const starPercentageRounded = `${(Math.round(starPercentage / 10) * 10)}%`;
+  document.querySelector(`.${rating} .stars-inner`).style.width = starPercentageRounded; 
+}

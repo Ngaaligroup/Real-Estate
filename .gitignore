@@ -11,4 +11,5 @@ tests.html
 .jshintrc
 .firebase/
 database-debug.log
+assets/scripts/testing.js
 

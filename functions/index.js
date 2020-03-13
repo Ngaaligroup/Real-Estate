@@ -16,27 +16,28 @@ exports.average = functions.database
 
     let totalSum = 0;
     let nbrOfElem = 0;
+    let avg;
 
     return usersRef
       .once('value', (snapshot) => {
         snapshot.forEach((childSnapshot) => {
-          if (childSnapshot.val().rating) {
+          if (childSnapshot.val()) {
             //console.log(childSnapshot.val());
-            totalSum += childSnapshot.val().rating;
+            totalSum=totalSum + childSnapshot.val();
             
             
           }
-          nbrOfElem=childSnapshot.numChildren();
-          let avg = totalSum / nbrOfElem;
+          nbrOfElem=snapshot.numChildren();
+          avg = totalSum / snapshot.numChildren();
           
         });
       })
       .then(() => {
-        //console.log('totalSum: ' + totalSum);
-        //console.log('nbrOfElem: ' + nbrOfElem);
+        console.log('totalSum: ' + totalSum);
+        console.log('nbrOfElem: ' + avg);
          return userAverageRef.transaction((average) => {
           if (nbrOfElem > 0) {
-            return { val: avg };
+            return { val: totalSum / nbrOfElem };
           } else {
             return 0;
           }
