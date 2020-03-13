@@ -348,18 +348,20 @@ $(document).ready(function(){
           // TODO: submit land properties
           var db = firebase.database().ref();
           var userdb= firebase.database().ref();
+          db.child('AllProperty/' + newLandKey).set(propertyland);
           db.child('properties/Land/' + newLandKey).set(propertyland);
           db.child('users/' + user.uid + "/property/" + newLandKey).set(propertyland);
-          db.child('AllProperty/' + newLandKey).set(propertyland);
+          
 
 
         }else{
 
           // TODO: submit other properties
           var dbo = firebase.database().ref();
+          dbo.child('AllProperty/' + newhouseKey).set(propertyhouse);
           dbo.child('properties/house/' + newhouseKey ).set(propertyhouse);
           dbo.child('users/' + user.uid + "/property/" + newhouseKey).set(propertyhouse);
-          db0.child('AllProperty/' + newhouseKey).set(propertyhouse);
+          
         }
 
 
