@@ -115,20 +115,24 @@ function getUrlParam(param)
 			$('#review').on('submit', function (e) {
 				e.preventDefault();
 				
-				var ratingdata = {
-					rating: $("#value1").val(),
+				
+					var rating= $("#value1").val();
+					var data2={
 					review: $("#form_review1").val(),
 					ratedby: uid
-				};
+					};
+				
 
 				// console.log(ratingdata);
 				if(param == uid){
 					window.alert("user cant rate him/herself");
 
 				}else{
-				var db = firebase.database().ref();
-				db.child('Rates/'+param ).push(ratingdata);
-				document.getElementById("review").reset();
+					var newKey = firebase.database().ref().child('Rates/'+param).push().key;
+					var db = firebase.database().ref();
+					db.child('Rates/'+param+ "/reviews/"+newKey).set(data2);
+					db.child('Rates/'+param+ "/rate/" +newKey).set({rating:rating});
+					document.getElementById("review").reset();
 				}
 		
 			});
