@@ -19,7 +19,9 @@ function getUrlParam(param)
 	        var Lname=snapshot.val().LastName;
 	        var email=val.email;
 	        var phone=val.phone;
-	        var aboutme=val.AboutMe;
+			var aboutme=val.AboutMe;
+			var ProfilePic=val.ProfilePic;
+      		// var company=childSnapshot.val().company;
 	        var propertiesNumber=snapshot.child("property").numChildren();
 
 	        $('#usernames').append('<header><h1 >'+Fname+' '+Lname+'</h1></header>');
@@ -29,8 +31,15 @@ function getUrlParam(param)
 	        if (aboutme=="undefined") {
 	        	document.getElementById('aboutme').innerHTML="";
 	        }else{
-	        	document.getElementById('aboutme').innerHTML="aboutme";
-	        }
+				// document.getElementById('aboutme').innerHTML="aboutme";
+				
+			}
+			if(ProfilePic == "undefined"){
+				$('#profilepic').append('<img  alt="" src="assets/img/agent-01.jpg"></img>');
+				
+			}else{
+				$('#profilepic').append('<img  alt="not found" src="'+ProfilePic+'" onerror=this.src="assets/img/agent-01.jpg"></img>');
+			}
 	        $('.countprop').append('<header><h3>My Properties ('+propertiesNumber+')</h3></header>');
 	        
 
@@ -97,5 +106,44 @@ function getUrlParam(param)
 	                '</div>'
 		    		);
 		    });
-	    });
+		});
+	firebase.auth().onAuthStateChanged(function(user) {
+		if (user) {
+
+			var uid = user.uid;
+			
+			$('#review').on('submit', function (e) {
+				e.preventDefault();
+				
+				var ratingdata = {
+					rating: $("#value1").val(),
+					review: $("#form_review1").val(),
+					ratedby: uid
+				};
+
+				// console.log(ratingdata);
+				if(param == uid){
+					window.alert("user cant rate him/herself");
+
+				}else{
+				var db = firebase.database().ref();
+				db.child('Rates/'+param ).push(ratingdata);
+				document.getElementById("review").reset();
+				}
+		
+			});
+		}else{
+			$('#review').on('submit', function (e) {
+				e.preventDefault();
+				window.alert("Login to review");
+				
+				
+		
+			});
+		}
+
+	});
+	
+	
+	
 });

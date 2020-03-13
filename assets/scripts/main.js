@@ -681,7 +681,7 @@ $(document).ready(function(){
       append(
         '<div class="col-md-12 col-lg-6">' +
           '<div class="agent">' +
-              '<a href="agent-detail.html?name='+key+'" class="agent-image"><img alt="userimage" src="'+ProfilePic+'"></a>' +
+              '<a href="agent-detail.html?name='+key+'" class="agent-image"><img alt="userimage" src="'+ProfilePic+'" onerror=this.src="assets/img/agent-01.jpg"></a>' +
               '<div class="wrapper">' +
                   '<header><a href="agent-detail.html?name='+key+'" ><h2>'+Fname+' '+Lname+'</h2></a></header>' +
                   '<aside>'+properties+ ' Properties</aside>' +
@@ -719,7 +719,7 @@ $(document).ready(function(){
       //   }
       // });
       
-      var proper=properties.length;
+      // var proper=properties.length;
 
 
     });
@@ -745,7 +745,7 @@ $(document).ready(function(){
       append(
         '<div class="col-md-12 col-lg-6">' +
           '<div class="agent">' +
-              '<a href="agent-detail.html?name='+key+'" class="agent-image"><img alt="userimage" src="'+ProfilePic+'"></a>' +
+              '<a href="agent-detail.html?name='+key+'" class="agent-image"><img alt="userimage" src="'+ProfilePic+'" onerror=this.src="assets/img/agent-01.jpg"></a>' +
               '<div class="wrapper">' +
                   '<header><a href="agent-detail.html?name='+key+'" ><h2>'+Fname+' '+Lname+'</h2></a></header>' +
                   '<aside>Contact</aside>' +
@@ -810,7 +810,7 @@ $(document).ready(function(){
       append(
         '<div class="col-md-12 col-lg-6">' +
           '<div class="agent">' +
-              '<a href="agent-detail.html?name='+key+'" class="agent-image"><img alt="userimage" src="'+ProfilePic+'"></a>' +
+              '<a href="agent-detail.html?name='+key+'" class="agent-image"><img alt="userimage" src="'+ProfilePic+'" onerror=this.src="assets/img/agent-01.jpg"></a>' +
               '<div class="wrapper">' +
                   '<header><a href="agent-detail.html?name='+key+'" ><h2>'+Fname+' '+Lname+'</h2></a></header>' +
                   '<aside>Contact</aside>' +
@@ -874,7 +874,7 @@ $(document).ready(function(){
       append(
         '<div class="col-md-12 col-lg-6">' +
           '<div class="agent">' +
-              '<a href="agent-detail.html?name='+key+'" class="agent-image"><img alt="userimage" src="'+ProfilePic+'"></a>' +
+              '<a href="agent-detail.html?name='+key+'" class="agent-image"><img alt="userimage" src="'+ProfilePic+'" onerror=this.src="assets/img/agent-01.jpg"></a>' +
               '<div class="wrapper">' +
                   '<header><a href="agent-detail.html?name='+key+'" ><h2>'+Fname+' '+Lname+'</h2></a></header>' +
                   '<aside>Contact</aside>' +
@@ -901,20 +901,20 @@ $(document).ready(function(){
           '</div><!-- /.agent -->' +
         '</div><!-- /.col-md-12 -->'
       );
-      document.getElementById('divRating').addEventListener('click', function(event) {
-        if (event.target.tagName.toLowerCase() != 'span') return;
+      // document.getElementById('divRating').addEventListener('click', function(event) {
+      //   if (event.target.tagName.toLowerCase() != 'span') return;
         
-        if (event.target.classList.contains('rated')) {
-          event.target.classList.remove('rated');
-        } else {
-          Array.prototype.forEach.call(document.getElementsByClassName('rated'), function(el) {
-            el.classList.remove('rated');
-          });
-          event.target.classList.add('rated');
-        }
-      });
+      //   if (event.target.classList.contains('rated')) {
+      //     event.target.classList.remove('rated');
+      //   } else {
+      //     Array.prototype.forEach.call(document.getElementsByClassName('rated'), function(el) {
+      //       el.classList.remove('rated');
+      //     });
+      //     event.target.classList.add('rated');
+      //   }
+      // });
       
-      var proper=properties.length;
+      // var proper=properties.length;
 
 
     });
@@ -938,7 +938,7 @@ $(document).ready(function(){
       append(
         '<div class="col-md-12 col-lg-6">' +
           '<div class="agent">' +
-              '<a href="agent-detail.html?name='+key+'" class="agent-image"><img alt="userimage" src="'+ProfilePic+'"></a>' +
+              '<a href="agent-detail.html?name='+key+'" class="agent-image"><img alt="userimage" src="'+ProfilePic+'" onerror=this.src="assets/img/agent-01.jpg"></a>' +
               '<div class="wrapper">' +
                   '<header><a href="agent-detail.html?name='+key+'" ><h2>'+Fname+' '+Lname+'</h2></a></header>' +
                   '<aside>Contact</aside>' +
@@ -965,20 +965,20 @@ $(document).ready(function(){
           '</div><!-- /.agent -->' +
         '</div><!-- /.col-md-12 -->'
       );
-      document.getElementById('divRating').addEventListener('click', function(event) {
-        if (event.target.tagName.toLowerCase() != 'span') return;
+      // document.getElementById('divRating').addEventListener('click', function(event) {
+      //   if (event.target.tagName.toLowerCase() != 'span') return;
         
-        if (event.target.classList.contains('rated')) {
-          event.target.classList.remove('rated');
-        } else {
-          Array.prototype.forEach.call(document.getElementsByClassName('rated'), function(el) {
-            el.classList.remove('rated');
-          });
-          event.target.classList.add('rated');
-        }
-      });
+      //   if (event.target.classList.contains('rated')) {
+      //     event.target.classList.remove('rated');
+      //   } else {
+      //     Array.prototype.forEach.call(document.getElementsByClassName('rated'), function(el) {
+      //       el.classList.remove('rated');
+      //     });
+      //     event.target.classList.add('rated');
+      //   }
+      // });
       
-      var proper=properties.length;
+      // var proper=properties.length;
 
 
     });
@@ -1002,7 +1002,7 @@ $(document).ready(function(){
       append(
         '<div class="col-md-12 col-lg-6">' +
           '<div class="agent">' +
-              '<a href="agent-detail.html?name='+key+'" class="agent-image"><img alt="userimage" src="'+ProfilePic+'"></a>' +
+              '<a href="agent-detail.html?name='+key+'" class="agent-image"><img alt="userimage" src="'+ProfilePic+'" onerror=this.src="assets/img/agent-01.jpg"></a>' +
               '<div class="wrapper">' +
                   '<header><a href="agent-detail.html?name='+key+'" ><h2>'+Fname+' '+Lname+'</h2></a></header>' +
                   '<aside>Contact</aside>' +
@@ -1026,23 +1026,18 @@ $(document).ready(function(){
                 '<span id="spanRatingPoor" title="Poor">☆</span>' +
                 '<span id="spanRatingAwful" title="Awful">☆</span>' +
               '</div>'+
+              
+          
           '</div><!-- /.agent -->' +
         '</div><!-- /.col-md-12 -->'
       );
-      document.getElementById('divRating').addEventListener('click', function(event) {
-        if (event.target.tagName.toLowerCase() != 'span') return;
-        
-        if (event.target.classList.contains('rated')) {
-          event.target.classList.remove('rated');
-        } else {
-          Array.prototype.forEach.call(document.getElementsByClassName('rated'), function(el) {
-            el.classList.remove('rated');
-          });
-          event.target.classList.add('rated');
-        }
-      });
-      
-      var proper=properties.length;
+      // document.querySelector('#divRating').addEventListener('click', function (e) {
+      //   let action = 'add';
+      //   for (const span of this.children) {
+      //       span.classList[action]('active');
+      //       if (span === e.target) action = 'remove';
+      //   }
+      // });
 
 
     });
@@ -1103,13 +1098,7 @@ $(document).ready(function(){
     });
   });
 
-  document.querySelector('#divrating').addEventListener('click', function (e) {
-    let action = 'add';
-    for (const span of this.children) {
-        span.classList[action]('active');
-        if (span === e.target) action = 'remove';
-    }
-});
+  
 
   ///add all properties
   //  TODO: retriev all properties

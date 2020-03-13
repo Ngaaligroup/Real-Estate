@@ -1,25 +1,43 @@
-import rater from 'rater-js';
-var myRating = raterJs( {
+// import rater from 'rater-js';
+$.getScript('assets/rater.js', function(){
 	
-		element:document.querySelector("#rater"),
-		rateCallback:function rateCallback(rating, done) {
-		  this.setRating(rating);
-		  done();
-		}
-	});
-	var myRating = raterJs({
+	var myRating = {
+		max: 5,
+		starSize: 16,
+		disableText: 'Thank you for your vote!',
+		ratingText: '{rating}/{maxRating}',
+		update_input_field_name:$("#value1"),
+		isBusyText: null,
+		step: 0.5,
+		// reverse: false,
+		// readOnly: false
 		
-		
-			max: 5,
-			starSize: 16,
-			disableText: 'Thank you for your vote!',
-		    ratingText: '{rating}/{maxRating}',
-			isBusyText: null,
+		// element:document.querySelector("#rater"),
+		// rateCallback:function rateCallback(rating, done) {
+		//   this.setRating(rating);
+		//   done();
+		// }
+	};
+	$("#ratin").rate(myRating);
 	
-			step: undefined,
-		
-			reverse: false,
-				readOnly: false
-		});
+	var avgrating={
+		max: 5,
+		starSize: 16,
+		ratingText: '{rating}/{maxRating}',
+		step: 0.5,
+		readOnly: true
+
+		// element:document.querySelector("#rater"),
+		// rateCallback:function rateCallback(rating, done) {
+		//   this.setRating(rating);
+		//   done();
+		// }
+	};
+	$("#avgrating").rate(avgrating);
+
+	
+});
+
+
 		
 	
