@@ -15,6 +15,7 @@ exports.average = functions.database
     const userAverageRef = db.ref('Rates/' + userId + '/average');
 
     let totalSum = 0;
+    let val1=0;
     let nbrOfElem = 0;
     let avg;
 
@@ -23,12 +24,13 @@ exports.average = functions.database
         snapshot.forEach((childSnapshot) => {
           if (childSnapshot.val()) {
             //console.log(childSnapshot.val());
-            totalSum=totalSum + childSnapshot.val();
+            totalSum += parseFloat(childSnapshot.child('rating').val());
+            nbrOfElem=snapshot.numChildren();
+            avg = totalSum / snapshot.numChildren();
             
             
           }
-          nbrOfElem=snapshot.numChildren();
-          avg = totalSum / snapshot.numChildren();
+          
           
         });
       })
@@ -47,56 +49,4 @@ exports.average = functions.database
         console.log(error);
       });
 
-    // const userId = context.params.userId;
-    // return admin.database().ref('Rates/' + userId).once('value')
-    // .then((snapshot) => {
-    //     let sum=0;
-    //     snapshot.forEach(child => {
-    //         sum = sum + child.val().rating;
-    //     });
-    //     let avg = sum / snapshot.numChildren();
-
-    //     const userAverageRef = db.ref('Rates/' + userId + '/average');
-    //     return userAverageRef.transaction((average) => {
-          
-    //       return { val: avg };
-          
-    //     });
-    // });
-    
   });
-
-
-  // const userId = context.params.userId;
-  // const usersRef = db.ref('Rates/' + userId);
-
-  //   const userAverageRef = db.ref('Rates/' + userId + '/average');
-
-  //   let totalSum = 0;
-  //   let nbrOfElem = 0;
-
-  //   return usersRef
-  //     .once('value', (snapshot) => {
-  //       snapshot.forEach((childSnapshot) => {
-  //         if (childSnapshot.val().rating) {
-  //           //console.log(childSnapshot.val());
-  //           totalSum += childSnapshot.val().rating;
-            
-  //         }
-  //         nbrOfElem=snapshot.numChildren();
-  //       });
-  //     })
-  //     .then(() => {
-  //       //console.log('totalSum: ' + totalSum);
-  //       //console.log('nbrOfElem: ' + nbrOfElem);
-        //  return userAverageRef.transaction((average) => {
-        //   if (nbrOfElem > 0) {
-        //     return { val: totalSum / nbrOfElem };
-        //   } else {
-        //     return 0;
-        //   }
-        // });
-  //     })
-  //     .catch(error => {
-  //       console.log(error);
-  //     });

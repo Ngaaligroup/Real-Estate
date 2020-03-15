@@ -1,15 +1,15 @@
 $(document).ready(function(){
   
-function getUrlParam(param)
-            {
-              param = param.replace(/([\[\](){}*?+^$.\\|])/g, "\\$1");
-              var regex = new RegExp("[?&]" + param + "=([^&#]*)");
-              var url   = decodeURIComponent(window.location.href);
-              var match = regex.exec(url);
-              return match ? match[1] : "";
+	function getUrlParam(param)
+	{
+		param = param.replace(/([\[\](){}*?+^$.\\|])/g, "\\$1");
+		var regex = new RegExp("[?&]" + param + "=([^&#]*)");
+		var url   = decodeURIComponent(window.location.href);
+		var match = regex.exec(url);
+		return match ? match[1] : "";
 
-              
-            }
+		
+	}
         var param = getUrlParam("name");
         var ref = firebase.database().ref("users/" +param);
         ref.once("value").then(function(snapshot) {
@@ -133,6 +133,7 @@ function getUrlParam(param)
 					db.child('Rates/'+param+ "/reviews/"+newKey).set(data2);
 					db.child('Rates/'+param+ "/rate/" +newKey).set({rating:rating});
 					document.getElementById("review").reset();
+					window.location.reload(true); 
 				}
 		
 			});
@@ -147,7 +148,71 @@ function getUrlParam(param)
 		}
 
 	});
+	var averagref = firebase.database().ref("Rates/" +param);
+	averagref.limitToFirst(1).once("value").then(function(snapshot){
+		
+		snapshot.forEach(function(childSnapshot) {
+			var vl = childSnapshot.child('val').val();
+			
+			var averagerate = Math.round(vl * 10) / 10;
+			
+			// total number of stars
+			const starTotal = 5;
+			const starPercentage = (averagerate / starTotal) * 100;
+			const starPercentageRounded = `${(Math.round(starPercentage / 10) * 10)}%`;
+			// document.querySelector(`.${rating} .stars-inner`).style.width = starPercentageRounded; 
+			document.querySelector(`.stars-inner`).style.width = starPercentageRounded; 
+			document.getElementById('avgvalue').innerHTML ="avg: " +averagerate;
+			
+		});
+	});
+	var rates = firebase.database().ref("Rates/" +param+ "/rate");
 	
+	rates.once("value").then(function(snapshot){
+		snapshot.forEach(function(childSnapshot){
+			vl = childSnapshot.val().rating;
+			var key1 = childSnapshot.key;
+			
+			var reviews = firebase.database().ref("Rates/" +param+ "/reviews");
+			reviews.once("value").then(function(snapsreview){
+				snapsreview.forEach(function(childreview){
+					var revie = childreview.val().review;
+					var rater = childreview.val().ratedby;
+
+					var ref = firebase.database().ref("users/" +rater);
+					ref.once("value").then(function(snapshot) {
+						
+						var Fname=snapshot.val().FirstName;
+						var Lname=snapshot.val().LastName;
+
+						// $("#testmonials").
+    					// 	append(
+						// 		'<aside>'+
+						// 		'<p>'+revie+'</p>'+
+						// 		'<div class="stars-outer" style="font-size: 16px;">'+
+						// 			'<div class="stars-inner" id="inner"></div>'+
+						// 		'</div>'+
+						// 		'<footer>'+Fname +' ' +Lname+'</footer>'+
+						// 		'</aside>'
+
+						// 	);
+						// total number of stars
+						// const starTotal = 5;
+						// const starPercentage = (vl / starTotal) * 100;
+						// const starPercentageRounded = `${(Math.round(starPercentage / 10) * 10)}%`; 
+						// document.querySelector('#inner').style.width = starPercentageRounded;
+					});
+
+
+
+				});
+			});
+			
+
+			
+
+		});
+	});
 	
 	
 });

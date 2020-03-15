@@ -683,7 +683,7 @@ $(document).ready(function(){
       append(
         '<div class="col-md-12 col-lg-6">' +
           '<div class="agent">' +
-              '<a href="agent-detail.html?name='+key+'" class="agent-image"><img alt="userimage" src="'+ProfilePic+'" onerror=this.src="assets/img/agent-01.jpg"></a>' +
+              '<a href="agent-detail.html?name='+key+'" class="agent-image"><img height ="180" alt="userimage" src="'+ProfilePic+'" onerror=this.src="assets/img/agent-01.jpg"></a>' +
               '<div class="wrapper">' +
                   '<header><a href="agent-detail.html?name='+key+'" ><h2>'+Fname+' '+Lname+'</h2></a></header>' +
                   '<aside>'+properties+ ' Properties</aside>' +
@@ -698,28 +698,33 @@ $(document).ready(function(){
                       '<!--<dd>john.doe</dd>-->' +
                   '</dl>' +
               '</div>' +
-              '<div id="divRating" class="rating">'+
-                '<span id="spanRatingExcellent" title="Excellent">☆</span>' +
-                '<span id="spanRatingGood" title="Good">☆</span>' +
-                '<span id="spanRatingFair" title="Fair">☆</span>' +
-                '<span id="spanRatingPoor" title="Poor">☆</span>' +
-                '<span id="spanRatingAwful" title="Awful">☆</span>' +
-              '</div>'+
+              '<div class="stars-outer" style="font-size: 20px; ">'+
+                  '<div class="stars-inner" id="inner"><script type="text/javascript">'+
+                  'var averagref = firebase.database().ref("Rates/" +key);'+
+                  'averagref.limitToFirst(1).once("value").then(function(snapshot){'+
+                  'snapshot.forEach(function(childSnapshot) {'+
+                    'var vl = childSnapshot.val().val;'+
+                    
+                    'var averagerate = Math.round(vl * 10) / 10;'+
+                  
+                    
+                    '// total number of stars'+
+                    'const starTotal = 5;'+
+                    
+                    'const starPercentage = (averagerate  / starTotal) * 100;'+
+                    'const starPercentageRounded = `${(Math.round(starPercentage / 10) * 10)}%`;'+ 
+                    'document.querySelector(`.stars-inner`).style.width = starPercentageRounded;'+ 
+                    
+                  '});'+
+               '});'+
+                  '</script></div>'+
+							'</div>'+
           '</div><!-- /.agent -->' +
         '</div><!-- /.col-md-12 -->'
       );
-      // document.getElementById('divRating').addEventListener('click', function(event) {
-      //   if (event.target.tagName.toLowerCase() != 'span') return;
-        
-      //   if (event.target.classList.contains('rated')) {
-      //     event.target.classList.remove('rated');
-      //   } else {
-      //     Array.prototype.forEach.call(document.getElementsByClassName('rated'), function(el) {
-      //       el.classList.remove('rated');
-      //     });
-      //     event.target.classList.add('rated');
-      //   }
-      // });
+      
+      
+     
       
       // var proper=properties.length;
 
@@ -747,7 +752,7 @@ $(document).ready(function(){
       append(
         '<div class="col-md-12 col-lg-6">' +
           '<div class="agent">' +
-              '<a href="agent-detail.html?name='+key+'" class="agent-image"><img alt="userimage" src="'+ProfilePic+'" onerror=this.src="assets/img/agent-01.jpg"></a>' +
+              '<a href="agent-detail.html?name='+key+'" class="agent-image"><img height ="180" alt="userimage" src="'+ProfilePic+'" onerror=this.src="assets/img/agent-01.jpg"></a>' +
               '<div class="wrapper">' +
                   '<header><a href="agent-detail.html?name='+key+'" ><h2>'+Fname+' '+Lname+'</h2></a></header>' +
                   '<aside>Contact</aside>' +
@@ -764,30 +769,13 @@ $(document).ready(function(){
                       '<!--<dd>john.doe</dd>-->' +
                   '</dl>' +
               '</div>' +
-              '<div id="divRating" class="rating">'+
-                '<span id="spanRatingExcellent" title="Excellent">☆</span>' +
-                '<span id="spanRatingGood" title="Good">☆</span>' +
-                '<span id="spanRatingFair" title="Fair">☆</span>' +
-                '<span id="spanRatingPoor" title="Poor">☆</span>' +
-                '<span id="spanRatingAwful" title="Awful">☆</span>' +
-              '</div>'+
+              '<div class="stars-outer" style="font-size: 20px;">'+
+									'<div class="stars-inner" id="inner"></div>'+
+							'</div>'+
           '</div><!-- /.agent -->' +
         '</div><!-- /.col-md-12 -->'
       );
-      // document.getElementById('divRating').addEventListener('click', function(event) {
-      //   if (event.target.tagName.toLowerCase() != 'span') return;
-        
-      //   if (event.target.classList.contains('rated')) {
-      //     event.target.classList.remove('rated');
-      //   } else {
-      //     Array.prototype.forEach.call(document.getElementsByClassName('rated'), function(el) {
-      //       el.classList.remove('rated');
-      //     });
-      //     event.target.classList.add('rated');
-      //   }
-      // });
       
-      // var proper=properties.length;
 
 
     });
@@ -812,7 +800,7 @@ $(document).ready(function(){
       append(
         '<div class="col-md-12 col-lg-6">' +
           '<div class="agent">' +
-              '<a href="agent-detail.html?name='+key+'" class="agent-image"><img alt="userimage" src="'+ProfilePic+'" onerror=this.src="assets/img/agent-01.jpg"></a>' +
+              '<a href="agent-detail.html?name='+key+'" class="agent-image"><img height ="180" alt="userimage" src="'+ProfilePic+'" onerror=this.src="assets/img/agent-01.jpg"></a>' +
               '<div class="wrapper">' +
                   '<header><a href="agent-detail.html?name='+key+'" ><h2>'+Fname+' '+Lname+'</h2></a></header>' +
                   '<aside>Contact</aside>' +
@@ -829,32 +817,13 @@ $(document).ready(function(){
                       '<!--<dd>john.doe</dd>-->' +
                   '</dl>' +
               '</div>' +
-              '<div id="divRating" class="rating">'+
-                '<span id="spanRatingExcellent" title="Excellent">☆</span>' +
-                '<span id="spanRatingGood" title="Good">☆</span>' +
-                '<span id="spanRatingFair" title="Fair">☆</span>' +
-                '<span id="spanRatingPoor" title="Poor">☆</span>' +
-                '<span id="spanRatingAwful" title="Awful">☆</span>' +
-              '</div>'+
+              '<div class="stars-outer" style="font-size: 20px;">'+
+              '<div class="stars-inner" id="inner"></div>'+
+          '</div>'+
           '</div><!-- /.agent -->' +
         '</div><!-- /.col-md-12 -->'
       );
-      // document.getElementById('divRating').addEventListener('click', function(event) {
-      //   if (event.target.tagName.toLowerCase() != 'span') return;
-        
-      //   if (event.target.classList.contains('rated')) {
-      //     event.target.classList.remove('rated');
-      //   } else {
-      //     Array.prototype.forEach.call(document.getElementsByClassName('rated'), function(el) {
-      //       el.classList.remove('rated');
-      //     });
-      //     event.target.classList.add('rated');
-      //   }
-      // });
       
-      // var proper=properties.length;
-
-
     });
   });
 
@@ -876,7 +845,7 @@ $(document).ready(function(){
       append(
         '<div class="col-md-12 col-lg-6">' +
           '<div class="agent">' +
-              '<a href="agent-detail.html?name='+key+'" class="agent-image"><img alt="userimage" src="'+ProfilePic+'" onerror=this.src="assets/img/agent-01.jpg"></a>' +
+              '<a href="agent-detail.html?name='+key+'" class="agent-image"><img height ="180" alt="userimage" src="'+ProfilePic+'" onerror=this.src="assets/img/agent-01.jpg"></a>' +
               '<div class="wrapper">' +
                   '<header><a href="agent-detail.html?name='+key+'" ><h2>'+Fname+' '+Lname+'</h2></a></header>' +
                   '<aside>Contact</aside>' +
@@ -893,30 +862,13 @@ $(document).ready(function(){
                       '<!--<dd>john.doe</dd>-->' +
                   '</dl>' +
               '</div>' +
-              '<div id="divRating" class="rating">'+
-                '<span id="spanRatingExcellent" title="Excellent">☆</span>' +
-                '<span id="spanRatingGood" title="Good">☆</span>' +
-                '<span id="spanRatingFair" title="Fair">☆</span>' +
-                '<span id="spanRatingPoor" title="Poor">☆</span>' +
-                '<span id="spanRatingAwful" title="Awful">☆</span>' +
-              '</div>'+
+              '<div class="stars-outer" style="font-size: 20px;">'+
+									'<div class="stars-inner" id="inner"></div>'+
+							'</div>'+
           '</div><!-- /.agent -->' +
         '</div><!-- /.col-md-12 -->'
       );
-      // document.getElementById('divRating').addEventListener('click', function(event) {
-      //   if (event.target.tagName.toLowerCase() != 'span') return;
-        
-      //   if (event.target.classList.contains('rated')) {
-      //     event.target.classList.remove('rated');
-      //   } else {
-      //     Array.prototype.forEach.call(document.getElementsByClassName('rated'), function(el) {
-      //       el.classList.remove('rated');
-      //     });
-      //     event.target.classList.add('rated');
-      //   }
-      // });
       
-      // var proper=properties.length;
 
 
     });
@@ -940,7 +892,7 @@ $(document).ready(function(){
       append(
         '<div class="col-md-12 col-lg-6">' +
           '<div class="agent">' +
-              '<a href="agent-detail.html?name='+key+'" class="agent-image"><img height ="200"alt="userimage" src="'+ProfilePic+'" onerror=this.src="assets/img/agent-01.jpg"></a>' +
+              '<a href="agent-detail.html?name='+key+'" class="agent-image"><img height ="180"alt="userimage" src="'+ProfilePic+'" onerror=this.src="assets/img/agent-01.jpg"></a>' +
               '<div class="wrapper">' +
                   '<header><a href="agent-detail.html?name='+key+'" ><h2>'+Fname+' '+Lname+'</h2></a></header>' +
                   '<aside>Contact</aside>' +
@@ -957,32 +909,13 @@ $(document).ready(function(){
                       '<!--<dd>john.doe</dd>-->' +
                   '</dl>' +
               '</div>' +
-              '<div id="divRating" class="rating">'+
-                '<span id="spanRatingExcellent" title="Excellent">☆</span>' +
-                '<span id="spanRatingGood" title="Good">☆</span>' +
-                '<span id="spanRatingFair" title="Fair">☆</span>' +
-                '<span id="spanRatingPoor" title="Poor">☆</span>' +
-                '<span id="spanRatingAwful" title="Awful">☆</span>' +
-              '</div>'+
+              '<div class="stars-outer" style="font-size: 20px;">'+
+									'<div class="stars-inner" id="inner"></div>'+
+							'</div>'+
           '</div><!-- /.agent -->' +
         '</div><!-- /.col-md-12 -->'
       );
-      // document.getElementById('divRating').addEventListener('click', function(event) {
-      //   if (event.target.tagName.toLowerCase() != 'span') return;
-        
-      //   if (event.target.classList.contains('rated')) {
-      //     event.target.classList.remove('rated');
-      //   } else {
-      //     Array.prototype.forEach.call(document.getElementsByClassName('rated'), function(el) {
-      //       el.classList.remove('rated');
-      //     });
-      //     event.target.classList.add('rated');
-      //   }
-      // });
       
-      // var proper=properties.length;
-
-
     });
   });
 
@@ -1004,7 +937,7 @@ $(document).ready(function(){
       append(
         '<div class="col-md-12 col-lg-6">' +
           '<div class="agent">' +
-              '<a href="agent-detail.html?name='+key+'" class="agent-image"><img alt="userimage" src="'+ProfilePic+'" onerror=this.src="assets/img/agent-01.jpg"></a>' +
+              '<a href="agent-detail.html?name='+key+'" class="agent-image"><img height ="180" alt="userimage" src="'+ProfilePic+'" onerror=this.src="assets/img/agent-01.jpg"></a>' +
               '<div class="wrapper">' +
                   '<header><a href="agent-detail.html?name='+key+'" ><h2>'+Fname+' '+Lname+'</h2></a></header>' +
                   '<aside>Contact</aside>' +
@@ -1021,27 +954,15 @@ $(document).ready(function(){
                       '<!--<dd>john.doe</dd>-->' +
                   '</dl>' +
               '</div>' +
-              '<div id="divRating" class="rating">'+
-                '<span id="spanRatingExcellent" title="Excellent">☆</span>' +
-                '<span id="spanRatingGood" title="Good">☆</span>' +
-                '<span id="spanRatingFair" title="Fair">☆</span>' +
-                '<span id="spanRatingPoor" title="Poor">☆</span>' +
-                '<span id="spanRatingAwful" title="Awful">☆</span>' +
-              '</div>'+
+              '<div class="stars-outer" style="font-size: 20px;">'+
+									'<div class="stars-inner" id="inner"></div>'+
+							'</div>'+
               
           
           '</div><!-- /.agent -->' +
         '</div><!-- /.col-md-12 -->'
       );
-      // document.querySelector('#divRating').addEventListener('click', function (e) {
-      //   let action = 'add';
-      //   for (const span of this.children) {
-      //       span.classList[action]('active');
-      //       if (span === e.target) action = 'remove';
-      //   }
-      // });
-
-
+     
     });
   });
 
