@@ -679,7 +679,23 @@ $(document).ready(function(){
       var ProfilePic=childSnapshot.val().ProfilePic;
       var properties=childSnapshot.child("property").numChildren();
 
-       $('.agentie').
+      
+      var averagref = firebase.database().ref("Rates/" +key);
+      averagref.limitToFirst(1).once("value").then(function(snapshot){
+      snapshot.forEach(function(childSnapshot) {
+        var vl = childSnapshot.val().val;
+        
+        var averagerate = Math.round(vl * 10) / 10;
+      
+        
+        // total number of stars
+        const starTotal = 5;
+        
+        const starPercentage = (averagerate  / starTotal) * 100;
+        const starPercentageRounded = `${(Math.round(starPercentage / 10) * 10)}%`;
+        
+
+        $('.agentie').
       append(
         '<div class="col-md-12 col-lg-6">' +
           '<div class="agent">' +
@@ -699,36 +715,16 @@ $(document).ready(function(){
                   '</dl>' +
               '</div>' +
               '<div class="stars-outer" style="font-size: 20px; ">'+
-                  '<div class="stars-inner" id="inner"><script type="text/javascript">'+
-                  'var averagref = firebase.database().ref("Rates/" +key);'+
-                  'averagref.limitToFirst(1).once("value").then(function(snapshot){'+
-                  'snapshot.forEach(function(childSnapshot) {'+
-                    'var vl = childSnapshot.val().val;'+
-                    
-                    'var averagerate = Math.round(vl * 10) / 10;'+
-                  
-                    
-                    '// total number of stars'+
-                    'const starTotal = 5;'+
-                    
-                    'const starPercentage = (averagerate  / starTotal) * 100;'+
-                    'const starPercentageRounded = `${(Math.round(starPercentage / 10) * 10)}%`;'+ 
-                    'document.querySelector(`.stars-inner`).style.width = starPercentageRounded;'+ 
-                    
-                  '});'+
-               '});'+
-                  '</script></div>'+
+                  '<div class="stars-inner" id="inner"></div>'+
 							'</div>'+
           '</div><!-- /.agent -->' +
         '</div><!-- /.col-md-12 -->'
       );
-      
-      
-     
-      
-      // var proper=properties.length;
-
-
+      document.querySelector(`.stars-inner`).style.width = starPercentageRounded;
+        
+      });
+    });
+  
     });
   });
   //  TODO:  retrieving professionals

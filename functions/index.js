@@ -27,7 +27,8 @@ exports.average = functions.database
             totalSum += parseFloat(childSnapshot.child('rating').val());
             nbrOfElem=snapshot.numChildren();
             avg = totalSum / snapshot.numChildren();
-            
+
+            db.ref().child('users/' + userId ).update({average:totalSum / nbrOfElem});
             
           }
           
@@ -35,8 +36,8 @@ exports.average = functions.database
         });
       })
       .then(() => {
-        console.log('totalSum: ' + totalSum);
-        console.log('nbrOfElem: ' + avg);
+        // console.log('totalSum: ' + totalSum);
+        // console.log('nbrOfElem: ' + avg);
          return userAverageRef.transaction((average) => {
           if (nbrOfElem > 0) {
             return { val: totalSum / nbrOfElem };
