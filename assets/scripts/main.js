@@ -116,7 +116,7 @@ $(document).ready(function(){
 	           
 	          });
 	      } else {
-          window.alert("passwords dont match");
+          window.alert("Couldnt create user: passwords dont match");
 	        // console.log("passwords dont match");
 	      }
     }
@@ -715,12 +715,11 @@ $(document).ready(function(){
                   '</dl>' +
               '</div>' +
               '<div class="stars-outer" style="font-size: 20px; ">'+
-                  '<div class="stars-inner" id="inner"></div>'+
+                  '<div class="stars-inner" id="inner"  style="width:'+starPercentageRounded+' ;"></div>'+
 							'</div>'+
           '</div><!-- /.agent -->' +
         '</div><!-- /.col-md-12 -->'
       );
-      document.querySelector(`.stars-inner`).style.width = starPercentageRounded;
         
       });
     });
@@ -742,6 +741,20 @@ $(document).ready(function(){
       var phone=childSnapshot.val().phone;
       var ProfilePic=childSnapshot.val().ProfilePic;
       var company=childSnapshot.val().company;
+
+      var averagref = firebase.database().ref("Rates/" +key);
+      averagref.limitToFirst(1).once("value").then(function(snapshot){
+      snapshot.forEach(function(childSnapshot) {
+        var vl = childSnapshot.val().val;
+        
+        var averagerate = Math.round(vl * 10) / 10;
+      
+        
+        // total number of stars
+        const starTotal = 5;
+        
+        const starPercentage = (averagerate  / starTotal) * 100;
+        const starPercentageRounded = `${(Math.round(starPercentage / 10) * 10)}%`;
       
 
        $('.surveyor').
@@ -766,12 +779,13 @@ $(document).ready(function(){
                   '</dl>' +
               '</div>' +
               '<div class="stars-outer" style="font-size: 20px;">'+
-									'<div class="stars-inner" id="inner"></div>'+
+              '<div class="stars-inner" id="inner"  style="width:'+starPercentageRounded+' ;"></div>'+
 							'</div>'+
           '</div><!-- /.agent -->' +
         '</div><!-- /.col-md-12 -->'
       );
-      
+    });
+  });  
 
 
     });
@@ -790,6 +804,20 @@ $(document).ready(function(){
       var phone=childSnapshot.val().phone;
       var ProfilePic=childSnapshot.val().ProfilePic;
       var company=childSnapshot.val().company;
+
+      var averagref = firebase.database().ref("Rates/" +key);
+      averagref.limitToFirst(1).once("value").then(function(snapshot){
+      snapshot.forEach(function(childSnapshot) {
+        var vl = childSnapshot.val().val;
+        
+        var averagerate = Math.round(vl * 10) / 10;
+      
+        
+        // total number of stars
+        const starTotal = 5;
+        
+        const starPercentage = (averagerate  / starTotal) * 100;
+        const starPercentageRounded = `${(Math.round(starPercentage / 10) * 10)}%`;
       
 
        $('.architect').
@@ -814,11 +842,13 @@ $(document).ready(function(){
                   '</dl>' +
               '</div>' +
               '<div class="stars-outer" style="font-size: 20px;">'+
-              '<div class="stars-inner" id="inner"></div>'+
+              '<div class="stars-inner" id="inner"  style="width:'+starPercentageRounded+' ;"></div>'+
           '</div>'+
           '</div><!-- /.agent -->' +
         '</div><!-- /.col-md-12 -->'
       );
+      });
+    });
       
     });
   });
@@ -836,6 +866,20 @@ $(document).ready(function(){
       var phone=childSnapshot.val().phone;
       var ProfilePic=childSnapshot.val().ProfilePic;
       var company=childSnapshot.val().company;
+
+      var averagref = firebase.database().ref("Rates/" +key);
+      averagref.limitToFirst(1).once("value").then(function(snapshot){
+      snapshot.forEach(function(childSnapshot) {
+        var vl = childSnapshot.val().val;
+        
+        var averagerate = Math.round(vl * 10) / 10;
+      
+        
+        // total number of stars
+        const starTotal = 5;
+        
+        const starPercentage = (averagerate  / starTotal) * 100;
+        const starPercentageRounded = `${(Math.round(starPercentage / 10) * 10)}%`;
 
        $('.hardware').
       append(
@@ -859,12 +903,13 @@ $(document).ready(function(){
                   '</dl>' +
               '</div>' +
               '<div class="stars-outer" style="font-size: 20px;">'+
-									'<div class="stars-inner" id="inner"></div>'+
+              '<div class="stars-inner" id="inner"  style="width:'+starPercentageRounded+' ;"></div>'+
 							'</div>'+
           '</div><!-- /.agent -->' +
         '</div><!-- /.col-md-12 -->'
       );
-      
+      });
+    });   
 
 
     });
@@ -883,6 +928,20 @@ $(document).ready(function(){
       var phone=childSnapshot.val().phone;
       var ProfilePic=childSnapshot.val().ProfilePic;
       var company=childSnapshot.val().company;
+
+      var averagref = firebase.database().ref("Rates/" +key);
+      averagref.limitToFirst(1).once("value").then(function(snapshot){
+      snapshot.forEach(function(childSnapshot) {
+        var vl = childSnapshot.val().val;
+        
+        var averagerate = Math.round(vl * 10) / 10;
+      
+        
+        // total number of stars
+        const starTotal = 5;
+        
+        const starPercentage = (averagerate  / starTotal) * 100;
+        const starPercentageRounded = `${(Math.round(starPercentage / 10) * 10)}%`;
 
        $('.civils').
       append(
@@ -906,12 +965,14 @@ $(document).ready(function(){
                   '</dl>' +
               '</div>' +
               '<div class="stars-outer" style="font-size: 20px;">'+
-									'<div class="stars-inner" id="inner"></div>'+
+              '<div class="stars-inner" id="inner"  style="width:'+starPercentageRounded+' ;"></div>'+
 							'</div>'+
           '</div><!-- /.agent -->' +
         '</div><!-- /.col-md-12 -->'
       );
       
+      });
+    });
     });
   });
 
@@ -928,6 +989,19 @@ $(document).ready(function(){
       var phone=childSnapshot.val().phone;
       var ProfilePic=childSnapshot.val().ProfilePic;
       var company=childSnapshot.val().company;
+      var averagref = firebase.database().ref("Rates/" +key);
+      averagref.limitToFirst(1).once("value").then(function(snapshot){
+      snapshot.forEach(function(childSnapshot) {
+        var vl = childSnapshot.val().val;
+        
+        var averagerate = Math.round(vl * 10) / 10;
+      
+        
+        // total number of stars
+        const starTotal = 5;
+        
+        const starPercentage = (averagerate  / starTotal) * 100;
+        const starPercentageRounded = `${(Math.round(starPercentage / 10) * 10)}%`;
 
        $('.lawyer').
       append(
@@ -951,13 +1025,13 @@ $(document).ready(function(){
                   '</dl>' +
               '</div>' +
               '<div class="stars-outer" style="font-size: 20px;">'+
-									'<div class="stars-inner" id="inner"></div>'+
-							'</div>'+
-              
-          
+              '<div class="stars-inner" id="inner"  style="width:'+starPercentageRounded+' ;"></div>'+
+							'</div>'+ 
           '</div><!-- /.agent -->' +
         '</div><!-- /.col-md-12 -->'
       );
+      });
+    });
      
     });
   });

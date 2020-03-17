@@ -52,7 +52,6 @@ $(document).ready(function(){
 		    	var vl = childSnapshot.val();
 		    	var key = childSnapshot.key;
 		    	
-
 		    	var Title=vl.Title;
 		        var Address=vl.Address;
 		        var Area=vl.Area;
@@ -64,10 +63,6 @@ $(document).ready(function(){
 		        var bed=vl.Beds;
 		        var baths=vl.Bathrooms;
 		        var garage=vl.Garages;
-
-		        
-
-
 		    	$('#userpropert')
 		    	.append(
 		    		'<div class="col-md-4 col-sm-4">'+
@@ -111,36 +106,51 @@ $(document).ready(function(){
 		if (user) {
 
 			var uid = user.uid;
+			var ref = firebase.database().ref("users/" +uid);
+			ref.once("value").then(function(snapshot) {
+				
+				var Fname=snapshot.val().FirstName;
+				var Lname=snapshot.val().LastName;
+				var Name=snapshot.val().AgencyName;
 			
-			$('#review').on('submit', function (e) {
-				e.preventDefault();
-				
-				
-					var rating= $("#value1").val();
-					var data2={
-					review: $("#form_review1").val(),
-					ratedby: uid
-					};
-				
+			
+				$('#review').on('submit', function (e) {
+					e.preventDefault();
+					
+					
+						var rating= $("#value1").val();
 
-				// console.log(ratingdata);
-				if(param == uid){
-					window.alert("user cant rate him/herself");
+						var data2={
+						review: $("#form_review1").val(),
+						ratedby: Fname +Lname ||Name
+						};
+						var datasave={
+							review: $("#form_review1").val(),
+							ratedby: Fname + ',' + Lname ||Name,
+							rating: $("#value1").val()
+						};
+					
 
-				}else{
-					var newKey = firebase.database().ref().child('Rates/'+param).push().key;
-					var db = firebase.database().ref();
-					db.child('Rates/'+param+ "/reviews/"+newKey).set(data2);
-					db.child('Rates/'+param+ "/rate/" +newKey).set({rating:rating});
-					document.getElementById("review").reset();
-					window.location.reload(true); 
-				}
-		
+					// console.log(ratingdata);
+					if(param == uid){
+						window.alert("user cant rate him/herself");
+
+					}else{
+						var newKey = firebase.database().ref().child('Rates/'+param).push().key;
+						var db = firebase.database().ref();
+						db.child('Rates/'+param+ "/reviews/"+newKey).set(data2);
+						db.child('Rates/'+param+ "/rate/" +newKey).set({rating:rating});
+						db.child('users/' + param+ "/rating/" + newKey).set(datasave);
+						document.getElementById("review").reset();
+						window.location.reload(true); 
+					}
+			
+				});
 			});
 		}else{
 			$('#review').on('submit', function (e) {
 				e.preventDefault();
-				window.alert("Login to review");
+				window.alert("Please Login to review");
 				
 				
 		
@@ -167,53 +177,46 @@ $(document).ready(function(){
 			
 		});
 	});
-	var rates = firebase.database().ref("Rates/" +param+ "/rate");
+	var rates = firebase.database().ref('users/' + param+ "/rating/");
 	
 	rates.once("value").then(function(snapshot){
 		snapshot.forEach(function(childSnapshot){
 			vl = childSnapshot.val().rating;
 			var key1 = childSnapshot.key;
+			var revie = childSnapshot.val().review;
+			var rater = childSnapshot.val().ratedby;
+
+			// total number of stars
+			const starTotal = 5;
+			const starPercentage = (vl / starTotal) * 100;
+			const starPercentageRounded = `${(Math.round(starPercentage / 10) * 10)}%`; 
+			// document.querySelector('#inner').style.width = starPercentageRounded;
 			
-			var reviews = firebase.database().ref("Rates/" +param+ "/reviews");
-			reviews.once("value").then(function(snapsreview){
-				snapsreview.forEach(function(childreview){
-					var revie = childreview.val().review;
-					var rater = childreview.val().ratedby;
-
-					var ref = firebase.database().ref("users/" +rater);
-					ref.once("value").then(function(snapshot) {
+				// var ref = firebase.database().ref("users/" +rater);
+				// 	ref.once("value").then(function(snapshot) {
 						
-						var Fname=snapshot.val().FirstName;
-						var Lname=snapshot.val().LastName;
+				// 		var Fname=snapshot.val().FirstName;
+				// 		var Lname=snapshot.val().LastName;
 
-						// $("#testmonials").
-    					// 	append(
-						// 		'<aside>'+
-						// 		'<p>'+revie+'</p>'+
-						// 		'<div class="stars-outer" style="font-size: 16px;">'+
-						// 			'<div class="stars-inner" id="inner"></div>'+
-						// 		'</div>'+
-						// 		'<footer>'+Fname +' ' +Lname+'</footer>'+
-						// 		'</aside>'
+						$("#testmonials").
+    						append(
+								'<aside>'+
+								'<p>'+revie+'</p>'+
+								'<div class="stars-outer" style="font-size: 16px;">'+
+								'<div class="stars-inner" id="inner"  style="width:'+starPercentageRounded+' ;"></div>'+
+								'</div>'+
+								'<footer>'+rater +'</footer>'+
+								'</aside>'
 
-						// 	);
-						// total number of stars
-						// const starTotal = 5;
-						// const starPercentage = (vl / starTotal) * 100;
-						// const starPercentageRounded = `${(Math.round(starPercentage / 10) * 10)}%`; 
-						// document.querySelector('#inner').style.width = starPercentageRounded;
-					});
+							);
+						
+					// });
 
 
 
 				});
 			});
-			
-
-			
-
-		});
-	});
+	
 	
 	
 });
