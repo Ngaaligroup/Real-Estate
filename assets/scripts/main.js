@@ -71,12 +71,13 @@ $(document).ready(function(){
               console.log(usertype);
               firebase.database().ref("users/" + uid).set(acc)
               .then(function(){
-                console.log("User Information Saved:", uid);
+                // console.log("User Information Saved:", uid);
               });
+              firebase.database().ref('Rates/'+uid+ "/average/").set({val:0});
               if (usertype=== "seller") {
                  firebase.database().ref("property owners/" + usertype + "/" + uid).set(acc)
                  .then(function(){
-                  console.log("success", uid);
+                  // console.log("success", uid);
                 });
                
                }else if(usertype=== "professional"){
@@ -112,7 +113,7 @@ $(document).ready(function(){
             })
 	          .catch(function(error){
 	            console.log("Error creating user:", error);
-              window.alert("Error creating user:", error);
+              window.alert("Error creating user:", error.message);
 	           
 	          });
 	      } else {
@@ -174,7 +175,7 @@ $(document).ready(function(){
         })
         .catch(function(error){
           // console.log("Error creating user:", error);
-          window.alert("Error creating user:", error);
+          window.alert("Error creating user:", error.message);
            
         });
     } 
@@ -195,7 +196,7 @@ $(document).ready(function(){
       };
       firebase.auth().signInWithEmailAndPassword(email, password)
         .catch(function(error) {
-          console.log("Login Failed!", error);
+          console.log("Login Failed!", error.message);
         })
         .then(function(authData) {
           auth = authData;

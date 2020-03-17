@@ -201,11 +201,12 @@ $(document).ready(function(){
 						$("#testmonials").
     						append(
 								'<aside>'+
+								'<footer>'+rater +'</footer>'+
 								'<p>'+revie+'</p>'+
 								'<div class="stars-outer" style="font-size: 16px;">'+
 								'<div class="stars-inner" id="inner"  style="width:'+starPercentageRounded+' ;"></div>'+
 								'</div>'+
-								'<footer>'+rater +'</footer>'+
+								
 								'</aside>'
 
 							);
