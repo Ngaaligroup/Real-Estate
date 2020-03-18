@@ -8,7 +8,7 @@
 
     <script type="text/javascript" src="assets/js/jquery-2.1.0.min.js"></script>
     <script src="star.js"></script>
-    
+    <link rel="stylesheet" href="assets/stars.css" type="text/css">
     <link href='http://fonts.googleapis.com/css?family=Roboto:300,400,700' rel='stylesheet' type='text/css'>
     <link href="assets/fonts/font-awesome.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.css" type="text/css">
@@ -17,7 +17,6 @@
     <link rel="stylesheet" href="assets/css/jquery.slider.min.css" type="text/css">
     <link rel="stylesheet" href="assets/css/owl.carousel.css" type="text/css">
     <link rel="stylesheet" href="assets/css/style.css" type="text/css">
-    <link rel="stylesheet" href="styles/5star.css">
 
 
 
@@ -69,7 +68,7 @@
                             </ul>
                         </li>
 
-                        <li class="has-child" id="adminhides"><a href="#">Professionals</a>
+                        <li class="has-child" id=""><a href="#">Professionals</a>
                             <ul class="child-navigation">
                                 <li><a href="architect.html">Architects</a></li>
                                 <li><a href="surveyor.html">Surveyors</a></li>
@@ -129,13 +128,15 @@
                                         <dd id="phnes">888 123 456 789</dd>
                                         <dt>Email:</dt>
                                         <dd class="useremail"><!-- <a href="mailto:#">john.doe@example.com</a> --></dd>
-                                        <dt>Avg Rating:</dt><br>
-                                        <dt>
-                                            <div id="avgrating" style="font-size: 25px;">
-                                            </div>
+                                        <dt>Avg Rating:</dt>
+                                        <dd>
+                                            
+                                            <div class="stars-outer" style="font-size: 20px;">
+                                                <div class="stars-inner"></div>
+                                              </div>
                                             <!-- <div><span id="avgvalue">4.5/5</span> <span>333</span> reviews </div><br> -->
                                             
-                                        </dt><br>
+                                        </dd><br>
                                     </dl>
                                 </div><!-- /.col-md-5 -->
                                 <div class="col-md-4 col-sm-4">
@@ -143,6 +144,10 @@
                                     <p>I care about your houses you are going to buy as they become your homes forever so i get to give 
                                     you everything good.
                                     </p>
+                                    <p></p><br>
+                                    
+                                    
+                                    <div id="avgvalue"></div>
                                 </div><!-- /.col-md-4 -->
                             </div><!-- /.row -->
                             <div class="row">
@@ -179,7 +184,7 @@
                             </div>
                             <div class="layout-expandable">
                                 <div class="row " id="userpropert">
-                                    <div class="col-md-4 col-sm-4">
+                                    <!-- <div class="col-md-4 col-sm-4">
                                         <div class="property">
                                             <a href="property-detail.html">
                                                 <div class="property-image">
@@ -210,9 +215,9 @@
                                                         </li>
                                                     </ul>
                                                 </div>
-                                            </a>
-                                        </div><!--/.property--> 
-                                    </div> <!--/.col-md-4 -->
+                                            </a> -->
+                                        <!-- </div>/.property  -->
+                                    <!-- </div> /.col-md-4 -->
                                 </div><!-- /.row-->
                             </div>
                             <div class="center">
@@ -224,8 +229,24 @@
                             <div class="col-md-5">
                                 <section id="agent-testimonials">
                                     <h3>What Other Said About Me</h3>
-                                    <div class="owl-carousel testimonials-carousel small">
-                                        <blockquote class="testimonial">
+                                    <div class="">
+                                        <div style="overflow:scroll; height:400px;">
+                                            <div id="testmonials">
+                                                <!-- <figure>
+                                                    <div class="image">
+                                                        <img alt="" src="assets/img/client-01.jpg" style="size: 20%;">
+                                                    </div>
+                                                </figure> -->
+                                                <!-- <aside >
+                                                    <p>Fusce risus metus, placerat in consectetur eu, porttitor a est sed sed dolor lorem cras adipiscing</p>
+                                                    <div class="stars-outer" style="font-size: 16px;">
+                                                        <div class="stars-inner"></div>
+                                                      </div>
+                                                    <footer>Natalie Jenkins</footer>
+                                                </aside> -->
+                                            </div>
+                                        </div>
+                                        <!-- <blockquote class="testimonial">
                                             <figure>
                                                 <div class="image">
                                                     <img alt="" src="assets/img/client-01.jpg">
@@ -246,7 +267,7 @@
                                                 <p>Fusce risus metus, placerat in consectetur eu, porttitor a est sed sed dolor lorem cras adipiscing</p>
                                                 <footer>Natalie Jenkins</footer>
                                             </aside>
-                                        </blockquote>
+                                        </blockquote> -->
                                     </div><!-- /.testimonials-carousel -->
                                 </section><!-- /#agent-testimonial -->
                             </div><!-- /.col-md-5 -->
@@ -423,7 +444,7 @@
     <!-- end Page Footer -->
 </div>
 
-<script type="text/javascript" src="assets/js/jquery-2.1.0.min.js"></script>
+<script  type="text/javascript" src="assets/js/jquery-2.1.0.min.js"></script>
 <script type="text/javascript" src="assets/js/jquery-migrate-1.2.1.min.js"></script>
 <script type="text/javascript" src="assets/bootstrap/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="assets/js/smoothscroll.js"></script>
@@ -448,17 +469,17 @@
 <!-- These scripts are made available when the app is served or deployed on Firebase Hosting -->
 <!-- If you do not want to serve/host your project using Firebase Hosting see https://firebase.google.com/docs/web/setup -->
 
-<script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-auth.js"></script>
-<script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-storage.js"></script>
-<script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-messaging.js"></script>
-<script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-firestore.js"></script>
-<script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-performance.js"></script>
-<script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-database.js"></script>
+<script rel="preload" src="https://www.gstatic.com/firebasejs/6.2.4/firebase-app.js"></script>
+<script rel="preload" src="https://www.gstatic.com/firebasejs/6.2.4/firebase-auth.js"></script>
+<script rel="preload" src="https://www.gstatic.com/firebasejs/6.2.4/firebase-storage.js"></script>
+<script rel="preload" src="https://www.gstatic.com/firebasejs/6.2.4/firebase-messaging.js"></script>
+<script rel="preload" src="https://www.gstatic.com/firebasejs/6.2.4/firebase-firestore.js"></script>
+<script rel="preload" src="https://www.gstatic.com/firebasejs/6.2.4/firebase-performance.js"></script>
+<script rel="preload" src="https://www.gstatic.com/firebasejs/6.2.4/firebase-database.js"></script>
 
 
-<script src="assets/scripts/main.js"></script>
-<script type="text/javascript" src="assets/scripts/userdetails.js"></script>
+<script rel="preload" src="assets/scripts/main.js"></script>
+<script rel="preload" type="text/javascript" src="assets/scripts/userdetails.js"></script>
 
 </body>
 </html>

@@ -1,15 +1,15 @@
 $(document).ready(function(){
   
-function getUrlParam(param)
-            {
-              param = param.replace(/([\[\](){}*?+^$.\\|])/g, "\\$1");
-              var regex = new RegExp("[?&]" + param + "=([^&#]*)");
-              var url   = decodeURIComponent(window.location.href);
-              var match = regex.exec(url);
-              return match ? match[1] : "";
+    function getUrlParam(param)
+        {
+            param = param.replace(/([\[\](){}*?+^$.\\|])/g, "\\$1");
+            var regex = new RegExp("[?&]" + param + "=([^&#]*)");
+            var url   = decodeURIComponent(window.location.href);
+            var match = regex.exec(url);
+            return match ? match[1] : "";
 
-              
-            }
+            
+        }
         var param = getUrlParam("name");
         var ref = firebase.database().ref("property owners/Agency/" +param);
         ref.once("value").then(function(snapshot) {
@@ -39,8 +39,9 @@ function getUrlParam(param)
 	        
 
 	    });
-	    var propertiesref= firebase.database().ref("users/" +param+ "/property/");
-	    $('.userpropert').html('');
+        var propertiesref= firebase.database().ref("users/" +param+ "/property/");
+        propertiesref.once("value").then(function(snapshot){
+	        $('.userpropert').html('');
             snapshot.forEach(function(childSnapshot) {
             
                 var vl = childSnapshot.val();
@@ -61,42 +62,43 @@ function getUrlParam(param)
                 var garage=vl.Garages;
 
 
-	    	$('.userpropert')
-	    	.append(
-	    		'<div class="col-md-4 col-sm-4">'+
-                    '<div class="property">'+
-                        '<ahref="property-detail.html?name='+key+'" >'+
-                            '<div class="property-image">'+
-                                '<img alt="" src="'+Photos+'">'+
-                            '</div>'+
-                            '<div class="overlay">'+
-                                '<div class="info">'+
-                                    '<div class="tag price">UGX '+price+'</div>'+
-                                    '<h3>'+Title+'</h3>'+
-                                    '<figure>'+Address+'</figure>'+
+                $('.userpropert')
+                .append(
+                    '<div class="col-md-4 col-sm-4">'+
+                        '<div class="property">'+
+                            '<ahref="property-detail.html?name='+key+'" >'+
+                                '<div class="property-image">'+
+                                    '<img alt="" src="'+Photos+'">'+
                                 '</div>'+
-                                '<ul class="additional-info">'+
-                                    '<li>'+
-                                        '<header>Area:</header>'+
-                                        '<figure><span >'+Area+ '</span>m<sup>2</sup></figure>'+
-                                    '</li>'+
-                                    '<li>'+
-                                        '<header>Beds:</header>'+
-                                        '<figure>'+bed+'</figure>'+
-                                    '</li>'+
-                                    '<li>'+
-                                        '<header>Baths:</header>'+
-                                        '<figure>'+baths+'</figure>'+
-                                    '</li>'+
-                                    '<li>'+
-                                        '<header>Garages:</header>'+
-                                        '<figure>'+garage+'</figure>'+
-                                    '</li>'+
-                                '</ul>'+
-                            '</div>'+
-                        '</a>'+
-                    '</div>'+
-                '</div>'
-	    		);
-	    })
+                                '<div class="overlay">'+
+                                    '<div class="info">'+
+                                        '<div class="tag price">UGX '+price+'</div>'+
+                                        '<h3>'+Title+'</h3>'+
+                                        '<figure>'+Address+'</figure>'+
+                                    '</div>'+
+                                    '<ul class="additional-info">'+
+                                        '<li>'+
+                                            '<header>Area:</header>'+
+                                            '<figure><span >'+Area+ '</span>m<sup>2</sup></figure>'+
+                                        '</li>'+
+                                        '<li>'+
+                                            '<header>Beds:</header>'+
+                                            '<figure>'+bed+'</figure>'+
+                                        '</li>'+
+                                        '<li>'+
+                                            '<header>Baths:</header>'+
+                                            '<figure>'+baths+'</figure>'+
+                                        '</li>'+
+                                        '<li>'+
+                                            '<header>Garages:</header>'+
+                                            '<figure>'+garage+'</figure>'+
+                                        '</li>'+
+                                    '</ul>'+
+                                '</div>'+
+                            '</a>'+
+                        '</div>'+
+                    '</div>'
+                );
+            });
+	    });
 });
