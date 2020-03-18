@@ -112,8 +112,8 @@ $(document).ready(function(){
               
             })
 	          .catch(function(error){
-	            console.log("Error creating user:", error);
-              window.alert("Error creating user:", error.message);
+	            
+              window.alert( error.message);
 	           
 	          });
 	      } else {
@@ -175,7 +175,7 @@ $(document).ready(function(){
         })
         .catch(function(error){
           // console.log("Error creating user:", error);
-          window.alert("Error creating user:", error.message);
+          window.alert( error.message);
            
         });
     } 
@@ -196,7 +196,7 @@ $(document).ready(function(){
       };
       firebase.auth().signInWithEmailAndPassword(email, password)
         .catch(function(error) {
-          console.log("Login Failed!", error.message);
+          window.alert( error.message);
         })
         .then(function(authData) {
           auth = authData;
@@ -1171,5 +1171,6 @@ $(document).ready(function(){
     });
   });
   //rating  here
+  
 
 });
