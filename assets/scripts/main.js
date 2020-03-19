@@ -113,7 +113,7 @@ $(document).ready(function(){
             })
 	          .catch(function(error){
 	            console.log("Error creating user:", error);
-              window.alert("Error creating user:", error.message);
+              window.alert("Email address already belongs to another account:", error.message);
 	           
 	          });
 	      } else {

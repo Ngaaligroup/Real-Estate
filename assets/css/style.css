@@ -110,8 +110,8 @@ blockquote .cite footer {
 }
 
 body {
-   background-color: rgb(178, 197, 235); 
-  color: rgb(115, 175, 235);
+   background-color:white; 
+  color: navy;
   font-family: 'Roboto', sans-serif;
 }
 
@@ -206,7 +206,7 @@ ul.list-links li a:hover {
 /* 2. Styling for specific pages */
 
 .page-sub-page #page-content:after {
-  background: rgb(178, 197, 235);
+  background: white;
   /* background: -moz-linear-gradient(top, rgb(5, 44, 77) 0%, rgb(49, 13, 13) 80%);
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgb(11, 18, 26)), color-stop(80%, rgb(49, 13, 13)));
   background: -webkit-linear-gradient(top, rgb(5, 44, 77) 0%, rgb(49, 13, 13) 80%);
