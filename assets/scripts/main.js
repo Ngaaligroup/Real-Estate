@@ -106,7 +106,9 @@ $(document).ready(function(){
                       db6.child(usertype + "/" + profType + "/" + uid ).update({ProfilePic: url});
                     
                     }
-                    window.location.href = "index.html";
+                    // window.location.href = "index.html";
+                    document.getElementById("form-create-account").reset();
+                    window.location.replace("index.html#nocache");
                   });
                 });
               
@@ -134,7 +136,7 @@ $(document).ready(function(){
         AgencyName : $('#create-agency-title').val(),
         Description : $('#create-agency-description').val(),
         address : $("#create-agency-address").val(),
-        
+        ProfilePic: "",
         license : $("#create-agency-license").val(),
         city : $("#create-agency-city").val(),
         postal : $("#create-agency-zip").val(),
@@ -155,8 +157,8 @@ $(document).ready(function(){
         .createUserWithEmailAndPassword(agency.email, passd.password)
         .then(function(user){
           //now user is needed to be logged in to save data
-          window.location.href = "index.html";
-          document.getElementById("form-create-agency").reset();
+          // window.location.href = "index.html";
+          
           auth = user;
           var uid = firebase.auth().currentUser.uid;
           
@@ -164,17 +166,33 @@ $(document).ready(function(){
             .then(function(){
               // console.log("User Information Saved:", uid);
             });
+          firebase.database().ref('Rates/'+uid+ "/average/").set({val:0});
          
           //saving information to the property owners
           firebase.database().ref("property owners/Agency/" + uid).set(agency)
             .then(function(){
-              // console.log("success", uid);
+              
             });
-           window.location.href = "index.html";
+            var storagep = firebase.storage();
+            var storageRefp = storagep.ref();
+            var filep = $(".agencypic")[0].files[0];
+            var imgRefp = storageRefp.child(uid + "/ProfilePic/" + filep.name);
+            console.log(imgRefp);
+            var uploadp = imgRefp.put(filep).then(function(snapshot){
+              snapshot.ref.getDownloadURL().then(function(url) {
+                var dbp  = firebase.database().ref();
+                dbp.child("users/" + uid).update({ProfilePic: url});
+                dbp.child("property owners/Agency/" + uid).update({ProfilePic: url});
+                document.getElementById("form-create-agency").reset();
+                window.location.replace("index.html#nocache");
+
+              });
+            });
+           
             
         })
         .catch(function(error){
-          // console.log("Error creating user:", error);
+          console.log("Error creating user:", error);
           window.alert( error.message);
            
         });
@@ -211,7 +229,8 @@ $(document).ready(function(){
   $('#sign-out').on('click', function(e) {
     e.preventDefault();
     firebase.auth().signOut();
-    window.location.href = "sign-in.html";
+    // window.location.href = "sign-in.html";
+    window.location.replace("sign-in.html#nocache");
   });
 
   firebase.auth().onAuthStateChanged(function(user) {
@@ -1054,6 +1073,19 @@ $(document).ready(function(){
       var license=childSnapshot.val().license;
       var postal=childSnapshot.val().postal;
       var properties=childSnapshot.child("property").numChildren();
+      var averagref = firebase.database().ref("Rates/" +key);
+      averagref.limitToFirst(1).once("value").then(function(snapshot){
+      snapshot.forEach(function(childSnapshot) {
+        var vl = childSnapshot.val().val;
+        
+        var averagerate = Math.round(vl * 10) / 10;
+      
+        
+        // total number of stars
+        const starTotal = 5;
+        
+        const starPercentage = (averagerate  / starTotal) * 100;
+        const starPercentageRounded = `${(Math.round(starPercentage / 10) * 10)}%`;
       
 
       $('.agencie').
@@ -1078,11 +1110,15 @@ $(document).ready(function(){
                     '<br>'+
                     '<strong>'+Name+'</strong><br>'+
                     ''+address+'<br>'+
-                    ''+postal+''+
+                    ''+postal+'<br>'+
+                    '<div class="stars-outer" style="font-size: 20px;">'+
+                    '<div class="stars-inner" id="inner"  style="width:'+starPercentageRounded+' ;"></div>'+
                 '</address>'+
             '</div>'+
           '</div><!-- /.agency -->'
           );
+        });
+      });
 
       
 

@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="ThemeStarz">
 
+    <script type="text/javascript" src="assets/js/jquery-2.1.0.min.js"></script>
+    <script src="star.js"></script>
     <link href='http://fonts.googleapis.com/css?family=Roboto:300,400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="assets/stars.css" type="text/css">
     <link href="assets/fonts/font-awesome.css" rel="stylesheet" type="text/css">
@@ -84,9 +86,7 @@
 						 
                     </ul>
                 </nav><!-- /.navbar collapse-->
-                <div class="add-your-property">
-                    <a href="submit.html" class="btn btn-default"><i class="fa fa-plus"></i><span class="text">Add Your Property</span></a>
-                </div>
+                
             </header><!-- /.navbar -->
         </div><!-- /.container -->
     </div><!-- /.navigation -->
@@ -133,8 +133,11 @@
                                         <dd id="phnes">888 123 456 789</dd>
                                         <dt>Email:</dt>
                                         <dd class="useremail"><!-- <a href="mailto:#">john.doe@example.com</a> --></dd>
-                                        <!-- <dt>Skype:</dt>
-                                        <dd>genius.properties</dd> -->
+                                        <dt>Average Rating:</dt>
+                                        <dd>
+                                            <div class="stars-outer" style="font-size: 20px;">
+                                                <div class="stars-inner" id="inner" ></div>
+                                        </dd>
                                     </dl>
                                 </div><!-- /.col-md-5 -->
                                 <div class="col-md-4 col-sm-4">
@@ -148,6 +151,18 @@
                                             <a href="#" class="fa fa-facebook btn btn-grey-dark"></a>
                                             <a href="#" class="fa fa-linkedin btn btn-grey-dark"></a>
                                         </div>
+                                        <form id="review" method="post"  class="clearfix">
+                                            <div id="ratin" style="font-size:40px ;">
+                                            </div>
+                                            <div><span id="value1"></span></div>
+                                            <div class="form-group">
+                                                <label for="form_review">Your Review<em>*</em></label>
+                                                <textarea class="form-control" id="form_review1" rows="2" name="form_review1"></textarea>
+                                            </div><!-- /.form-group -->
+                                            <div class="form-group clearfix">
+                                                <button type="submit" class="btn pull-right btn-default submitreview1" id=" submitreview1">Review</button>
+                                            </div><!-- /.form-group -->
+                                        </form>
                                     </div><!-- /.block -->
                                 </div><!-- /.col-md-4 -->
                             </div><!-- /.row -->
@@ -210,29 +225,13 @@
                             <div class="col-md-5">
                                 <section id="agent-testimonials">
                                     <h3>What Other Said About Us</h3>
-                                    <div class="owl-carousel testimonials-carousel small">
-                                        <blockquote class="testimonial">
-                                            <figure>
-                                                <div class="image">
-                                                    <img alt="" src="assets/img/client-01.jpg">
-                                                </div>
-                                            </figure>
-                                            <aside class="cite">
-                                                <p>Fusce risus metus, placerat in consectetur eu, porttitor a est sed sed dolor lorem cras adipiscing</p>
-                                                <footer>Natalie Jenkins</footer>
-                                            </aside>
-                                        </blockquote>
-                                        <blockquote class="testimonial">
-                                            <figure>
-                                                <div class="image">
-                                                    <img alt="" src="assets/img/client-01.jpg">
-                                                </div>
-                                            </figure>
-                                            <aside class="cite">
-                                                <p>Fusce risus metus, placerat in consectetur eu, porttitor a est sed sed dolor lorem cras adipiscing</p>
-                                                <footer>Natalie Jenkins</footer>
-                                            </aside>
-                                        </blockquote>
+                                    <div class="">
+                                        <div style="overflow:scroll; height:400px;">
+                                            <div id="testmonials">
+                                                
+                                            </div>
+                                        </div>
+                                        
                                     </div><!-- /.testimonials-carousel -->
                                 </section><!-- /#agent-testimonial -->
                             </div><!-- /.col-md-5 -->

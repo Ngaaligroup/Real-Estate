@@ -70,7 +70,7 @@ $(document).ready(function(){
 						//   console.log("Remove succeeded.")
 						})
 						.catch(function(error) {
-						  console.log("Remove failed: " + error.message);
+						  console.log( error.message);
 						});
 
 						var ref3 = firebase.database().ref("properties/Land/" +key);
