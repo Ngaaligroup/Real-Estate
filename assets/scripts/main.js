@@ -1074,6 +1074,7 @@ $(document).ready(function(){
       var description=childSnapshot.val().Description;
       var license=childSnapshot.val().license;
       var postal=childSnapshot.val().postal;
+      var ProfilePic=childSnapshot.val().ProfilePic;
       var properties=childSnapshot.child("property").numChildren();
       var averagref = firebase.database().ref("Rates/" +key);
       averagref.limitToFirst(1).once("value").then(function(snapshot){
@@ -1094,7 +1095,7 @@ $(document).ready(function(){
         append(
           '<div class="agency">'+
           //adding agency logo
-            '<a href="agency-detail.html?name='+key+'" class="agency-image"><img alt="" src="assets/img/agency-logo-01.png"></a>'+
+            '<a href="agency-detail.html?name='+key+'" class="agency-image"><img alt="" src="'+ProfilePic+'" onerror=this.src="assets/img/agency-logo-01.png"></a>'+
             '<div class="wrapper">'+
                 '<header><a href="agency-detail.html?name='+key+'"><h2>'+Name+'</h2></a></header>'+
                 '<dl>'+
