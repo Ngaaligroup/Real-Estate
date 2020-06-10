@@ -108,17 +108,22 @@ $(document).ready(function(){
                     }
                     // window.location.href = "index.html";
                     document.getElementById("form-create-account").reset();
-                    window.location.replace("index.html#nocache");
+                    
                   });
                 });
+              user.sendEmailVerification().then(function() {
+                // Email sent.
+                window.location.replace("confirmEmail.html");
+              }, function(error) {
+                // An error happened.
+              });
               
             })
 	          .catch(function(error){
-	            console.log("Error creating user:", error);
-              window.alert("Email address already belongs to another account:", error.message);
-	            
+              console.log("Error creating user:", error);
+              console.log(error.message);
               window.alert( error.message);
-	           
+              
 	          });
 	      } else {
           window.alert("Couldnt create user: passwords dont match");
@@ -186,11 +191,16 @@ $(document).ready(function(){
                 dbp.child("users/" + uid).update({ProfilePic: url});
                 dbp.child("property owners/Agency/" + uid).update({ProfilePic: url});
                 document.getElementById("form-create-agency").reset();
-                window.location.replace("index.html#nocache");
+                // window.location.replace("index.html#nocache");
 
               });
             });
-           
+          user.sendEmailVerification().then(function() {
+            // Email sent.
+            window.location.replace("confirmEmail.html");
+          }, function(error) {
+            // An error happened.
+          });
             
         })
         .catch(function(error){
