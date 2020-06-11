@@ -63,7 +63,8 @@ $(document).ready(function(){
 	        firebase.auth()
 	          .createUserWithEmailAndPassword(acc.email, pass.password)
 	          .then(function(user){
-	            //now user is needed to be logged in to save data
+              //now user is needed to be logged in to save data
+              var usern = firebase.auth().currentUser;
 	            auth = user;
               var uid = firebase.auth().currentUser.uid;
               // window.location.href = "index.html";
@@ -112,7 +113,7 @@ $(document).ready(function(){
                     
                   });
                 });
-              user.sendEmailVerification().then(function() {
+              usern.sendEmailVerification().then(function() {
                 // Email sent.
                 window.location.replace("confirmEmail.html");
               }, function(error) {
@@ -169,6 +170,7 @@ $(document).ready(function(){
           
           auth = user;
           var uid = firebase.auth().currentUser.uid;
+          var usern = firebase.auth().currentUser;
           
           firebase.database().ref("users/" + uid).set(agency)
             .then(function(){
@@ -196,7 +198,7 @@ $(document).ready(function(){
 
               });
             });
-          user.sendEmailVerification().then(function() {
+          usern.sendEmailVerification().then(function() {
             // Email sent.
             window.location.replace("confirmEmail.html");
           }, function(error) {
