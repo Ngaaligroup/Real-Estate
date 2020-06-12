@@ -56,7 +56,7 @@
                         <li><a href="index.html">Homepage</a>
                        
                         </li>
-                        <li class="has-child" id="adminhide"><a href="#">Properties</a>
+                        <li class="has-child" id="adminhide"><a href="#">Property</a>
                            <ul class="child-navigation">
                                 <li><a href="land.html">Land</a></li>
                                 <li><a href="properties-listing-lines.html">Building</a></li>
@@ -66,7 +66,6 @@
                             <ul class="child-navigation">
                                 <li><a href="architect.html">Architects</a></li>
                                 <li><a href="surveyor.html">Surveyors</a></li>
-                                <li><a href="hardware.html">Hardware</a></li>
                                 <li><a href="civilEngineer.html">Civil Engineers</a></li>
                                 <li><a href="Lawyer.html">Lawyers</a></li>
                             </ul>
@@ -78,9 +77,11 @@
                                 <li><a href="agencies-listing.html">Agencies Listing</a></li>
                             </ul>
                         </li>
+                        
+                        <li><a href="hardware.html">Hardware</a></li>
                         <li><a href="submit.html" class="hide" id="submitlin">Add Your Property</a></li>
                         
-                        <li><a href="contact.html">Contact</a></li>
+                        <!-- <li><a href="contact.html">Contact</a></li> -->
                     </ul>
                 </nav><!-- /.navbar collapse-->
                 <div class="add-your-property">
@@ -109,33 +110,29 @@
                     <form role="form" id="form-create-account" method="post" >
                         <div class="radio" id="create-account-user">
                             <label>
-                                <input type="radio" id="account-type-user" name="account-type" value="Buyer" required>Buyer
+                                <input type="radio" id="account-type-user" name="account-type" value="Buyer" >Agent
                             </label>
                         </div>
                         <div class="radio" id="agent-switch" >
                             <label>
-                                <input type="radio" id="account-type-agent" name="account-type" value="professional" required>proffessionals
+                                <input type="radio" id="account-type-agent" name="account-type" value="professional" >Professionals
                             </label>
                         </div>
-						<div class="radio" id="professional account" >
-                            <label>
-                                <a href="create-agency.html"  id="account-type-professional" name="account-type" >Register agency.</a>
-                            </label>
-                        </div>
+						
 						<div class="radio" id="regular seller" >
                             <label>
-                                <input type="radio" id="account-type-regular seller" name="account-type" value="seller" required>Regular seller
+                                <input type="radio" id="account-type-regular seller" name="account-type" value="seller" >Broker
                             </label>
                         </div>
                         <div id="agency" class="disabled">
                             <div class="form-group">
-                                <label for="account-agency">proffesion</label>
+                                <label for="account-agency">Profession</label>
                                 <!-- <input type="text" class="form-control" id="create-proffesion" > -->
                                 <select name="proffesion" id="create-proffesion" class="prof1">
                                     <option value="architect">Architect</option>
-                                    <option value="surveyor">surveyor</option>
-                                    <option value="hardware">hardware</option>
-                                    <option value="civilEngineer">civilEngineer</option>
+                                    <option value="surveyor">Surveyor</option>
+                                    <option value="hardware">Hardware</option>
+                                    <option value="civilEngineer">Civil Engineer</option>
                                     <option value="Lawyer">Lawyer</option>
                                 </select>
                             </div>
