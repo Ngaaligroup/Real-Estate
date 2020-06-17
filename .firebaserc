@@ -1,5 +1,6 @@
 {
   "projects": {
-    "default": "real-estate-9882c"
+    "default": "realestates-b978c",
+    "RealEstate": "realestates-b978c"
   }
 }

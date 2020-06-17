@@ -115,7 +115,7 @@ $(document).ready(function(){
                 });
               usern.sendEmailVerification().then(function() {
                 // Email sent.
-                window.location.replace("confirmEmail.html");
+                // window.location.replace("confirmEmail.html");
               }, function(error) {
                 // An error happened.
               });
@@ -200,7 +200,7 @@ $(document).ready(function(){
             });
           usern.sendEmailVerification().then(function() {
             // Email sent.
-            window.location.replace("confirmEmail.html");
+            // window.location.replace("confirmEmail.html");
           }, function(error) {
             // An error happened.
           });
