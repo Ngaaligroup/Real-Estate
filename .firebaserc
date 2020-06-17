@@ -1,6 +1,7 @@
 {
   "projects": {
     "default": "realestates-b978c",
-    "RealEstate": "realestates-b978c"
+    "RealEstate": "realestates-b978c",
+    "realestates": "realestates-b978c"
   }
 }
