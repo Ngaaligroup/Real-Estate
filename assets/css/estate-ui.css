@@ -1,0 +1,126 @@
+/*
+ Global values
+ font-family: Sen,Ubuntu,'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ Colors :
+  #7e1e6e;
+*/
+
+html , body{
+    overflow-x: hidden;
+}
+
+body {
+    position : relative;
+    font-family: Sen,Ubuntu,'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+}
+
+/* styles for the top header  */
+.top-header{
+    padding:10px 20px;
+    background-color: #7e1e6e;
+    
+    border-bottom: 2px solid green;
+}
+.top-header-margin{
+    width: max-content;
+    margin:0% 5%;
+    display:inline-block;
+}
+
+.actions a {
+    margin:0px 5px;
+}
+
+.btn.btn-top-header-links, select.btn-top-header-links {
+    font-size:12px;
+    
+    background-color: #7e1e6e;
+    color: whitesmoke;
+    border: 1px solid whitesmoke;
+    border-radius: 10px;
+    
+}
+
+.btn.btn-top-header-links:hover {
+    background-color: whitesmoke;
+    color: #7e1e6e;    
+    font-weight:bold;
+}
+
+/* for the main menu */
+.mainMenu-container{
+    background-color:rgba(0, 0, 0, 0.5);
+    padding:30px 20px !important;
+}
+
+.navbar-nav > .nav-item{
+    margin:0% 1%;
+}
+
+.nav-link {
+    padding: .0rem 1.5rem;
+    color:whitesmoke;
+}
+
+.nav-item:hover {
+    background-color:rgba(126, 30, 110, 0.6);
+    border-bottom: 4px solid #4e0642;
+
+}
+
+.nav-item:hover > a.nav-link , .dropdown-menu > a.dropdown-item {
+    color:whitesmoke;
+    text-decoration:none;
+}
+
+.nav-item.active {
+    background-color: rgba(249, 249, 249, 0.6);
+    border-bottom: 4px solid #4e0642;
+}
+
+.nav-item.active > a {
+    color:#4e0642;
+}
+
+.dropdown-menu {
+    background-color: rgba(126, 30, 110, 0.8) !important;
+}
+
+.dropdown-item:hover {
+    color : #4e0642 !important;
+}
+
+.btn.btn-add-property {
+    -moz-box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2);
+    -webkit-box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2);
+    -moz-transition: 0.2s;
+    -webkit-transition: 0.2s;
+    transition: 0.2s;
+    background-color: #7e1e6e;
+    color: #fff;
+}
+
+.btn.btn-add-property:hover{
+    background-color: whitesmoke;
+    color: #550848 !important;
+}
+
+/* // Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) { }
+
+/* // Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {  }
+
+/* // Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {  }
+
+/* // Large devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199.98px) {  }
+
+/* // Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) { 
+    .navbar-nav{
+        width:70%;
+    }
+ }

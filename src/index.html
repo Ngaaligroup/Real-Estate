@@ -3,90 +3,111 @@
 <html lang="en-US">
 <head>
     <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="ThemeStarz">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- <meta name="author" content="ThemeStarz"> -->
 
     <link href='http://fonts.googleapis.com/css?family=Roboto:300,400,700' rel='stylesheet' type='text/css'>
     <link href="assets/fonts/font-awesome.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.css" type="text/css">
+    <!-- <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.css" type="text/css"> commented out local bootstrap css so that it can be loaded from the cdn -->
     <link rel="stylesheet" href="assets/css/bootstrap-select.min.css" type="text/css">
     <link rel="stylesheet" href="assets/css/jquery.slider.min.css" type="text/css">
     <link rel="stylesheet" href="assets/css/owl.carousel.css" type="text/css">
     <link rel="stylesheet" href="assets/css/owl.transitions.css" type="text/css">
     <link rel="stylesheet" href="assets/css/style.css" type="text/css">
 
+    <!-- estate ui redesigning css written by Kevin -->
+    <link rel="stylesheet" href="assets/css/estate-ui.css" type="text/css">
+    <!-- latest bootstrap cdn -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
     <title> ESTATE | Homepage</title>
 
 </head>
 
-<body  class="page-homepage navigation-fixed-top page-slider horizontal-search" id="page-top" data-spy="scroll" data-target=".navigation" data-offset="90">
+<body  class="page-homepage navigation-fixed-top page-slider horizontal-search" id="page-top" data-spy="scroll" data-target=".main-header" data-offset="90">
+    <!-- changed class navigation to main-header -->
 <!-- Wrapper -->
 <div class="wrapper">
 
-    <div class="navigation">
-        <div class="secondary-navigation">
-            <div class="container"> 
-                <div class="user-area">
+    <header class="main-header"> <!-- top header starts here-->
+        <div class="top-header">
+                 
+                <div class="user-area d-flex flex-row-reverse">
                     <div class="actions" id="act">
-                        <a href="create-agency.html" class="promoted" ><strong>Agency</strong> </a>
-                        <a href="create-account.html" class="promoted"><strong>Create Account</strong></a>
-                        <a href="sign-in.html" id="sign-in" class="hide"><strong>SignIn</strong></a>
-                        <a href="sign-in.html" id="sign-out" class="hide" style="padding-right: 20px">Sign Out</a>
+                        <a href="create-agency.html" class="promoted btn btn-top-header-links" >Agency </a>
+                        <a href="create-account.html" class="promoted btn btn-top-header-links">Create Account</a>
+                        <a href="sign-in.html" id="sign-in" class="hide btn btn-top-header-links"> Sign In</a>
+                        <a href="sign-in.html" id="sign-out" class="hide btn btn-top-header-links">Sign Out</a>
+                        <!-- style="padding-right: 20px" <strong></strong>-->
                     </div>
                    
                 </div>
-            </div>
+         
         </div>
-        <div class="container">
-            <header class="navbar" id="top" role="banner">
-                <div class="navbar-header">
-                    <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <div class="navbar-brand nav" id="brand">
-                        <a href="index.html"><img src="assets/img/estate.png" alt="brand"></a>
+        <nav class="navbar sticky-top navbar-expand-lg mainMenu-container">
+            <a href="index.html" id="brand">
+                <img src="assets/img/estate.png" alt="brand">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse" aria-controls="mainMenu" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          
+            <div class="collapse navbar-collapse my-lg-0 bs-navbar-collapse" id="mainMenu">
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                   <a class="nav-link" href="#">Homepage</a>                    
+                </li>
+              
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="adminhide" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Property
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="adminhide">
+                    <a class="dropdown-item" href="land.html">Land</a>
+                    <a class="dropdown-item" href="properties-listing-lines.html">Building</a>
+                   
+                  </div>
+                </li>
+               
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="adminhides" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Professionals
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="adminhides">
+                      <a class="dropdown-item" href="architect.html">Architects</a>
+                      <a class="dropdown-item" href="surveyor.html">Surveyors</a>
+                      <a class="dropdown-item" href="civilEngineer.html">Civil Engineers</a>
+                      <a class="dropdown-item" href="Lawyer.html">Lawyers</a>                     
                     </div>
-                </div>
-                <nav class="collapse navbar-collapse bs-navbar-collapse navbar-right" role="navigation">
-                    <ul class="nav navbar-nav">
-                        <li class="active"><a href="#">Homepage</a>
-                            
-                        </li>
-                        <li class="has-child" id="adminhide"><a href="#">Property</a>
-                           <ul class="child-navigation">
-                                <li><a href="land.html">Land</a></li>
-                                <li><a href="properties-listing-lines.html">Building</a></li>
-                            </ul>
-                        </li>
-                    
-                        <li class="has-child" id="adminhides"><a href="#">Professionals</a>
-                            <ul class="child-navigation">
-                                <li><a href="architect.html">Architects</a></li>
-                                <li><a href="surveyor.html">Surveyors</a></li>
-                                <li><a href="civilEngineer.html">Civil Engineers</a></li>
-                                <li><a href="Lawyer.html">Lawyers</a></li>
-                            </ul>
-                        </li>
-                        <li class="has-child" id="adminhides"><a href="#">Agents & Agencies</a>
-                            <ul class="child-navigation">
-                                <li><a href="agents-listing.html">Agents Listing</a></li>
-                                <li><a href="agencies-listing.html">Agencies Listing</a></li>
-                            </ul>
-                        </li>
-                        
-                        <li><a href="hardware.html">Hardware</a></li>
-                    </ul>
-                </nav><!-- /.navbar collapse-->
-                
-                <div class="add-your-property">
-                    <a href="submit.html" class="btn btn-default"><i class="fa fa-plus"></i><span class="text">Add Your Property</span></a>
-                </div>
-            </header><!-- /.navbar -->
-        </div><!-- /.container -->
-    </div><!-- /.navigation -->
+                  </li>
+
+                  <li class="nav-item dropdown">
+                      <!-- id="adminhides" -->
+                    <a class="nav-link dropdown-toggle" href="#" id="agents_and_agencies" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Agents & Agencies
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="agents_and_agencies">
+                      <a class="dropdown-item" href="agents-listing.html">Agents Listing</a>
+                      <a class="dropdown-item" href="agencies-listing.html">Agencies Listing</a>
+                     
+                    </div>
+                  </li>
+
+                  <li class="nav-item">
+                    <a class="nav-link" href="hardware.html">Hardware</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Contact Us</a>
+                  </li>
+                  <li class="add-your-property ml-3">
+                    <!-- <a href="submit.html" class="btn btn-default"><i class="fa fa-plus"></i><span class="text">Add Your Property</span></a> -->
+                    <a href="submit.html" class="btn btn-add-property ml-auto"><i class="fa fa-plus" title="Add Your Property"></i></a>
+                  </li>
+              </ul>
+          
+            </div>
+          </nav>       
+    </header><!-- /.navigation -->
 
     <!-- Slider -->
      <!-- <div id="slider" class="loading has-parallax">
@@ -233,6 +254,12 @@
 </div>
 
 <div id="overlay"></div>
+
+<!-- <script type="text/javascript" src="assets/js/jquery-2.1.0.min.js"></script> -->
+<!-- latest jquery cdn and bootstrap js dependencies -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 
 <script type="text/javascript" src="assets/js/jquery-2.1.0.min.js"></script>
 <script type="text/javascript" src="assets/js/jquery-migrate-1.2.1.min.js"></script>
