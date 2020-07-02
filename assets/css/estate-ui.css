@@ -135,7 +135,27 @@ body {
 .dropdown-menu.show .dropdown-item{
     padding:10px;
 }
+    
+  /* The sticky class is added to the header with JS when it reaches its scroll position */
+  .sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+  }
+  
+  /* Add some top padding to the page content to prevent sudden quick movement (as the header gets a new position at the top of the page (position:fixed and top:0) */
+  .sticky + .page-content {
+    padding-top: 102px;
+  }
+/* end of header styles */
 
+
+/* begin footer styles */
+#page-footer .inner #footer-main{
+    border-bottom: 2px solid whitesmoke;
+}
+/* end footer style */
 
 /* // Extra small devices (portrait phones, less than 576px) */
 @media (max-width: 575.98px) {

@@ -30,7 +30,7 @@
 <!-- Wrapper -->
 <div class="wrapper">
 
-    <header class="main-header sticky-top"> <!-- top header starts here-->
+    <header class="main-header" id="main-header"> <!-- top header starts here-->
         <div class="top-header">
                  
                 <div class="user-area d-flex flex-row-reverse">
@@ -133,7 +133,8 @@
     </div>  -->
     <!-- end Slider -->
 
-     <div class="search-box-wrapper"> 
+    <!-- search box section -- currently commented out -->
+    <!-- <div class="search-box-wrapper"> 
         <div class="search-box-inner">
             <div class="container">
                 <div class="search-box map">
@@ -145,13 +146,13 @@
             </div>
         </div> 
         <div class="background-image"><img class="opacity-20" src="assets/img/searchbox-bg.jpg"></div>
-    </div>
+    </div> -->
       
 
     <!-- Page Content -->
     <div id="page-content">
         <section id="banner">
-            <div class="block has-dark-background background-color-default-darker center text-banner">
+            <div class="block center text-banner">
                 <div class="container">
                     <h1 class="no-bottom-margin no-border">welcome to REAL ESTATE</h1>
                 </div>
@@ -295,7 +296,24 @@
     $(window).load(function(){
         initializeOwl(false);
     });
-</script>
+
+
+//js for sticky header 
+    window.onscroll = function() {myFunction()};
+    
+    var header = document.getElementById("main-header");
+    var sticky = header.offsetTop;
+    
+    function myFunction() {
+      if (window.pageYOffset > sticky) {
+        header.classList.add("sticky");
+      } else {
+        header.classList.remove("sticky");
+      }
+    }
+
+
+    </script>
 
 <!-- Import and configure the Firebase SDK -->
 <!-- These scripts are made available when the app is served or deployed on Firebase Hosting -->

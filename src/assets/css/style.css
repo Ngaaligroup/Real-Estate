@@ -4950,9 +4950,10 @@ body, html {
 }
 
 .wrapper {
-  display: table;
+  /* display: table;
   height: 100%;
-  width: 100%;
+  width: 100%; */
+  height: auto;
 }
 
 #page-content {
@@ -4960,8 +4961,9 @@ body, html {
 }
 
 #page-footer {
-  display: table-row;
-  height: 1px;
+  /* display: table-row;
+  height: 1px; */
+  display:block;
 }
 
 /* 7. Responsive */
