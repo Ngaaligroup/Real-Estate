@@ -83,7 +83,7 @@ body {
 }
 
 .dropdown-menu {
-    background-color: rgba(126, 30, 110, 0.8) !important;
+    background-color: rgba(126, 30, 110, 0.9) !important;
 }
 
 .dropdown-item:hover {
@@ -106,11 +106,52 @@ body {
     color: #550848 !important;
 }
 
+.navbar-toggler .navbar-toggler-icon{
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(245,245,245, 100)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+.navbar-toggler{
+    border: 1px solid whitesmoke !important;
+}
+
+.navbar-toggler:hover {
+    background-color:#4e0642;
+    border-color:#4e0642 !important;
+}
+
+.dropdown-menu.show{
+    background-color:rgba(126, 30, 110, 0.6);
+    padding:2% 0%;
+}
+
+.show .nav-item{
+    margin : 0;
+}
+
+.show .nav-item .nav-link{
+    padding:10px;
+}
+
+.dropdown-menu.show .dropdown-item{
+    padding:10px;
+}
+
+
 /* // Extra small devices (portrait phones, less than 576px) */
-@media (max-width: 575.98px) { }
+@media (max-width: 575.98px) {
+    .show{
+        background-color:rgba(126, 30, 110, 0.6);
+        padding:2% 0%;
+    }
+ }
 
 /* // Small devices (landscape phones, 576px and up) */
-@media (min-width: 576px) and (max-width: 767.98px) {  }
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .show{
+        background-color:rgba(126, 30, 110, 0.6);
+        padding:2% 0%;
+    }
+  }
 
 /* // Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) and (max-width: 991.98px) {  }

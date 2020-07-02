@@ -8,7 +8,8 @@
 
     <link href='http://fonts.googleapis.com/css?family=Roboto:300,400,700' rel='stylesheet' type='text/css'>
     <link href="assets/fonts/font-awesome.css" rel="stylesheet" type="text/css">
-    <!-- <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.css" type="text/css"> commented out local bootstrap css so that it can be loaded from the cdn -->
+    <!-- <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.css" type="text/css">  -->
+        <!--commented out local bootstrap css so that it can be loaded from the cdn -->
     <link rel="stylesheet" href="assets/css/bootstrap-select.min.css" type="text/css">
     <link rel="stylesheet" href="assets/css/jquery.slider.min.css" type="text/css">
     <link rel="stylesheet" href="assets/css/owl.carousel.css" type="text/css">
@@ -29,7 +30,7 @@
 <!-- Wrapper -->
 <div class="wrapper">
 
-    <header class="main-header"> <!-- top header starts here-->
+    <header class="main-header sticky-top"> <!-- top header starts here-->
         <div class="top-header">
                  
                 <div class="user-area d-flex flex-row-reverse">
@@ -44,15 +45,23 @@
                 </div>
          
         </div>
-        <nav class="navbar sticky-top navbar-expand-lg mainMenu-container">
-            <a href="index.html" id="brand">
+        <nav class="navbar navbar-default navbar-expand-lg mainMenu-container">
+            <a class="navbar-brand" href="index.html" id="brand">
                 <img src="assets/img/estate.png" alt="brand">
             </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse" aria-controls="mainMenu" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainMenu" aria-controls="mainMenu" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              
             </button>
+
+            <!-- <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button> -->
           
-            <div class="collapse navbar-collapse my-lg-0 bs-navbar-collapse" id="mainMenu">
+            <div class="collapse navbar-collapse" id="mainMenu">
               <ul class="navbar-nav ml-auto">
                 <li class="nav-item active">
                    <a class="nav-link" href="#">Homepage</a>                    
