@@ -7,9 +7,15 @@
     <!-- <meta name="author" content="ThemeStarz"> -->
 
     <link href='http://fonts.googleapis.com/css?family=Roboto:300,400,700' rel='stylesheet' type='text/css'>
-    <link href="assets/fonts/font-awesome.css" rel="stylesheet" type="text/css">
+    
+    <!--commented out local bootstrap and fontawesome css so that it can be loaded from the cdn -->
+    <!-- <link href="assets/fonts/font-awesome.css" rel="stylesheet" type="text/css"> -->   
     <!-- <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.css" type="text/css">  -->
-        <!--commented out local bootstrap css so that it can be loaded from the cdn -->
+
+    <!-- local bootrap and fontawesom css for when internet is not available to use cdn ->
+    <link rel="stylesheet" href="assets/estate-ui-local/bootstrap4/bootstrap.min.css" type="text/css"> 
+    <link rel="stylesheet" href="assets/estate-ui-local/fontawesome/css/fontawesome-all.css" type="text/css"> -->
+        
     <link rel="stylesheet" href="assets/css/bootstrap-select.min.css" type="text/css">
     <link rel="stylesheet" href="assets/css/jquery.slider.min.css" type="text/css">
     <link rel="stylesheet" href="assets/css/owl.carousel.css" type="text/css">
@@ -18,8 +24,9 @@
 
     <!-- estate ui redesigning css written by Kevin -->
     <link rel="stylesheet" href="assets/css/estate-ui.css" type="text/css">
-    <!-- latest bootstrap cdn -->
+    <!-- latest bootstrap and fontawesome cdn -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
     <title> ESTATE | Homepage</title>
 
@@ -30,7 +37,7 @@
 <!-- Wrapper -->
 <div class="wrapper">
 
-    <header class="main-header" id="main-header"> <!-- top header starts here-->
+    <header class="main-header header-sticky" id="main-header"> <!-- top header starts here-->
         <div class="top-header">
                  
                 <div class="user-area d-flex flex-row-reverse">
@@ -118,7 +125,7 @@
           </nav>       
     </header><!-- /.navigation -->
 
-    <!-- Slider -->
+    <!-- Slider section-->
      <!-- <div id="slider" class="loading has-parallax">
         <div id="loading-icon"><i class="fa fa-cog fa-spin"></i></div>
         <div class="owl-carousel homepage-slider carousel-full-width">
@@ -131,6 +138,46 @@
             </div>
         </div>
     </div>  -->
+    <section class="slider-section" id="slider-section">
+        <div id="mainSlider" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+              <li data-target="#mainSlider" data-slide-to="0" class="active"></li>
+              <li data-target="#mainSlider" data-slide-to="1"></li>
+              <li data-target="#mainSlider" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+              <div class="carousel-item active" style="background-image:linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)),url(assets/img/bg_images/image16.jpg);">
+                <!-- <img src="assets/img/estate-ui/image16.jpg" class="d-block w-100" alt="WELCOME TO ESTATE"> -->
+                <div class="carousel-caption d-md-block">
+                  <h2>Welcome To Estate</h2>
+                  <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                </div>
+              </div>
+              <div class="carousel-item" style="background-image:linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)),url(assets/img/bg_images/image17.jpg);">
+                <!-- <img src="assets/img/estate-ui/image17.jpg" class="d-block w-100" alt="WELCOME TO ESTATE"> -->
+                <div class="carousel-caption d-md-block">
+                  <h2>Second slide Heading</h2>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </div>
+              </div>
+              <div class="carousel-item" style="background-image:linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)),url(assets/img/bg_images/image5.jpg);">
+                <!-- <img src="assets/img/estate-ui/image5.jpg" class="d-block w-100" alt="WELCOME TO ESTATE"> -->
+                <div class="carousel-caption d-md-block">
+                  <h2>Third slide Heading</h2>
+                  <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+                </div>
+              </div>
+            </div>
+            <a class="carousel-control-prev" href="#mainSlider" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#mainSlider" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+    </section>    
     <!-- end Slider -->
 
     <!-- search box section -- currently commented out -->
@@ -266,13 +313,18 @@
 <div id="overlay"></div>
 
 <!-- <script type="text/javascript" src="assets/js/jquery-2.1.0.min.js"></script> -->
+
 <!-- latest jquery cdn and bootstrap js dependencies -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 
-<script type="text/javascript" src="assets/js/jquery-2.1.0.min.js"></script>
-<script type="text/javascript" src="assets/js/jquery-migrate-1.2.1.min.js"></script>
+<!-- local js for when internet is unavailable to load cdn ->
+<script type="text/javascript" src="assets/estate-ui-local/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="assets/estate-ui-local/bootstrap4/popper.js"></script>
+<script type="text/javascript" src="assets/estate-ui-local/bootstrap4/bootstrap.min.js"></script> -->
+
+<!-- <script type="text/javascript" src="assets/js/jquery-migrate-1.2.1.min.js"></script>
 <script type="text/javascript" src="assets/bootstrap/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="assets/js/smoothscroll.js"></script>
 <script type="text/javascript" src="assets/js/owl.carousel.min.js"></script>
@@ -288,7 +340,8 @@
 <script type="text/javascript" src="assets/js/jquery.dependClass-0.1.js"></script>
 <script type="text/javascript" src="assets/js/draggable-0.1.js"></script>
 <script type="text/javascript" src="assets/js/jquery.slider.js"></script>
-<script type="text/javascript" src="assets/js/custom.js"></script>
+<script type="text/javascript" src="assets/js/custom.js"></script> -->
+
 <!--[if gt IE 8]>
 <script type="text/javascript" src="assets/js/ie.js"></script>
 <![endif]-->
@@ -299,12 +352,12 @@
 
 
 //js for sticky header 
-    window.onscroll = function() {myFunction()};
+    window.onscroll = function() {headerStickFunction()};
     
     var header = document.getElementById("main-header");
     var sticky = header.offsetTop;
     
-    function myFunction() {
+    function headerStickFunction() {
       if (window.pageYOffset > sticky) {
         header.classList.add("sticky");
       } else {
@@ -312,14 +365,13 @@
       }
     }
 
-
     </script>
 
 <!-- Import and configure the Firebase SDK -->
 <!-- These scripts are made available when the app is served or deployed on Firebase Hosting -->
 <!-- If you do not want to serve/host your project using Firebase Hosting see https://firebase.google.com/docs/web/setup -->
 
-<script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-app.js"></script>
+<!-- <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-auth.js"></script>
 <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-storage.js"></script>
 <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-messaging.js"></script>
@@ -329,6 +381,6 @@
 
 
 
-<script src="assets/scripts/main.js"></script>
+<script src="assets/scripts/main.js"></script> -->
 </body>
 </html>

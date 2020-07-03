@@ -12,3 +12,5 @@ tests.html
 database-debug.log
 assets/scripts/testing.js
 
+#Added for the estate ui re-design
+assets/estate-ui-local/

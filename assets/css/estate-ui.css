@@ -16,7 +16,7 @@ body {
 
 /* styles for the top header  */
 .top-header{
-    padding:10px 20px;
+    padding:8px 20px;
     background-color: #7e1e6e;
     
     border-bottom: 2px solid green;
@@ -38,6 +38,7 @@ body {
     color: whitesmoke;
     border: 1px solid whitesmoke;
     border-radius: 10px;
+    padding:6px !important;
     
 }
 
@@ -58,7 +59,7 @@ body {
 }
 
 .nav-link {
-    padding: .0rem 1.5rem;
+    /* padding: .0rem 1.5rem; */
     color:whitesmoke;
 }
 
@@ -120,7 +121,7 @@ body {
 }
 
 .dropdown-menu.show{
-    background-color:rgba(126, 30, 110, 0.6);
+    background-color:rgba(126, 30, 110, 0.8);
     padding:2% 0%;
 }
 
@@ -137,19 +138,56 @@ body {
 }
     
   /* The sticky class is added to the header with JS when it reaches its scroll position */
-  .sticky {
+  .header-sticky {
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 999;
   }
   
+  /* The class is added to the header with JS when it reaches its scroll position to changer BG color*/
+  .mainMenu-container .change-header-bg{
+    background-color:rgba(126, 30, 110, 0.7);
+  }
+
   /* Add some top padding to the page content to prevent sudden quick movement (as the header gets a new position at the top of the page (position:fixed and top:0) */
   .sticky + .page-content {
     padding-top: 102px;
   }
 /* end of header styles */
 
+/* beginning of slider section styles */
+
+#slider-section {
+    /* min-height : 550px; */
+    height : auto;
+}
+
+#slider-section .carousel-item {
+    background-size: cover;
+    background-position:center;
+  }
+
+  #slider-section .carousel-item img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height:auto;
+      /* min-height: 300px; */
+  }
+
+
+  #slider-section .carousel-caption h2 , #slider-section .carousel-caption p {
+      color:#fff !important;
+      margin-bottom:10px;
+      /* border:2px solid red; */
+  }
+
+  #slider-section .carousel-caption p {
+      text-align:left;
+  }
+
+/* end of slider section styles */
 
 /* begin footer styles */
 #page-footer .inner #footer-main{
@@ -160,28 +198,83 @@ body {
 /* // Extra small devices (portrait phones, less than 576px) */
 @media (max-width: 575.98px) {
     .show{
-        background-color:rgba(126, 30, 110, 0.6);
+        background-color:rgba(126, 30, 110, 0.8);
         padding:2% 0%;
     }
+
+     /* slider styles */
+     .carousel-item {
+        height: 450px;        
+      }
+    
+      #slider-section .carousel-caption h2 {
+          font-size:40px;
+          font-weight: 700;
+      }
+    
+      #slider-section .carousel-caption p {
+        font-size:16px;      
+      }
  }
 
 /* // Small devices (landscape phones, 576px and up) */
-@media (min-width: 576px) and (max-width: 767.98px) {
+@media (min-width: 576px) and (max-width: 767.98px) {  }
+
+/* Small devices (landscape phones, 576px and up) //PLUS/ Medium devices (tablets, 768px and up) */
+@media (min-width: 576px) and (max-width: 991.98px) { 
+
     .show{
         background-color:rgba(126, 30, 110, 0.6);
         padding:2% 0%;
     }
-  }
 
-/* // Medium devices (tablets, 768px and up) */
-@media (min-width: 768px) and (max-width: 991.98px) {  }
+         /* slider styles */
+         .carousel-item {
+            height: 450px;        
+          }
+
+          #slider-section .carousel-caption h2 {
+            font-size:50px;
+            font-weight: 700;
+        }
+      
+        #slider-section .carousel-caption p {
+          font-size:18px;      
+        }
+ }
 
 /* // Large devices (desktops, 992px and up) */
-@media (min-width: 992px) and (max-width: 1199.98px) {  }
-
-/* // Extra large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) { 
+@media (min-width: 992px) { 
+ 
+    /*main menu styles */
     .navbar-nav{
         width:70%;
     }
+
+    /* slider styles */
+    .carousel-item {
+        height: 600px;
+      }
+
+      #slider-section .carousel-caption {
+        width:30%;
+    
+        left:unset;
+        /* text-align: justify; */
+        
+        bottom:unset;
+    
+          top:35%;
+      }
+
+    
+      #slider-section .carousel-caption h2 {
+          font-size:62px;
+          font-weight: 700;
+      }
+    
+      #slider-section .carousel-caption p {
+        font-size:20px;
+      
+      }
  }
