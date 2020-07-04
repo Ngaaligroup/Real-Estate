@@ -6,7 +6,7 @@
 */
 
 html , body{
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
 }
 
 body {
@@ -19,7 +19,7 @@ body {
     padding:8px 20px;
     background-color: #7e1e6e;
     
-    border-bottom: 2px solid green;
+    border-bottom: 2px solid whitesmoke;
 }
 .top-header-margin{
     width: max-content;
@@ -50,9 +50,17 @@ body {
 
 /* for the main menu */
 .mainMenu-container{
-    background-color:rgba(0, 0, 0, 0.5);
+    transition: 0.6s ease;
+    /* background-color:rgba(0, 0, 0, 0.5); */
+    background-color: transparent;
     padding:30px 20px !important;
 }
+
+  /* The class is added to the header with JS when it reaches its scroll position to changer BG color*/
+  .mainMenu-container.scrolled{
+    background-color:rgba(126, 30, 110, 0.95);
+  }
+
 
 .navbar-nav > .nav-item{
     margin:0% 1%;
@@ -145,10 +153,6 @@ body {
     z-index: 999;
   }
   
-  /* The class is added to the header with JS when it reaches its scroll position to changer BG color*/
-  .mainMenu-container .change-header-bg{
-    background-color:rgba(126, 30, 110, 0.7);
-  }
 
   /* Add some top padding to the page content to prevent sudden quick movement (as the header gets a new position at the top of the page (position:fixed and top:0) */
   .sticky + .page-content {
@@ -253,7 +257,7 @@ body {
 
     /* slider styles */
     .carousel-item {
-        height: 600px;
+        height: 700px;
       }
 
       #slider-section .carousel-caption {

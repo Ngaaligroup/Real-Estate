@@ -35,7 +35,7 @@
 <body  class="page-homepage navigation-fixed-top page-slider horizontal-search" id="page-top" data-spy="scroll" data-target=".main-header" data-offset="90">
     <!-- changed class navigation to main-header -->
 <!-- Wrapper -->
-<div class="wrapper">
+<div class="wrapper" id="content-wrapper">
 
     <header class="main-header header-sticky" id="main-header"> <!-- top header starts here-->
         <div class="top-header">
@@ -52,9 +52,9 @@
                 </div>
          
         </div>
-        <nav class="navbar navbar-default navbar-expand-lg mainMenu-container">
+        <nav class="navbar navbar-default navbar-expand-lg mainMenu-container" id="mainMenu-container">
             <a class="navbar-brand" href="index.html" id="brand">
-                <img src="assets/img/estate.png" alt="brand">
+                <img src="assets/img/estate.PNG" alt="brand">
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainMenu" aria-controls="mainMenu" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -214,7 +214,7 @@
                     <h2>New Properties for You</h2>
                     <a id='submitlin' href="index.html" class="link-arrow">All Properties</a>
                 </header>
-                <div class = 'row' id='allprop'></div>
+                <div class ='row' id='allprop'></div>
                 
             </div><!-- /.container-->
         </section><!-- /#new-properties-->
@@ -315,63 +315,74 @@
 <!-- <script type="text/javascript" src="assets/js/jquery-2.1.0.min.js"></script> -->
 
 <!-- latest jquery cdn and bootstrap js dependencies -->
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>  -->
 
-<!-- local js for when internet is unavailable to load cdn ->
+<!-- local js for when internet is unavailable to load cdn -->
 <script type="text/javascript" src="assets/estate-ui-local/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="assets/estate-ui-local/bootstrap4/popper.js"></script>
-<script type="text/javascript" src="assets/estate-ui-local/bootstrap4/bootstrap.min.js"></script> -->
+<script type="text/javascript" src="assets/estate-ui-local/bootstrap4/bootstrap.min.js"></script>
 
-<!-- <script type="text/javascript" src="assets/js/jquery-migrate-1.2.1.min.js"></script>
-<script type="text/javascript" src="assets/bootstrap/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="assets/js/smoothscroll.js"></script>
+<script>
+   /*  
+   $(window).load(function(){
+      initializeOwl(false);     
+    }); 
+    */
+
+  $(document).ready(function(){
+    
+    initializeOwl(false);
+
+
+  // Prevent Default Click action for # links
+  $('a[href="#"]').on('click', function ($) {
+            $.preventDefault();
+    });
+
+  });
+
+//JS code for changing background color of navbar on scroll
+  var slider = document.getElementById('slider-section'); // getting slider section element
+  var sliderHeight = slider.offsetHeight;
+
+  $(window).scroll(function(){
+        // console.log('scrolling');
+        //changing bg color of navbar on scroll
+        $('#mainMenu-container').toggleClass('scrolled',$(this).scrollTop() > (sliderHeight - 350));
+    });   
+   </script>
+
+
+<!-- <script type="text/javascript" src="assets/js/jquery-migrate-1.2.1.min.js"></script> -->
+<!-- <script type="text/javascript" src="assets/bootstrap/js/bootstrap.min.js"></script> -->
+<!-- <script type="text/javascript" src="assets/js/smoothscroll.js"></script> -->
 <script type="text/javascript" src="assets/js/owl.carousel.min.js"></script>
-<script type="text/javascript" src="assets/js/bootstrap-select.min.js"></script>
-<script type="text/javascript" src="assets/js/jquery.validate.min.js"></script>
-<script type="text/javascript" src="assets/js/jquery.placeholder.js"></script>
+<!-- <script type="text/javascript" src="assets/js/bootstrap-select.min.js"></script> -->
+<!-- <script type="text/javascript" src="assets/js/jquery.validate.min.js"></script> -->
+<!-- <script type="text/javascript" src="assets/js/jquery.placeholder.js"></script> -->
 <script type="text/javascript" src="assets/js/icheck.min.js"></script>
-<script type="text/javascript" src="assets/js/jquery.vanillabox-0.1.5.min.js"></script>
+<!-- <script type="text/javascript" src="assets/js/jquery.vanillabox-0.1.5.min.js"></script> -->
 <script type="text/javascript" src="assets/js/retina-1.1.0.min.js"></script>
 <script type="text/javascript" src="assets/js/jshashtable-2.1_src.js"></script>
 <script type="text/javascript" src="assets/js/jquery.numberformatter-1.2.3.js"></script>
 <script type="text/javascript" src="assets/js/tmpl.js"></script>
-<script type="text/javascript" src="assets/js/jquery.dependClass-0.1.js"></script>
+<!-- <script type="text/javascript" src="assets/js/jquery.dependClass-0.1.js"></script> -->
 <script type="text/javascript" src="assets/js/draggable-0.1.js"></script>
 <script type="text/javascript" src="assets/js/jquery.slider.js"></script>
-<script type="text/javascript" src="assets/js/custom.js"></script> -->
+<!-- <script type="text/javascript" src="assets/js/custom.js"></script> -->
 
 <!--[if gt IE 8]>
 <script type="text/javascript" src="assets/js/ie.js"></script>
 <![endif]-->
-<script>
-    $(window).load(function(){
-        initializeOwl(false);
-    });
 
-
-//js for sticky header 
-    window.onscroll = function() {headerStickFunction()};
-    
-    var header = document.getElementById("main-header");
-    var sticky = header.offsetTop;
-    
-    function headerStickFunction() {
-      if (window.pageYOffset > sticky) {
-        header.classList.add("sticky");
-      } else {
-        header.classList.remove("sticky");
-      }
-    }
-
-    </script>
 
 <!-- Import and configure the Firebase SDK -->
 <!-- These scripts are made available when the app is served or deployed on Firebase Hosting -->
 <!-- If you do not want to serve/host your project using Firebase Hosting see https://firebase.google.com/docs/web/setup -->
 
-<!-- <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-auth.js"></script>
 <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-storage.js"></script>
 <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-messaging.js"></script>
@@ -381,6 +392,6 @@
 
 
 
-<script src="assets/scripts/main.js"></script> -->
+<script src="assets/scripts/main.js"></script>
 </body>
 </html>
