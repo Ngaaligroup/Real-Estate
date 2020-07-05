@@ -193,6 +193,91 @@ body {
 
 /* end of slider section styles */
 
+/* Property section styles */
+.property-section-margin{
+    margin:0% 10%;
+}
+
+.single-property-overlay-text {
+    position: absolute;
+    left: 10%;
+    top: 5%;
+    color: whitesmoke;
+    background-color: rgba(126, 30, 110, 0.75);
+    padding: .5rem;
+}
+
+.btn.btn-property-price {       
+    -moz-transition: 0.2s;
+    -webkit-transition: 0.2s;
+    transition: 0.5s;
+    background-color: #7e1e6e;
+    color: #fff;      
+    
+    width: 100%;
+    padding: 12px 6px;
+}
+
+.btn.btn-property-price:hover {
+    background-color: #fff;
+    color: #7e1e6e;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .single-properties-slider-section .carousel-inner .carousel-item > div {
+        display: none;
+    }
+    .single-properties-slider-section .carousel-inner .carousel-item > div:first-child {
+        display: block;
+    }
+}
+
+.single-properties-slider-section .carousel-inner .carousel-item.active,
+.single-properties-slider-section .carousel-inner .carousel-item-next,
+.single-properties-slider-section .carousel-inner .carousel-item-prev {
+    display: flex;
+}
+
+/* display 3 */
+@media (min-width: 768px) {
+    
+    .single-properties-slider-section .carousel-inner .carousel-item-right.active,
+    .single-properties-slider-section .carousel-inner .carousel-item-next {
+      transform: translateX(33.333%);
+    }
+    
+    .single-properties-slider-section .carousel-inner .carousel-item-left.active, 
+    .single-properties-slider-section .carousel-inner .carousel-item-prev {
+      transform: translateX(-33.333%);
+    }
+}
+
+.single-properties-slider-section .carousel-inner .carousel-item-right,
+.single-properties-slider-section .carousel-inner .carousel-item-left{ 
+  transform: translateX(0);
+}
+
+.property-slider-controls{
+    display: flex;
+}
+
+.property-slider-controls a {
+    font-size:25px;
+    margin:0% 10%;
+    padding:.7rem;
+    color : #7e1e6e;
+    border: 1px solid #7e1e6e;
+}
+
+.property-slider-controls a:hover {
+    text-decoration: none;
+    background-color: #7e1e6e;
+    color:whitesmoke;
+}
+
+/* End Property section styles */
+
 /* begin footer styles */
 #page-footer .inner #footer-main{
     border-bottom: 2px solid whitesmoke;
@@ -219,6 +304,15 @@ body {
       #slider-section .carousel-caption p {
         font-size:16px;      
       }
+
+        /* Property section styles */
+        .property-section-margin{
+            margin:0% 5%;
+        }
+
+        .property-slider-controls a {            
+            margin:0% 4%;           
+        }
  }
 
 /* // Small devices (landscape phones, 576px and up) */
@@ -244,6 +338,15 @@ body {
       
         #slider-section .carousel-caption p {
           font-size:18px;      
+        }
+
+        /* Property section styles */
+        .property-section-margin{
+            margin:0% 5%;
+        }
+
+        .property-slider-controls a {            
+            margin:0% 7%;           
         }
  }
 

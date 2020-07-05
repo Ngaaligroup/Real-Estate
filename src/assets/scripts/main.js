@@ -1110,7 +1110,7 @@ $(document).ready(function(){
         if (span === e.target) action = 'remove';
     }
   });
-});
+// });
   ///add all properties
   //  TODO: retriev all properties
   var propref =firebase.database().ref('AllProperty');
