@@ -318,14 +318,21 @@ body {
         font-size:16px;      
       }
 
-        /* Property section styles */
+        /* Property section styles START */
         .property-section-margin{
             margin:0% 5%;
         }
 
         .property-slider-controls a {            
-            margin:0% 4%;           
+            /* margin:0% 6%;      */
+            padding:.6rem; 
+            font-size:17px;     
         }
+     
+        .link-arrow {            
+            font-size:15px;
+          }
+        /* Property section styles END */
  }
 
 /* // Small devices (landscape phones, 576px and up) */
