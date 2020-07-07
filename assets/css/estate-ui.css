@@ -301,7 +301,8 @@ body {
 
 /*========================================== Service section styles ======================================================= */
 #services-section{
-    background-image:linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(126, 30, 110, 0.65)),url(../img/bg_images/image6.jpg);
+    /* rgba(126, 30, 110, 0.8)) */
+    background-image:linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.65)),url(../img/bg_images/image6.jpg);
     background-position: center;
     background-size: cover;
 
@@ -341,7 +342,9 @@ body {
 }
 
 .single-service .service-img-container img.card-img-top {
-    width:60%;
+    /* width:60%; */
+    width: 200px;
+    height: 180px;
 }
 
 .single-service .service-text .card-text{
@@ -361,6 +364,16 @@ body {
     }
     .services-slider-section .carousel-inner .carousel-item > div:first-child {
         display: block;
+    }
+
+    .services-slider-section .carousel-inner .carousel-item-right.active,
+    .services-slider-section .carousel-inner .carousel-item-next {
+      transform: translateX(30%);
+    }
+    
+    .services-slider-section .carousel-inner .carousel-item-left.active, 
+    .services-slider-section .carousel-inner .carousel-item-prev {
+      transform: translateX(-30%);
     }
 }
 
@@ -415,12 +428,12 @@ body {
     border: 2px solid whitesmoke;
     color: #fff;      
     
-    /* width: 100%; */
-    width:24.5%;
+    width: 100%;
+    /* width:24.5%; */
     padding: 10px 5px;
 
-    position:fixed;
-    bottom: 0px;
+  /*   position:fixed;
+    bottom: 0px; */
 }
 
 .btn.btn-service-link:hover {
@@ -431,6 +444,49 @@ body {
 }
 
 /* End service section styles */
+
+/* ============================= START sign up section styles ======================================== */
+
+#sign-up-section{
+    padding: 20px 0px;
+    /* background-color: #7e1e6e; */
+    background-color: rgba(126, 30, 110, 0.85);
+}
+
+#sign-up-section .signup-section-text h3{
+    color: white;
+    /* font-family:inherit; */
+    font-family: Tahoma,Verdana, Geneva, sans-serif;
+    vertical-align: middle ;
+}
+
+#sign-up-section p {
+    color: white;
+    opacity:unset;
+}
+
+.btn.btn-signup-section-button {       
+    -moz-transition: 0.2s;
+    -webkit-transition: 0.2s;
+    transition: 0.5s;
+  
+    background-color: transparent;
+    color: white;
+    border: 2px solid #fff;
+    cursor: pointer;
+    padding: 10px 20px;
+
+    /* position:fixed;
+    bottom: 0px; */
+}
+
+.btn.btn-signup-section-button:hover {
+    background-color: #fff;
+    color: #7e1e6e;
+    border: 2px solid black;
+    cursor: pointer;
+}
+/* End sign up section styles */
 
 /* begin footer styles */
 #page-footer .inner #footer-main{
@@ -461,7 +517,7 @@ body {
 
         /* ======================================== Property section styles START =============================== */
         .property-section-margin{
-            margin:0% 5%;
+            margin:0% 4%;
         }
 
         .property-slider-controls a {            
@@ -476,17 +532,22 @@ body {
         /* Property section styles END */
 
         /* ==========================================service section styles START ================================= */
+        #services-section {
+
+            padding:20px 0px;
+        }
         .service-section-margin{
-            margin:0% 5%;
+            margin:0% 2%;
         }
         .single-service{           
             min-height:450px;
         }
 
-        .single-service img {
-
+        .single-service .service-img-container img.card-img-top {
+            /* width:60%; */
+            width: 300px;
+            height: 270px;
         }
-
         .single-service .single-service-text {
 
         }
