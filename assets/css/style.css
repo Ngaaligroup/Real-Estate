@@ -399,6 +399,7 @@ ul.list-links li a:hover {
   transition: 0.2s;
   color: black;
   display: inline-block;
+  font-size:20px;
 }
 .link-arrow:after {
   -moz-transition: 0.2s;
@@ -407,27 +408,30 @@ ul.list-links li a:hover {
   text-shadow: none;
   -webkit-font-smoothing: antialiased;
   font-family: 'fontawesome';
-  speak: none;
+  /* speak: none; */
   font-weight: normal;
   font-variant: normal;
   line-height: 1;
   text-transform: none;
   content: "\f105";
-  color: CornFlowerBlue;
-  left: 0;
-  font-size: 18px;
+  /* color: CornFlowerBlue; */ color:inherit;
+  /* left: 0; */ left:10px;
+  /* font-size: 18px; */ font-size:28px;
   margin-left: 10px;
   vertical-align: middle;
   position: relative;
   bottom: 2px;
 }
 .link-arrow:hover {
-  color: #fff;
+  text-decoration: none;
+  color: #7e1e6e;
   cursor: pointer;
+  /* background-color: #7e1e6e; */
 }
 .link-arrow:hover:after {
-  color: #fff;
-  left: 5px;
+  text-decoration: none;
+  /* color: #fff;  */ color:#7e1e6e;
+  left: 15px;
 }
 .link-arrow.geo-location:after {
   content: "\f041";

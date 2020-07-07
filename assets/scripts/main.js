@@ -1151,10 +1151,17 @@ $(document).ready(function(){
   var propref =firebase.database().ref('AllProperty');
   propref.once("value").then(function(snapshot) {
     $('#allprop').html('');
+    var first_property = true;
     snapshot.forEach(function(childSnapshot) {
       var key = childSnapshot.key;
       var childData = childSnapshot.val();
       
+      var active_class = "";
+      //catering for the first carousel item to add the active class to it
+      if(first_property) {active_class = "active";}
+
+      //then set first property variable to false for the other properties that follow
+      first_property = false;
 
       var Title=childSnapshot.val().Title;
       // alert(Title);
@@ -1171,40 +1178,27 @@ $(document).ready(function(){
 
       $('#allprop').
       append(
-        '<div class="col-md-3 col-sm-6" style="padding-top: 20px;">' +
-          '<div class="property">' +
-              '<a href="property-detail.html?name='+key+'" >' +
-                  '<div class="property-image">' +
-                      '<img alt="property" src="'+Photos+'" style="width: 514px; height:386px">' +
-                  '</div>' +
-                  '<div class="overlay">' +
-                      '<div class="info">'  +
-                          '<div class="tag price">UGX '+price+'</div>' +
-                          '<h3>'+Title+'</h3>' +
-                          '<figure>'+Address+'</figure>' +
-                      '</div>' +
-                      '<ul class="additional-info">' +
-                          '<li>'+
-                              '<header>Area:</header>' +
-                              '<figure><span >'+Area+ '</span>m<sup>2</sup></figure>' +
-                          '</li>' +
-                          '<li>' +
-                              '<header>Beds:</header>' +
-                              '<figure id="bedss">'+bed+'</figure>' +
-                          '</li>' +
-                          '<li>' +
-                              '<header>Baths:</header>' +
-                              '<figure id="bths">'+baths+'</figure>' +
-                          '</li>' +
-                          '<li>' +
-                              '<header>Garages:</header>' +
-                              '<figure id="grge">'+garage+'</figure>' +
-                          '</li>' +
-                      '</ul>' +
-                  '</div>'+
+        '<div class="carousel-item '+ active_class +'">' +
+        '<div class="col-md-4 col-12 single-property">'+
+          '<div class="card" style="width:auto;">' +
+            '<div class="image property-img-container">' +
+              '<a href="property-detail.html?name='+key+'" class="image-popup">' +
+                '<img alt="property" src="'+Photos+'" class="card-img-top">' +
               '</a>' +
-            '</div><!-- /.property -->' +
-        '</div><!-- /.col-md-3 -->'
+            '<div class="single-property-overlay-text">' +
+              '<h5 class="mb-0"> '+ Status +'</h5>' +                   
+            '</div>' +
+          '</div>' +           
+            '<div class="card-body">' +
+              '<h4 class="card-title float-right"> Rating </h4>' +
+              '<h5 class="card-title">'+Title+' </h5>' +
+              '<h6 class="card-title property-address">'+Address+' </h6>' +
+              '<p class="card-text">'+description+'</p>' +                         
+            '</div>' +
+            '<a href="property-detail.html?name='+key+'" class="btn btn-property-price"> '+price+' </a>' +
+          '</div>' +
+        '</div>' +
+      '</div>'
 
         );
       // if (bed="undefined") {
