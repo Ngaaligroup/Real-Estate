@@ -11,7 +11,7 @@ html , body{
 
 body {
     position : relative;
-    font-family: Sen,Ubuntu,'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+    font-family: Sen,Ubuntu,Tahoma,'Segoe UI', Geneva, Verdana, sans-serif !important;
 }
 
 /* styles for the top header  */
@@ -160,7 +160,7 @@ body {
   }
 /* end of header styles */
 
-/* beginning of slider section styles */
+/* ====================================================== beginning of main slider section styles ===============================================*/
 
 #slider-section {
     /* min-height : 550px; */
@@ -193,7 +193,7 @@ body {
 
 /* end of slider section styles */
 
-/* Property section styles */
+/*============================================================= Property section styles ===============================================*/
 .property-section-margin{
     margin:0% 10%;
 }
@@ -212,6 +212,13 @@ body {
     padding: .5rem;
 }
 
+.single-property p.card-text {
+    border-bottom:none;
+    font-size:18px;
+    opacity:unset;
+    font-family: inherit;
+}
+
 .btn.btn-property-price {       
     -moz-transition: 0.2s;
     -webkit-transition: 0.2s;
@@ -219,11 +226,12 @@ body {
     background-color: #7e1e6e;
     color: #fff;      
     
-    width: 100%;
+    /* width: 100%; */
+    width:32%;
     padding: 12px 6px;
 
-    /* position:static;
-    bottom: 0; */
+    position:absolute;
+    bottom: 0px;
 }
 
 .btn.btn-property-price:hover {
@@ -291,6 +299,139 @@ body {
 
 /* End Property section styles */
 
+/*========================================== Service section styles ======================================================= */
+#services-section{
+    background-image:linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(126, 30, 110, 0.65)),url(../img/bg_images/image6.jpg);
+    background-position: center;
+    background-size: cover;
+
+    /* border:2px solid red;  */
+    padding:30px 0px;
+}
+.services-section-margin{
+    margin:0% 5%;
+}
+
+.single-service{
+    /* border:1px solid green; */
+    min-height:400px;
+    margin:0px 5px;
+    padding:10px 5px 2px 5px;
+
+    /* background-color: rgba(0, 0, 0, 0.35); */
+}
+
+.single-service .card {
+    background-color: unset;
+    /* background-color: rgba(0, 0, 0, 0.68); */
+    border : none;
+}
+
+.single-service .card-header {
+    padding:0;
+    background-color: unset;
+    border-bottom:none;
+
+    text-align:center;
+    color:white;
+}
+
+.single-service .service-img-container {
+    text-align:center;
+}
+
+.single-service .service-img-container img.card-img-top {
+    width:60%;
+}
+
+.single-service .service-text .card-text{
+    /* text-align: justify; */
+    border-bottom:none;
+
+    color:white;
+    font-size:18px;
+    opacity:unset;
+    font-family: inherit;
+}
+
+
+@media (max-width: 768px) {
+    .services-slider-section .carousel-inner .carousel-item > div {
+        display: none;
+    }
+    .services-slider-section .carousel-inner .carousel-item > div:first-child {
+        display: block;
+    }
+}
+
+.services-slider-section .carousel-inner .carousel-item.active,
+.services-slider-section .carousel-inner .carousel-item-next,
+.services-slider-section .carousel-inner .carousel-item-prev {
+    display: flex;
+}
+
+/* display 4 */
+@media (min-width: 768px) {
+    
+    .services-slider-section .carousel-inner .carousel-item-right.active,
+    .services-slider-section .carousel-inner .carousel-item-next {
+      transform: translateX(25%);
+    }
+    
+    .services-slider-section .carousel-inner .carousel-item-left.active, 
+    .services-slider-section .carousel-inner .carousel-item-prev {
+      transform: translateX(-25.9%);
+    }
+}
+
+.services-slider-section .carousel-inner .carousel-item-right,
+.services-slider-section .carousel-inner .carousel-item-left{ 
+  transform: translateX(0);
+}
+
+.service-slider-controls{
+    display: flex;
+}
+
+.service-slider-controls a {
+    font-size:25px;
+    margin:0% 10%;
+    padding:.7rem;
+    color : whitesmoke;
+    border: 1px solid white;
+}
+
+.service-slider-controls a:hover {
+    text-decoration: none;
+    background-color: white;
+    color:#7e1e6e;
+}
+
+.btn.btn-service-link {       
+    -moz-transition: 0.2s;
+    -webkit-transition: 0.2s;
+    transition: 0.5s;
+    background-color: transparent;
+    border: 2px solid whitesmoke;
+    color: #fff;      
+    
+    /* width: 100%; */
+    width:24.5%;
+    padding: 10px 5px;
+
+    position:fixed;
+    bottom: 0px;
+}
+
+.btn.btn-service-link:hover {
+    background-color: #fff;
+    color: #7e1e6e;
+    border: 2px solid #7e1e6e;
+    cursor: pointer;
+}
+
+/* End service section styles */
+
 /* begin footer styles */
 #page-footer .inner #footer-main{
     border-bottom: 2px solid whitesmoke;
@@ -318,7 +459,7 @@ body {
         font-size:16px;      
       }
 
-        /* Property section styles START */
+        /* ======================================== Property section styles START =============================== */
         .property-section-margin{
             margin:0% 5%;
         }
@@ -333,6 +474,24 @@ body {
             font-size:15px;
           }
         /* Property section styles END */
+
+        /* ==========================================service section styles START ================================= */
+        .service-section-margin{
+            margin:0% 5%;
+        }
+        .single-service{           
+            min-height:450px;
+        }
+
+        .single-service img {
+
+        }
+
+        .single-service .single-service-text {
+
+        }
+
+        /* service section style END */
  }
 
 /* // Small devices (landscape phones, 576px and up) */

@@ -229,7 +229,7 @@
                                    
                   <div class="property-slider-controls float-right mr-3">
                     <a href="#single-properties-slider-section" title="Previous Property" data-slide="prev" class="left fa fa-angle-left"></a>
-                    <a href="#single-properties-slider-section" title="Previous Property" data-slide="next" class="right fa fa-angle-right"></a>
+                    <a href="#single-properties-slider-section" title="Next Property" data-slide="next" class="right fa fa-angle-right"></a>
                   </div>
   
                 </div>
@@ -254,6 +254,128 @@
               </div>                
             </div><!-- /.property-section-margin-->
         </section><!-- /#new-properties-->
+
+        <section id="services-section" class="mt-3"><!-- #services-section -->
+          <div class="services-section-margin">
+            <div class="row justify-content-center service-section-title mb-4">
+              <div class="col-md-8 col-12 service-section-header text-center text-white">
+                <h2> What Can We Do For You ? </h2>  
+              </div>
+              <div class="col-md-2 col-12 service-section-text">                              
+                <div class="service-slider-controls float-right">
+                  <a href="#single-service-slider-section" title="Previous Service" data-slide="prev" class="left fa fa-angle-left"></a>
+                  <a href="#single-service-slider-section" title="Next Service" data-slide="next" class="right fa fa-angle-right"></a>
+                </div>
+               </div>
+            </div>
+              <!-- ========= services slider start ============-->
+         <div class="row mx-auto my-auto">
+          <div id="single-service-slider-section" class="services-slider-section carousel slide w-100" data-ride="carousel">
+          <!-- Wrapper for single service slides-->
+          <div class="carousel-inner w-100" role="listbox">
+            
+            <!-- single service carousel item card -->
+            <div class="carousel-item active">
+              <div class="col-md-3 col-12 single-service">                
+                <div class="card" style="width:auto;">
+                  <div class="card-header">
+                    <h3 class="card-title"> Best Property Deals </h3>
+                  </div>
+                  <div class="image service-img-container">
+                    <img src="assets/img/estate-ui/image9.jpg" class="card-img-top" alt="Best Property Deals">                  
+                </div>
+                 
+                  <div class="card-body service-text">
+                    <p class="card-text">Get you the best property deals. Both land and house </p>                          
+                  </div>
+                  <a href="#" class="btn btn-service-link ml-auto"> All Property Deals </a>
+                </div>
+
+              </div> 
+            </div>
+
+             <!-- single property carousel item card -->
+             <div class="carousel-item">
+              <div class="col-md-3 col-12 single-service">
+                <div class="card" style="width:auto;">
+                  <div class="card-header">
+                    <h3 class="card-title"> Best Brokers </h3>
+                  </div>
+                  <div class="image service-img-container">
+                    <img src="assets/img/estate-ui/image9.jpg" class="card-img-top" alt="Best Brokers">                  
+                  </div>
+                 
+                  <div class="card-body service-text">
+                    <p class="card-text"> Get you connected to the best brokers around </p>                          
+                  </div>
+                  <a href="#" class="btn btn-service-link"> All Brokers </a>
+                </div>
+
+              </div> 
+            </div>
+
+             <!-- single service carousel item card -->
+             <div class="carousel-item">
+              <div class="col-md-3 col-12 single-service">
+                <div class="card" style="width:auto;">
+                  <div class="card-header">
+                    <h3 class="card-title"> Best Architects </h3>
+                  </div>
+                  <div class="image service-img-container">
+                    <img src="assets/img/estate-ui/image9.jpg" class="card-img-top" alt="Best Architects">                  
+                  </div>
+                 
+                  <div class="card-body service-text">
+                    <p class="card-text"> Get you connected to the best and brightest architects</p>                          
+                  </div>
+                  <a href="#" class="btn btn-service-link"> All Architects </a>
+                </div>
+              </div>
+            </div>
+              
+               <!-- single service carousel item card -->
+             <div class="carousel-item">
+              <div class="col-md-3 col-12 single-service">
+                <div class="card" style="width:auto;">
+                  <div class="card-header">
+                    <h3 class="card-title"> Best Civil Engineers </h3>
+                  </div>
+                  <div class="image service-img-container">
+                    <img src="assets/img/estate-ui/image9.jpg" class="card-img-top" alt="Best Civil Engineers">                  
+                  </div>
+                 
+                  <div class="card-body service-text">
+                    <p class="card-text"> Get you connected to the best and brightest Civil Engineers</p>                          
+                  </div>
+                  <a href="#" class="btn btn-service-link"> All Civil Engineers </a>
+                </div>
+              </div> 
+            </div>
+
+              <!-- single service carousel item card -->
+              <div class="carousel-item">
+                <div class="col-md-3 col-12 single-service">
+                  <div class="card" style="width:auto;">
+                    <div class="card-header">
+                      <h3 class="card-title"> Best Hardware Deals </h3>
+                    </div>
+                    <div class="image service-img-container">
+                      <img src="assets/img/estate-ui/image9.jpg" class="card-img-top" alt="Best Hardware Deals">
+                    </div>
+                   
+                    <div class="card-body service-text">
+                      <p class="card-text"> Get you best high quality hardware</p>                          
+                    </div>
+                    <a href="#" class="btn btn-service-link"> All Hardware </a>
+                  </div>
+                </div> 
+              </div>
+
+            </div>
+            </div>
+          </div>
+        </div>
+        </section><!-- /#services-section -->
 
         <section id="testimonials" class="block">
             <div class="container">
@@ -381,7 +503,7 @@
           });
 
           //for property section slider
-          $('#single-properties-slider-section').carousel({
+         $('#single-properties-slider-section').carousel({
             interval: 5000
           });
 
@@ -403,6 +525,28 @@
               }
         });
 
+          //for services section slider
+          $('#single-service-slider-section').carousel({
+            interval: 5000
+          });
+
+        $('.services-slider-section .carousel-item').each(function(){
+            var minPerSlide = 4;
+            var next = $(this).next();
+            if (!next.length) {
+            next = $(this).siblings(':first');
+            }
+            next.children(':first-child').clone().appendTo($(this));
+            
+            for (var i=0;i<minPerSlide;i++) {
+                next=next.next();
+                if (!next.length) {
+                  next = $(this).siblings(':first');
+                }
+                
+                next.children(':first-child').clone().appendTo($(this));
+              }
+        });
   });
 
 //JS code for changing background color of navbar on scroll
@@ -444,13 +588,13 @@
 <!-- These scripts are made available when the app is served or deployed on Firebase Hosting -->
 <!-- If you do not want to serve/host your project using Firebase Hosting see https://firebase.google.com/docs/web/setup -->
 
-<script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-app.js"></script>
+<!-- <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-auth.js"></script>
 <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-storage.js"></script>
 <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-messaging.js"></script>
 <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-firestore.js"></script>
 <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-performance.js"></script>
-<script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-database.js"></script> 
+<script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-database.js"></script>  -->
 
 
 
