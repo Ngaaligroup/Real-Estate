@@ -1179,23 +1179,45 @@ $(document).ready(function(){
       $('#allprop').
       append(
         '<div class="carousel-item '+ active_class +'">' +
-        '<div class="col-md-4 col-12 single-property">'+
+        '<div class="col-md-4 col-12 single-property property">'+
           '<div class="card" style="width:auto;">' +
             '<div class="image property-img-container">' +
+              
               '<a href="property-detail.html?name='+key+'" class="image-popup">' +
                 '<img alt="property" src="'+Photos+'" class="card-img-top">' +
               '</a>' +
+              '<div class="row single-property-additional-info">' +
+                '<div class="col-md-3 col-3">'+
+                    '<h6>Area:</h6>' +
+                    '<figure><span >'+Area+ '</span>m<sup>2</sup></figure>' +
+                '</div>' +
+                '<div class="col-md-3 col-3">' +
+                    '<h6>Beds:</h6>' +
+                    '<figure id="bedss">'+bed+'</figure>' +
+                '</div>' +
+                '<div class="col-md-3 col-3">' +
+                    '<h6>Baths:</h6>' +
+                    '<figure id="bths">'+baths+'</figure>' +
+                '</div>' +
+                '<div class="col-md-3 col-3">' +
+                    '<h6>Garages:</h6>' +
+                    '<figure id="grge">'+garage+'</figure>' +
+                '</div>' +
+            '</div>' + 
             '<div class="single-property-overlay-text">' +
-              '<h5 class="mb-0"> '+ Status +'</h5>' +                   
-            '</div>' +
-          '</div>' +           
+              '<h5 class="mb-0"> '+ Status +'</h5>' +                 
+            '</div>'+
+            
+            '</div>' +                 
             '<div class="card-body">' +
               '<h4 class="card-title float-right"> Rating </h4>' +
               '<h5 class="card-title">'+Title+' </h5>' +
               '<h6 class="card-title property-address">'+Address+' </h6>' +
-              '<p class="card-text">'+description+'</p>' +                         
+              '<p class="card-text">'+description+
+              
+              '</p>' +                         
             '</div>' +
-            '<a href="property-detail.html?name='+key+'" class="btn btn-property-price"> '+price+' </a>' +
+            '<a href="property-detail.html?name='+key+'" class="btn btn-property-price"> UGX '+price+' </a>' +
           '</div>' +
         '</div>' +
       '</div>'

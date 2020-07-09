@@ -49,6 +49,7 @@ body {
 }
 
 /* for the main menu */
+
 .mainMenu-container{
     transition: 0.6s ease;
     /* background-color:rgba(0, 0, 0, 0.5); */
@@ -160,7 +161,7 @@ body {
   }
 /* end of header styles */
 
-/* ====================================================== beginning of main slider section styles ===============================================*/
+/* ================================= beginning of main slider section styles =================================*/
 
 #slider-section {
     /* min-height : 550px; */
@@ -193,14 +194,14 @@ body {
 
 /* end of slider section styles */
 
-/*============================================================= Property section styles ===============================================*/
+/*========================= Property section styles ======================================*/
 .property-section-margin{
     margin:0% 10%;
 }
 
 .single-properties-slider-section .single-property .card{
     min-height:450px;
-    max-height: 550px;
+    max-height: 650px;
 }
 
 .single-property-overlay-text {
@@ -212,9 +213,34 @@ body {
     padding: .5rem;
 }
 
+.single-property-additional-info{
+    /* background-color: red; */
+    /* position: relative;
+    top: -90px; */
+    /* border: 5px solid red; */
+    background-color: rgba(126, 30, 110, 0.8);
+    margin: 0;
+    padding: 5px 0px;
+}
+
+.single-property-additional-info div{
+    border-right:1.5px solid white;
+}
+
+.single-property-additional-info h6,
+.single-property-additional-info figure{
+    font-size:13px;
+    color:#fff;
+    font-family:inherit !important;
+}
+
+.single-property-additional-info figure{
+    text-align: center;
+}
+
 .single-property p.card-text {
     border-bottom:none;
-    font-size:18px;
+    font-size:16px;
     opacity:unset;
     font-family: inherit;
 }
@@ -227,7 +253,7 @@ body {
     color: #fff;      
     
     /* width: 100%; */
-    width:32%;
+    width:100%;
     padding: 12px 6px;
 
     position:absolute;
@@ -309,6 +335,12 @@ body {
     /* border:2px solid red;  */
     padding:30px 0px;
 }
+
+.service-section-header h2 ,
+.single-service .card-header .card-title {
+    color:white;
+}
+
 .services-section-margin{
     margin:0% 5%;
 }
@@ -334,7 +366,6 @@ body {
     border-bottom:none;
 
     text-align:center;
-    color:white;
 }
 
 .single-service .service-img-container {
@@ -590,12 +621,16 @@ body {
         }
  }
 
-/* // Large devices (desktops, 992px and up) */
-@media (min-width: 992px) { 
+ /* // Large devices (desktops, 992px and up) */
+ @media (min-width: 992px) and (max-width: 1199.98px) { 
  
     /*main menu styles */
-    .navbar-nav{
+    /* .navbar-nav{
         width:70%;
+    } */
+
+    #mainMenu > .navbar-nav {
+        min-width: 65%;
     }
 
     /* slider styles */
@@ -623,4 +658,22 @@ body {
         font-size:20px;
       
       }
+ }
+
+ /* // Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) { 
+
+    #mainMenu > .navbar-nav {
+        min-width: 70%;
+    }
+
+    .single-properties-slider-section .card .card-img-top {
+        height : auto;
+    }
+
+    .single-properties-slider-section .single-property .card{
+        min-height:500px;
+        max-height: 650px;
+    }
+
  }
