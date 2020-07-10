@@ -489,6 +489,8 @@ body {
     /* font-family:inherit; */
     font-family: Tahoma,Verdana, Geneva, sans-serif;
     vertical-align: middle ;
+
+    margin-top:23px;
 }
 
 #sign-up-section p {
@@ -518,6 +520,60 @@ body {
     cursor: pointer;
 }
 /* End sign up section styles */
+
+/* ==============================BEGIN testimonial section styles===============================*/
+   /*  #testimonial-section {
+        min-height:350px;
+    } */
+
+    .video-column h3,
+    .testimonial-column h3 {
+        text-align : center;
+        border-bottom: 0.5px solid lightgray;
+    }
+
+      .testimonial-column .carousel-caption {
+        padding: 0;
+        right: 0;
+        left: 0;
+        color: #3d3d3d;
+      }
+      .testimonial-column .carousel-caption h4 {
+        color: #3d3d3d;
+      }
+      .testimonial-column .carousel-caption p {
+        line-height: 30px;
+      }
+      .testimonial-column .carousel-caption .col-md-4 {
+        display: flex;
+        align-items: center;
+      }
+      .testimonial-column .carousel-caption .col-md-8 {
+        text-align: left;
+      }
+      
+      .single-testimony img{
+          width:50%;
+      }
+   
+      .testimonial-slider-controls a {
+          /* padding: 10px; */
+          /* font-size:25px; */
+        /* margin:0% 10%; */
+        text-decoration:none;
+        padding:.7rem;
+        color : #7e1e6e;
+        border: 1px solid #7e1e6e;
+      }
+
+      .testimonial-slider-controls a:hover {
+          /* background-color: #666; */
+        text-decoration: none;
+        background-color: #7e1e6e;
+        color:whitesmoke;
+      }
+      
+/* End testimonial section styles */
 
 /* begin footer styles */
 #page-footer .inner #footer-main{
