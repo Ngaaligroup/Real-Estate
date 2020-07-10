@@ -526,12 +526,20 @@ body {
         min-height:350px;
     } */
 
+    .video-column,
+    .testimonial-column{
+        min-height:400px;
+    }
+
     .video-column h3,
     .testimonial-column h3 {
         text-align : center;
         border-bottom: 0.5px solid lightgray;
     }
 
+    .testimonial-column {
+        border-color: rgba(126, 30, 110, 0.7);
+    }
       .testimonial-column .carousel-caption {
         padding: 0;
         right: 0;
@@ -551,9 +559,14 @@ body {
       .testimonial-column .carousel-caption .col-md-8 {
         text-align: left;
       }
+
+      .single-testimony{
+          margin-top:40px;
+          padding:15px;
+      }
       
       .single-testimony img{
-          width:50%;
+          width:65%;
       }
    
       .testimonial-slider-controls a {
@@ -572,6 +585,7 @@ body {
         background-color: #7e1e6e;
         color:whitesmoke;
       }
+      
       
 /* End testimonial section styles */
 
@@ -640,6 +654,26 @@ body {
         }
 
         /* service section style END */
+
+        /* ==================================== testimonial section styles =================================== */
+        .video-column,
+        .testimonial-column{
+            min-height:300px;
+        }
+
+        .single-testimony{
+            margin-top:20px;
+            padding:15px;
+        }
+        
+        .single-testimony img{
+            width:40%;
+        }
+
+        .single-testimony h4.testimonial-title{
+            padding-top:15px;
+            text-align: center;
+          }
  }
 
 /* // Small devices (landscape phones, 576px and up) */
@@ -722,6 +756,32 @@ body {
     #mainMenu > .navbar-nav {
         min-width: 70%;
     }
+
+    /* slider styles */
+    #slider-section .carousel-item {
+        height: 700px;
+      }
+
+      #slider-section .carousel-caption {
+        width:30%;
+    
+        left:unset;
+        /* text-align: justify; */
+        
+        bottom:unset;
+    
+          top:35%;
+      }
+    
+      #slider-section .carousel-caption h2 {
+          font-size:62px;
+          font-weight: 700;
+      }
+    
+      #slider-section .carousel-caption p {
+        font-size:20px;
+      
+      }
 
     .single-properties-slider-section .card .card-img-top {
         height : auto;
