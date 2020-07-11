@@ -900,15 +900,22 @@ ul.list-links li a:hover {
     display: block;
 }
 #page-footer .inner h3 {
-    color: midnightblue;
+    /* color: midnightblue; */
+    color: white;
     font-weight: normal;
-    margin-bottom: 30px;
+    font-family: inherit;
+    /* margin-bottom: 30px; */
+    margin-bottom:15px;
     margin-top: 0;
+    text-decoration:underline;
+    text-decoration-color: purple;
 }
+
 #page-footer .inner #footer-main {
     /* background-color: MidnightBlue; */
     background-color: #7e1e6e;
-    padding: 40px 0;
+    /* padding: 40px 0; */
+    padding: 30px 0px 10px 0px;
 }
 #page-footer .inner #footer-copyright {
     /* background-color: plum; */
@@ -916,8 +923,9 @@ ul.list-links li a:hover {
     color: #fff;
     /* display: table; */
     display : block;
-    padding: 10px 0;
+    padding: 8px 0;
     width: 100%;
+    text-align: center;
 }
 #page-footer .inner #footer-copyright a {
     color: #fff;

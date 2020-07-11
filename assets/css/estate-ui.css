@@ -107,7 +107,8 @@ body {
     -moz-transition: 0.2s;
     -webkit-transition: 0.2s;
     transition: 0.2s;
-    background-color: #7e1e6e;
+    /* #7e1e6e #4a073f */
+    background-color:#4a073f ; 
     color: #fff;
 }
 
@@ -341,7 +342,7 @@ body {
     color:white;
 }
 
-.services-section-margin{
+.custom-margin{
     margin:0% 5%;
 }
 
@@ -589,10 +590,86 @@ body {
       
 /* End testimonial section styles */
 
-/* begin footer styles */
+/* ========================================= begin footer styles =======================================*/
 #page-footer .inner #footer-main{
-    border-bottom: 2px solid whitesmoke;
+    border-bottom: 1px solid whitesmoke;
 }
+
+.footer-about-us p {
+    color:#fff;
+    opacity: unset;
+}
+
+.btn.btn-about-us {       
+    -moz-transition: 0.2s;
+    -webkit-transition: 0.2s;
+    transition: 0.5s;
+  
+    background-color: transparent;
+    color: white;
+    border: 1px solid #fff;
+    cursor: pointer;
+    padding: 8px 10px;
+
+    /* position:fixed;
+    bottom: 0px; */
+}
+
+.btn.btn-about-us:hover {
+    background-color: #fff;
+    color: #7e1e6e;
+    cursor: pointer;
+}
+
+.footer-links .list-links li {
+    width:60%;
+    list-style-type: none;
+}
+
+.footer-links .list-links li a {
+    color:#fff;
+    padding:5px 10px;  
+}
+
+.footer-links .list-links li:hover {
+    background-color: #fff;    
+}
+
+.footer-links .list-links li:hover a,
+.footer-links .list-links li a:hover {
+    color:#7e1e6e;
+    text-decoration: none;    
+    padding-left:15px;  
+}
+
+.footer-logo img {
+    width:100%;
+}
+
+.social-media-icons li {
+    list-style: none;
+    margin:0% 5%;
+}
+
+.social-media-icons li a i{
+    color:#fff;
+}
+
+.social-media-icons li a:hover i{
+    color:#4a073f;
+}
+
+#footer-copyright a.go-to-top {
+    background-color: #4a073f;
+    padding:5px;
+}
+
+#footer-copyright a.go-to-top:hover {
+    color: #4a073f !important;
+    background-color: #fff;
+    padding:5px;
+}
+
 /* end footer style */
 
 /* // Extra small devices (portrait phones, less than 576px) */
@@ -674,10 +751,36 @@ body {
             padding-top:15px;
             text-align: center;
           }
+
+              /* foooter styles*/
+    .social-media-column,
+    .footer-links {
+        border-top:1px solid white;
+        
+    }
+     
+    .social-media-column,
+    .footer-links,
+    .footer-about-us {
+        padding:20px;
+    }
+
+    .footer-links .list-links li {
+        width:70%;
+        margin-top:2.5%;
+    }
+
  }
 
 /* // Small devices (landscape phones, 576px and up) */
-@media (min-width: 576px) and (max-width: 767.98px) {  }
+@media (min-width: 576px) and (max-width: 767.98px) { 
+        /* foooter styles*/
+        .social-media-column,
+        .footer-links,
+        .social-media-icons {
+            border-top:1px solid white;
+        }
+ }
 
 /* Small devices (landscape phones, 576px and up) //PLUS/ Medium devices (tablets, 768px and up) */
 @media (min-width: 576px) and (max-width: 991.98px) { 
@@ -748,6 +851,17 @@ body {
         font-size:20px;
       
       }
+
+      /* foooter styles*/
+    .social-media-column,
+    .footer-links,
+    .social-media-icons {
+        border-left:1px solid white;
+    }
+
+    .social-media-row{
+        margin:15% 0%;
+    }
  }
 
  /* // Extra large devices (large desktops, 1200px and up) */
@@ -791,5 +905,16 @@ body {
         min-height:500px;
         max-height: 650px;
     }
+
+      /* foooter styles*/
+      .social-media-column,
+      .footer-links,
+      .social-media-icons {
+          border-left:1px solid white;
+      }
+
+      .social-media-row{
+          margin: 15% 0%;
+      }
 
  }
