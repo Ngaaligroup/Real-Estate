@@ -1464,12 +1464,14 @@ ul.list-links li a:hover {
   line-height: 1;
   text-transform: none;
   content: "\f08a";
-  color: #1396e2;
+  /* color: #1396e2; */
+  color:#7e1e6e;
   font-size: 18px;
   position: relative;
 }
 .bookmark:hover:before {
-  color: #073855;
+  /* color: #073855; */
+  color:#7e1e6e;
 }
 .bookmark:hover .title-add {
   visibility: visible;
@@ -1484,7 +1486,8 @@ ul.list-links li a:hover {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
   opacity: 0;
   visibility: hidden;
-  color: #5a5a5a;
+  /* color: #5a5a5a; */
+  color: #7e1e6e;
   font-size: 12px;
   pointer-events: none;
   position: absolute;
@@ -1514,7 +1517,8 @@ ul.list-links li a:hover {
   animation: animate-bookmark 1s;
   -webkit-animation: animate-bookmark 1s;
   content: "\f055";
-  color: #1396e2;
+  /* color: #1396e2; */
+  color: #7e1e6e;
   left: 3px;
   font-size: 14px;
   position: absolute;
@@ -2209,7 +2213,8 @@ ul.list-links li a:hover {
   margin-bottom: 4px;
 }
 .member .tag {
-  background-color: #1396e2;
+  /* background-color: #1e2224; */
+  background-color: #7e1e6e;
   color: #fff;
   font-size: 12px;
   font-weight: bold;
@@ -3543,7 +3548,8 @@ ul.list-links li a:hover {
 }
 .tag.price {
   text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.3);
-  background-color: #1396e2;
+  /* background-color: #1396e2; */
+  background-color:#7e1e6e;
   color: #fff;
   font-size: 14px;
   font-weight: bold;
