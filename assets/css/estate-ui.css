@@ -675,6 +675,61 @@ body {
 
 /* end footer style */
 
+/*================================ INNER PAGE STYLES ================================================*/
+.inner-page-banner {
+    height:500px;
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+}
+
+/* .inner-page-banner .inner{
+    position: relative;
+    top:50%;
+    z-index:1;
+}
+
+.inner-page-breadcrumb {
+    text-align: center;
+    line-height: 1.2;
+    width:50%;
+    //margin-top:15%;
+}
+
+.inner-page-breadcrumb li {
+    list-style:none;
+    margin:0% 2%;
+}
+
+.inner-page-breadcrumb li a {
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size:45px;
+    color: #be26a5;
+}
+
+.inner-page-breadcrumb li a:hover {
+    color: #4a073f;
+    font-weight:bold;
+}
+
+.inner-page-breadcrumb li.active {
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size:60px;
+    color: #fff;
+    font-weight:bold;
+} */
+
+.inner-page-title{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size:60px;
+    color: #fff;
+    font-weight:bold;
+
+    position: relative;
+    top:50%;
+    z-index:1;
+}
+
 /* // Extra small devices (portrait phones, less than 576px) */
 @media (max-width: 575.98px) {
     .show{
@@ -772,6 +827,14 @@ body {
         width:70%;
         margin-top:2.5%;
     }
+
+    /*================================ INNER PAGE STYLES ================================================*/
+.inner-page-banner {
+    height:350px;
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+}
 
  }
 
