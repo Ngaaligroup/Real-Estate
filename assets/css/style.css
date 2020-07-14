@@ -2360,13 +2360,20 @@ ul.list-links li a:hover {
 }
 .pagination li.active a {
   background-color: transparent;
-  border-color: #073855;
-  color: #073855;
+  /* border-color: #073855; */
+  /* color: #073855; */
+
+  border-color: #4a073f; 
+   color: #4a073f;
+
 }
 .pagination li.active a:hover, .pagination li.active a:active, .pagination li.active a:focus {
   background-color: transparent;
-  border-color: #073855;
-  color: #073855;
+  /* border-color: #073855;
+  color: #073855; */
+
+  border-color: #4a073f;
+  color: #4a073f;
 }
 .pagination li a {
   -moz-border-radius: 0px;
@@ -2380,8 +2387,11 @@ ul.list-links li a:hover {
 }
 .pagination li a:hover, .pagination li a:active, .pagination li a:focus {
   background-color: transparent;
-  border-color: #1396e2;
-  color: #1396e2;
+  /* border-color: #1396e2;
+  color: #1396e2; */
+
+  border-color: #7e1e6e;
+  color: #7e1e6e;
 }
 
 .post-author {
