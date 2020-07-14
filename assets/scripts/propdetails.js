@@ -43,24 +43,12 @@ function getUrlParam(param)
 
           $('.slidein').
           append(
-            '<div class="property-slide">'+
-                '<a href="'+Photos+'" class="image-popup" >'+
-                    '<div class="overlay"><h3>Front View</h3></div>'+
-                    '<img alt="" src="'+Photos+'" >'+
-                '</a>'+
+            '<div class="carousel-item active">'+
+            '<img src="'+Photos+'" class="d-block w-100" alt="Property Front View">'+
+            '<div class="carousel-caption d-none d-md-block">'+
+              '<h5> Picture Caption </h5>'+
             '</div>'+
-            '<!--<div class="property-slide">'+
-                '<a href="'+Photos+'" class="image-popup" >'+
-                    '<div class="overlay"><h3>Bedroom</h3></div>'+
-                    '<img alt="" src="'+Photos+'" >'+
-                '</a>'+
-            '</div>'+
-            '<div class="property-slide">'+
-                '<a href="'+Photos+'" class="image-popup" >'+
-                    '<div class="overlay"><h3>Bathroom</h3></div>'+
-                    '<img alt="" src="'+Photos+'" >'+
-                '</a>'+
-            '</div>-->'
+          '</div>'
 
             );
           var owersref=firebase.database().ref("users/" +owners);
