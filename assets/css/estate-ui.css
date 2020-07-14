@@ -816,17 +816,22 @@ body {
 
   
 @media (max-width: 768px) {
-    .similar-properties-slider-section .carousel-inner .carousel-item > div {
+    .similar-properties-slider-section .carousel-inner .carousel-item > div,
+    .properties-listing-slider-section .carousel-inner .carousel-item > div {
         display: none;
     }
-    .similar-properties-slider-section .carousel-inner .carousel-item > div:first-child {
+    .similar-properties-slider-section .carousel-inner .carousel-item > div:first-child,
+    .properties-listing-slider-section .carousel-inner .carousel-item > div:first-child {
         display: block;
     }
 }
 
 .similar-properties-slider-section .carousel-inner .carousel-item.active,
 .similar-properties-slider-section .carousel-inner .carousel-item-next,
-.similar-properties-slider-section .carousel-inner .carousel-item-prev {
+.similar-properties-slider-section .carousel-inner .carousel-item-prev,
+.properties-listing-slider-section .carousel-inner .carousel-item.active,
+.properties-listing-slider-section .carousel-inner .carousel-item-next,
+.properties-listing-slider-section .carousel-inner .carousel-item-prev {
     display: flex;
 }
 
@@ -845,8 +850,33 @@ body {
 }
 
 .similar-properties-slider-section .carousel-inner .carousel-item-right,
-.similar-properties-slider-section .carousel-inner .carousel-item-left{ 
+.similar-properties-slider-section .carousel-inner .carousel-item-left,
+.properties-listing-slider-section .carousel-inner .carousel-item-right,
+.properties-listing-slider-section .carousel-inner .carousel-item-left{ 
   transform: translateX(0);
+}
+
+/* property listing section slider style */
+/* display 2 */
+@media (min-width: 768px) {
+    
+    .properties-listing-slider-section .carousel-inner .carousel-item-right.active,
+    .properties-listing-slider-section .carousel-inner .carousel-item-next {
+      transform: translateX(50%);
+    }
+    
+    .properties-listing-slider-section .carousel-inner .carousel-item-left.active, 
+    .properties-listing-slider-section .carousel-inner .carousel-item-prev {
+      /* transform: translateX(-0%); */
+    }
+}
+
+.properties-listing-slider-section .carousel-item .card{
+    min-height:450px;
+}
+
+.properties-listing-slider-section .card p.card-text{
+    padding:12% 0%;
 }
 
 /* // Extra small devices (portrait phones, less than 576px) */
@@ -961,6 +991,10 @@ body {
         font-size:20px;
         font-weight:bold;
         font-family:inherit;
+    }
+
+    .properties-listing-slider-section .carousel-item .card{
+        min-height:400px;
     }
 
  }

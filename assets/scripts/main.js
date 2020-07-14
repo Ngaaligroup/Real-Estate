@@ -586,7 +586,16 @@ $(document).ready(function(){
   // TODO: retrieving houses properties
   var houseref =firebase.database().ref('properties/house');
   houseref.once("value").then(function(snapshot) {
+    var first_property = true;
     snapshot.forEach(function(childSnapshot) {
+
+      var active_class = "";
+      //catering for the first carousel item to add the active class to it
+      if(first_property) {active_class = "active";}
+
+      //then set first property variable to false for the other properties that follow
+      first_property = false;
+
       var key = childSnapshot.key;
       var Title=childSnapshot.val().Title;
       // alert(Title);
@@ -605,39 +614,45 @@ $(document).ready(function(){
       
       $('.prophouse').
         append(
-          '<div class="property">' +
-            '<figure class="tag status">For Sale</figure>' +
-            '<div class="propty">' +
-              '<figure class="type" title="Apartment"><img src="" alt="property"></figure>' +
-            '</div>'+
-            '<div class="property-image">' +
-                '<a href="property-detail.html?name='+key+'">' +
-                    '<img alt="" src="'+Photos+'">' +
-                '</a>' +
-            '</div>' +
-            '<div class="info">' +
-                '<header>' +
-                    '<a href="property-detail.html?name='+key+'"><h3>'+Title+'</h3></a>' +
-                    '<figure>'+Address+'</figure>' +
-                '</header>' +
-                '<div class="tag price">UGX '+price+'</div>' +
-                '<aside>' +
-                    '<p>'+description+ '</p>' +
-                    
-                    '<dl>' +
-                        '<dt>Status:</dt>' +
-                            '<dd>'+Status+'</dd>' +
-                        '<dt>Area:</dt>' +
-                            '<dd><span >'+Area+ '</span> m<sup>2</sup></dd>' +
-                        '<dt>Beds:</dt>' +
-                            '<dd id="bedss">'+bed+'</dd>' +
-                        '<dt>Baths:</dt>' +
-                            '<dd id="bths">'+baths+'</dd>' +
-                    '</dl>' +
-                '</aside>' +
-                '<a href="property-detail.html?name='+key+'" class="link-arrow">Read More</a>' +
-            '</div>' +
-          '</div>'
+         '<div class="carousel-item '+ active_class +'">'+
+         '<div class="col-md-6 col-12 single-property">'+
+             '<div class="card" style="width:auto;">'+
+                 '<div class="image property-img-container">'+
+                   
+                   '<a href="property-detail.html?name='+key+'" class="image-popup">'+
+                     '<img alt="property" src="'+Photos+'" class="card-img-top">'+
+                   '</a>'+
+                   '<div class="row single-property-additional-info">'+
+                     '<div class="col-md-3 col-3">'+
+                         '<h6>Area:</h6>'+
+                         '<figure><span>'+Area+'</span>m<sup>2</sup></figure>'+
+                     '</div>'+
+                     '<div class="col-md-3 col-3">'+
+                         '<h6>Beds:</h6>'+
+                         '<figure id="bedss">'+bed+'</figure>'+
+                     '</div>'+
+                     '<div class="col-md-3 col-3">'+
+                         '<h6>Baths:</h6>'+
+                         '<figure id="bths">'+baths+'</figure>'+
+                     '</div>'+
+                     '<div class="col-md-3 col-3">'+
+                         '<h6>Garages:</h6>'+
+                         '<figure id="grge">'+garage+'</figure>'+
+                     '</div>'+
+                 '</div>'+
+                 '<div class="single-property-overlay-text">'+
+                   '<h5 class="mb-0"> '+propType+' For '+ Status +'</h5>'+
+                 '</div>'+                 
+                 '</div>'+
+                 '<div class="card-body">'+
+                   '<h4 class="card-title float-right"> Rating </h4>'+
+                   '<h5 class="card-title d-inline">'+Title+' </h5> &nbsp; &nbsp; in  &nbsp; &nbsp; <span class="card-title property-address">'+Address+' </span>'+                   
+                   '<p class="card-text">'+description+' </p>'+
+                 '</div>'+
+                 '<a href="property-detail.html?name='+key+'" class="btn btn-property-price"> UGX '+price+'</a>'+
+               '</div>'+
+         '</div>'+
+     '</div>'
           );
       if (propType==="Apartment") {
         var srcappartment="assets/img/property-types/apartment.png";
