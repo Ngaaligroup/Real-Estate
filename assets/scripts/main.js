@@ -1292,7 +1292,7 @@ $(document).ready(function(){
               '<h4 class="card-title float-right"> Rating </h4>' +
               '<h5 class="card-title">'+Title+' </h5>' +
               '<h6 class="card-title property-address">'+Address+' </h6>' +
-              '<p class="card-text">'+description+
+              '<p class="card-text pb-2">'+description+
               
               '</p>' +                         
             '</div>' +
