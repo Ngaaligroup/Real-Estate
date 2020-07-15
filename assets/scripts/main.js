@@ -718,7 +718,16 @@ $(document).ready(function(){
   //  TODO:  retrieving agents
   var useeref =firebase.database().ref('property owners/seller');
   useeref.once("value").then(function(snapshot) {
+    var first_agency = true;
     snapshot.forEach(function(childSnapshot) {
+
+      var active_class = "";
+      //catering for the first carousel item to add the active class to it
+      if(first_agency) {active_class = "active";}
+
+      //then set first property variable to false for the other properties that follow
+      first_agency = false;
+
       var key = childSnapshot.key;
       var childData = childSnapshot.val();
 
@@ -747,28 +756,42 @@ $(document).ready(function(){
 
         $('.agentie').
       append(
-        '<div class="col-md-12 col-lg-6">' +
-          '<div class="agent">' +
-              '<a href="agent-detail.html?name='+key+'" class="agent-image"><img height ="180" alt="userimage" src="'+ProfilePic+'" onerror=this.src="assets/img/agent-01.jpg"></a>' +
-              '<div class="wrapper">' +
-                  '<header><a href="agent-detail.html?name='+key+'" ><h2>'+Fname+' '+Lname+'</h2></a></header>' +
-                  '<aside>'+properties+ ' Properties</aside>' +
-                  '<dl>' +
-                      '<dt>Phone:</dt>' +
-                      '<dd>(+256)'+phone+'</dd>' +
-                      '<dt>Mobile:</dt>' +
-                      '<dd>(+256)'+phone+'</dd>' +
-                      '<dt>Email:</dt>' +
-                      '<dd><a href="mailto:'+email+'">'+email+'</a></dd>' +
-                      '<!--<dt>Skype:</dt>-->' +
-                      '<!--<dd>john.doe</dd>-->' +
-                  '</dl>' +
-              '</div>' +
-              '<div class="stars-outer" style="font-size: 20px; ">'+
-                  '<div class="stars-inner" id="inner"  style="width:'+starPercentageRounded+' ;"></div>'+
-							'</div>'+
-          '</div><!-- /.agent -->' +
-        '</div><!-- /.col-md-12 -->'
+        '<div class="carousel-item '+ active_class +'">'+
+         '<div class="col-md-6 col-12 single-agency">'+
+             '<div class="card " style="width:auto;">'+
+                 '<div class="image property-img-container">'+
+                   
+                   '<a href="agent-detail.html?name='+key+'" class="agent-image" class="agent-image">'+
+                     '<img height ="300" alt="'+Fname+' '+Lname+'" src="'+ProfilePic+'" class="card-img-top" onerror=this.src="assets/img/agent-01.jpg">'+
+                   '</a>'+
+                 '<!--<div class="single-property-overlay-text">'+                   
+                   
+                 '</div>-->'+                 
+                 '</div>'+
+                 '<div class="card-body">'+
+                  '<div class="card-title float-right star-rating">'+
+                    '<div class="stars-outer" style="font-size: 20px;">'+
+                      '<div class="stars-inner" id="inner"  style="width:'+starPercentageRounded+' ;"></div>'+
+                      '</div>'+
+                  '</div>' +
+                   '<a href="agent-detail.html?name='+key+'" > <h2 class="card-title d-inline">'+Fname+' '+Lname+' </h2> </a>'+                   
+                   '<p class="card-text">'+
+                    '<h5>'+properties+ ' Properties</h5>' +
+                    '<dl>' +
+                        '<dt>Phone:</dt>' +
+                        '<dd>(+256)'+phone+'</dd>' +
+                        '<dt>Mobile:</dt>' +
+                        '<dd>(+256)'+phone+'</dd>' +
+                        '<dt>Email:</dt>' +
+                        '<dd><a href="mailto:'+email+'">'+email+'</a></dd>' +
+                        '<!--<dt>Skype:</dt>-->' +
+                        '<!--<dd>john.doe</dd>-->' +
+                    '</dl>' +                 
+                   '</p>'+
+                 '</div>'+
+               '</div>'+
+         '</div>'+
+     '</div>'
       );
         
       });
