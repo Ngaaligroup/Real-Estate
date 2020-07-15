@@ -922,6 +922,14 @@ body {
     max-height:500px;
 }
 
+.listing-slider-section .card p.card-text{
+    padding:12% 0%;
+}
+
+.card-item-overflow-show{
+    overflow-x: auto;
+}
+
 /* ------------------------ FOR RATING --------------------------*/
 .star-rating{
     color: #7e1e6e; 

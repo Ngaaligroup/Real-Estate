@@ -1135,7 +1135,15 @@ $(document).ready(function(){
    //  TODO:  retrieving agency
   var useeref11 =firebase.database().ref('property owners/Agency');
   useeref11.once("value").then(function(snapshot) {
+    var first_item = true;
     snapshot.forEach(function(childSnapshot) {
+      var active_class = "";
+      //catering for the first carousel item to add the active class to it
+      if(first_item) {active_class = "active";}
+
+      //then set first property variable to false for the other properties that follow
+      first_item = false;
+
       var key = childSnapshot.key;
       var childData = childSnapshot.val();
 
@@ -1167,41 +1175,51 @@ $(document).ready(function(){
 
       $('.agencie').
         append(
-          '<div class="agency">'+
-          //adding agency logo
-            '<a href="agency-detail.html?name='+key+'" class="agency-image"><img alt="" src="'+ProfilePic+'" onerror=this.src="assets/img/agency-logo-01.png"></a>'+
-            '<div class="wrapper">'+
-                '<header><a href="agency-detail.html?name='+key+'"><h2>'+Name+'</h2></a></header>'+
-                '<dl>'+
-                    '<dt>Phone:</dt>'+
-                    '<dd>(+256)'+phone+'</dd>'+
-                    '<dt>Mobile:</dt>'+
-                    '<dd>(+256)'+phone+'</dd>'+
-                    '<dt>Email:</dt>'+
-                    '<dd><a href="mailto:'+email+'">'+email+'</a></dd>'+
-                    '<dt>Website:</dt>'+
-                    '<dd><a href="#">'+website+'</a></dd>'+
-                '</dl>'+
-                '<address>'+
-                    '<strong>Address</strong>'+
-                    '<br>'+
-                    '<strong>'+Name+'</strong><br>'+
-                    ''+address+'<br>'+
-                    ''+postal+'<br>'+
-                    '<div class="stars-outer" style="font-size: 20px;">'+
-                    '<div class="stars-inner" id="inner"  style="width:'+starPercentageRounded+' ;"></div>'+
-                '</address>'+
+          '<div class="carousel-item '+ active_class +'">'+
+            '<div class="col-md-6 col-12 single-agency">'+
+                '<div class="card card-item-overflow-show" style="width:auto;">'+
+                    '<div class="image property-img-container">'+
+                      
+                      '<a href="agent-detail.html?name='+key+'" class="agent-image" class="agent-image">'+
+                        '<img height ="300" alt="'+Name+'" src="'+ProfilePic+'" class="card-img-top" onerror=this.src="assets/img/agent-01.jpg">'+
+                      '</a>'+
+                    '<!--<div class="single-property-overlay-text">'+                   
+                      
+                    '</div>-->'+                 
+                    '</div>'+
+                    '<div class="card-body">'+
+                      '<div class="card-title float-right star-rating">'+
+                        '<div class="stars-outer" style="font-size: 20px;">'+
+                          '<div class="stars-inner" id="inner"  style="width:'+starPercentageRounded+' ;"></div>'+
+                          '</div>'+
+                      '</div>' +
+                      '<a href="agent-detail.html?name='+key+'" > <h3 class="card-title d-inline">'+Name+' </h3> </a>'+                  
+                      '<h5 class="pt-2" style="color:#7e1e6e;">'+properties+ ' Properties </h5>' + 
+                      '<p class="card-text p-0">'+
+                        '<dl>' +
+                            '<dt>Address:</dt>' +
+                            '<dd>'+Name+'</dd>' +
+                            '<dd>'+address+'</dd>' +
+                            '<dd>'+postal+'</dd>' + 
+                            '<dt>Phone:</dt>' +
+                            '<dd>(+256)'+phone+'</dd>' +
+                            '<dt>Mobile:</dt>' +
+                            '<dd>(+256)'+phone+'</dd>' +
+                            '<dt>Email:</dt>' +
+                            '<dd><a href="mailto:'+email+'">'+email+'</a></dd>' +
+                            '<dt>Website:</dt>'+
+                            '<dd><a href="#">'+website+'</a></dd>'+
+                            '<!--<dt>Skype:</dt>-->' +
+                            '<!--<dd>john.doe</dd>-->' +
+                        '</dl>' +                 
+                      '</p>'+
+                    '</div>'+                    
+                  '</div>'+
             '</div>'+
-          '</div><!-- /.agency -->'
+        '</div>'
           );
         });
       });
-
-      
-
-
-
-
     });
   });
 
