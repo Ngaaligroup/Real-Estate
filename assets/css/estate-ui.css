@@ -882,8 +882,12 @@ body {
 /* // Extra small devices (portrait phones, less than 576px) */
 @media (max-width: 575.98px) {
     .show{
-        background-color:rgba(126, 30, 110, 0.8);
+        background-color:rgba(126, 30, 110, 0.9);
         padding:2% 0%;
+    }
+
+    .mainMenu-container {
+        padding: .5rem 1rem !important;
     }
 
      /* slider styles */
@@ -980,6 +984,15 @@ body {
     /*================================ INNER PAGE STYLES ================================================*/
     .inner-page-banner {
         height:350px;
+    }
+
+    .inner-page-title{
+        font-size:40px;
+       
+    }
+
+    #our-guides a {
+        margin:1.5% 10%;
     }
 
     /* single property details page */

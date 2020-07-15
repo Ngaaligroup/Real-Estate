@@ -151,7 +151,7 @@
        <!-- /# Inner Page banner section end -->
 
     <!-- Page Content -->
-    <div id="page-content">
+    <div id="page-content" class="pt-3">
         <!-- Breadcrumb ->
         <div class="container">
             <ol class="breadcrumb">
@@ -162,62 +162,30 @@
         <!-- end Breadcrumb -->
         <div class="container"> <!-- Container-->
             <div class="row">
-                <!-- Results -->
-                <div class="col-md-9 col-sm-9">
-                    <section id="results">
-                        <header><h1>Land Listing</h1></header>
-                        <section id="search-filter">
-                            <figure><h3><i class="fa fa-search"></i>Search Results:</h3>
-                                <span class="search-count">28</span>
-                                <div class="sorting">
-                                    <div class="form-group">
-                                        <select name="sorting" class="form-control">
-                                            <option value="">Sort By</option>
-                                            <option value="1">Lowest price first</option>
-                                            <option value="2">Highest price first</option>
-                                            <option value="3">Date added</option>
-                                        </select>
-                                    </div><!-- /.form-group -->
-                                </div>
-                            </figure>
-                        </section>
-                        <section id="properties" class="display-lines showprop">
-                            
-                            
-                        </section><!-- /#properties-->
-                        <!-- Pagination -->
-                            <div class="center">
-                                <ul class="pagination">
-                                    <li class="active"><a href="#">1</a></li>
-                                    <li><a href="#">2</a></li>
-                                    <li><a href="#">3</a></li>
-                                    <li><a href="#">4</a></li>
-                                    <li><a href="#">5</a></li>
-                                </ul><!-- /.pagination-->
-                            </div><!-- /.center-->
-                    </section><!-- /#results -->
-                </div><!-- /.col-md-9 -->
-                <!-- end Results -->
-
                 <!-- sidebar -->
                 <div class="col-md-3 col-sm-3">
                     <section id="sidebar">
                         <aside id="edit-search">
-                            <header><h3>Search Land</h3></header>
-                            <form role="form" id="form-sidebar" class="form-search" action="properties-listing.html">
-                                <div class="form-group">
+                            <header><h3>Search Buildings</h3></header>
+                            <form role="form" id="form-sidebar" class="form-search form-row" action="properties-listing.html">
+                                <div class="col-md-12 col-6 form-group">
                                     <select name="type" class="form-control">
                                         <option value="">Status</option>
                                         <option value="1">Rent</option>
                                         <option value="2">Sale</option>
                                     </select>
                                 </div><!-- /.form-group -->
-                                <div class="form-group">
+                                <div class="col-md-12 col-6 form-group">
                                     <select name="country" class="form-control">
                                         <option value="1">Uganda</option>
-                                 </select>
+                                      <!--  <option value="1">France</option>
+                                        <option value="2">Great Britain</option>
+                                        <option value="3">Spain</option>
+                                        <option value="4">Russia</option>
+                                        <option value="5">United States</option>-->
+                                    </select>
                                 </div><!-- /.form-group -->
-                                <div class="form-group">
+                                <div class="col-md-12 col-6 form-group">
                                     <select name="city" class="form-control">
                                         <option value="">City</option>
                                         <option value="1">Kawempe</option>
@@ -227,8 +195,8 @@
                                         <option value="5">Gaaba</option>
                                     </select>
                                 </div><!-- /.form-group -->
-                                <div class="form-group" class="form-control">
-                                    <select name="district">
+                                <div class="col-md-12 col-6 form-group">
+                                    <select name="district" class="form-control">
                                         <option value="">District</option>
                                         <option value="1">Wakiso</option>
                                         <option value="2">Mpiji</option>
@@ -237,19 +205,17 @@
                                         <option value="5">Kalangala</option>
                                     </select>
                                 </div><!-- /.form-group -->
-                                <div class="form-group">
+                                <div class="col-md-12 col-6 form-group">
                                     <select name="property-type" class="form-control">
                                         <option value="">Property Type</option>
-                                        <option value="1">Mailo Land</option>
-										
-										<option value="2">Mailo Titled</option>
-										<option value="3">Mailo Untitled</option>
-										
-                                        <option value="4">Crown Land</option>
-                                        
+                                        <option value="1">Apartment</option>
+                                        <option value="2">Hotel</option>
+                                        <option value="3">Cottage</option>
+                                        <option value="4">Flat</option>
+                                        <option value="5">House</option>
                                     </select>
                                 </div><!-- /.form-group -->
-                                <div class="form-group">
+                                <div class="col-md-12 col-12 form-group">
                                     <!-- <div class="price-range">
                                         <input id="price-input" type="text" name="price" value="1000;299000">
                                     </div> -->
@@ -257,7 +223,7 @@
                                     <input type="range" min="1000" max="299000" value="100000" class="w-75 priceSlider" id="priceSlider">
                                     <span class="ml-1 mt-1 priceValueSpan" id="priceValueSpan"></span>
                                 </div>
-                                <div class="form-group">
+                                <div class="col-md-12 col-6 form-group">
                                     <button type="submit" class="btn btn-sidebar-form-search">Search Now</button>
                                 </div><!-- /.form-group -->
                             </form><!-- /#form-map -->
@@ -275,11 +241,69 @@
                                 <span>Recommendations</span>
                                 <span class="arrow fa fa-angle-right"></span>
                             </a><!-- /.universal-button -->
-                            <!-- /.universal-button -->
+                           <!-- /.universal-button -->
                         </aside><!-- /#our-guide -->
                     </section><!-- /#sidebar -->
                 </div><!-- /.col-md-3 -->
                 <!-- end Sidebar -->
+
+                <!-- Results -->
+                <div class="col-md-9 col-sm-9">
+                    <section id="results">
+                        <!-- <header><h1>Land Listing</h1></header> -->
+                        <header>
+                            <div id="search-filter" class="row pt-0 justify-content-end">
+                                <div class="col-md-6 col-12">
+                                    <h1>
+                                        Total Results: <span class="search-count">28</span> 
+                                    </h1>  
+                                </div>
+                                <div class="col-md-2 col-3">
+                                    <div class="property-slider-controls float-left mr-5">
+                                        <a href="#properties-listing-slider-section" title="Previous Property" data-slide="prev" class="left fa fa-angle-left"></a>
+                                        <a href="#properties-listing-slider-section" title="Next Property" data-slide="next" class="right fa fa-angle-right"></a>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-6">
+                                    <div class="form-group">
+                                        <select name="sorting" class="form-control">
+                                            <option value="">Sort By</option>
+                                            <option value="1">Lowest price first</option>
+                                            <option value="2">Highest price first</option>
+                                            <option value="3">Date added</option>
+                                        </select>
+                                    </div><!-- /.form-group -->
+                                </div>                        
+                                <!-- <figure><h3><i class="fa fa-search"></i>Search Results:</h3>
+                                    <span class="search-count">28</span> -->
+                                    <!-- <div class="sorting pt-2">                                      
+                                    </div>                             -->
+                            </div>
+                     
+                        </header>
+                        <section id="properties" class="display-lines showprop">
+                            
+                            
+                        </section><!-- /#properties-->
+                         <!-- Pagination -->
+                         <div class="row justify-content-center mt-5">
+                            <div class="col-5">
+                               <div class="center">
+                                   <ul class="pagination">
+                                       <li class="active"><a href="#">1</a></li>
+                                       <li><a href="#">2</a></li>
+                                       <li><a href="#">3</a></li>
+                                       <li><a href="#">4</a></li>
+                                       <li><a href="#">5</a></li>
+                                   </ul><!-- /.pagination-->
+                               </div><!-- /.center-->
+                            </div>
+                        </div> 
+                    </section><!-- /#results -->
+                </div><!-- /.col-md-9 -->
+                <!-- end Results -->
+
+                
             </div><!-- /.row -->
         </div><!-- /.container -->
     </div>
