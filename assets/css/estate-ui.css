@@ -879,7 +879,48 @@ body {
     padding:12% 0%;
 }
 
-/* // Extra small devices (portrait phones, less than 576px) */
+/* generic style for listings sliders */
+
+@media (max-width: 768px) {
+
+    .listing-slider-section .carousel-inner .carousel-item > div {
+        display: none;
+    }
+
+    .listing-slider-section .carousel-inner .carousel-item > div:first-child {
+        display: block;
+    }
+}
+
+.listing-slider-section .carousel-inner .carousel-item.active,
+.listing-slider-section .carousel-inner .carousel-item-next,
+.listing-slider-section .carousel-inner .carousel-item-prev {
+    display: flex;
+}
+
+/* display 2 */
+@media (min-width: 768px) {
+    
+    .listing-slider-section .carousel-inner .carousel-item-right.active,
+    .listing-slider-section .carousel-inner .carousel-item-next {
+      transform: translateX(50%);
+    }
+    
+    .listing-slider-section .carousel-inner .carousel-item-left.active, 
+    .listing-slider-section .carousel-inner .carousel-item-prev {
+      /* transform: translateX(-0%); */
+    }
+}
+
+.listing-slider-section .carousel-inner .carousel-item-right,
+.listing-slider-section .carousel-inner .carousel-item-left{ 
+  transform: translateX(0);
+}
+
+/* ============================================================================================================================= */
+/* ===========================================MEDIA QUERIES =============================================================== */
+/* ============================================================================================================================= */
+/* ================================== // Extra small devices (portrait phones, less than 576px) ============================= */
 @media (max-width: 575.98px) {
     .show{
         background-color:rgba(126, 30, 110, 0.9);
