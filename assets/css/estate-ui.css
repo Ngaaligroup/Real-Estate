@@ -99,8 +99,12 @@ body {
     background-color: rgba(126, 30, 110, 0.9) !important;
 }
 
-.dropdown-item:hover {
+.dropdown-item:hover, a.dropdown-item.active {
     color : #4e0642 !important;
+}
+
+.dropdown-item.active, .dropdown-item:active {
+    background-color: whitesmoke;
 }
 
 .btn.btn-add-property {

@@ -3,20 +3,48 @@
 <html lang="en-US">
 <head>
     <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="ThemeStarz">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- <meta name="author" content="ThemeStarz"> -->
 
     <link href='http://fonts.googleapis.com/css?family=Roboto:300,400,700' rel='stylesheet' type='text/css'>
+
+    <script type="text/javascript" src="assets/js/jquery-2.1.0.min.js"></script>
+
+    <!-- For the rating stars -->
+    <script src="star.js"></script>
     <link rel="stylesheet" href="assets/stars.css" type="text/css">
-    <link href="assets/fonts/font-awesome.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.css" type="text/css">
+
+    <!-- latest bootstrap and fontawesome and owlcarousel cdn -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+     
+    <!-- owl carousel -->
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.css" integrity="sha512-RWhcC19d8A3vE7kpXq6Ze4GcPfGe3DQWuenhXAbcGiZOaqGojLtWwit1eeM9jLGHFv8hnwpX3blJKGjTsf2HxQ==" crossorigin="anonymous" /> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.css" integrity="sha512-X/RSQYxFb/tvuz6aNRTfKXDnQzmnzoawgEQ4X8nZNftzs8KFFH23p/BA6D2k0QCM4R0sY1DEy9MIY9b3fwi+bg==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.theme.css" integrity="sha512-itF/9I/NigY9u4ukjw9s7/kG6SC7LJ5Q4pRNMnTbGZAsO4/RSUelfVuYBk8AkSk23qEcucIqdUlzzpy2qf7jGg==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.transitions.css" integrity="sha512-4ioNqjewIy2hSnYs7smFWpvzAB4xcD6NnR2z6ydUZEBg0UDVW3IoKATPoVYMyzKexe8yFU6sPd2VypoH2ZjCTQ==" crossorigin="anonymous" />
+    
+    <!-- OLD commented out local bootstrap and fontawesome -->
+    <!-- <link href="assets/fonts/font-awesome.css" rel="stylesheet" type="text/css"> -->   
+    <!-- <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.css" type="text/css">  -->
+
+    <!-- local bootrap and fontawesome and owl carousel css for when internet is not available to use cdn -->
+    <!-- <link rel="stylesheet" href="assets/estate-ui-local/bootstrap4/bootstrap.min.css" type="text/css"> 
+    <link rel="stylesheet" href="assets/estate-ui-local/fontawesome/css/fontawesome-all.css" type="text/css"> 
+    <link rel="stylesheet" href="assets/estate-ui-local/owlcarousel/owl.carousel.css" type="text/css"> 
+    <link rel="stylesheet" href="assets/estate-ui-local/owlcarousel/owl.theme.css" type="text/css"> 
+    <link rel="stylesheet" href="assets/estate-ui-local/owlcarousel/owl.transitions.css" type="text/css">  -->
+
     <link rel="stylesheet" href="assets/css/bootstrap-select.min.css" type="text/css">
-    <link rel="stylesheet" href="assets/css/magnific-popup.css" type="text/css">
     <link rel="stylesheet" href="assets/css/jquery.slider.min.css" type="text/css">
     <link rel="stylesheet" href="assets/css/owl.carousel.css" type="text/css">
+    <!-- <link rel="stylesheet" href="assets/css/owl.transitions.css" type="text/css"> -->
     <link rel="stylesheet" href="assets/css/style.css" type="text/css">
 
-    <title>Estate | Architect</title>
+    <!-- estate ui redesigning css written by Kevin -->
+    <link rel="stylesheet" href="assets/css/estate-ui.css" type="text/css">
+ 
+    <title>Estate | Civil Engineers</title>
 
 </head>
 
@@ -24,77 +52,113 @@
 <!-- Wrapper -->
 <div class="wrapper">
     <!-- Navigation -->
-    <div class="navigation">
-        <div class="secondary-navigation">
-            <div class="container">
+   <header class="main-header header-sticky" id="main-header"> <!-- top header starts here-->
+        <div class="top-header">
                 
-                <div class="user-area" >
+                <div class="user-area d-flex flex-row-reverse">
                     <div class="actions" id="act">
-                        <a href="create-agency.html" class="promoted">Register Agency</a>
-                        <a href="create-account.html" class="promoted"><strong>Create Account</strong></a>
-                        <a href="sign-in.html" id="sign-in" class="hide">Sign In</a>
-                        <a href="sign-in.html" id="sign-out" class="hide" style="padding-right: 20px">Sign Out</a>
+                        <a href="create-agency.html" class="promoted btn btn-top-header-links" >Agency </a>
+                        <a href="create-account.html" class="promoted btn btn-top-header-links">Create Account</a>
+                        <a href="sign-in.html" id="sign-in" class="hide btn btn-top-header-links"> Sign In</a>
+                        <a href="sign-in.html" id="sign-out" class="hide btn btn-top-header-links">Sign Out</a>
+                        <!-- style="padding-right: 20px" <strong></strong>-->
                     </div>
-                    
+                
                 </div>
-            </div>
+        
         </div>
-        <div class="container">
-            <header class="navbar" id="top" role="banner">
-                <div class="navbar-header">
-                    <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <div class="navbar-brand nav" id="brand">
-                        <a href="index.html"><img src="assets/img/estate.PNG" alt="brand"></a>
+        <nav class="navbar navbar-default navbar-expand-lg mainMenu-container" id="mainMenu-container">
+            <a class="navbar-brand" href="index.html" id="brand">
+                <img src="./src/assets/img/estate-ui/estate_logo2.png" alt="Estate Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainMenu" aria-controls="mainMenu" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            
+            </button>
+
+            <!-- <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button> -->
+        
+            <div class="collapse navbar-collapse" id="mainMenu">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                <a class="nav-link" href="index.html">Homepage</a>                    
+                </li>
+            
+                <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="adminhide" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Property
+                </a>
+                <div class="dropdown-menu" aria-labelledby="adminhide">
+                    <a class="dropdown-item" href="land.html">Land</a>
+                    <a class="dropdown-item" href="properties-listing-lines.html">Building</a>
+                
+                </div>
+                </li>
+            
+                <li class="nav-item dropdown active">
+                    <a class="nav-link dropdown-toggle" href="#" id="adminhides" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Professionals
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="adminhides">
+                    <a class="dropdown-item" href="architect.html">Architects</a>
+                    <a class="dropdown-item" href="surveyor.html">Surveyors</a>
+                    <a class="dropdown-item active" href="civilEngineer.html">Civil Engineers</a>
+                    <a class="dropdown-item" href="Lawyer.html">Lawyers</a>                     
                     </div>
-                </div>
-                <nav class="collapse navbar-collapse bs-navbar-collapse navbar-right" role="navigation">
-                    <ul class="nav navbar-nav">
-                         <li><a href="index.html">Homepage</a>
-                       
-                        </li>
-                        <li class="has-child" id="adminhide"><a href="#">Property</a>
-                           <ul class="child-navigation">
-                                <li><a href="land.html">Land</a></li>
-                                <li><a href="properties-listing-lines.html">Building</a></li>
-                            </ul>
-                        </li>
-                        <li class="has-child" id=""><a href="#">Professionals</a>
-                            <ul class="child-navigation">
-                                <li><a href="architect.html">Architects</a></li>
-                                <li><a href="surveyor.html">Surveyors</a></li>
-                                <li><a href="civilEngineer.html">Civil Engineers</a></li>
-                                <li><a href="Lawyer.html">Lawyers</a></li>
-                            </ul>
-                        </li>
-                     
-                        <li class="has-child" id="adminhides"><a href="#">Agents & Agencies</a>
-                            <ul class="child-navigation">
-                                <li><a href="agents-listing.html">Agents Listing</a></li>
-                                <li><a href="agencies-listing.html">Agencies Listing</a></li>
-                            </ul>
-                        </li>
-                        
-                        <li><a href="hardware.html">Hardware</a></li>
-                        <li><a href="submit.html" class="hide" id="submitlin">Add Your Property</a></li>
-                        
-               
-                    </ul>
-                </nav><!-- /.navbar collapse-->
-                <div class="add-your-property">
+                </li>
+
+                <li class="nav-item dropdown">
+                    <!-- id="adminhides" -->
+                    <a class="nav-link dropdown-toggle" href="#" id="agents_and_agencies" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Agents & Agencies
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="agents_and_agencies">
+                    <a class="dropdown-item" href="agents-listing.html">Agents Listing</a>
+                    <a class="dropdown-item" href="agencies-listing.html">Agencies Listing</a>
+                    
+                    </div>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="hardware.html">Hardware</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact Us</a>
+                </li>
+                <li class="add-your-property ml-3">
                     <!-- <a href="submit.html" class="btn btn-default"><i class="fa fa-plus"></i><span class="text">Add Your Property</span></a> -->
-                </div>
-            </header><!-- /.navbar -->
-        </div><!-- /.container -->
-    </div><!-- /.navigation -->
-    <!-- end Navigation -->
+                    <a href="submit.html" class="btn btn-add-property ml-auto"><i class="fa fa-plus" title="Add Your Property"></i></a>
+                </li>
+            </ul>
+        
+            </div>
+        </nav>       
+    </header><!-- /.navigation -->
+
+    <!-- Inner Page banner section Start-->
+    <section class="inner-page-banner" id="inner-page-banner" style="background-image:linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)),url(assets/img/bg_images/image2.jpg);">
+        <!-- Breadcrumb ->
+        <div class="container text-center inner">
+        <ul class="inner-page-breadcrumb d-inline-flex">
+            <li><a href="#">Home</a></li>
+            <li class="active">Property Detail</li>
+        </ul>
+    </div>
+    <!-- end Breadcrumb -->
+    <div class="inner-page-title"> <!-- The title of the page -->
+        Civil Engineer Listings
+    </div>
+    </section>    
+    <!-- /# Inner Page banner section end -->
+
     <!-- Page Content -->
-    <div id="page-content">
-        <!-- Breadcrumb -->
+    <div id="page-content" class="pt-3">
+        <!-- Breadcrumb ->
         <div class="container">
             <ol class="breadcrumb">
                 <li><a href="#">Home</a></li>
@@ -106,71 +170,31 @@
 
         <div class="container">
             <div class="row">
-                <!-- Agent Detail -->
-                <div class="col-md-9 col-sm-9">
-                    <section id="agents-listing">
-                        <header><h1>Civil Engineers Listing</h1></header>
-                        <div class="row civils">
-                            <!-- <div class="col-md-12 col-lg-6">
-                                <div class="agent">
-                                    <img alt="" class="agent-image" src="assets/img/shirley.jpg">
-                                    <div class="wrapper">
-                                        <header><h2>Robert Farley</h2></header>
-                                        <aside>Contact</aside>
-                                        <dl>
-                                            <dt>Phone:</dt>
-                                            <dd>(123) 456 789</dd>
-                                            <dt>Mobile:</dt>
-                                            <dd>888 123 456 789</dd>
-                                            <dt>Email:</dt>
-                                            <dd><a href="mailto:#">john.doe@example.com</a></dd>
-                                            <dt>Skype:</dt>
-                                            <dd>john.doe</dd>
-                                        </dl>
-                                    </div> -->
-                                <!-- </div>
-                            </div> -->
-                            
-                        </div><!-- /.row -->
-                    </section><!-- /#agents-listing -->
-                    <!-- Pagination -->
-                    <div class="center">
-                        <ul class="pagination">
-                            <li class="active"><a href="#">1</a></li>
-                            <li><a href="#">2</a></li>
-                            <li><a href="#">3</a></li>
-                            <li><a href="#">4</a></li>
-                            <li><a href="#">5</a></li>
-                        </ul><!-- /.pagination-->
-                    </div><!-- /.center-->
-                </div><!-- /.col-md-9 -->
-                <!-- end Agent Detail -->
-
                 <!-- sidebar -->
                 <div class="col-md-3 col-sm-3">
                     <section id="sidebar">
                         <aside id="edit-search">
-                            <header><h3>Search Properties</h3></header>
-                            <form role="form" id="form-sidebar" class="form-search" action="properties-listing.html">
-                                <div class="form-group">
-                                    <select name="type">
+                            <header><h3>Search Civil Engineers</h3></header>
+                            <form role="form" id="form-sidebar" class="form-search form-row" action="properties-listing.html">
+                                <div class="col-md-12 col-6 form-group">
+                                    <select name="type" class="form-control">
                                         <option value="">Status</option>
                                         <option value="1">Rent</option>
                                         <option value="2">Sale</option>
                                     </select>
                                 </div><!-- /.form-group -->
-                                <div class="form-group">
-                                    <select name="country">
-                                        <option value="">Country</option>
+                                <div class="col-md-12 col-6 form-group">
+                                    <select name="country" class="form-control">
                                         <option value="1">Uganda</option>
-                                      <!--  <option value="2">Great Britain</option>
+                                      <!--  <option value="1">France</option>
+                                        <option value="2">Great Britain</option>
                                         <option value="3">Spain</option>
                                         <option value="4">Russia</option>
-                                        <option value="5">United States</option> -->
+                                        <option value="5">United States</option>-->
                                     </select>
                                 </div><!-- /.form-group -->
-                                <div class="form-group">
-                                    <select name="city">
+                                <div class="col-md-12 col-6 form-group">
+                                    <select name="city" class="form-control">
                                         <option value="">City</option>
                                         <option value="1">Kawempe</option>
                                         <option value="2">Jinja</option>
@@ -179,18 +203,18 @@
                                         <option value="5">Gaaba</option>
                                     </select>
                                 </div><!-- /.form-group -->
-                                <div class="form-group">
-                                    <select name="district">
+                                <div class="col-md-12 col-6 form-group">
+                                    <select name="district" class="form-control">
                                         <option value="">District</option>
                                         <option value="1">Wakiso</option>
-                                        <option value="2">Mpigi</option>
+                                        <option value="2">Mpiji</option>
                                         <option value="3">Kampala</option>
                                         <option value="4">Mityana</option>
                                         <option value="5">Kalangala</option>
                                     </select>
                                 </div><!-- /.form-group -->
-                                <div class="form-group">
-                                    <select name="property-type">
+                                <div class="col-md-12 col-6 form-group">
+                                    <select name="property-type" class="form-control">
                                         <option value="">Property Type</option>
                                         <option value="1">Apartment</option>
                                         <option value="2">Hotel</option>
@@ -199,13 +223,16 @@
                                         <option value="5">House</option>
                                     </select>
                                 </div><!-- /.form-group -->
-                                <div class="form-group">
-                                    <div class="price-range">
+                                <div class="col-md-12 col-12 form-group">
+                                    <!-- <div class="price-range">
                                         <input id="price-input" type="text" name="price" value="1000;299000">
-                                    </div>
+                                    </div> -->
+                                    <label class="form-control-label"> Price: </label> <br/>
+                                    <input type="range" min="1000" max="299000" value="100000" class="w-75 priceSlider" id="priceSlider">
+                                    <span class="ml-1 mt-1 priceValueSpan" id="priceValueSpan"></span>
                                 </div>
-                                <div class="form-group">
-                                    <button type="submit" class="btn btn-default">Search Now</button>
+                                <div class="col-md-12 col-6 form-group">
+                                    <button type="submit" class="btn btn-sidebar-form-search">Search Now</button>
                                 </div><!-- /.form-group -->
                             </form><!-- /#form-map -->
                         </aside><!-- /#edit-search -->
@@ -227,58 +254,220 @@
                     </section><!-- /#sidebar -->
                 </div><!-- /.col-md-3 -->
                 <!-- end Sidebar -->
+
+                <!-- Civil Engineer Detail -->
+                <div class="col-md-9 col-sm-9">
+                    <section id="agents-listing">
+                        <!-- <header><h1>Civil Engineer Listing</h1></header> -->
+                        <header>
+                            <div id="search-filter" class="row pt-0 justify-content-end">
+                                <div class="col-md-6 col-12">
+                                    <h1>
+                                        Total Results: <span class="search-count">28</span> 
+                                    </h1>  
+                                </div>
+                                <div class="col-md-2 col-3">
+                                    <div class="property-slider-controls">
+                                        <a href="#engineer-listing-slider-section" title="Previous Civil Engineer" data-slide="prev" class="left fa fa-angle-left"></a>
+                                        <a href="#engineer-listing-slider-section" title="Next Civil Engineer" data-slide="next" class="right fa fa-angle-right"></a>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-6">
+                                    <div class="form-group">
+                                        <select name="sorting" class="form-control">
+                                            <option value="">Sort By</option>
+                                            <option value="1">Lowest price first</option>
+                                            <option value="2">Highest price first</option>
+                                            <option value="3">Date added</option>
+                                        </select>
+                                    </div><!-- /.form-group -->
+                                </div>                        
+                                <!-- <figure><h3><i class="fa fa-search"></i>Search Results:</h3>
+                                    <span class="search-count">28</span> -->
+                                    <!-- <div class="sorting pt-2">                                      
+                                    </div>                             -->
+                            </div>
+                     
+                        </header>
+
+                             <!-- ========= slider start ============ -->
+                        <div class="row mx-auto my-auto">
+                            <div id="engineer-listing-slider-section" class="engineer-listing-slider-section listing-slider-section carousel slide w-100" data-ride="carousel">
+                        
+                            <!-- Wrapper for single property slides -->
+                                <div class="carousel-inner w-100" role="listbox">
+                                    
+                                    <!-- load the individual slides from the main.js -->
+                                    <div class="display-lines civils"></div><!-- /#properties -->
+                                </div>
+                            </div>
+                        </div>
+                    </section><!-- /#agencies-listing -->
+                    
+                    <div class="row justify-content-center mt-5">
+                        <div class="col-6">
+                            <div class="center">
+                                <ul class="pagination">
+                                    <li class="active"><a href="#">1</a></li>
+                                    <li><a href="#">2</a></li>
+                                    <li><a href="#">3</a></li>
+                                    <li><a href="#">4</a></li>
+                                    <li><a href="#">5</a></li>
+                                </ul>
+                            </div><!-- /.center-->
+                            </div>
+                    </div>  <!-- /.pagination-->  
+                </div><!-- /.col-md-9 -->
+                <!-- end Civil Engineer Detail -->
+
             </div><!-- /.row -->
         </div><!-- /.container -->
     </div>
     <!-- end Page Content -->
     <!-- Page Footer -->
-    <footer id="page-footer">
-        <div class="inner">
-            <aside id="footer-main">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-3 col-sm-3">
-                            <article>
-                                <h3>About Us</h3>
-                                <p>We offer services concerning the whole process of buying or renting land including all the necessary Professionals
-                                        that are necessary in accompolishing those tasks.
-                                </p>
-                                <hr>
-                               
-                            </article>
-                        </div><!-- /.col-sm-3 -->
-                        <div class="col-md-3 col-sm-3 recent"></div>
+   <footer id="page-footer">
+    <div class="inner">
+        <aside id="footer-main">
+            <div class="custom-margin">
+                <div class="row">
+                    <div class="col-md-4 col-sm-4 footer-about-us">
+                        <!-- <article></article> -->
+                            <h3>About Us</h3>
+                            <p>We offer services concerning the whole process of buying or renting land including all the necessary Professionals
+                                that are necessary in accompolishing those tasks.
+                            </p>
+                            <a class="btn btn-about-us" href="#"> Read More ...</a>
+                            <!-- <hr> -->
+                    </div><!-- /.col-sm-3 -->
+                    <!-- Commented out "Recent Section" in the footer ->
+                    <div class="col-md-3 col-sm-3 recent">
                         
-                        <div class="col-md-3 col-sm-3">
-                            <article>
-                                <h3>Useful Links</h3>
-                                <ul class="list-unstyled list-links">
-                                    <li><a href="index.html">All Properties</a></li>
-                                    <!-- <li><a href="#">Privacy Policy</a></li> -->
-                                    <li><a href="sign-in.html">Login and Register Account</a></li>
-                                    <li><a href="#">FAQ</a></li>
-                                    <li><a href="#">Terms and Conditions</a></li>
-                                </ul>
-                            </article>
-                        </div><!-- /.col-sm-3 -->
-                    </div><!-- /.row -->
-                </div><!-- /.container -->
-            </aside><!-- /#footer-main -->
-            <aside id="footer-thumbnails" class="footer-thumbnails"></aside><!-- /#footer-thumbnails -->
-            <aside id="footer-copyright">
-                <div class="container">
-                    <span>Copyright © <script type="text/javascript">
-  document.write(new Date().getFullYear());
-</script>. All Rights Reserved.</span>
-                    <span class="pull-right"><a href="#page-top" class="roll">Go to top</a></span>
-                </div>
-            </aside>
-        </div><!-- /.inner -->
-    </footer>
-    <!-- end Page Footer -->
+                    </div><!- /.col-sm-3 -->
+                   
+                    <!-- /.col-sm-3 -->
+                    <div class="col-md-4 col-sm-4 footer-links">
+                        <!-- <article></article> -->
+                            <!-- <h3>Useful Links</h3> list-unstyled -->
+                            <h3>Quick Links</h3>
+                            <ul class="list-links">
+                                <li><a href="index.html">All Properties</a></li>
+                                <li><a href="sign-in.html">Login and Register Account</a></li>
+                                <li><a href="#">FAQ</a></li>
+                                <li><a href="#">Terms and Conditions</a></li>
+                            </ul>
+                        
+                    </div><!-- /.col-sm-3 -->
+                    <div class="col-md-4 col-sm-4 social-media-column">
+                     
+                      <div class="row justify-content-between social-media-row">
+                        <div class="col-4 image footer-logo">
+                          <img src="./src/assets/img/estate-ui/estate_logo2.png" alt="brand">
+                        </div>
+                        <div class="col-6 image">
+                          <ul class="d-inline-flex social-media-icons w-100">
+                            <li> <a href="#"> <i class="fa fa-twitter fa-2x"></i></a></li>
+                            <li> <a href="#"> <i class="fa fa-facebook fa-2x"></i></a></li>
+                            <li> <a href="#"> <i class="fa fa-instagram fa-2x"></i></a></li>
+                          </ul>
+                        </div>
+                      </div>
+
+                    </div>
+                </div><!-- /.row -->
+            </div><!-- /.container -->
+        </aside><!-- /#footer-main -->
+        <aside id="footer-thumbnails" class="footer-thumbnails"></aside><!-- /#footer-thumbnails -->
+        <aside id="footer-copyright">
+            <div class="container">
+                <span>
+                  Copyright © 
+                  <script type="text/javascript">
+                    document.write(new Date().getFullYear());
+                  </script>. All Rights Reserved.
+                  <!-- <small> Designed By Tripple K</small> -->
+                  </span>
+                <span class="pull-right"><a href="#page-top" class="roll go-to-top" title="Go to top" > <i class="fa fa-arrow-up"></i></a></span>
+            </div>
+        </aside>
+    </div><!-- /.inner -->
+</footer>
+<!-- end Page Footer -->
 </div>
 
-<script type="text/javascript" src="assets/js/jquery-2.1.0.min.js"></script>
+
+<!-- latest jquery,owlcarousel cdn and bootstrap js dependencies -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.js"></script>
+
+
+<!-- local js for when internet is unavailable to load cdn -->
+<!-- <script type="text/javascript" src="assets/estate-ui-local/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="assets/estate-ui-local/bootstrap4/popper.js"></script>
+<script type="text/javascript" src="assets/estate-ui-local/bootstrap4/bootstrap.min.js"></script>
+<script type="text/javascript" src="assets/estate-ui-local/owlcarousel/owl.carousel.js"></script> -->
+
+<script type="text/javascript">
+    /* $(window).load(function(){
+         initializeOwl(false);
+     }); */
+ 
+ //JS Code for price range slider
+     var slider = document.getElementById("priceSlider");
+     var output = document.getElementById("priceValueSpan");
+     output.innerHTML = slider.value; // Display the default slider value
+ 
+     // Update the current slider value (each time you drag the slider handle)
+     slider.oninput = function() {
+     output.innerHTML = this.value;
+     }
+ 
+ $(document).ready(function() {        
+
+     // Prevent Default Click action for # links
+     $('a[href="#"]').on('click', function ($) {
+                  $.preventDefault();
+          });
+
+       //for property section slider
+       /* $('#single-properties-slider-section').carousel({
+            interval: 5000
+          }); */
+
+        $('.listing-slider-section .carousel-item').each(function(){
+            var minPerSlide = 2;
+            var next = $(this).next();
+            if (!next.length) {
+            next = $(this).siblings(':first');
+            }
+            next.children(':first-child').clone().appendTo($(this));
+            
+            for (var i=0;i<minPerSlide;i++) {
+                next=next.next();
+                if (!next.length) {
+                  next = $(this).siblings(':first');
+                }
+                
+                next.children(':first-child').clone().appendTo($(this));
+              }
+        });
+
+ });
+ 
+     //JS code for changing background color of navbar on scroll
+   var banner = document.getElementById('inner-page-banner'); // getting slider section element
+   var bannerHeight = banner.offsetHeight;
+ 
+   $(window).scroll(function(){
+         // console.log('scrolling');
+         //changing bg color of navbar on scroll
+         $('#mainMenu-container').toggleClass('scrolled', $(this).scrollTop() > (bannerHeight - 250));
+     });   
+ 
+ </script>
+
+<!-- <script type="text/javascript" src="assets/js/jquery-2.1.0.min.js"></script>
 <script type="text/javascript" src="assets/js/jquery-migrate-1.2.1.min.js"></script>
 <script type="text/javascript" src="assets/bootstrap/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="assets/js/smoothscroll.js"></script>
@@ -294,7 +483,7 @@
 <script type="text/javascript" src="assets/js/jquery.dependClass-0.1.js"></script>
 <script type="text/javascript" src="assets/js/draggable-0.1.js"></script>
 <script type="text/javascript" src="assets/js/jquery.slider.js"></script>
-<script type="text/javascript" src="assets/js/custom.js"></script>
+<script type="text/javascript" src="assets/js/custom.js"></script> -->
 <!--[if gt IE 8]>
 <script type="text/javascript" src="assets/js/ie.js"></script>
 <![endif]-->
