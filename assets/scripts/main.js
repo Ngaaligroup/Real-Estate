@@ -1121,7 +1121,16 @@ $(document).ready(function(){
   //lawyer
   var lawyerref =firebase.database().ref('professional/Lawyer');
   lawyerref.once("value").then(function(snapshot) {
+    var first_lawyer = true;
     snapshot.forEach(function(childSnapshot) {
+
+      var active_class = "";
+      //catering for the first carousel item to add the active class to it
+      if(first_lawyer) {active_class = "active";}
+
+      //then set first listing variable to false for the other lawyers that follow
+      first_civil = false;
+
       var key = childSnapshot.key;
       var childData = childSnapshot.val();
 
@@ -1147,30 +1156,44 @@ $(document).ready(function(){
 
        $('.lawyer').
       append(
-        '<div class="col-md-12 col-lg-6">' +
-          '<div class="agent">' +
-              '<a href="agent-detail.html?name='+key+'" class="agent-image"><img height ="180" alt="userimage" src="'+ProfilePic+'" onerror=this.src="assets/img/agent-01.jpg"></a>' +
-              '<div class="wrapper">' +
-                  '<header><a href="agent-detail.html?name='+key+'" ><h2>'+Fname+' '+Lname+'</h2></a></header>' +
-                  '<aside>Contact</aside>' +
-                  '<dl>' +
-                      '<dt>Company:</dt>' +
-                      '<dd>'+company+'</dd>' +
-                      '<dt>Phone:</dt>' +
-                      '<dd>(+256)'+phone+'</dd>' +
-                      '<dt>Mobile:</dt>' +
-                      '<dd>(+256)'+phone+'</dd>' +
-                      '<dt>Email:</dt>' +
-                      '<dd><a href="mailto:'+email+'">'+email+'</a></dd>' +
-                      '<!--<dt>Skype:</dt>-->' +
-                      '<!--<dd>john.doe</dd>-->' +
-                  '</dl>' +
-              '</div>' +
-              '<div class="stars-outer" style="font-size: 20px;">'+
-              '<div class="stars-inner" id="inner"  style="width:'+starPercentageRounded+' ;"></div>'+
-							'</div>'+ 
-          '</div><!-- /.agent -->' +
-        '</div><!-- /.col-md-12 -->'
+        '<div class="carousel-item '+ active_class +'">'+
+         '<div class="col-md-6 col-12 single-engineer">'+
+             '<div class="card " style="width:auto;">'+
+                 '<div class="image property-img-container">'+
+                   
+                   '<a href="agent-detail.html?name='+key+'" class="agent-image" class="agent-image">'+
+                     '<img height ="300" alt="'+Fname+' '+Lname+'" src="'+ProfilePic+'" class="card-img-top" onerror=this.src="assets/img/agent-01.jpg">'+
+                   '</a>'+
+                 '<!--<div class="single-property-overlay-text">'+                   
+                   
+                 '</div>-->'+                 
+                 '</div>'+
+                 '<div class="card-body">'+
+                  '<div class="card-title float-right star-rating">'+
+                    '<div class="stars-outer" style="font-size: 20px;">'+
+                      '<div class="stars-inner" id="inner"  style="width:'+starPercentageRounded+' ;"></div>'+
+                      '</div>'+
+                  '</div>' +
+                   '<a href="agent-detail.html?name='+key+'" > <h2 class="card-title d-inline">'+Fname+' '+Lname+' </h2> </a>'+                   
+                   '<p class="card-text" style="padding:0;">'+
+                    '<h5>Contact Information</h5>' +
+                    '<dl>' +
+                        '<dt>Company:</dt>' +
+                        '<dd>'+company+'</dd>' +
+                        '<dt>Phone:</dt>' +
+                        '<dd>(+256)'+phone+'</dd>' +
+                        '<dt>Mobile:</dt>' +
+                        '<dd>(+256)'+phone+'</dd>' +
+                        '<dt>Email:</dt>' +
+                        '<dd><a href="mailto:'+email+'">'+email+'</a></dd>' +
+                        '<!--<dt>Skype:</dt>-->' +
+                        '<!--<dd>john.doe</dd>-->' +
+                    '</dl>' +                    
+                   '</p>'+
+                 '</div>'+
+               '</div>'+
+         '</div>'+
+     '</div>'
       );
       });
     });
