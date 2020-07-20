@@ -1,13 +1,14 @@
 $(document).ready(function(){
   // Initialize Firebase
 	var config = {
-    apiKey: "AIzaSyAwrdWBHcMo6xlvUp0qAavF5osGKMrFfNc",
-    authDomain: "real-estate-9882c.firebaseapp.com",
-    databaseURL: "https://real-estate-9882c.firebaseio.com",
-    projectId: "real-estate-9882c",
-    storageBucket: "real-estate-9882c.appspot.com",
-    messagingSenderId: "1077907462804",
-    appId: "1:1077907462804:web:bd7b165973428aa6"
+    apiKey: "AIzaSyDFN2NFfgko7fBa4di1dv-EOhP1aNNok6k",
+    authDomain: "realestates-b978c.firebaseapp.com",
+    databaseURL: "https://realestates-b978c.firebaseio.com",
+    projectId: "realestates-b978c",
+    storageBucket: "realestates-b978c.appspot.com",
+    messagingSenderId: "85338363199",
+    appId: "1:85338363199:web:003d5846ea63720dd5af8a",
+    measurementId: "G-XESFFT7YD4"
     };
     
     firebase.initializeApp(config);

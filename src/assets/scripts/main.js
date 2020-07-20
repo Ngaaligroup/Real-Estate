@@ -2,13 +2,14 @@ $(document).ready(function(){
   
 	// Initialize Firebase
 	var config = {
-	apiKey: "AIzaSyAwrdWBHcMo6xlvUp0qAavF5osGKMrFfNc",
-	authDomain: "real-estate-9882c.firebaseapp.com",
-	databaseURL: "https://real-estate-9882c.firebaseio.com",
-	projectId: "real-estate-9882c",
-	storageBucket: "real-estate-9882c.appspot.com",
-	messagingSenderId: "1077907462804",
-	appId: "1:1077907462804:web:bd7b165973428aa6"
+  apiKey: "AIzaSyDFN2NFfgko7fBa4di1dv-EOhP1aNNok6k",
+  authDomain: "realestates-b978c.firebaseapp.com",
+  databaseURL: "https://realestates-b978c.firebaseio.com",
+  projectId: "realestates-b978c",
+  storageBucket: "realestates-b978c.appspot.com",
+  messagingSenderId: "85338363199",
+  appId: "1:85338363199:web:003d5846ea63720dd5af8a",
+  measurementId: "G-XESFFT7YD4"
 	};
 	
 	firebase.initializeApp(config);
@@ -62,7 +63,8 @@ $(document).ready(function(){
 	        firebase.auth()
 	          .createUserWithEmailAndPassword(acc.email, pass.password)
 	          .then(function(user){
-	            //now user is needed to be logged in to save data
+              //now user is needed to be logged in to save data
+              var usern = firebase.auth().currentUser;
 	            auth = user;
               var uid = firebase.auth().currentUser.uid;
               // window.location.href = "index.html";
@@ -71,12 +73,13 @@ $(document).ready(function(){
               console.log(usertype);
               firebase.database().ref("users/" + uid).set(acc)
               .then(function(){
-                console.log("User Information Saved:", uid);
+                // console.log("User Information Saved:", uid);
               });
+              firebase.database().ref('Rates/'+uid+ "/average/").set({val:0});
               if (usertype=== "seller") {
                  firebase.database().ref("property owners/" + usertype + "/" + uid).set(acc)
                  .then(function(){
-                  console.log("success", uid);
+                  // console.log("success", uid);
                 });
                
                }else if(usertype=== "professional"){
@@ -105,18 +108,27 @@ $(document).ready(function(){
                       db6.child(usertype + "/" + profType + "/" + uid ).update({ProfilePic: url});
                     
                     }
-                    window.location.href = "index.html";
+                    // window.location.href = "index.html";
+                    document.getElementById("form-create-account").reset();
+                    
                   });
                 });
+              usern.sendEmailVerification().then(function() {
+                // Email sent.
+                // window.location.replace("confirmEmail.html");
+              }, function(error) {
+                // An error happened.
+              });
               
             })
 	          .catch(function(error){
-	            console.log("Error creating user:", error);
-              window.alert("Error creating user:", error);
-	           
+              console.log("Error creating user:", error);
+              console.log(error.message);
+              window.alert( error.message);
+              
 	          });
 	      } else {
-          window.alert("passwords dont match");
+          window.alert("Couldnt create user: passwords dont match");
 	        // console.log("passwords dont match");
 	      }
     }
@@ -133,7 +145,7 @@ $(document).ready(function(){
         AgencyName : $('#create-agency-title').val(),
         Description : $('#create-agency-description').val(),
         address : $("#create-agency-address").val(),
-        
+        ProfilePic: "",
         license : $("#create-agency-license").val(),
         city : $("#create-agency-city").val(),
         postal : $("#create-agency-zip").val(),
@@ -154,27 +166,49 @@ $(document).ready(function(){
         .createUserWithEmailAndPassword(agency.email, passd.password)
         .then(function(user){
           //now user is needed to be logged in to save data
-          window.location.href = "index.html";
-          document.getElementById("form-create-agency").reset();
+          // window.location.href = "index.html";
+          
           auth = user;
           var uid = firebase.auth().currentUser.uid;
+          var usern = firebase.auth().currentUser;
           
           firebase.database().ref("users/" + uid).set(agency)
             .then(function(){
               // console.log("User Information Saved:", uid);
             });
+          firebase.database().ref('Rates/'+uid+ "/average/").set({val:0});
          
           //saving information to the property owners
           firebase.database().ref("property owners/Agency/" + uid).set(agency)
             .then(function(){
-              // console.log("success", uid);
+              
             });
-           window.location.href = "index.html";
+            var storagep = firebase.storage();
+            var storageRefp = storagep.ref();
+            var filep = $(".agencypic")[0].files[0];
+            var imgRefp = storageRefp.child(uid + "/ProfilePic/" + filep.name);
+            console.log(imgRefp);
+            var uploadp = imgRefp.put(filep).then(function(snapshot){
+              snapshot.ref.getDownloadURL().then(function(url) {
+                var dbp  = firebase.database().ref();
+                dbp.child("users/" + uid).update({ProfilePic: url});
+                dbp.child("property owners/Agency/" + uid).update({ProfilePic: url});
+                document.getElementById("form-create-agency").reset();
+                // window.location.replace("index.html#nocache");
+
+              });
+            });
+          usern.sendEmailVerification().then(function() {
+            // Email sent.
+            // window.location.replace("confirmEmail.html");
+          }, function(error) {
+            // An error happened.
+          });
             
         })
         .catch(function(error){
-          // console.log("Error creating user:", error);
-          window.alert("Error creating user:", error);
+          console.log("Error creating user:", error);
+          window.alert( error.message);
            
         });
     } 
@@ -195,7 +229,7 @@ $(document).ready(function(){
       };
       firebase.auth().signInWithEmailAndPassword(email, password)
         .catch(function(error) {
-          console.log("Login Failed!", error);
+          window.alert( error.message);
         })
         .then(function(authData) {
           auth = authData;
@@ -210,7 +244,8 @@ $(document).ready(function(){
   $('#sign-out').on('click', function(e) {
     e.preventDefault();
     firebase.auth().signOut();
-    window.location.href = "sign-in.html";
+    // window.location.href = "sign-in.html";
+    window.location.replace("sign-in.html#nocache");
   });
 
   firebase.auth().onAuthStateChanged(function(user) {
@@ -348,18 +383,20 @@ $(document).ready(function(){
           // TODO: submit land properties
           var db = firebase.database().ref();
           var userdb= firebase.database().ref();
+          db.child('AllProperty/' + newLandKey).set(propertyland);
           db.child('properties/Land/' + newLandKey).set(propertyland);
           db.child('users/' + user.uid + "/property/" + newLandKey).set(propertyland);
-          db.child('AllProperty/' + newLandKey).set(propertyland);
+          
 
 
         }else{
 
           // TODO: submit other properties
           var dbo = firebase.database().ref();
+          dbo.child('AllProperty/' + newhouseKey).set(propertyhouse);
           dbo.child('properties/house/' + newhouseKey ).set(propertyhouse);
           dbo.child('users/' + user.uid + "/property/" + newhouseKey).set(propertyhouse);
-          db0.child('AllProperty/' + newhouseKey).set(propertyhouse);
+          
         }
 
 
@@ -677,11 +714,27 @@ $(document).ready(function(){
       var ProfilePic=childSnapshot.val().ProfilePic;
       var properties=childSnapshot.child("property").numChildren();
 
-       $('.agentie').
+      
+      var averagref = firebase.database().ref("Rates/" +key);
+      averagref.limitToFirst(1).once("value").then(function(snapshot){
+      snapshot.forEach(function(childSnapshot) {
+        var vl = childSnapshot.val().val;
+        
+        var averagerate = Math.round(vl * 10) / 10;
+      
+        
+        // total number of stars
+        const starTotal = 5;
+        
+        const starPercentage = (averagerate  / starTotal) * 100;
+        const starPercentageRounded = `${(Math.round(starPercentage / 10) * 10)}%`;
+        
+
+        $('.agentie').
       append(
         '<div class="col-md-12 col-lg-6">' +
           '<div class="agent">' +
-              '<a href="agent-detail.html?name='+key+'" class="agent-image"><img alt="userimage" src="'+ProfilePic+'"></a>' +
+              '<a href="agent-detail.html?name='+key+'" class="agent-image"><img height ="180" alt="userimage" src="'+ProfilePic+'" onerror=this.src="assets/img/agent-01.jpg"></a>' +
               '<div class="wrapper">' +
                   '<header><a href="agent-detail.html?name='+key+'" ><h2>'+Fname+' '+Lname+'</h2></a></header>' +
                   '<aside>'+properties+ ' Properties</aside>' +
@@ -696,32 +749,16 @@ $(document).ready(function(){
                       '<!--<dd>john.doe</dd>-->' +
                   '</dl>' +
               '</div>' +
-              '<div id="divRating" class="rating">'+
-                '<span id="spanRatingExcellent" title="Excellent">☆</span>' +
-                '<span id="spanRatingGood" title="Good">☆</span>' +
-                '<span id="spanRatingFair" title="Fair">☆</span>' +
-                '<span id="spanRatingPoor" title="Poor">☆</span>' +
-                '<span id="spanRatingAwful" title="Awful">☆</span>' +
-              '</div>'+
+              '<div class="stars-outer" style="font-size: 20px; ">'+
+                  '<div class="stars-inner" id="inner"  style="width:'+starPercentageRounded+' ;"></div>'+
+							'</div>'+
           '</div><!-- /.agent -->' +
         '</div><!-- /.col-md-12 -->'
       );
-      // document.getElementById('divRating').addEventListener('click', function(event) {
-      //   if (event.target.tagName.toLowerCase() != 'span') return;
         
-      //   if (event.target.classList.contains('rated')) {
-      //     event.target.classList.remove('rated');
-      //   } else {
-      //     Array.prototype.forEach.call(document.getElementsByClassName('rated'), function(el) {
-      //       el.classList.remove('rated');
-      //     });
-      //     event.target.classList.add('rated');
-      //   }
-      // });
-      
-      var proper=properties.length;
-
-
+      });
+    });
+  
     });
   });
   //  TODO:  retrieving professionals
@@ -739,13 +776,27 @@ $(document).ready(function(){
       var phone=childSnapshot.val().phone;
       var ProfilePic=childSnapshot.val().ProfilePic;
       var company=childSnapshot.val().company;
+
+      var averagref = firebase.database().ref("Rates/" +key);
+      averagref.limitToFirst(1).once("value").then(function(snapshot){
+      snapshot.forEach(function(childSnapshot) {
+        var vl = childSnapshot.val().val;
+        
+        var averagerate = Math.round(vl * 10) / 10;
+      
+        
+        // total number of stars
+        const starTotal = 5;
+        
+        const starPercentage = (averagerate  / starTotal) * 100;
+        const starPercentageRounded = `${(Math.round(starPercentage / 10) * 10)}%`;
       
 
        $('.surveyor').
       append(
         '<div class="col-md-12 col-lg-6">' +
           '<div class="agent">' +
-              '<a href="agent-detail.html?name='+key+'" class="agent-image"><img alt="userimage" src="'+ProfilePic+'"></a>' +
+              '<a href="agent-detail.html?name='+key+'" class="agent-image"><img height ="180" alt="userimage" src="'+ProfilePic+'" onerror=this.src="assets/img/agent-01.jpg"></a>' +
               '<div class="wrapper">' +
                   '<header><a href="agent-detail.html?name='+key+'" ><h2>'+Fname+' '+Lname+'</h2></a></header>' +
                   '<aside>Contact</aside>' +
@@ -762,30 +813,14 @@ $(document).ready(function(){
                       '<!--<dd>john.doe</dd>-->' +
                   '</dl>' +
               '</div>' +
-              '<div id="divRating" class="rating">'+
-                '<span id="spanRatingExcellent" title="Excellent">☆</span>' +
-                '<span id="spanRatingGood" title="Good">☆</span>' +
-                '<span id="spanRatingFair" title="Fair">☆</span>' +
-                '<span id="spanRatingPoor" title="Poor">☆</span>' +
-                '<span id="spanRatingAwful" title="Awful">☆</span>' +
-              '</div>'+
+              '<div class="stars-outer" style="font-size: 20px;">'+
+              '<div class="stars-inner" id="inner"  style="width:'+starPercentageRounded+' ;"></div>'+
+							'</div>'+
           '</div><!-- /.agent -->' +
         '</div><!-- /.col-md-12 -->'
       );
-      // document.getElementById('divRating').addEventListener('click', function(event) {
-      //   if (event.target.tagName.toLowerCase() != 'span') return;
-        
-      //   if (event.target.classList.contains('rated')) {
-      //     event.target.classList.remove('rated');
-      //   } else {
-      //     Array.prototype.forEach.call(document.getElementsByClassName('rated'), function(el) {
-      //       el.classList.remove('rated');
-      //     });
-      //     event.target.classList.add('rated');
-      //   }
-      // });
-      
-      // var proper=properties.length;
+    });
+  });  
 
 
     });
@@ -804,13 +839,27 @@ $(document).ready(function(){
       var phone=childSnapshot.val().phone;
       var ProfilePic=childSnapshot.val().ProfilePic;
       var company=childSnapshot.val().company;
+
+      var averagref = firebase.database().ref("Rates/" +key);
+      averagref.limitToFirst(1).once("value").then(function(snapshot){
+      snapshot.forEach(function(childSnapshot) {
+        var vl = childSnapshot.val().val;
+        
+        var averagerate = Math.round(vl * 10) / 10;
+      
+        
+        // total number of stars
+        const starTotal = 5;
+        
+        const starPercentage = (averagerate  / starTotal) * 100;
+        const starPercentageRounded = `${(Math.round(starPercentage / 10) * 10)}%`;
       
 
        $('.architect').
       append(
         '<div class="col-md-12 col-lg-6">' +
           '<div class="agent">' +
-              '<a href="agent-detail.html?name='+key+'" class="agent-image"><img alt="userimage" src="'+ProfilePic+'"></a>' +
+              '<a href="agent-detail.html?name='+key+'" class="agent-image"><img height ="180" alt="userimage" src="'+ProfilePic+'" onerror=this.src="assets/img/agent-01.jpg"></a>' +
               '<div class="wrapper">' +
                   '<header><a href="agent-detail.html?name='+key+'" ><h2>'+Fname+' '+Lname+'</h2></a></header>' +
                   '<aside>Contact</aside>' +
@@ -827,32 +876,15 @@ $(document).ready(function(){
                       '<!--<dd>john.doe</dd>-->' +
                   '</dl>' +
               '</div>' +
-              '<div id="divRating" class="rating">'+
-                '<span id="spanRatingExcellent" title="Excellent">☆</span>' +
-                '<span id="spanRatingGood" title="Good">☆</span>' +
-                '<span id="spanRatingFair" title="Fair">☆</span>' +
-                '<span id="spanRatingPoor" title="Poor">☆</span>' +
-                '<span id="spanRatingAwful" title="Awful">☆</span>' +
-              '</div>'+
+              '<div class="stars-outer" style="font-size: 20px;">'+
+              '<div class="stars-inner" id="inner"  style="width:'+starPercentageRounded+' ;"></div>'+
+          '</div>'+
           '</div><!-- /.agent -->' +
         '</div><!-- /.col-md-12 -->'
       );
-      // document.getElementById('divRating').addEventListener('click', function(event) {
-      //   if (event.target.tagName.toLowerCase() != 'span') return;
-        
-      //   if (event.target.classList.contains('rated')) {
-      //     event.target.classList.remove('rated');
-      //   } else {
-      //     Array.prototype.forEach.call(document.getElementsByClassName('rated'), function(el) {
-      //       el.classList.remove('rated');
-      //     });
-      //     event.target.classList.add('rated');
-      //   }
-      // });
+      });
+    });
       
-      // var proper=properties.length;
-
-
     });
   });
 
@@ -870,11 +902,25 @@ $(document).ready(function(){
       var ProfilePic=childSnapshot.val().ProfilePic;
       var company=childSnapshot.val().company;
 
+      var averagref = firebase.database().ref("Rates/" +key);
+      averagref.limitToFirst(1).once("value").then(function(snapshot){
+      snapshot.forEach(function(childSnapshot) {
+        var vl = childSnapshot.val().val;
+        
+        var averagerate = Math.round(vl * 10) / 10;
+      
+        
+        // total number of stars
+        const starTotal = 5;
+        
+        const starPercentage = (averagerate  / starTotal) * 100;
+        const starPercentageRounded = `${(Math.round(starPercentage / 10) * 10)}%`;
+
        $('.hardware').
       append(
         '<div class="col-md-12 col-lg-6">' +
           '<div class="agent">' +
-              '<a href="agent-detail.html?name='+key+'" class="agent-image"><img alt="userimage" src="'+ProfilePic+'"></a>' +
+              '<a href="agent-detail.html?name='+key+'" class="agent-image"><img height ="180" alt="userimage" src="'+ProfilePic+'" onerror=this.src="assets/img/agent-01.jpg"></a>' +
               '<div class="wrapper">' +
                   '<header><a href="agent-detail.html?name='+key+'" ><h2>'+Fname+' '+Lname+'</h2></a></header>' +
                   '<aside>Contact</aside>' +
@@ -891,37 +937,21 @@ $(document).ready(function(){
                       '<!--<dd>john.doe</dd>-->' +
                   '</dl>' +
               '</div>' +
-              '<div id="divRating" class="rating">'+
-                '<span id="spanRatingExcellent" title="Excellent">☆</span>' +
-                '<span id="spanRatingGood" title="Good">☆</span>' +
-                '<span id="spanRatingFair" title="Fair">☆</span>' +
-                '<span id="spanRatingPoor" title="Poor">☆</span>' +
-                '<span id="spanRatingAwful" title="Awful">☆</span>' +
-              '</div>'+
+              '<div class="stars-outer" style="font-size: 20px;">'+
+              '<div class="stars-inner" id="inner"  style="width:'+starPercentageRounded+' ;"></div>'+
+							'</div>'+
           '</div><!-- /.agent -->' +
         '</div><!-- /.col-md-12 -->'
       );
-      document.getElementById('divRating').addEventListener('click', function(event) {
-        if (event.target.tagName.toLowerCase() != 'span') return;
-        
-        if (event.target.classList.contains('rated')) {
-          event.target.classList.remove('rated');
-        } else {
-          Array.prototype.forEach.call(document.getElementsByClassName('rated'), function(el) {
-            el.classList.remove('rated');
-          });
-          event.target.classList.add('rated');
-        }
       });
-      
-      var proper=properties.length;
+    });   
 
 
     });
   });
 
   //civilengineers
-  var civilref =firebase.database().ref('professional/civilengineer');
+  var civilref =firebase.database().ref('professional/civilEngineer');
   civilref.once("value").then(function(snapshot) {
     snapshot.forEach(function(childSnapshot) {
       var key = childSnapshot.key;
@@ -934,11 +964,25 @@ $(document).ready(function(){
       var ProfilePic=childSnapshot.val().ProfilePic;
       var company=childSnapshot.val().company;
 
+      var averagref = firebase.database().ref("Rates/" +key);
+      averagref.limitToFirst(1).once("value").then(function(snapshot){
+      snapshot.forEach(function(childSnapshot) {
+        var vl = childSnapshot.val().val;
+        
+        var averagerate = Math.round(vl * 10) / 10;
+      
+        
+        // total number of stars
+        const starTotal = 5;
+        
+        const starPercentage = (averagerate  / starTotal) * 100;
+        const starPercentageRounded = `${(Math.round(starPercentage / 10) * 10)}%`;
+
        $('.civils').
       append(
         '<div class="col-md-12 col-lg-6">' +
           '<div class="agent">' +
-              '<a href="agent-detail.html?name='+key+'" class="agent-image"><img alt="userimage" src="'+ProfilePic+'"></a>' +
+              '<a href="agent-detail.html?name='+key+'" class="agent-image"><img height ="180"alt="userimage" src="'+ProfilePic+'" onerror=this.src="assets/img/agent-01.jpg"></a>' +
               '<div class="wrapper">' +
                   '<header><a href="agent-detail.html?name='+key+'" ><h2>'+Fname+' '+Lname+'</h2></a></header>' +
                   '<aside>Contact</aside>' +
@@ -955,32 +999,15 @@ $(document).ready(function(){
                       '<!--<dd>john.doe</dd>-->' +
                   '</dl>' +
               '</div>' +
-              '<div id="divRating" class="rating">'+
-                '<span id="spanRatingExcellent" title="Excellent">☆</span>' +
-                '<span id="spanRatingGood" title="Good">☆</span>' +
-                '<span id="spanRatingFair" title="Fair">☆</span>' +
-                '<span id="spanRatingPoor" title="Poor">☆</span>' +
-                '<span id="spanRatingAwful" title="Awful">☆</span>' +
-              '</div>'+
+              '<div class="stars-outer" style="font-size: 20px;">'+
+              '<div class="stars-inner" id="inner"  style="width:'+starPercentageRounded+' ;"></div>'+
+							'</div>'+
           '</div><!-- /.agent -->' +
         '</div><!-- /.col-md-12 -->'
       );
-      document.getElementById('divRating').addEventListener('click', function(event) {
-        if (event.target.tagName.toLowerCase() != 'span') return;
-        
-        if (event.target.classList.contains('rated')) {
-          event.target.classList.remove('rated');
-        } else {
-          Array.prototype.forEach.call(document.getElementsByClassName('rated'), function(el) {
-            el.classList.remove('rated');
-          });
-          event.target.classList.add('rated');
-        }
-      });
       
-      var proper=properties.length;
-
-
+      });
+    });
     });
   });
 
@@ -997,12 +1024,25 @@ $(document).ready(function(){
       var phone=childSnapshot.val().phone;
       var ProfilePic=childSnapshot.val().ProfilePic;
       var company=childSnapshot.val().company;
+      var averagref = firebase.database().ref("Rates/" +key);
+      averagref.limitToFirst(1).once("value").then(function(snapshot){
+      snapshot.forEach(function(childSnapshot) {
+        var vl = childSnapshot.val().val;
+        
+        var averagerate = Math.round(vl * 10) / 10;
+      
+        
+        // total number of stars
+        const starTotal = 5;
+        
+        const starPercentage = (averagerate  / starTotal) * 100;
+        const starPercentageRounded = `${(Math.round(starPercentage / 10) * 10)}%`;
 
        $('.lawyer').
       append(
         '<div class="col-md-12 col-lg-6">' +
           '<div class="agent">' +
-              '<a href="agent-detail.html?name='+key+'" class="agent-image"><img alt="userimage" src="'+ProfilePic+'"></a>' +
+              '<a href="agent-detail.html?name='+key+'" class="agent-image"><img height ="180" alt="userimage" src="'+ProfilePic+'" onerror=this.src="assets/img/agent-01.jpg"></a>' +
               '<div class="wrapper">' +
                   '<header><a href="agent-detail.html?name='+key+'" ><h2>'+Fname+' '+Lname+'</h2></a></header>' +
                   '<aside>Contact</aside>' +
@@ -1019,32 +1059,15 @@ $(document).ready(function(){
                       '<!--<dd>john.doe</dd>-->' +
                   '</dl>' +
               '</div>' +
-              '<div id="divRating" class="rating">'+
-                '<span id="spanRatingExcellent" title="Excellent">☆</span>' +
-                '<span id="spanRatingGood" title="Good">☆</span>' +
-                '<span id="spanRatingFair" title="Fair">☆</span>' +
-                '<span id="spanRatingPoor" title="Poor">☆</span>' +
-                '<span id="spanRatingAwful" title="Awful">☆</span>' +
-              '</div>'+
+              '<div class="stars-outer" style="font-size: 20px;">'+
+              '<div class="stars-inner" id="inner"  style="width:'+starPercentageRounded+' ;"></div>'+
+							'</div>'+ 
           '</div><!-- /.agent -->' +
         '</div><!-- /.col-md-12 -->'
       );
-      document.getElementById('divRating').addEventListener('click', function(event) {
-        if (event.target.tagName.toLowerCase() != 'span') return;
-        
-        if (event.target.classList.contains('rated')) {
-          event.target.classList.remove('rated');
-        } else {
-          Array.prototype.forEach.call(document.getElementsByClassName('rated'), function(el) {
-            el.classList.remove('rated');
-          });
-          event.target.classList.add('rated');
-        }
       });
-      
-      var proper=properties.length;
-
-
+    });
+     
     });
   });
 
@@ -1064,14 +1087,28 @@ $(document).ready(function(){
       var description=childSnapshot.val().Description;
       var license=childSnapshot.val().license;
       var postal=childSnapshot.val().postal;
+      var ProfilePic=childSnapshot.val().ProfilePic;
       var properties=childSnapshot.child("property").numChildren();
+      var averagref = firebase.database().ref("Rates/" +key);
+      averagref.limitToFirst(1).once("value").then(function(snapshot){
+      snapshot.forEach(function(childSnapshot) {
+        var vl = childSnapshot.val().val;
+        
+        var averagerate = Math.round(vl * 10) / 10;
+      
+        
+        // total number of stars
+        const starTotal = 5;
+        
+        const starPercentage = (averagerate  / starTotal) * 100;
+        const starPercentageRounded = `${(Math.round(starPercentage / 10) * 10)}%`;
       
 
       $('.agencie').
         append(
           '<div class="agency">'+
           //adding agency logo
-            '<a href="agency-detail.html?name='+key+'" class="agency-image"><img alt="" src="assets/img/agency-logo-01.png"></a>'+
+            '<a href="agency-detail.html?name='+key+'" class="agency-image"><img alt="" src="'+ProfilePic+'" onerror=this.src="assets/img/agency-logo-01.png"></a>'+
             '<div class="wrapper">'+
                 '<header><a href="agency-detail.html?name='+key+'"><h2>'+Name+'</h2></a></header>'+
                 '<dl>'+
@@ -1089,11 +1126,15 @@ $(document).ready(function(){
                     '<br>'+
                     '<strong>'+Name+'</strong><br>'+
                     ''+address+'<br>'+
-                    ''+postal+''+
+                    ''+postal+'<br>'+
+                    '<div class="stars-outer" style="font-size: 20px;">'+
+                    '<div class="stars-inner" id="inner"  style="width:'+starPercentageRounded+' ;"></div>'+
                 '</address>'+
             '</div>'+
           '</div><!-- /.agency -->'
           );
+        });
+      });
 
       
 
@@ -1103,14 +1144,8 @@ $(document).ready(function(){
     });
   });
 
-  document.querySelector('#rating').addEventListener('click', function (e) {
-    let action = 'add';
-    for (const span of this.children) {
-        span.classList[action]('active');
-        if (span === e.target) action = 'remove';
-    }
-  });
-});
+  
+
   ///add all properties
   //  TODO: retriev all properties
   var propref =firebase.database().ref('AllProperty');
@@ -1188,5 +1223,6 @@ $(document).ready(function(){
     });
   });
   //rating  here
+  
 
 });

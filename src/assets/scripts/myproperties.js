@@ -31,7 +31,7 @@ $(document).ready(function(){
 			        append(
 			        	'<tr>'+
 			                '<td class="image">'+
-			                    '<a href="property-detail.html?name='+key+'"><img alt="property picture" src="'+Photos+'"></a>'+
+			                    '<a href="property-detail.html?name='+key+'"><img alt="property picture" src="'+Photos+' onerror=this.src="assets/img/properties/property-04.jpg"></a>'+
 			                '</td>'+
 			                '<td><div class="inner">'+
 			                    '<a href="property-detail.html?name='+key+'"><h2>'+Title+'</h2></a>'+
@@ -70,7 +70,7 @@ $(document).ready(function(){
 						//   console.log("Remove succeeded.")
 						})
 						.catch(function(error) {
-						  console.log("Remove failed: " + error.message);
+						  console.log( error.message);
 						});
 
 						var ref3 = firebase.database().ref("properties/Land/" +key);
