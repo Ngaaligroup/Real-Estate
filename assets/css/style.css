@@ -2558,7 +2558,8 @@ ul.list-links li a:hover {
 }
 .property .overlay .additional-info,
 .single-property .overlay .additional-info {
-  background-color: #073855;
+  /* background-color: #073855; */
+  background-color: #7e1e6e;
   display: table;
   height: 30px;
   list-style: none;
@@ -2983,7 +2984,8 @@ ul.list-links li a:hover {
   direction: rtl;
   font-size: 28px;
   margin-top: -11px;
-  color: #3a5fb1;
+  /* color: #3a5fb1; */
+  color:#7e1e6e;
   margin-left: 10px;
   margin-right: 10px;
 }

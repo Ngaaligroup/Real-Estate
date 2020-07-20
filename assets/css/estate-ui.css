@@ -692,6 +692,10 @@ body {
 /* end footer style */
 
 /*================================ INNER PAGE STYLES ================================================*/
+.review-form .form-control:focus{
+    border:1px solid #4e0642;
+}
+
 .inner-page-banner {
     height:500px;
     background-position: center;
@@ -947,7 +951,8 @@ body {
 }
 
 /* ------------------------ FOR RATING --------------------------*/
-.star-rating{
+.star-rating,
+.stars-outer{
     color: #7e1e6e; 
 }
 
