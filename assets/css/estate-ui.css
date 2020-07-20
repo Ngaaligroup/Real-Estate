@@ -169,6 +169,18 @@ body {
   }
 /* end of header styles */
 
+/* sign in modal styles start */
+.modal-content,
+.modal-header,
+.modal-footer{
+    border-color:#7e1e6e;
+}
+
+#form-sign-in .form-control:focus{
+    border-bottom:3px solid #4e0642;
+}
+/* sign in modal styles end */
+
 /* ================================= beginning of main slider section styles =================================*/
 
 #slider-section {
@@ -1127,7 +1139,7 @@ body {
     } */
 
     #mainMenu > .navbar-nav {
-        min-width: 65%;
+        min-width: 75%;
     }
 
     /* slider styles */
@@ -1172,7 +1184,7 @@ body {
 @media (min-width: 1200px) { 
 
     #mainMenu > .navbar-nav {
-        min-width: 70%;
+        min-width: 80%;
     }
 
     /* slider styles */
