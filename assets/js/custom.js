@@ -27,7 +27,7 @@ $(document).ready(function($) {
 
     $('.tool-tip').tooltip();
 
-    var select = $('select');
+    var select = $('.custom-form-select');
     if (select.length > 0 ){
         select.selectpicker();
     }

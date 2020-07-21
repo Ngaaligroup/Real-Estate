@@ -169,14 +169,15 @@ body {
   }
 /* end of header styles */
 
-/* sign in modal styles start */
+/* sign in modal and create account form styles start */
 .modal-content,
 .modal-header,
 .modal-footer{
     border-color:#7e1e6e;
 }
 
-#form-sign-in .form-control:focus{
+#form-sign-in .form-control:focus,
+.create-account-form .form-control:focus{
     border-bottom:3px solid #4e0642;
 }
 /* sign in modal styles end */
@@ -783,7 +784,8 @@ body {
 }
 
 /* single property search form styles */
-.form-search .form-control:focus{
+.form-search .form-control:focus,
+.create-account-form .select-input:focus{
     border-color: #7e1e6e;
     box-shadow:0 0 0 0.2rem rgba(110, 19, 95, 0.25);
 }

@@ -761,7 +761,7 @@ ul.list-links li a:hover {
     text-shadow: none;
     -webkit-font-smoothing: antialiased;
     font-family: 'fontawesome';
-    speak: none;
+    /* speak: none; */
     font-weight: normal;
     font-variant: normal;
     line-height: 1;

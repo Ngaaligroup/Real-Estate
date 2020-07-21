@@ -421,7 +421,7 @@
                                 <h3>Quick Links</h3>
                                 <ul class="list-links">
                                     <li><a href="index.html">All Properties</a></li>
-                                    <li><a href="sign-in.html">Login and Register Account</a></li>
+                                    <li><a href="#" data-toggle="modal" data-target="#sign-in-modal">Sign In</a></li>
                                     <li><a href="#">FAQ</a></li>
                                     <li><a href="#">Terms and Conditions</a></li>
                                 </ul>
@@ -535,25 +535,6 @@ $(document).ready(function() {
      /* $('#similar-properties-slider-section').carousel({
             interval: 5000
           }); */
-
-        $('.similar-properties-slider-section .carousel-item').each(function(){
-            console.log("sliding");
-            var minPerSlide = 3;
-            var next = $(this).next();
-            if (!next.length) {
-            next = $(this).siblings(':first');
-            }
-            next.children(':first-child').clone().appendTo($(this));
-            
-            for (var i=0;i<minPerSlide;i++) {
-                next=next.next();
-                if (!next.length) {
-                  next = $(this).siblings(':first');
-                }
-                
-                next.children(':first-child').clone().appendTo($(this));
-              }
-        });
 });
 
     //JS code for changing background color of navbar on scroll
