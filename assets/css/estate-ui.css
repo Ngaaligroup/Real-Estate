@@ -177,7 +177,8 @@ body {
 }
 
 #form-sign-in .form-control:focus,
-.create-account-form .form-control:focus{
+.create-account-form .form-control:focus,
+.create-agency-form .form-control:focus{
     border-bottom:3px solid #4e0642;
 }
 /* sign in modal styles end */
