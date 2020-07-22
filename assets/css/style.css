@@ -35,14 +35,16 @@ a {
   -moz-transition: 0.2s;
   -webkit-transition: 0.2s;
   transition: 0.2s;
-  color: dodgerblue;
+  /* color: dodgerblue; */
+  color:#4e0642;
   outline: none !important;
 }
 a:hover {
   text-decoration: none;
 }
 a:hover h1, a:hover h2, a:hover h3, a:hover h4 {
-  color: dodgerblue;
+  /* color: dodgerblue; */
+  color:#7e1e6e; 
 }
 a:focus, a:active {
   outline: none !important;
@@ -52,7 +54,8 @@ a h1, a h2, a h3, a h4 {
   -moz-transition: 0.2s;
   -webkit-transition: 0.2s;
   transition: 0.2s;
-  color: dodgerblue;
+  /* color: dodgerblue; */
+  color:#4e0642; 
 }
 
 blockquote {
@@ -199,7 +202,8 @@ ul.list-links li a {
   padding-left: 0;
 }
 ul.list-links li a:hover {
-  color: #fff;
+  /* color: #fff; */
+  color:#7e1e6e;
   padding-left: 5px;
 }
 
@@ -3111,7 +3115,8 @@ ul.list-links li a:hover {
   padding-left: 15px;
 }
 #sidebar ul.list-links li {
-  color: #1396e2;
+  /* color: #1396e2; */
+  color: #4e0642;
 }
 #sidebar .sidebar-navigation {
   list-style: none;
