@@ -12,7 +12,7 @@ $(document).ready(function(){
       };
       
       firebase.initializeApp(config);
-      var uid = firebase.auth().currentUser.uid;
+      
   
       $('#sign-out').on('click', function(e) {
         e.preventDefault();
@@ -78,12 +78,13 @@ $(document).ready(function(){
               signed.classList.remove('hide');
             } 
       });
-    // var uid = firebase.auth().currentUser.uid;
+    var uid = firebase.auth().currentUser.uid;
     var ref = firebase.database().ref("users/" +uid);
     ref.once("value").then(function(snapshot) {
         var val = snapshot.val();
         var Fname=val.FirstName;
         var Lname=val.LastName;
+        var Name=val.AgencyName;
         var email=val.email;
         var phone=val.phone;
         var ProfilePic=val.ProfilePic;
@@ -98,11 +99,16 @@ $(document).ready(function(){
                 '<!-- <input id="file-input" type="file" /> -->'+
                 '<input id="file-input" class="image" type="file" name="imgbtn" src="'+ProfilePic+'" alt="Tool Tip" accept="image/jpeg,image/png">'+
             '</div>');
-
-        document.getElementById('form-account-fname').value = Fname;
-        document.getElementById('form-account-lname').value = Lname;
+        // document.getElementById('form-account-lname').value = Lname;
         document.getElementById('form-account-email').value = email;
         document.getElementById('form-account-phone').value = phone;
+        if(Name===null){
+          document.getElementById('form-account-name').value = Fname + Lname;
+        }else{
+          document.getElementById('form-account-name').value = Name;
+        }
+        
+        
       
     });
 
@@ -113,6 +119,7 @@ $(document).ready(function(){
         var storage = firebase.storage();
         var storageRef = storage.ref();
         var file = $("#file-input")[0].files[0];
+        var uid = firebase.auth().currentUser.uid;
         
         var today = new Date().toLocaleDateString();
         var time =firebase.database.ServerValue.TIMESTAMP;
@@ -137,8 +144,8 @@ $(document).ready(function(){
         }else{}
 
         var db = firebase.database().ref();
-        db.child("users/" + uid).update({FirstName: Fname});
-        db.child("users/" + uid).update({LastName: Lname});
+        // db.child("users/" + uid).update({FirstName: Fname});
+        // db.child("users/" + uid).update({LastName: Lname});
         db.child("users/" + uid).update({email: email});
         db.child("users/" + uid).update({phone: phone});
         db.child("users/" + uid).update({Facebook: facebook});

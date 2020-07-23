@@ -40,7 +40,7 @@ $(document).ready(function(){
 			                '</div>'+
 			                '</td>'+
 			                '<td>'+date+'</td>'+
-			                
+			                '<td>236</td>'+
 			                '<td class="actions">'+
 			                    '<a href="#" class="edit" id="edits"  ><i class="fa fa-pencil"></i>Edit</a>'+
 			                    '<a href="#" id="deletes" "><i class="delete fa fa-trash-o"></i></a>'+
