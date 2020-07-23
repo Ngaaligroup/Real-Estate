@@ -59,7 +59,7 @@
                     <div class="actions" id="act">
                         <a href="create-agency.html" class="promoted btn btn-top-header-links" >Agency </a>
                         <a href="create-account.html" class="promoted btn btn-top-header-links">Create Account</a>
-                        <a href="sign-in.html" id="sign-in" class="hide btn btn-top-header-links"> Sign In</a>
+                        <a href="#" id="sign-in" class="hide btn btn-top-header-links" data-toggle="modal" data-target="#sign-in-modal"> Sign In</a>
                         <a href="sign-in.html" id="sign-out" class="hide btn btn-top-header-links">Sign Out</a>
                         <!-- style="padding-right: 20px" <strong></strong>-->
                     </div>
@@ -85,7 +85,7 @@
           
             <div class="collapse navbar-collapse" id="mainMenu">
               <ul class="navbar-nav ml-auto">
-                <li class="nav-item active">
+                <li class="nav-item">
                    <a class="nav-link" href="index.html">Homepage</a>                    
                 </li>
               
@@ -112,17 +112,21 @@
                     </div>
                   </li>
 
-                  <li class="nav-item dropdown">
+                  <li class="nav-item dropdown active">
                       <!-- id="adminhides" -->
                     <a class="nav-link dropdown-toggle" href="#" id="agents_and_agencies" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       Agents & Agencies
                     </a>
                     <div class="dropdown-menu" aria-labelledby="agents_and_agencies">
-                      <a class="dropdown-item" href="agents-listing.html">Agents Listing</a>
+                      <a class="dropdown-item active" href="agents-listing.html">Agents Listing</a>
                       <a class="dropdown-item" href="agencies-listing.html">Agencies Listing</a>
                      
                     </div>
                   </li>
+
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Brokers</a>                    
+                 </li>
 
                   <li class="nav-item">
                     <a class="nav-link" href="hardware.html">Hardware</a>
@@ -351,7 +355,7 @@
                                 <h3>Quick Links</h3>
                                 <ul class="list-links">
                                     <li><a href="index.html">All Properties</a></li>
-                                    <li><a href="sign-in.html">Login and Register Account</a></li>
+                                    <li><a href="#" data-toggle="modal" data-target="#sign-in-modal">Sign In</a></li>
                                     <li><a href="#">FAQ</a></li>
                                     <li><a href="#">Terms and Conditions</a></li>
                                 </ul>
@@ -393,6 +397,42 @@
     </footer>
     <!-- end Page Footer -->
 </div>
+
+<!--sign in Modal -->
+<div class="modal fade" id="sign-in-modal" tabindex="-1" role="dialog" aria-labelledby="sign-in-modal" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title m-auto" id="sign-in-modal-title"> SIGN IN </h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <form role="form" id="form-sign-in" method="post" class="form sign-in-form" > <!-- Form start-->
+          <div class="modal-body">
+            <div class="row justify-content-center">
+              <div class="col-6">                
+                      <div class="form-group">
+                          <label for="form-account-email">Email:</label>
+                          <input type="email" class="form-control" id="account-email" required>
+                      </div><!-- /.form-group -->
+                      <div class="form-group">
+                          <label for="form-account-password">Password:</label>
+                          <input type="password" class="form-control" id="account-password" required>
+                      </div><!-- /.form-group -->                
+                  <hr>
+                  <div class="center" id="resetpass"><a href="#">Forgotten your password ?</a></div>
+              </div>
+          </div><!-- /.row -->
+          </div>
+          <div class="modal-footer">
+            <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
+            <button type="button" class="btn btn-sidebar-form-search pull-right">Sign In</button>
+          </div>
+      </form> <!-- form end -->
+      </div>
+    </div>
+  </div>
 
 <!-- latest jquery,owlcarousel cdn and bootstrap js dependencies -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

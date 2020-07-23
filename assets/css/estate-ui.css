@@ -169,6 +169,20 @@ body {
   }
 /* end of header styles */
 
+/* sign in modal and create account form styles start */
+.modal-content,
+.modal-header,
+.modal-footer{
+    border-color:#7e1e6e;
+}
+
+#form-sign-in .form-control:focus,
+.create-account-form .form-control:focus,
+.create-agency-form .form-control:focus{
+    border-bottom:3px solid #4e0642;
+}
+/* sign in modal styles end */
+
 /* ================================= beginning of main slider section styles =================================*/
 
 #slider-section {
@@ -680,6 +694,10 @@ body {
 /* end footer style */
 
 /*================================ INNER PAGE STYLES ================================================*/
+.review-form .form-control:focus{
+    border:1px solid #4e0642;
+}
+
 .inner-page-banner {
     height:500px;
     background-position: center;
@@ -767,7 +785,8 @@ body {
 }
 
 /* single property search form styles */
-.form-search .form-control:focus{
+.form-search .form-control:focus,
+.create-account-form .select-input:focus{
     border-color: #7e1e6e;
     box-shadow:0 0 0 0.2rem rgba(110, 19, 95, 0.25);
 }
@@ -935,7 +954,8 @@ body {
 }
 
 /* ------------------------ FOR RATING --------------------------*/
-.star-rating{
+.star-rating,
+.stars-outer{
     color: #7e1e6e; 
 }
 
@@ -1127,7 +1147,7 @@ body {
     } */
 
     #mainMenu > .navbar-nav {
-        min-width: 65%;
+        min-width: 75%;
     }
 
     /* slider styles */
@@ -1172,7 +1192,7 @@ body {
 @media (min-width: 1200px) { 
 
     #mainMenu > .navbar-nav {
-        min-width: 70%;
+        min-width: 80%;
     }
 
     /* slider styles */

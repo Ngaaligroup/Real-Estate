@@ -8,6 +8,10 @@
 
     <link href='http://fonts.googleapis.com/css?family=Roboto:300,400,700' rel='stylesheet' type='text/css'>
         
+    <!-- For the rating stars -->
+    <script src="star.js"></script>
+    <link rel="stylesheet" href="assets/stars.css" type="text/css">
+    
     <link rel="stylesheet" href="assets/css/bootstrap-select.min.css" type="text/css">
     <link rel="stylesheet" href="assets/css/jquery.slider.min.css" type="text/css">
     <!-- <link rel="stylesheet" href="assets/css/owl.carousel.css" type="text/css">
@@ -47,93 +51,98 @@
 <!-- Wrapper -->
 <div class="wrapper" id="content-wrapper">
 
-    <header class="main-header header-sticky" id="main-header"> <!-- top header starts here-->
-        <div class="top-header">
+     <!-- Navigation -->
+     <header class="main-header header-sticky" id="main-header"> <!-- top header starts here-->
+      <div class="top-header">
+               
+              <div class="user-area d-flex flex-row-reverse">
+                  <div class="actions" id="act">
+                      <a href="create-agency.html" class="promoted btn btn-top-header-links" >Agency </a>
+                      <a href="create-account.html" class="promoted btn btn-top-header-links">Create Account</a>
+                      <a href="#" id="sign-in" class="hide btn btn-top-header-links" data-toggle="modal" data-target="#sign-in-modal"> Sign In</a>
+                      <a href="sign-in.html" id="sign-out" class="hide btn btn-top-header-links">Sign Out</a>
+                      <!-- style="padding-right: 20px" <strong></strong>-->
+                  </div>
                  
-                <div class="user-area d-flex flex-row-reverse">
-                    <div class="actions" id="act">
-                        <a href="create-agency.html" class="promoted btn btn-top-header-links" >Agency </a>
-                        <a href="create-account.html" class="promoted btn btn-top-header-links">Create Account</a>
-                        <a href="sign-in.html" id="sign-in" class="hide btn btn-top-header-links"> Sign In</a>
-                        <a href="sign-in.html" id="sign-out" class="hide btn btn-top-header-links">Sign Out</a>
-                        <!-- style="padding-right: 20px" <strong></strong>-->
-                    </div>
-                   
-                </div>
-         
-        </div>
-        <nav class="navbar navbar-default navbar-expand-lg mainMenu-container" id="mainMenu-container">
-            <a class="navbar-brand" href="index.html" id="brand">
-                <img src="assets/img/estate-ui/estate_logo2.png" alt="Estate Logo">
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainMenu" aria-controls="mainMenu" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              
-            </button>
+              </div>
+       
+      </div>
+      <nav class="navbar navbar-default navbar-expand-lg mainMenu-container" id="mainMenu-container">
+          <a class="navbar-brand" href="index.html" id="brand">
+              <img src="assets/img/estate-ui/estate_logo2.png" alt="Estate Logo">
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainMenu" aria-controls="mainMenu" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            
+          </button>
 
-            <!-- <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button> -->
-          
-            <div class="collapse navbar-collapse" id="mainMenu">
-              <ul class="navbar-nav ml-auto">
-                <li class="nav-item active">
-                   <a class="nav-link" href="#">Homepage</a>                    
-                </li>
-              
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" id="adminhide" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Property
+          <!-- <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+          </button> -->
+        
+          <div class="collapse navbar-collapse" id="mainMenu">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item active">
+                 <a class="nav-link" href="index.html">Homepage</a>                    
+              </li>
+            
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="adminhide" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Property
+                </a>
+                <div class="dropdown-menu" aria-labelledby="adminhide">
+                  <a class="dropdown-item" href="land.html">Land</a>
+                  <a class="dropdown-item" href="properties-listing-lines.html">Building</a>
+                 
+                </div>
+              </li>
+             
+              <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="adminhides" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Professionals
                   </a>
-                  <div class="dropdown-menu" aria-labelledby="adminhide">
-                    <a class="dropdown-item" href="land.html">Land</a>
-                    <a class="dropdown-item" href="properties-listing-lines.html">Building</a>
+                  <div class="dropdown-menu" aria-labelledby="adminhides">
+                    <a class="dropdown-item" href="architect.html">Architects</a>
+                    <a class="dropdown-item" href="surveyor.html">Surveyors</a>
+                    <a class="dropdown-item" href="civilEngineer.html">Civil Engineers</a>
+                    <a class="dropdown-item" href="Lawyer.html">Lawyers</a>                     
+                  </div>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <!-- id="adminhides" -->
+                  <a class="nav-link dropdown-toggle" href="#" id="agents_and_agencies" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Agents & Agencies
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="agents_and_agencies">
+                    <a class="dropdown-item" href="agents-listing.html">Agents Listing</a>
+                    <a class="dropdown-item" href="agencies-listing.html">Agencies Listing</a>
                    
                   </div>
                 </li>
-               
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="adminhides" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      Professionals
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="adminhides">
-                      <a class="dropdown-item" href="architect.html">Architects</a>
-                      <a class="dropdown-item" href="surveyor.html">Surveyors</a>
-                      <a class="dropdown-item" href="civilEngineer.html">Civil Engineers</a>
-                      <a class="dropdown-item" href="Lawyer.html">Lawyers</a>                     
-                    </div>
-                  </li>
 
-                  <li class="nav-item dropdown">
-                      <!-- id="adminhides" -->
-                    <a class="nav-link dropdown-toggle" href="#" id="agents_and_agencies" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      Agents & Agencies
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="agents_and_agencies">
-                      <a class="dropdown-item" href="agents-listing.html">Agents Listing</a>
-                      <a class="dropdown-item" href="agencies-listing.html">Agencies Listing</a>
-                     
-                    </div>
-                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Brokers</a>                    
+               </li>
 
-                  <li class="nav-item">
-                    <a class="nav-link" href="hardware.html">Hardware</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Contact Us</a>
-                  </li>
-                  <li class="add-your-property ml-3">
-                    <!-- <a href="submit.html" class="btn btn-default"><i class="fa fa-plus"></i><span class="text">Add Your Property</span></a> -->
-                    <a href="submit.html" class="btn btn-add-property ml-auto"><i class="fa fa-plus" title="Add Your Property"></i></a>
-                  </li>
-              </ul>
-          
-            </div>
-          </nav>       
-    </header><!-- /.navigation -->
+                <li class="nav-item">
+                  <a class="nav-link" href="hardware.html">Hardware</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Contact Us</a>
+                </li>
+                <li class="add-your-property ml-3">
+                  <!-- <a href="submit.html" class="btn btn-default"><i class="fa fa-plus"></i><span class="text">Add Your Property</span></a> -->
+                  <a href="submit.html" class="btn btn-add-property ml-auto"><i class="fa fa-plus" title="Add Your Property"></i></a>
+                </li>
+            </ul>
+        
+          </div>
+        </nav>       
+  </header><!-- /.navigation -->
 
     <!-- Slider section-->
      <!-- <div id="slider" class="loading has-parallax">
@@ -532,7 +541,7 @@
                                 <h3>Quick Links</h3>
                                 <ul class="list-links">
                                     <li><a href="index.html">All Properties</a></li>
-                                    <li><a href="sign-in.html">Login and Register Account</a></li>
+                                    <li><a href="#" data-toggle="modal" data-target="#sign-in-modal">Sign In</a></li>
                                     <li><a href="#">FAQ</a></li>
                                     <li><a href="#">Terms and Conditions</a></li>
                                 </ul>
@@ -576,6 +585,42 @@
 </div>
 
 <div id="overlay"></div>
+
+<!--sign in Modal -->
+<div class="modal fade" id="sign-in-modal" tabindex="-1" role="dialog" aria-labelledby="sign-in-modal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title m-auto" id="sign-in-modal-title"> SIGN IN </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form role="form" id="form-sign-in" method="post" class="form sign-in-form" > <!-- Form start-->
+        <div class="modal-body">
+          <div class="row justify-content-center">
+            <div class="col-6">                
+                    <div class="form-group">
+                        <label for="form-account-email">Email:</label>
+                        <input type="email" class="form-control" id="account-email" required>
+                    </div><!-- /.form-group -->
+                    <div class="form-group">
+                        <label for="form-account-password">Password:</label>
+                        <input type="password" class="form-control" id="account-password" required>
+                    </div><!-- /.form-group -->                
+                <hr>
+                <div class="center" id="resetpass"><a href="#">Forgotten your password ?</a></div>
+            </div>
+        </div><!-- /.row -->
+        </div>
+        <div class="modal-footer">
+          <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
+          <button type="button" class="btn btn-sidebar-form-search pull-right">Sign In</button>
+        </div>
+    </form> <!-- form end -->
+    </div>
+  </div>
+</div>
 
 <!-- <script type="text/javascript" src="assets/js/jquery-2.1.0.min.js"></script> -->
 

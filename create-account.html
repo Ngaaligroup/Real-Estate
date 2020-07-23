@@ -3,17 +3,40 @@
 <html lang="en-US">
 <head>
     <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="ThemeStarz">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- <meta name="author" content="ThemeStarz"> -->
 
     <link href='http://fonts.googleapis.com/css?family=Roboto:300,400,700' rel='stylesheet' type='text/css'>
-    <link href="assets/fonts/font-awesome.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.css" type="text/css">
+
+    <!-- latest bootstrap and fontawesome and owlcarousel cdn -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+     
+    <!-- owl carousel -->
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.css" integrity="sha512-RWhcC19d8A3vE7kpXq6Ze4GcPfGe3DQWuenhXAbcGiZOaqGojLtWwit1eeM9jLGHFv8hnwpX3blJKGjTsf2HxQ==" crossorigin="anonymous" /> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.css" integrity="sha512-X/RSQYxFb/tvuz6aNRTfKXDnQzmnzoawgEQ4X8nZNftzs8KFFH23p/BA6D2k0QCM4R0sY1DEy9MIY9b3fwi+bg==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.theme.css" integrity="sha512-itF/9I/NigY9u4ukjw9s7/kG6SC7LJ5Q4pRNMnTbGZAsO4/RSUelfVuYBk8AkSk23qEcucIqdUlzzpy2qf7jGg==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.transitions.css" integrity="sha512-4ioNqjewIy2hSnYs7smFWpvzAB4xcD6NnR2z6ydUZEBg0UDVW3IoKATPoVYMyzKexe8yFU6sPd2VypoH2ZjCTQ==" crossorigin="anonymous" />
+    
+    <!-- OLD commented out local bootstrap and fontawesome -->
+    <!-- <link href="assets/fonts/font-awesome.css" rel="stylesheet" type="text/css"> -->   
+    <!-- <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.css" type="text/css">  -->
+
+    <!-- local bootrap and fontawesome and owl carousel css for when internet is not available to use cdn -->
+    <!-- <link rel="stylesheet" href="assets/estate-ui-local/bootstrap4/bootstrap.min.css" type="text/css"> 
+    <link rel="stylesheet" href="assets/estate-ui-local/fontawesome/css/fontawesome-all.css" type="text/css"> 
+    <link rel="stylesheet" href="assets/estate-ui-local/owlcarousel/owl.carousel.css" type="text/css"> 
+    <link rel="stylesheet" href="assets/estate-ui-local/owlcarousel/owl.theme.css" type="text/css"> 
+    <link rel="stylesheet" href="assets/estate-ui-local/owlcarousel/owl.transitions.css" type="text/css">  -->
+
     <link rel="stylesheet" href="assets/css/bootstrap-select.min.css" type="text/css">
-    <link rel="stylesheet" href="assets/css/magnific-popup.css" type="text/css">
     <link rel="stylesheet" href="assets/css/jquery.slider.min.css" type="text/css">
     <link rel="stylesheet" href="assets/css/owl.carousel.css" type="text/css">
+    <!-- <link rel="stylesheet" href="assets/css/owl.transitions.css" type="text/css"> -->
     <link rel="stylesheet" href="assets/css/style.css" type="text/css">
+
+    <!-- estate ui redesigning css written by Kevin -->
+    <link rel="stylesheet" href="assets/css/estate-ui.css" type="text/css">
 
     <title>ESTATE | Create an Account</title>
 
@@ -23,77 +46,116 @@
 <!-- Wrapper -->
 <div class="wrapper">
     <!-- Navigation -->
-    <div class="navigation">
-        <div class="secondary-navigation">
-            <div class="container">
-                
-                <div class="user-area" >
-                    <div class="actions" id="act">
-                        <a href="create-agency.html" class="promoted">Register Agency</a>
-                        <a href="create-account.html" class="promoted"><strong>Create Account</strong></a>
-                        <a href="sign-in.html" id="sign-in" class="hide">Sign In</a>
-                        <a href="sign-in.html" id="sign-out" class="hide" style="padding-right: 20px">Sign Out</a>
-                    </div>
-                    
+<header class="main-header header-sticky" id="main-header"> <!-- top header starts here-->
+    <div class="top-header">
+             
+            <div class="user-area d-flex flex-row-reverse">
+                <div class="actions" id="act">
+                    <a href="create-agency.html" class="promoted btn btn-top-header-links" >Agency </a>
+                    <a href="create-account.html" class="promoted btn btn-top-header-links">Create Account</a>
+                    <a href="#" id="sign-in" class="hide btn btn-top-header-links" data-toggle="modal" data-target="#sign-in-modal"> Sign In</a>
+                    <a href="sign-in.html" id="sign-out" class="hide btn btn-top-header-links">Sign Out</a>
+                    <!-- style="padding-right: 20px" <strong></strong>-->
                 </div>
+               
             </div>
+     
+    </div>
+    <nav class="navbar navbar-default navbar-expand-lg mainMenu-container" id="mainMenu-container">
+        <a class="navbar-brand" href="index.html" id="brand">
+            <img src="./src/assets/img/estate-ui/estate_logo2.png" alt="Estate Logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainMenu" aria-controls="mainMenu" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          
+        </button>
+
+        <!-- <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button> -->
+      
+        <div class="collapse navbar-collapse" id="mainMenu">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+               <a class="nav-link" href="index.html">Homepage</a>                    
+            </li>
+          
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="adminhide" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Property
+              </a>
+              <div class="dropdown-menu" aria-labelledby="adminhide">
+                <a class="dropdown-item" href="land.html">Land</a>
+                <a class="dropdown-item" href="properties-listing-lines.html">Building</a>               
+              </div>
+            </li>
+           
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="adminhides" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Professionals
+                </a>
+                <div class="dropdown-menu" aria-labelledby="adminhides">
+                  <a class="dropdown-item" href="architect.html">Architects</a>
+                  <a class="dropdown-item" href="surveyor.html">Surveyors</a>
+                  <a class="dropdown-item" href="civilEngineer.html">Civil Engineers</a>
+                  <a class="dropdown-item" href="Lawyer.html">Lawyers</a>                     
+                </div>
+              </li>
+
+              <li class="nav-item dropdown">
+                  <!-- id="adminhides" -->
+                <a class="nav-link dropdown-toggle" href="#" id="agents_and_agencies" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Agents & Agencies
+                </a>
+                <div class="dropdown-menu" aria-labelledby="agents_and_agencies">
+                  <a class="dropdown-item" href="agents-listing.html">Agents Listing</a>
+                  <a class="dropdown-item" href="agencies-listing.html">Agencies Listing</a>
+                 
+                </div>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="#">Brokers</a>                    
+             </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="hardware.html">Hardware</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Contact Us</a>
+              </li>
+              <li class="add-your-property ml-3">
+                <!-- <a href="submit.html" class="btn btn-default"><i class="fa fa-plus"></i><span class="text">Add Your Property</span></a> -->
+                <a href="submit.html" class="btn btn-add-property ml-auto"><i class="fa fa-plus" title="Add Your Property"></i></a>
+              </li>
+          </ul>
+      
         </div>
-        <div class="container">
-            <header class="navbar" id="top" role="banner">
-                <div class="navbar-header">
-                    <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <div class="navbar-brand nav" id="brand">
-                        <a href="index.html"><img src="assets/img/estate.PNG" alt="brand"></a>
-                    </div>
-                </div>
-                <nav class="collapse navbar-collapse bs-navbar-collapse navbar-right" role="navigation">
-                    <ul class="nav navbar-nav">
-                        <li><a href="index.html">Homepage</a>
-                       
-                        </li>
-                        <li class="has-child" id="adminhide"><a href="#">Property</a>
-                           <ul class="child-navigation">
-                                <li><a href="land.html">Land</a></li>
-                                <li><a href="properties-listing-lines.html">Building</a></li>
-                            </ul>
-                        </li>
-                        <li class="has-child" id=""><a href="#">Professionals</a>
-                            <ul class="child-navigation">
-                                <li><a href="architect.html">Architects</a></li>
-                                <li><a href="surveyor.html">Surveyors</a></li>
-                                <li><a href="civilEngineer.html">Civil Engineers</a></li>
-                                <li><a href="Lawyer.html">Lawyers</a></li>
-                            </ul>
-                        </li>
-                     
-                        <li class="has-child" id="adminhides"><a href="#">Agents & Agencies</a>
-                            <ul class="child-navigation">
-                                <li><a href="agents-listing.html">Agents Listing</a></li>
-                                <li><a href="agencies-listing.html">Agencies Listing</a></li>
-                            </ul>
-                        </li>
-                        
-                        <li><a href="hardware.html">Hardware</a></li>
-                        <li><a href="submit.html" class="hide" id="submitlin">Add Your Property</a></li>
-                        
-                        <!-- <li><a href="contact.html">Contact</a></li> -->
-                    </ul>
-                </nav><!-- /.navbar collapse-->
-                <div class="add-your-property">
-                    <!-- <a href="submit.html" class="btn btn-default"><i class="fa fa-plus"></i><span class="text">Add Your Property</span></a> -->
-                </div>
-            </header><!-- /.navbar -->
-        </div><!-- /.container -->
-    </div><!-- /.navigation -->
-    <!-- end Navigation -->
+      </nav>       
+</header><!-- /.navigation -->
+
+ <!-- Inner Page banner section Start-->
+ <section class="inner-page-banner" id="inner-page-banner" style="background-image:linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)),url(assets/img/bg_images/image2.jpg);">
+    <!-- Breadcrumb ->
+    <div class="container text-center inner">
+       <ul class="inner-page-breadcrumb d-inline-flex">
+           <li><a href="#">Home</a></li>
+           <li class="active">Property Detail</li>
+       </ul>
+   </div>
+   <!-- end Breadcrumb -->
+   <div class="inner-page-title"> <!-- The title of the page -->
+       Create An Account
+   </div>
+</section>    
+<!-- /# Inner Page banner section end -->
+
     <!-- Page Content -->
-    <div id="page-content">
-        <!-- Breadcrumb -->
+    <div id="page-content" class="pt-3 pb-5">
+        <!-- Breadcrumb ->
         <div class="container">
             <ol class="breadcrumb">
                 <li><a href="index.html">Home</a></li>
@@ -103,114 +165,262 @@
         <!-- end Breadcrumb -->
 
         <div class="container">
-            <header><h1>Create an Account</h1></header>
-            <div class="row">
-                <div class="col-md-4 col-sm-6 col-md-offset-4 col-sm-offset-3">
-                    <h3>Account Type</h3>
-                    <form role="form" id="form-create-account" method="post" >
-                        <div class="radio" id="create-account-user">
-                            <label>
-                                <input type="radio" id="account-type-user" name="account-type" value="Buyer" >Agent
-                            </label>
-                        </div>
-                        <div class="radio" id="agent-switch" >
-                            <label>
-                                <input type="radio" id="account-type-agent" name="account-type" value="professional" >Professionals
-                            </label>
-                        </div>
-						
-						<div class="radio" id="regular seller" >
-                            <label>
-                                <input type="radio" id="account-type-regular seller" name="account-type" value="seller" >Broker
-                            </label>
-                        </div>
-                        <div id="agency" class="disabled">
-                            <div class="form-group">
-                                <label for="account-agency">Profession</label>
-                                <!-- <input type="text" class="form-control" id="create-proffesion" > -->
-                                <select name="proffesion" id="create-proffesion" class="prof1">
-                                    <option value="architect">Architect</option>
-                                    <option value="surveyor">Surveyor</option>
-                                    <option value="hardware">Hardware</option>
-                                    <option value="civilEngineer">Civil Engineer</option>
-                                    <option value="Lawyer">Lawyer</option>
-                                </select>
+            <header><h1>Fill In Your Details Below</h1></header>
+            <form role="form" id="form-create-account" method="post" class="create-account-form" > <!-- Form begin -->
+                <div class="row justify-content-center">
+                    <div class="col-md-4 col-10">
+                        <h3>Account Type</h3>                        
+                            <div class="radio" id="create-account-user">
+                                <label>
+                                    <input type="radio" id="account-type-user" name="account-type" value="Buyer" >Agent
+                                </label>
                             </div>
-                            <div class="form-group">
-                                <label for="account-agency">Company:</label>
-                                <input type="text" class="form-control" id="create-company">
+                            <div class="radio" id="agent-switch" >
+                                <label>
+                                    <input type="radio" id="account-type-agent" name="account-type" value="professional" >Professionals
+                                </label>
                             </div>
-                            <!-- <div id="agency" class="disabled"> -->
                             
-                            <div class="form-group">
-                                <label for="account-agency">Adress</label>
-                                <input type="text" class="form-control" id="create-adress" >
-                            </div><!-- /.form-group -->
+                            <div class="radio" id="regular seller" >
+                                <label>
+                                    <input type="radio" id="account-type-regular seller" name="account-type" value="seller" >Broker
+                                </label>
+                            </div>
+                            <div id="agency" class="disabled">
+                                <div class="form-group">
+                                    <label for="account-agency">Profession</label>
+                                    <!-- <input type="text" class="form-control" id="create-proffesion" > -->
+                                    <select name="proffesion" id="create-proffesion" class="prof1 form-control select-input">
+                                        <option value="architect">Architect</option>
+                                        <option value="surveyor">Surveyor</option>
+                                        <option value="hardware">Hardware</option>
+                                        <option value="civilEngineer">Civil Engineer</option>
+                                        <option value="Lawyer">Lawyer</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="account-agency">Company:</label>
+                                    <input type="text" class="form-control" id="create-company">
+                                </div>
+                                <!-- <div id="agency" class="disabled"> -->
+                                
+                                <div class="form-group">
+                                    <label for="account-agency">Adress</label>
+                                    <input type="text" class="form-control" id="create-adress" >
+                                </div><!-- /.form-group -->
+                            </div>
+                        </div>   
+                        <div class="col-md-8 col-11">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="create-account-first-name">First Name:</label>
+                                        <input type="text" class="form-control" id="create-account-first-name" required>
+                                    </div><!-- /.form-group -->
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="form-create-account-last-name">Last Name:</label>
+                                        <input type="text" class="form-control" id="create-account-last-name" required>
+                                    </div><!-- /.form-group -->
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="form-create-account-email">Email:</label>
+                                        <input type="email" class="form-control" id="form-create-account-email" required>
+                                    </div><!-- /.form-group -->
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="form-create-account-Phone_Number">Phone Number:</label>
+                                        <input type="text" class="form-control" id="create-account-phone" required>
+                                    </div><!-- /.form-group -->
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="form-create-account-password">Password:</label>
+                                        <input type="password" class="form-control" id="create-account-password" required>
+                                    </div><!-- /.form-group -->
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="form-create-account-confirm-password">Confirm Password:</label>
+                                        <input type="password" class="form-control" id="create-account-confirm-password" required>
+                                    </div><!-- /.form-group -->
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="">Profile Pic:</label>
+                                        <input id="file-upload" type="file" class="file profilepic" data-show-upload="false" data-show-caption="false" data-show-remove="false" accept="image/*" data-browse-class="btn btn-default" data-browse-label="Browse Images" name="files[]" >
+                                    </div><!-- /.form-group -->
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group clearfix">
+                                        <button type="submit" class="btn pull-right btn-sidebar-form-search" id="account-submitbtn">Create Account</button>
+                                    </div><!-- /.form-group -->        
+                                </div>
+                            </div>
+                        <div class="center">
+                            <figure class="note">By clicking the “Create an Account” button you agree with our <a href="terms-conditions.html">Terms and conditions</a></figure>
                         </div>
-                        
-                        <div class="form-group">
-                            <label for="create-account-first-name">First Name:</label>
-                            <input type="text" class="form-control" id="create-account-first-name" required>
-                        </div><!-- /.form-group -->
-                        <div class="form-group">
-                            <label for="form-create-account-last-name">Last Name:</label>
-                            <input type="text" class="form-control" id="create-account-last-name" required>
-                        </div><!-- /.form-group -->
-                        <div class="form-group">
-                            <label for="form-create-account-email">Email:</label>
-                            <input type="email" class="form-control" id="form-create-account-email" required>
-                        </div><!-- /.form-group -->
-						 <div class="form-group">
-                            <label for="form-create-account-Phone_Number">Phone Number:</label>
-                            <input type="text" class="form-control" id="create-account-phone" required>
-                        </div><!-- /.form-group -->
-						 
-                        <div class="form-group">
-                            <label for="form-create-account-password">Password:</label>
-                            <input type="password" class="form-control" id="create-account-password" required>
-                        </div><!-- /.form-group -->
-                        <div class="form-group">
-                            <label for="form-create-account-confirm-password">Confirm Password:</label>
-                            <input type="password" class="form-control" id="create-account-confirm-password" required>
-                        </div><!-- /.form-group -->
-
-                        <div class="form-group">
-                            <label for="">Profile Pic:</label>
-                            <input id="file-upload" type="file" class="file profilepic" data-show-upload="false" data-show-caption="false" data-show-remove="false" accept="image/*" data-browse-class="btn btn-default" data-browse-label="Browse Images" name="files[]" >
-                        </div><!-- /.form-group -->
-
-                        <div class="form-group clearfix">
-                            <button type="submit" class="btn pull-right btn-default" id="account-submitbtn">Create an Account</button>
-                        </div><!-- /.form-group -->
-                    </form>
-                    
-                    <div class="center">
-                        <figure class="note">By clicking the “Create an Account” button you agree with our <a href="terms-conditions.html">Terms and conditions</a></figure>
                     </div>
-                </div>
-            </div><!-- /.row -->
-        
+                </div><!-- /.row -->
+        </form> <!-- Form end -->
         </div><!-- /.container -->
     </div>
     
     <!-- end Page Content -->
-    <!-- Page Footer -->
-    <footer id="page-footer">
-        <div class="inner">
-            <section id="footer-copyright">
-                <div class="container">
-                    <span>Copyright © <script type="text/javascript">
-                        document.write(new Date().getFullYear());
-                        </script>. All Rights Reserved.
-                    </span>
-                    <span class="pull-right"><a href="#page-top" class="roll">Go to top</a></span>
-                </div>
-            </section>
-        </div><!-- /.inner -->
-    </footer>
-    <!-- end Page Footer -->
+   <!-- Page Footer -->
+   <footer id="page-footer">
+    <div class="inner">
+        <aside id="footer-main">
+            <div class="custom-margin">
+                <div class="row">
+                    <div class="col-md-4 col-sm-4 footer-about-us">
+                        <!-- <article></article> -->
+                            <h3>About Us</h3>
+                            <p>We offer services concerning the whole process of buying or renting land including all the necessary Professionals
+                                that are necessary in accompolishing those tasks.
+                            </p>
+                            <a class="btn btn-about-us" href="#"> Read More ...</a>
+                            <!-- <hr> -->
+                    </div><!-- /.col-sm-3 -->
+                    <!-- Commented out "Recent Section" in the footer ->
+                    <div class="col-md-3 col-sm-3 recent">
+                        
+                    </div><!- /.col-sm-3 -->
+                   
+                    <!-- /.col-sm-3 -->
+                    <div class="col-md-4 col-sm-4 footer-links">
+                        <!-- <article></article> -->
+                            <!-- <h3>Useful Links</h3> list-unstyled -->
+                            <h3>Quick Links</h3>
+                            <ul class="list-links">
+                                <li><a href="index.html">All Properties</a></li>
+                                <li><a href="#" data-toggle="modal" data-target="#sign-in-modal">Sign In</a></li>
+                                <li><a href="#">FAQ</a></li>
+                                <li><a href="#">Terms and Conditions</a></li>
+                            </ul>
+                        
+                    </div><!-- /.col-sm-3 -->
+                    <div class="col-md-4 col-sm-4 social-media-column">
+                     
+                      <div class="row justify-content-between social-media-row">
+                        <div class="col-4 image footer-logo">
+                          <img src="./src/assets/img/estate-ui/estate_logo2.png" alt="brand">
+                        </div>
+                        <div class="col-6 image">
+                          <ul class="d-inline-flex social-media-icons w-100">
+                            <li> <a href="#"> <i class="fa fa-twitter fa-2x"></i></a></li>
+                            <li> <a href="#"> <i class="fa fa-facebook fa-2x"></i></a></li>
+                            <li> <a href="#"> <i class="fa fa-instagram fa-2x"></i></a></li>
+                          </ul>
+                        </div>
+                      </div>
+
+                    </div>
+                </div><!-- /.row -->
+            </div><!-- /.container -->
+        </aside><!-- /#footer-main -->
+        <aside id="footer-thumbnails" class="footer-thumbnails"></aside><!-- /#footer-thumbnails -->
+        <aside id="footer-copyright">
+            <div class="container">
+                <span>
+                  Copyright © 
+                  <script type="text/javascript">
+                    document.write(new Date().getFullYear());
+                  </script>. All Rights Reserved.
+                  <!-- <small> Designed By Tripple K</small> -->
+                  </span>
+                <span class="pull-right"><a href="#page-top" class="roll go-to-top" title="Go to top" > <i class="fa fa-arrow-up"></i></a></span>
+            </div>
+        </aside>
+    </div><!-- /.inner -->
+</footer>
+ <!-- end Page Footer -->
 </div>
 
+<!--sign in Modal -->
+<div class="modal fade" id="sign-in-modal" tabindex="-1" role="dialog" aria-labelledby="sign-in-modal" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title m-auto" id="sign-in-modal-title"> SIGN IN </h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <form role="form" id="form-sign-in" method="post" class="form sign-in-form" > <!-- Form start-->
+          <div class="modal-body">
+            <div class="row justify-content-center">
+              <div class="col-6">                
+                      <div class="form-group">
+                          <label for="form-account-email">Email:</label>
+                          <input type="email" class="form-control" id="account-email" required>
+                      </div><!-- /.form-group -->
+                      <div class="form-group">
+                          <label for="form-account-password">Password:</label>
+                          <input type="password" class="form-control" id="account-password" required>
+                      </div><!-- /.form-group -->                
+                  <hr>
+                  <div class="center" id="resetpass"><a href="#">Forgotten your password ?</a></div>
+              </div>
+          </div><!-- /.row -->
+          </div>
+          <div class="modal-footer">
+            <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
+            <button type="button" class="btn btn-sidebar-form-search pull-right">Sign In</button>
+          </div>
+      </form> <!-- form end -->
+      </div>
+    </div>
+  </div>
+
+<!-- latest jquery,owlcarousel cdn and bootstrap js dependencies -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.js"></script>
+
+
+<!-- local js for when internet is unavailable to load cdn -->
+<!-- <script type="text/javascript" src="assets/estate-ui-local/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="assets/estate-ui-local/bootstrap4/popper.js"></script>
+<script type="text/javascript" src="assets/estate-ui-local/bootstrap4/bootstrap.min.js"></script>
+<script type="text/javascript" src="assets/estate-ui-local/owlcarousel/owl.carousel.js"></script> -->
+
+<script type="text/javascript">
+    /* $(window).load(function(){
+         initializeOwl(false);
+     }); */
+ 
+ $(document).ready(function() {        
+
+     // Prevent Default Click action for # links
+     $('a[href="#"]').on('click', function ($) {
+                  $.preventDefault();
+          });
+
+ });
+ 
+     //JS code for changing background color of navbar on scroll
+   var banner = document.getElementById('inner-page-banner'); // getting slider section element
+   var bannerHeight = banner.offsetHeight;
+ 
+   $(window).scroll(function(){
+         // console.log('scrolling');
+         //changing bg color of navbar on scroll
+         $('#mainMenu-container').toggleClass('scrolled', $(this).scrollTop() > (bannerHeight - 250));
+     });   
+ 
+ </script>
+ 
 <script type="text/javascript" src="assets/js/jquery-2.1.0.min.js"></script>
 <script type="text/javascript" src="assets/js/jquery-migrate-1.2.1.min.js"></script>
 <script type="text/javascript" src="assets/bootstrap/js/bootstrap.min.js"></script>
@@ -224,6 +434,9 @@
 <script>
 $("form-create-account").validate();
 </script>
+
+
+
 <!--[if gt IE 8]>
 <script type="text/javascript" src="assets/js/ie.js"></script>
 <![endif]-->
