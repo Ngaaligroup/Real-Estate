@@ -1,21 +1,43 @@
 <!DOCTYPE html>
 
 <html lang="en-US">
-<head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="ThemeStarz">
-
-    <link href='http://fonts.googleapis.com/css?family=Roboto:300,400,700' rel='stylesheet' type='text/css'>
-    <link href="assets/fonts/font-awesome.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.css" type="text/css">
-    <link rel="stylesheet" href="assets/css/bootstrap-select.min.css" type="text/css">
-    <link rel="stylesheet" href="assets/css/magnific-popup.css" type="text/css">
-    <link rel="stylesheet" href="assets/css/jquery.slider.min.css" type="text/css">
-    <link rel="stylesheet" href="assets/css/owl.carousel.css" type="text/css">
-    <link rel="stylesheet" href="assets/css/fileinput.min.css" type="text/css">
-    <link rel="stylesheet" href="assets/css/style.css" type="text/css">
-
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!-- <meta name="author" content="ThemeStarz"> -->
+    
+        <link href='http://fonts.googleapis.com/css?family=Roboto:300,400,700' rel='stylesheet' type='text/css'>
+    
+        <!-- latest bootstrap and fontawesome and owlcarousel cdn -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+         
+        <!-- owl carousel -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.css" integrity="sha512-RWhcC19d8A3vE7kpXq6Ze4GcPfGe3DQWuenhXAbcGiZOaqGojLtWwit1eeM9jLGHFv8hnwpX3blJKGjTsf2HxQ==" crossorigin="anonymous" /> 
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.css" integrity="sha512-X/RSQYxFb/tvuz6aNRTfKXDnQzmnzoawgEQ4X8nZNftzs8KFFH23p/BA6D2k0QCM4R0sY1DEy9MIY9b3fwi+bg==" crossorigin="anonymous" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.theme.css" integrity="sha512-itF/9I/NigY9u4ukjw9s7/kG6SC7LJ5Q4pRNMnTbGZAsO4/RSUelfVuYBk8AkSk23qEcucIqdUlzzpy2qf7jGg==" crossorigin="anonymous" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.transitions.css" integrity="sha512-4ioNqjewIy2hSnYs7smFWpvzAB4xcD6NnR2z6ydUZEBg0UDVW3IoKATPoVYMyzKexe8yFU6sPd2VypoH2ZjCTQ==" crossorigin="anonymous" />
+        
+        <!-- OLD commented out local bootstrap and fontawesome -->
+        <!-- <link href="assets/fonts/font-awesome.css" rel="stylesheet" type="text/css"> -->   
+        <!-- <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.css" type="text/css">  -->
+    
+        <!-- local bootrap and fontawesome and owl carousel css for when internet is not available to use cdn -->
+        <!-- <link rel="stylesheet" href="assets/estate-ui-local/bootstrap4/bootstrap.min.css" type="text/css"> 
+        <link rel="stylesheet" href="assets/estate-ui-local/fontawesome/css/fontawesome-all.css" type="text/css"> 
+        <link rel="stylesheet" href="assets/estate-ui-local/owlcarousel/owl.carousel.css" type="text/css"> 
+        <link rel="stylesheet" href="assets/estate-ui-local/owlcarousel/owl.theme.css" type="text/css"> 
+        <link rel="stylesheet" href="assets/estate-ui-local/owlcarousel/owl.transitions.css" type="text/css">  -->
+    
+        <link rel="stylesheet" href="assets/css/bootstrap-select.min.css" type="text/css">
+        <link rel="stylesheet" href="assets/css/jquery.slider.min.css" type="text/css">
+        <link rel="stylesheet" href="assets/css/owl.carousel.css" type="text/css">
+        <!-- <link rel="stylesheet" href="assets/css/owl.transitions.css" type="text/css"> -->
+        <link rel="stylesheet" href="assets/css/style.css" type="text/css">
+    
+        <!-- estate ui redesigning css written by Kevin -->
+        <link rel="stylesheet" href="assets/css/estate-ui.css" type="text/css">
+    
     <title>ESTATE | Add Your Property</title>
 
 </head>
@@ -24,110 +46,137 @@
 <!-- Wrapper -->
 <div class="wrapper">
     <!-- Navigation -->
-    <div class="navigation">
-        <div class="secondary-navigation">
-            <div class="container">
-              
-                <div class="user-area" >
-                    <div class="actions" id="act">
-                        <a href="create-agency.html" class="promoted">Register Agency</a>
-                        <a href="create-account.html" class="promoted"><strong>Create Account</strong></a>
-                        <a href="sign-in.html" id="sign-in" class="hide">Sign In</a>
-                        <a href="sign-in.html" id="sign-out" class="hide" style="padding-right: 20px">Sign Out</a>
-                    </div>
-                    
+<header class="main-header header-sticky" id="main-header"> <!-- top header starts here-->
+    <div class="top-header">
+             
+            <div class="user-area d-flex flex-row-reverse">
+                <div class="actions" id="act">
+                    <a href="create-agency.html" class="promoted btn btn-top-header-links" >Agency </a>
+                    <a href="create-account.html" class="promoted btn btn-top-header-links">Create Account</a>
+                    <a href="#" id="sign-in" class="hide btn btn-top-header-links" data-toggle="modal" data-target="#sign-in-modal"> Sign In</a>
+                    <a href="sign-in.html" id="sign-out" class="hide btn btn-top-header-links">Sign Out</a>
+                    <!-- style="padding-right: 20px" <strong></strong>-->
                 </div>
+               
             </div>
+     
+    </div>
+    <nav class="navbar navbar-default navbar-expand-lg mainMenu-container" id="mainMenu-container">
+        <a class="navbar-brand" href="index.html" id="brand">
+            <img src="./src/assets/img/estate-ui/estate_logo2.png" alt="Estate Logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainMenu" aria-controls="mainMenu" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          
+        </button>
+
+        <!-- <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button> -->
+      
+        <div class="collapse navbar-collapse" id="mainMenu">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+               <a class="nav-link" href="index.html">Homepage</a>                    
+            </li>
+          
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="adminhide" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Property
+              </a>
+              <div class="dropdown-menu" aria-labelledby="adminhide">
+                <a class="dropdown-item" href="land.html">Land</a>
+                <a class="dropdown-item" href="properties-listing-lines.html">Building</a>               
+              </div>
+            </li>
+           
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="adminhides" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Professionals
+                </a>
+                <div class="dropdown-menu" aria-labelledby="adminhides">
+                  <a class="dropdown-item" href="architect.html">Architects</a>
+                  <a class="dropdown-item" href="surveyor.html">Surveyors</a>
+                  <a class="dropdown-item" href="civilEngineer.html">Civil Engineers</a>
+                  <a class="dropdown-item" href="Lawyer.html">Lawyers</a>                     
+                </div>
+              </li>
+
+              <li class="nav-item dropdown">
+                  <!-- id="adminhides" -->
+                <a class="nav-link dropdown-toggle" href="#" id="agents_and_agencies" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Agents & Agencies
+                </a>
+                <div class="dropdown-menu" aria-labelledby="agents_and_agencies">
+                  <a class="dropdown-item" href="agents-listing.html">Agents Listing</a>
+                  <a class="dropdown-item" href="agencies-listing.html">Agencies Listing</a>
+                 
+                </div>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="#">Brokers</a>                    
+             </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="hardware.html">Hardware</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Contact Us</a>
+              </li>
+              <li class="add-your-property ml-3">
+                <!-- <a href="submit.html" class="btn btn-default"><i class="fa fa-plus"></i><span class="text">Add Your Property</span></a> -->
+                <a href="submit.html" class="btn btn-add-property ml-auto"><i class="fa fa-plus" title="Add Your Property"></i></a>
+              </li>
+          </ul>
+      
         </div>
-        <div class="container">
-            <header class="navbar" id="top" role="banner">
-                <div class="navbar-header">
-                    <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <div class="navbar-brand nav" id="brand">
-                        <a href="index.html"><img src="assets/img/estate.PNG" alt="brand"></a>
-                    </div>
-                </div>
-                <nav class="collapse navbar-collapse bs-navbar-collapse navbar-right" role="navigation">
-                    <ul class="nav navbar-nav">
-                        <li ><a href="index.html">Homepage</a>
-                       
-                        </li>
-                        <li class="has-child" id="adminhide"><a href="#">Properties</a>
-                           <ul class="child-navigation">
-                                <li><a href="land.html">Land</a></li>
-                                <li><a href="properties-listing-lines.html">Building</a></li>
-                            </ul>
-                        </li>
-                        <li class="has-child" id=""><a href="#">Professionals</a>
-                            <ul class="child-navigation">
-                                <li><a href="architect.html">Architects</a></li>
-                                <li><a href="surveyor.html">Surveyors</a></li>
-                                <li><a href="hardware.html">Hardware</a></li>
-                                <li><a href="civilEngineer.html">Civil Engineers</a></li>
-                                <li><a href="Lawyer.html">Lawyers</a></li>
-                            </ul>
-                        </li>
-                     
-                        <li class="has-child" id="adminhides"><a href="#">Agents & Agencies</a>
-                            <ul class="child-navigation">
-                                <li><a href="agents-listing.html">Agents Listing</a></li>
-                                <li><a href="agencies-listing.html">Agencies Listing</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="submit.html" class="hide" id="submitlin">Add Your Property</a></li>
-                        
-                        
-                        <li><a href="contact.html">Contact</a></li>
-						
-                    </ul>
-                </nav><!-- /.navbar collapse-->
-                <div class="add-your-property">
-                    <!-- <a href="submit.html" class="btn btn-default"><i class="fa fa-plus"></i><span class="text">Add Your Property</span></a> -->
-                </div>
-            </header><!-- /.navbar -->
-        </div><!-- /.container -->
-    </div><!-- /.navigation -->
-    <!-- end Navigation -->
+      </nav>       
+</header><!-- /.navigation -->
+
+<!-- Inner Page banner section Start-->
+<section class="inner-page-banner" id="inner-page-banner" style="background-image:linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)),url(assets/img/bg_images/image2.jpg);">
+    <!-- Breadcrumb ->
+    <div class="container text-center inner">
+       <ul class="inner-page-breadcrumb d-inline-flex">
+           <li><a href="#">Home</a></li>
+           <li class="active">Property Detail</li>
+       </ul>
+   </div>
+   <!-- end Breadcrumb -->
+   <div class="inner-page-title"> <!-- The title of the page -->
+       Register Your Property
+   </div>
+</section>    
+<!-- /# Inner Page banner section end -->
+
     <!-- Page Content -->
-    <div id="page-content">
-        <!-- Breadcrumb -->
-        <div class="container">
-            <ol class="breadcrumb">
-                <li><a href="#">Home</a></li>
-                <li class="active">Add your property</li>
-            </ol>
-        </div>
-        <!-- end Breadcrumb -->
+    <div id="page-content" class="pt-3">
 
         <div class="container">
             <header><h1>Add Your Property</h1></header>
-            <div class="row">
-                
-            </div><!-- /.row -->
-            <form role="form" id="form-submit-property" class="form-submit" action="thank-you.html">
-                <div class="row">
-                    <div class="block">
+            <form role="form" id="form-submit-property" class="form-submit add-property-form" action="thank-you.html">
+                <div class="row justify-content-center">
+                    <!-- <div class="block"></div> -->
                         <div class="col-md-9 col-sm-9">
                             <section id="submit-form">
                                 <section id="basic-information">
                                     <header><h2>Basic Information</h2></header>
-                                    <div class="row">
-                                        <div class="col-md-8">
+                                    <div class="row justify-content-center">
+                                        <div class="col-md-8 col-10">
                                             <div class="form-group">
                                                 <label for="submit-title">Title</label>
                                                 <input type="text" class="form-control" id="submit-title" name="title" required>
                                             </div><!-- /.form-group -->
                                         </div>
-                                        <div class="col-md-4">
+                                        <div class="col-md-4 col-10">
                                             <div class="form-group">
                                                 <label for="submit-price">Price</label>
                                                 <div class="input-group">
-                                                    <span class="input-group-addon">Shs</span>
+                                                    <span class="input-group-text">shs.</span>
                                                     <input type="text" class="form-control" id="submit-price" name="price"  required>
                                                 </div>
                                             </div><!-- /.form-group -->
@@ -139,133 +188,137 @@
                                     </div><!-- /.form-group -->
                                 </section><!-- /#basic-information -->
 
-                                <section>
-                                    <div class="row">
-                                        <div class="block clearfix">
-                                            <div class="col-md-6 col-sm-6">
-                                                <section id="summary">
-                                                    <header><h2>Summary</h2></header>
+                                
+                                    <section id="summary">
+                                        <header><h2>Summary</h2></header>
+                                    <div class="clearfix">
+                                        <div class="row">
+                                            <div class="col-md-3 col-6">                                               
                                                     <div class="form-group">
                                                         <label for="submit-property-type">Property Type</label>
-                                                        <select name="type" id="submit-property-type">
+                                                        <select name="type" id="submit-property-type" class="form-control select-input">
                                                             <option value="Apartment">Apartment</option>
                                                             <option value="Hotel">Hotel</option>
                                                             <option value="Flat">Flat</option>
                                                             <option value="House">House</option>
                                                             <option value="Land">Land</option>
                                                         </select>
-                                                    </div><!-- /.form-group -->
-                                                    <div class="row">
-                                                    
-                                                        <div class="col-md-6 col-sm-6">
-                                                            <div class="form-group">
-                                                                <label for="submit-land-type">Land Type</label>
-                                                                <select name="type" id="submit-land-type">
-                                                                    <option value="Crown Land">Crown Land</option>
-                                                                    <option value="Mailo Land">Mailo Land</option>
-                                                                </select>
-                                                            </div><!-- /.form-group -->
-                                                        </div><!-- /.col-md-6 -->
-                                                        <div class="row">
-                                                        <div class="col-md-6 col-sm-6">
-                                                            <div class="form-group">
-                                                                <label for="submit-status">Status</label>
-                                                                <select name="type" id="submit-status">
-                                                                    <option value="Sale">Sale</option>
-                                                                    <option value="Rent">Rent</option>
-                                                                </select>
-                                                            </div><!-- /.form-group -->
-                                                        </div><!-- /.col-md-6 -->
-                                                        </div><!-- /.row -->
-													
-                                                        <div class="col-md-6 col-sm-6">
-                                                            <div class="form-group">
-                                                                <label for="submit-state">State</label>
-                                                                <select name="type" id="submit-state">
-                                                                    <option value="">select</option>
-                                                                    <option value="Fully Furnished">Fully Furnished</option>
-                                                                    <option value="Finished">Finished</option>
-                                                                </select>
-                                                            </div><!-- /.form-group -->
-                                                        </div><!-- /.col-md-6 -->
-                                                    </div><!-- /.row -->
-                                                    <div class="row">
-                                                        <div class="col-md-6 col-sm-6">
-                                                            <div class="form-group">
-                                                                <label for="submit-Beds">Bedrooms</label>
-                                                                <input type="text" class="form-control" id="submit-Beds" name="Beds" pattern="\d*" required>
-                                                            </div><!-- /.form-group -->
-                                                        </div><!-- /.col-md-6 -->
-                                                        <div class="col-md-6 col-sm-6">
-                                                            <div class="form-group">
-                                                                <label for="submit-Baths">Bathrooms</label>
-                                                                <input type="text" class="form-control" id="submit-Baths" name="Baths" pattern="\d*" required>
-                                                            </div><!-- /.form-group -->
-                                                        </div><!-- /.col-md-6 -->
-                                                    </div><!-- /.row -->
-                                                    <div class="row">
-                                                        <div class="col-md-6 col-sm-6">
-                                                            <div class="form-group">
-                                                                <label for="submit-area">Area</label>
-                                                                <div class="input-group">
-                                                                    <input type="text" class="form-control" id="submit-area" name="area" pattern="\d*" required>
-                                                                    <span class="input-group-addon">m<sup>2</sup></span>
-                                                                </div>
-                                                            </div><!-- /.form-group -->
-                                                        </div><!-- /.col-md-6 -->
-                                                        <div class="col-md-6 col-sm-6">
-                                                            <div class="form-group">
-                                                                <label for="submit-garages">Garages</label>
-                                                                <input type="text" class="form-control" id="submit-garages" name="garages" pattern="\d*" required>
-                                                            </div><!-- /.form-group -->
-                                                        </div><!-- /.col-md-6 -->
-                                                    </div><!-- /.row -->
+                                                    </div><!-- /.form-group -->  
+                                            </div>                                                  
+                                            <div class="col-md-3 col-6">
+                                                <div class="form-group">
+                                                    <label for="submit-land-type">Land Type</label>
+                                                    <select name="type" id="submit-land-type" class="form-control select-input">
+                                                        <option value="Crown Land">Crown Land</option>
+                                                        <option value="Mailo Land">Mailo Land</option>
+                                                    </select>
+                                                </div><!-- /.form-group -->
+                                            </div><!-- /.col-md-4 -->                                                      
+                                            <div class="col-md-3 col-6">
+                                                <div class="form-group">
+                                                    <label for="submit-status">Status</label>
+                                                    <select name="type" id="submit-status" class="form-control select-input">
+                                                        <option value="Sale">Sale</option>
+                                                        <option value="Rent">Rent</option>
+                                                    </select>
+                                                </div><!-- /.form-group -->
+                                            </div><!-- /.col-md-4 -->           												
+                                            <div class="col-md-3 col-6">
+                                                <div class="form-group">
+                                                    <label for="submit-state">State</label>
+                                                    <select name="type" id="submit-state" class="form-control select-input">
+                                                        <option value="">select</option>
+                                                        <option value="Fully Furnished">Fully Furnished</option>
+                                                        <option value="Finished">Finished</option>
+                                                    </select>
+                                                </div><!-- /.form-group -->
+                                            </div><!-- /.col-md-4 -->
+                                        </div>                                                
+                                        <div class="row">
+                                            <div class="col-md-3 col-6">
+                                                <div class="form-group">
+                                                    <label for="submit-Beds">Bedrooms</label>
+                                                    <input type="text" class="form-control" id="submit-Beds" name="Beds" pattern="\d*" required>
+                                                </div><!-- /.form-group -->
+                                            </div><!-- /.col-md-6 -->
+                                            <div class="col-md-3 col-6">
+                                                <div class="form-group">
+                                                    <label for="submit-Baths">Bathrooms</label>
+                                                    <input type="text" class="form-control" id="submit-Baths" name="Baths" pattern="\d*" required>
+                                                </div><!-- /.form-group -->
+                                            </div><!-- /.col-md-6 -->
+                                        
+                                            <div class="col-md-3 col-6">
+                                                <div class="form-group">
+                                                    <label for="submit-area">Area</label>
+                                                    <div class="input-group">
+                                                        <input type="text" class="form-control" id="submit-area" name="area" pattern="\d*" required>
+                                                        <span class="input-group-addon">m<sup>2</sup></span>
+                                                    </div>
+                                                </div><!-- /.form-group -->
+                                            </div><!-- /.col-md-6 -->
+                                            <div class="col-md-3 col-6">
+                                                <div class="form-group">
+                                                    <label for="submit-garages">Garages</label>
+                                                    <input type="text" class="form-control" id="submit-garages" name="garages" pattern="\d*" required>
+                                                </div><!-- /.form-group -->
+                                            </div><!-- /.col-md-6 -->
+                                        </div><!-- /.row -->
                                                     <!-- <div class="checkbox">
                                                         <label>
                                                             <input type="checkbox" required >Allow user rating <i class="fa fa-question-circle tool-tip"  data-toggle="tooltip" data-placement="right" title="Users can give you a stars rating which is displayed in property detail"></i>
                                                         </label>
                                                     </div> -->
-                                                </section><!-- /#summary -->
-                                            </div><!-- /.col-md-6 -->
-                                            <div class="col-md-6 col-sm-6">
-                                                <section id="place-on-map">
-                                                    <header class="section-title">
-                                                        <h2>Place on Map</h2>
-                                                        <span class="link-arrow geo-location">Get My Position</span>
-                                                    </header>
-                                                    <div class="form-group">
-                                                        <label for="address-map">Address</label>
-                                                        <input type="text" class="form-control" id="address-map" name="address">
-                                                    </div><!-- /.form-group -->
-                                                    <label for="address-map">Or drag the marker to property position</label>
-                                                    <div id="submit-map"></div>
-                                                    <div class="row">
-                                                        <div class="col-md-6">
-                                                            <div class="form-group">
-                                                                <input type="text" class="form-control" id="latitude" name="latitude" readonly>
-                                                            </div><!-- /.form-group -->
+                                            <div class="row">
+                                                <div class="col-md-6 col-sm-6">
+                                                    <section id="place-on-map">
+                                                        <header class="section-title">
+                                                            <h2>Place on Map</h2>
+                                                            <span class="link-arrow geo-location">Get My Position</span>
+                                                        </header>
+                                                        <div class="form-group">
+                                                            <label for="address-map">Address</label>
+                                                            <input type="text" class="form-control" id="address-map" name="address">
+                                                        </div><!-- /.form-group -->
+                                                        <label for="address-map">Or drag the marker to property position</label>
+                                                        <div id="submit-map"></div>
+                                                        <div class="row">
+                                                            <div class="col-md-6 col-6">
+                                                                <div class="form-group">
+                                                                    <input type="text" class="form-control" id="latitude" name="latitude" readonly>
+                                                                </div><!-- /.form-group -->
+                                                            </div>
+                                                            <div class="col-md-6 col-6">
+                                                                <div class="form-group">
+                                                                    <input type="text" class="form-control" id="longitude" name="longitude" readonly>
+                                                                </div><!-- /.form-group -->
+                                                            </div>
                                                         </div>
-                                                        <div class="col-md-6">
+                                                    </section><!-- /#place-on-map -->
+                                                </div><!-- /.col-md-6 -->
+                                                <div class="col-md-6 col-sm-6 pt-3">
+                                                    <section class="block" id="gallery">
+                                                        <header><h2>Gallery</h2></header>
+                                                        <div class="center">
                                                             <div class="form-group">
-                                                                <input type="text" class="form-control" id="longitude" name="longitude" readonly>
-                                                            </div><!-- /.form-group -->
+                                                                <input id="file-upload" type="file" class="file propertypic" multiple="true" data-show-upload="false" data-show-caption="false" data-show-remove="false" accept="image/*" data-browse-class="btn btn-default" data-browse-label="Browse Images" name="files[]" >
+                                                                <figure class="note"><strong>Hint:</strong> You can upload all images at once!</figure>
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                </section><!-- /#place-on-map -->
-                                            </div><!-- /.col-md-6 -->
-                                        </div><!-- /.block -->
-                                    </div><!-- /.row -->
-                                </section>
+                                                    </section>
 
-                                <section class="block" id="gallery">
-                                    <header><h2>Gallery</h2></header>
-                                    <div class="center">
-                                        <div class="form-group">
-                                            <input id="file-upload" type="file" class="file propertypic" multiple="true" data-show-upload="false" data-show-caption="false" data-show-remove="false" accept="image/*" data-browse-class="btn btn-default" data-browse-label="Browse Images" name="files[]" >
-                                            <figure class="note"><strong>Hint:</strong> You can upload all images at once!</figure>
-                                        </div>
-                                    </div>
-                                </section>
+                                                    <section class="mb-0 property-submit-button-section">
+                                                        <div class="center">
+                                                            <div class="form-group">
+                                                                <button type="submit" class="btn btn-sidebar-form-search">Submit Property</button>
+                                                            </div><!-- /.form-group -->
+                                                            <!-- <figure class="note block">By clicking the “Proceed to Payment” or “Submit” button you agree with our <a href="terms-conditions.html">Terms and conditions</a></figure> -->
+                                                        </div>
+                                                    </section>
+                                                </div>
+                                            </div><!-- Row -->                                            
+                                        </div><!-- /.block -->
+                                </section><!-- /#summary -->                              
 
                                <!--  <section id="property-features" class="block">
                                     <section>
@@ -305,18 +358,11 @@
                                 </div>
                             </aside><!-- /.submit-step -->
                         </div><!-- /.col-md-3 -->
-                    </div>
+                    
                 </div><!-- /.row -->
                 <div class="row">
                     <div class="block">
-                        <div class="col-md-9 col-sm-9">
-                            <div class="center">
-                                <div class="form-group">
-                                    <button type="submit" class="btn btn-default large">Submit Property</button>
-                                </div><!-- /.form-group -->
-                                <!-- <figure class="note block">By clicking the “Proceed to Payment” or “Submit” button you agree with our <a href="terms-conditions.html">Terms and conditions</a></figure> -->
-                            </div>
-                        </div>
+                        
                        <!--  <div class="col-md-3 col-sm-3">
                             <aside class="submit-step">
                                 <figure class="step-number">3</figure>
@@ -333,55 +379,150 @@
         </div><!-- /.container -->
     </div>
     <!-- end Page Content -->
-    <!-- Page Footer -->
-    <footer id="page-footer">
-        <div class="inner">
-            <aside id="footer-main">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-3 col-sm-3">
-                            <article>
-                                <h3>About Us</h3>
-                                <p>Vel fermentum ipsum. Suspendisse quis molestie odio. Interdum et malesuada fames ac ante ipsum
-                                    primis in faucibus. Quisque aliquet a metus in aliquet. Praesent ut turpis posuere, commodo odio
-                                    id, ornare tortor
-                                </p>
-                                <hr>
-                                <a href="#" class="link-arrow">Read More</a>
-                            </article>
-                        </div><!-- /.col-sm-3 -->
-                        <div class="col-md-3 col-sm-3 recent">
-                           
-                        </div><!-- /.col-sm-3 -->
-                        <!-- /.col-sm-3 -->
-                        <div class="col-md-3 col-sm-3">
-                            <article>
-                                <h3>Useful Links</h3>
-                                <ul class="list-unstyled list-links">
-                                    <li><a href="#">All Properties</a></li>
-                                    <li><a href="#">Privacy Policy</a></li>
-                                    <li><a href="#">Login and Register Account</a></li>
-                                    <li><a href="#">FAQ</a></li>
-                                    <li><a href="#">Terms and Conditions</a></li>
-                                </ul>
-                            </article>
-                        </div><!-- /.col-sm-3 -->
-                    </div><!-- /.row -->
-                </div><!-- /.container -->
-            </aside><!-- /#footer-main -->
-            <aside id="footer-thumbnails" class="footer-thumbnails"></aside><!-- /#footer-thumbnails -->
-            <aside id="footer-copyright">
-                <div class="container">
-                    <span>Copyright © <script type="text/javascript">
-  document.write(new Date().getFullYear());
-</script>. All Rights Reserved.</span>
-                    <span class="pull-right"><a href="#page-top" class="roll">Go to top</a></span>
-                </div>
-            </aside>
-        </div><!-- /.inner -->
-    </footer>
-    <!-- end Page Footer -->
+     <!-- Page Footer -->
+   <footer id="page-footer">
+    <div class="inner">
+        <aside id="footer-main">
+            <div class="custom-margin">
+                <div class="row">
+                    <div class="col-md-4 col-sm-4 footer-about-us">
+                        <!-- <article></article> -->
+                            <h3>About Us</h3>
+                            <p>We offer services concerning the whole process of buying or renting land including all the necessary Professionals
+                                that are necessary in accompolishing those tasks.
+                            </p>
+                            <a class="btn btn-about-us" href="#"> Read More ...</a>
+                            <!-- <hr> -->
+                    </div><!-- /.col-sm-3 -->
+                    <!-- Commented out "Recent Section" in the footer ->
+                    <div class="col-md-3 col-sm-3 recent">
+                        
+                    </div><!- /.col-sm-3 -->
+                   
+                    <!-- /.col-sm-3 -->
+                    <div class="col-md-4 col-sm-4 footer-links">
+                        <!-- <article></article> -->
+                            <!-- <h3>Useful Links</h3> list-unstyled -->
+                            <h3>Quick Links</h3>
+                            <ul class="list-links">
+                                <li><a href="index.html">All Properties</a></li>
+                                <li><a href="#" data-toggle="modal" data-target="#sign-in-modal">Sign In</a></li>
+                                <li><a href="#">FAQ</a></li>
+                                <li><a href="#">Terms and Conditions</a></li>
+                            </ul>
+                        
+                    </div><!-- /.col-sm-3 -->
+                    <div class="col-md-4 col-sm-4 social-media-column">
+                     
+                      <div class="row justify-content-between social-media-row">
+                        <div class="col-4 image footer-logo">
+                          <img src="./src/assets/img/estate-ui/estate_logo2.png" alt="brand">
+                        </div>
+                        <div class="col-6 image">
+                          <ul class="d-inline-flex social-media-icons w-100">
+                            <li> <a href="#"> <i class="fa fa-twitter fa-2x"></i></a></li>
+                            <li> <a href="#"> <i class="fa fa-facebook fa-2x"></i></a></li>
+                            <li> <a href="#"> <i class="fa fa-instagram fa-2x"></i></a></li>
+                          </ul>
+                        </div>
+                      </div>
+
+                    </div>
+                </div><!-- /.row -->
+            </div><!-- /.container -->
+        </aside><!-- /#footer-main -->
+        <aside id="footer-thumbnails" class="footer-thumbnails"></aside><!-- /#footer-thumbnails -->
+        <aside id="footer-copyright">
+            <div class="container">
+                <span>
+                  Copyright © 
+                  <script type="text/javascript">
+                    document.write(new Date().getFullYear());
+                  </script>. All Rights Reserved.
+                  <!-- <small> Designed By Tripple K</small> -->
+                  </span>
+                <span class="pull-right"><a href="#page-top" class="roll go-to-top" title="Go to top" > <i class="fa fa-arrow-up"></i></a></span>
+            </div>
+        </aside>
+    </div><!-- /.inner -->
+</footer>
+ <!-- end Page Footer -->
 </div>
+
+<!--sign in Modal -->
+<div class="modal fade" id="sign-in-modal" tabindex="-1" role="dialog" aria-labelledby="sign-in-modal" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title m-auto" id="sign-in-modal-title"> SIGN IN </h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <form role="form" id="form-sign-in" method="post" class="form sign-in-form" > <!-- Form start-->
+          <div class="modal-body">
+            <div class="row justify-content-center">
+              <div class="col-6">                
+                      <div class="form-group">
+                          <label for="form-account-email">Email:</label>
+                          <input type="email" class="form-control" id="account-email" required>
+                      </div><!-- /.form-group -->
+                      <div class="form-group">
+                          <label for="form-account-password">Password:</label>
+                          <input type="password" class="form-control" id="account-password" required>
+                      </div><!-- /.form-group -->                
+                  <hr>
+                  <div class="center" id="resetpass"><a href="#">Forgotten your password ?</a></div>
+              </div>
+          </div><!-- /.row -->
+          </div>
+          <div class="modal-footer">
+            <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
+            <button type="button" class="btn btn-sidebar-form-search pull-right">Sign In</button>
+          </div>
+      </form> <!-- form end -->
+      </div>
+    </div>
+  </div>
+
+<!-- latest jquery,owlcarousel cdn and bootstrap js dependencies -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.js"></script>
+
+
+<!-- local js for when internet is unavailable to load cdn -->
+<!-- <script type="text/javascript" src="assets/estate-ui-local/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="assets/estate-ui-local/bootstrap4/popper.js"></script>
+<script type="text/javascript" src="assets/estate-ui-local/bootstrap4/bootstrap.min.js"></script>
+<script type="text/javascript" src="assets/estate-ui-local/owlcarousel/owl.carousel.js"></script> -->
+
+<script type="text/javascript">
+    /* $(window).load(function(){
+         initializeOwl(false);
+     }); */
+ 
+ $(document).ready(function() {        
+
+     // Prevent Default Click action for # links
+     $('a[href="#"]').on('click', function ($) {
+                  $.preventDefault();
+          });
+
+ });
+ 
+     //JS code for changing background color of navbar on scroll
+   var banner = document.getElementById('inner-page-banner'); // getting slider section element
+   var bannerHeight = banner.offsetHeight;
+ 
+   $(window).scroll(function(){
+         // console.log('scrolling');
+         //changing bg color of navbar on scroll
+         $('#mainMenu-container').toggleClass('scrolled', $(this).scrollTop() > (bannerHeight - 250));
+     });   
+ 
+ </script>
 
 <script type="text/javascript" src="assets/js/jquery-2.1.0.min.js"></script>
 <script type="text/javascript" src="assets/js/jquery-migrate-1.2.1.min.js"></script>
