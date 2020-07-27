@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- <meta name="author" content="ThemeStarz"> -->
+
+    <link href='http://fonts.googleapis.com/css?family=Roboto:300,400,700' rel='stylesheet' type='text/css'>
+
+    <!-- For the rating stars -->
+    <script src="star.js"></script>
+    <link rel="stylesheet" href="assets/stars.css" type="text/css">
+    
+    <!-- latest bootstrap and fontawesome and owlcarousel cdn -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+     
+    <!-- owl carousel -->
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.css" integrity="sha512-RWhcC19d8A3vE7kpXq6Ze4GcPfGe3DQWuenhXAbcGiZOaqGojLtWwit1eeM9jLGHFv8hnwpX3blJKGjTsf2HxQ==" crossorigin="anonymous" /> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.css" integrity="sha512-X/RSQYxFb/tvuz6aNRTfKXDnQzmnzoawgEQ4X8nZNftzs8KFFH23p/BA6D2k0QCM4R0sY1DEy9MIY9b3fwi+bg==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.theme.css" integrity="sha512-itF/9I/NigY9u4ukjw9s7/kG6SC7LJ5Q4pRNMnTbGZAsO4/RSUelfVuYBk8AkSk23qEcucIqdUlzzpy2qf7jGg==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.transitions.css" integrity="sha512-4ioNqjewIy2hSnYs7smFWpvzAB4xcD6NnR2z6ydUZEBg0UDVW3IoKATPoVYMyzKexe8yFU6sPd2VypoH2ZjCTQ==" crossorigin="anonymous" />
+    
+    <link rel="stylesheet" href="assets/css/bootstrap-select.min.css" type="text/css">
+    <link rel="stylesheet" href="assets/css/jquery.slider.min.css" type="text/css">
+    <link rel="stylesheet" href="assets/css/owl.carousel.css" type="text/css">
+    <!-- <link rel="stylesheet" href="assets/css/owl.transitions.css" type="text/css"> -->
+    <link rel="stylesheet" href="assets/css/style.css" type="text/css">
+
+    <!-- estate ui redesigning css written by Kevin -->
+    <link rel="stylesheet" href="assets/css/estate-ui.css" type="text/css">
+
+
+    <title>Estate | Hardware</title>
+
+</head>
+
+<body class="page-sub-page page-agents-listing" id="page-top">
+    <!-- Wrapper -->
+    <div class="wrapper">
+        <!-- Navigation -->
+        <header class="main-header header-sticky" id="main-header"> <!-- top header starts here-->
+            <div class="top-header">
+                     
+                    <div class="user-area d-flex flex-row-reverse">
+                        <div class="actions" id="act">
+                            <a href="create-agency.html" class="promoted btn btn-top-header-links" >Agency </a>
+                            <a href="create-account.html" class="promoted btn btn-top-header-links">Create Account</a>
+                            <a href="#" id="sign-in" class="hide btn btn-top-header-links" data-toggle="modal" data-target="#sign-in-modal"> Sign In</a>
+                            <a href="sign-in.html" id="sign-out" class="hide btn btn-top-header-links">Sign Out</a>
+                            <!-- style="padding-right: 20px" <strong></strong>-->
+                        </div>
+                       
+                    </div>
+             
+            </div>
+            <nav class="navbar navbar-default navbar-expand-lg mainMenu-container" id="mainMenu-container">
+                <a class="navbar-brand" href="index.html" id="brand">
+                    <img src="./src/assets/img/estate-ui/estate_logo2.png" alt="Estate Logo">
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainMenu" aria-controls="mainMenu" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  
+                </button>
+              
+                <div class="collapse navbar-collapse" id="mainMenu">
+                  <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                       <a class="nav-link" href="index.html">Homepage</a>                    
+                    </li>
+                  
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" id="adminhide" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Property
+                      </a>
+                      <div class="dropdown-menu" aria-labelledby="adminhide">
+                        <a class="dropdown-item" href="land.html">Land</a>
+                        <a class="dropdown-item" href="properties-listing-lines.html">Building</a>
+                       
+                      </div>
+                    </li>
+                   
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="adminhides" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          Professionals
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="adminhides">
+                          <a class="dropdown-item active" href="architect.html">Architects</a>
+                          <a class="dropdown-item" href="surveyor.html">Surveyors</a>
+                          <a class="dropdown-item" href="civilEngineer.html">Civil Engineers</a>
+                          <a class="dropdown-item" href="Lawyer.html">Lawyers</a>                     
+                        </div>
+                      </li>
+    
+                      <li class="nav-item dropdown">
+                          <!-- id="adminhides" -->
+                        <a class="nav-link dropdown-toggle" href="#" id="agents_and_agencies" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          Agents & Agencies
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="agents_and_agencies">
+                          <a class="dropdown-item" href="agents-listing.html">Agents Listing</a>
+                          <a class="dropdown-item" href="agencies-listing.html">Agencies Listing</a>
+                         
+                        </div>
+                      </li>
+    
+                      <li class="nav-item active">
+                        <a class="nav-link active" href="brokers.html">Brokers</a>                    
+                     </li>
+                     
+                      <li class="nav-item">
+                        <a class="nav-link" href="hardware.html">Hardware</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact Us</a>
+                      </li>
+                      <li class="add-your-property ml-3">
+                       
+                        <a href="submit.html" class="btn btn-add-property ml-auto"><i class="fa fa-plus" title="Add Your Property"></i> Add Property</a>
+                      </li>
+                  </ul>
+              
+                </div>
+              </nav>       
+        </header><!-- /.navigation -->
+    
+         <!-- Inner Page banner section Start-->
+     <section class="inner-page-banner" id="inner-page-banner" style="background-image:linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)),url(assets/img/bg_images/image2.jpg);">
+       
+       <!-- end Breadcrumb -->
+       <div class="inner-page-title"> <!-- The title of the page -->
+          Brokers
+       </div>
+   </section> 
+   <div id="page-content" class="pt-3">
+
+    <div class="container">
+        <div class="row">
+            <!-- sidebar -->
+            <div class="col-md-3 col-sm-3">
+                <section id="sidebar">
+                    <aside id="edit-search">
+                        <header><h3>Search Brokers</h3></header>
+                        <form role="form" id="form-sidebar" class="form-search form-row" action="properties-listing.html">
+                            <div class="col-md-12 col-6 form-group">
+                                <select name="type" class="form-control">
+                                    <option value="">Status</option>
+                                    <option value="1">Rent</option>
+                                    <option value="2">Sale</option>
+                                </select>
+                            </div><!-- /.form-group -->
+                            <div class="col-md-12 col-6 form-group">
+                                <select name="country" class="form-control">
+                                    <option value="1">Uganda</option>
+                                </select>
+                            </div><!-- /.form-group -->
+                            <div class="col-md-12 col-6 form-group">
+                                <select name="city" class="form-control">
+                                    <option value="">City</option>
+                                    <option value="1">Kawempe</option>
+                                    <option value="2">Jinja</option>
+                                    <option value="3">Muyenga</option>
+                                    <option value="4">Makindye</option>
+                                    <option value="5">Gaaba</option>
+                                </select>
+                            </div><!-- /.form-group -->
+                            <div class="col-md-12 col-6 form-group">
+                                <select name="district" class="form-control">
+                                    <option value="">District</option>
+                                    <option value="1">Wakiso</option>
+                                    <option value="2">Mpiji</option>
+                                    <option value="3">Kampala</option>
+                                    <option value="4">Mityana</option>
+                                    <option value="5">Kalangala</option>
+                                </select>
+                            </div><!-- /.form-group -->
+                            <div class="col-md-12 col-6 form-group">
+                                <select name="property-type" class="form-control">
+                                    <option value="">Property Type</option>
+                                    <option value="1">Apartment</option>
+                                    <option value="2">Hotel</option>
+                                    <option value="3">Cottage</option>
+                                    <option value="4">Flat</option>
+                                    <option value="5">House</option>
+                                </select>
+                            </div><!-- /.form-group -->
+                            <div class="col-md-12 col-12 form-group">
+                                <label class="form-control-label"> Price: </label> <br/>
+                                <input type="range" min="1000" max="299000" value="100000" class="w-75 priceSlider" id="priceSlider">
+                                <span class="ml-1 mt-1 priceValueSpan" id="priceValueSpan"></span>
+                            </div>
+                            <div class="col-md-12 col-6 form-group">
+                                <button type="submit" class="btn btn-sidebar-form-search">Search Now</button>
+                            </div><!-- /.form-group -->
+                        </form><!-- /#form-map -->
+                    </aside><!-- /#edit-search -->
+                      
+                    <aside id="our-guides">
+                        <header><h3>Our Guides</h3></header>
+                        <a href="Guidelines.html" class="universal-button">
+                            <figure class="fa fa-home"></figure>
+                            <span>Guidelines for Purchase</span>
+                            <span class="arrow fa fa-angle-right"></span>
+                        </a><!-- /.universal-button -->
+                        <a href="Recommendations.html" class="universal-button">
+                            <figure class="fa fa-umbrella"></figure>
+                            <span>Recommendations</span>
+                            <span class="arrow fa fa-angle-right"></span>
+                        </a><!-- /.universal-button -->
+                       <!-- /.universal-button -->
+                    </aside><!-- /#our-guide -->
+                </section><!-- /#sidebar -->
+            </div><!-- /.col-md-3 -->
+            <!-- end Sidebar -->
+
+            <!-- Architect Detail -->
+            <div class="col-md-9 col-sm-9">
+                <section id="agents-listing">
+                    <header>
+                        <div id="search-filter" class="row pt-0 justify-content-end">
+                            <div class="col-md-6 col-12">
+                                <h1>
+                                   Results:
+                                </h1>  
+                            </div>
+                            <div class="col-md-2 col-3">
+                                <div class="property-slider-controls">
+                                    <a href="#architects-listing-slider-section" title="Previous Architect" data-slide="prev" class="left fa fa-angle-left"></a>
+                                    <a href="#architects-listing-slider-section" title="Next Architect" data-slide="next" class="right fa fa-angle-right"></a>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-6">
+                                <div class="form-group">
+                                    <select name="sorting" class="form-control">
+                                        <option value="">Sort By</option>
+                                        <option value="1">Lowest price first</option>
+                                        <option value="2">Highest price first</option>
+                                        <option value="3">Date added</option>
+                                    </select>
+                                </div><!-- /.form-group -->
+                            </div>    
+                        </div>
+                 
+                    </header>
+
+                         <!-- ========= architects slider start ============ -->
+                    <div class="row mx-auto my-auto">
+                        <div id="architects-listing-slider-section" class="architects-listing-slider-section listing-slider-section carousel slide w-100" data-ride="carousel">
+                    
+                        <!-- Wrapper for single property slides -->
+                            <div class="carousel-inner w-100" role="listbox">
+                                
+                                <!-- load the individual slides from the main.js -->
+                                <div id="properties" class="display-lines architect"></div><!-- /#properties -->
+                            </div>
+                        </div>
+                    </div>
+                </section><!-- /#agents-listing -->
+              
+            </div><!-- /.col-md-9 -->
+            <!-- end Agent Detail -->
+        </div><!-- /.row -->
+    </div><!-- /.container -->
+</div>
+<!-- end Page Content -->
+<!-- Page Footer -->
+<footer id="page-footer">
+    <div class="inner">
+        <aside id="footer-main">
+            <div class="custom-margin">
+                <div class="row">
+                    <div class="col-md-4 col-sm-4 footer-about-us">
+                        <!-- <article></article> -->
+                            <h3>About Us</h3>
+                            <p>We offer services concerning the whole process of buying or renting land including all the necessary Professionals
+                                that are necessary in accompolishing those tasks.
+                            </p>
+                            <!-- <hr> -->
+                    </div><!-- /.col-sm-3 -->
+                   
+                    <!-- /.col-sm-3 -->
+                    <div class="col-md-4 col-sm-4 footer-links">
+                        <!-- <article></article> -->
+                            <!-- <h3>Useful Links</h3> list-unstyled -->
+                            <h3>Quick Links</h3>
+                            <ul class="list-links">
+                                <li><a href="index.html">All Properties</a></li>
+                                <li><a href="#" data-toggle="modal" data-target="#sign-in-modal">Sign In</a></li>
+                                <li><a href="faq.html">FAQ</a></li>
+                                <li><a href="terms-conditions.html">Terms and Conditions</a></li>
+                            </ul>
+                        
+                    </div><!-- /.col-sm-3 -->
+                    <div class="col-md-4 col-sm-4 social-media-column">
+                     
+                      <div class="row justify-content-between social-media-row">
+                        <div class="col-4 image footer-logo">
+                          <img src="./src/assets/img/estate-ui/estate_logo2.png" alt="brand">
+                        </div>
+                        <div class="col-6 image">
+                          <ul class="d-inline-flex social-media-icons w-100">
+                            <li> <a href="#"> <i class="fa fa-twitter fa-2x"></i></a></li>
+                            <li> <a href="#"> <i class="fa fa-facebook fa-2x"></i></a></li>
+                            <li> <a href="#"> <i class="fa fa-instagram fa-2x"></i></a></li>
+                          </ul>
+                        </div>
+                      </div>
+
+                    </div>
+                </div><!-- /.row -->
+            </div><!-- /.container -->
+        </aside><!-- /#footer-main -->
+        <aside id="footer-thumbnails" class="footer-thumbnails"></aside><!-- /#footer-thumbnails -->
+        <aside id="footer-copyright">
+            <div class="container">
+                <span>
+                  Copyright © 
+                  <script type="text/javascript">
+                    document.write(new Date().getFullYear());
+                  </script>. All Rights Reserved.
+                  <!-- <small> Designed By Tripple K</small> -->
+                  </span>
+                <span class="pull-right"><a href="#page-top" class="roll go-to-top" title="Go to top" > <i class="fa fa-arrow-up"></i></a></span>
+            </div>
+        </aside>
+    </div><!-- /.inner -->
+</footer>
+ <!-- end Page Footer -->
+</div>
+
+<!--sign in Modal -->
+<div class="modal fade" id="sign-in-modal" tabindex="-1" role="dialog" aria-labelledby="sign-in-modal" aria-hidden="true">
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title m-auto" id="sign-in-modal-title"> SIGN IN </h5>
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <form role="form" id="form-sign-in" method="post" class="form sign-in-form" > <!-- Form start-->
+      <div class="modal-body">
+        <div class="row justify-content-center">
+          <div class="col-6">                
+                  <div class="form-group">
+                      <label for="form-account-email">Email:</label>
+                      <input type="email" class="form-control" id="account-email" required>
+                  </div><!-- /.form-group -->
+                  <div class="form-group">
+                      <label for="form-account-password">Password:</label>
+                      <input type="password" class="form-control" id="account-password" required>
+                  </div><!-- /.form-group -->                
+              <hr>
+              <div class="center" id="resetpass"><a href="#">Forgotten your password ?</a></div>
+          </div>
+      </div><!-- /.row -->
+      </div>
+      <div class="modal-footer">
+        <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
+        <button type="button" class="btn btn-sidebar-form-search pull-right">Sign In</button>
+      </div>
+  </form> <!-- form end -->
+  </div>
+</div>
+</div>
+
+<!-- latest jquery,owlcarousel cdn and bootstrap js dependencies -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.js"></script>
+
+<script type="text/javascript">
+
+//JS Code for price range slider
+ var slider = document.getElementById("priceSlider");
+ var output = document.getElementById("priceValueSpan");
+ output.innerHTML = slider.value; // Display the default slider value
+
+ // Update the current slider value (each time you drag the slider handle)
+ slider.oninput = function() {
+ output.innerHTML = this.value;
+ }
+
+$(document).ready(function() {        
+
+ // Prevent Default Click action for # links
+ $('a[href="#"]').on('click', function ($) {
+              $.preventDefault();
+      });
+
+   //for property section slider
+   /* $('#single-properties-slider-section').carousel({
+        interval: 5000
+      }); */
+
+    $('.listing-slider-section .carousel-item').each(function(){
+        var minPerSlide = 2;
+        var next = $(this).next();
+        if (!next.length) {
+        next = $(this).siblings(':first');
+        }
+        next.children(':first-child').clone().appendTo($(this));
+        
+        for (var i=0;i<minPerSlide;i++) {
+            next=next.next();
+            if (!next.length) {
+              next = $(this).siblings(':first');
+            }
+            
+            next.children(':first-child').clone().appendTo($(this));
+          }
+    });
+
+});
+
+ //JS code for changing background color of navbar on scroll
+var banner = document.getElementById('inner-page-banner'); // getting slider section element
+var bannerHeight = banner.offsetHeight;
+
+$(window).scroll(function(){
+     // console.log('scrolling');
+     //changing bg color of navbar on scroll
+     $('#mainMenu-container').toggleClass('scrolled', $(this).scrollTop() > (bannerHeight - 250));
+ });   
+
+</script>
+
+<script rel="preload" src="https://www.gstatic.com/firebasejs/6.2.4/firebase-app.js"></script>
+<script rel="preload" src="https://www.gstatic.com/firebasejs/6.2.4/firebase-auth.js"></script>
+<script rel="preload" src="https://www.gstatic.com/firebasejs/6.2.4/firebase-storage.js"></script>
+<script rel="preload" src="https://www.gstatic.com/firebasejs/6.2.4/firebase-messaging.js"></script>
+<script rel="preload" src="https://www.gstatic.com/firebasejs/6.2.4/firebase-firestore.js"></script>
+<script rel="preload" src="https://www.gstatic.com/firebasejs/6.2.4/firebase-performance.js"></script>
+<script rel="preload" src="https://www.gstatic.com/firebasejs/6.2.4/firebase-database.js"></script>
+
+
+<script rel="preload" src="assets/scripts/main.js"></script>
+
+</body>
+</html>
