@@ -87,7 +87,7 @@ $(document).ready(function(){
                  console.log(profType);
                  firebase.database().ref(usertype + "/" + profType + "/" + uid).set(acc)
                  .then(function(){
-                  console.log("proffesional registered succsefully", uid);
+                  console.log("professional registered succsefully", uid);
 
                  });
                }
