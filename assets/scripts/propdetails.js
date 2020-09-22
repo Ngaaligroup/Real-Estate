@@ -14,6 +14,7 @@ function getUrlParam(param)
         var ref = firebase.database().ref("AllProperty/" +param);
         ref.once("value").then(function(snapshot) {
             var val = snapshot.val();
+            console.log(val)
             var Title=val.Title;
                
             var Address=val.Address;
@@ -46,7 +47,6 @@ function getUrlParam(param)
             '<div class="carousel-item active">'+
             '<img src="'+Photos+'" class="d-block w-100" alt="Property Front View">'+
             '<div class="carousel-caption d-none d-md-block">'+
-              '<h5> Picture Caption </h5>'+
             '</div>'+
           '</div>'
 
